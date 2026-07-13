@@ -69,8 +69,9 @@ The current WAIA text mark is temporary. Header and favicon references are struc
 ## Remaining Work
 
 - Add the approved WAIA brand icon and any final visual identity assets.
-- Configure analytics for the standalone WAIA domain.
-- Configure consent management before adding analytics or marketing scripts.
+- Cloudflare Web Analytics is enabled through Cloudflare's automatic Real User Measurement injection. No analytics beacon is stored in this repository.
+- The WAIA marketing site does not use Apollo website tracking or Cookiebot.
+- Keep the site free from behavioural and marketing tracking unless a clear future requirement is approved.
 - Confirm final legal review of WAIA terms, AI use statement and shared document links.
 - Redirect old Nineteen Point Two WAIA routes only after this multi-page version is merged and verified live.
 
