@@ -1,0 +1,15 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" fill="#1A1A2E" />
+  <text
+    x="256"
+    y="324.096"
+    font-family="Inter, system-ui, -apple-system, sans-serif"
+    font-size="194.56"
+    font-weight="700"
+    text-anchor="middle"
+    letter-spacing="-2"
+  >
+    <tspan fill="#F7F3EE">19</tspan>
+    <tspan fill="#0D7377" dx="-33.08">.2</tspan>
+  </text>
+</svg>
