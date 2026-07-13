@@ -52,6 +52,8 @@ The site is organised around the buyer questions a prospective customer needs to
 
 WAIA-specific terms and AI use information live in this repository at `/terms/` and `/ai-use-statement/`.
 
+The marketing site is live at `https://waia.co.uk/`. GitHub Pages deployment is active, custom-domain DNS is configured, and HTTPS is enforced.
+
 Shared Nineteen Point Two Ltd documents remain on `www.nineteenpointtwo.com`:
 
 - Privacy policy
@@ -69,9 +71,8 @@ The current WAIA text mark is temporary. Header and favicon references are struc
 - Add the approved WAIA brand icon and any final visual identity assets.
 - Configure analytics for the standalone WAIA domain.
 - Configure consent management before adding analytics or marketing scripts.
-- Confirm production deployment and custom-domain DNS for `waia.co.uk`.
-- Confirm final legal review of WAIA terms, AI use statement and shared document links after domain setup.
-- Redirect old Nineteen Point Two WAIA routes only after this version is reviewed, approved and live.
+- Confirm final legal review of WAIA terms, AI use statement and shared document links.
+- Redirect old Nineteen Point Two WAIA routes only after this multi-page version is merged and verified live.
 
 ## Source Used For Initial Migration
 
