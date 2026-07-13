@@ -69,9 +69,10 @@ The current WAIA text mark is temporary. Header and favicon references are struc
 ## Remaining Work
 
 - Add the approved WAIA brand icon and any final visual identity assets.
-- Cloudflare Web Analytics is enabled through Cloudflare's automatic Real User Measurement injection. No analytics beacon is stored in this repository.
-- The WAIA marketing site does not use Apollo website tracking or Cookiebot.
-- Keep the site free from behavioural and marketing tracking unless a clear future requirement is approved.
+- Cloudflare Web Analytics is installed manually through the beacon stored in this repository.
+- Automatic Cloudflare RUM injection is not relied upon.
+- The site does not use Apollo website tracking or Cookiebot.
+- Behavioural and marketing tracking should not be added without an approved requirement.
 - Confirm final legal review of WAIA terms, AI use statement and shared document links.
 - Redirect old Nineteen Point Two WAIA routes only after this multi-page version is merged and verified live.
 
