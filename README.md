@@ -1,12 +1,12 @@
 # WAIA Marketing Site
 
-Standalone marketing website for WAIA, the workplace AI adoption control product operated by Nineteen Point Two Ltd.
+Standalone product marketing website for WAIA, the workplace AI adoption control product operated by Nineteen Point Two Ltd.
 
 ## Purpose
 
-This repository contains the first standalone WAIA marketing site for `https://waia.co.uk/`.
+This repository contains the standalone WAIA product website for `https://waia.co.uk/`.
 
-The site was migrated from the existing Nineteen Point Two website and keeps WAIA as the primary brand. Nineteen Point Two is retained as the operating company and secondary endorsement.
+WAIA is the primary visible brand. Nineteen Point Two Ltd is the legal operator, customer relationship owner and secondary endorsement.
 
 ## Local Preview
 
@@ -18,23 +18,68 @@ npx http-server . -p 4173
 
 Then open `http://127.0.0.1:4173/`.
 
-## Routes
+## Route Structure
 
-- `/`
-- `/how-it-works/`
-- `/terms/`
-- `/ai-use-statement/`
+- `/` - product overview
+- `/how-it-works/` - product operating model and implementation
+- `/who-its-for/` - buyer fit and organisational signals
+- `/pricing/` - annual licence pricing, scope and commercial FAQ
+- `/data-privacy/` - data, privacy and product boundaries
+- `/terms/` - WAIA Terms of Service
+- `/ai-use-statement/` - WAIA Product and AI Use Statement
 - `/404.html`
 - `/robots.txt`
 - `/sitemap.xml`
 
-## Source Used For Migration
+## Production Targets
+
+- Marketing site: `https://waia.co.uk/`
+- WAIA application login: `https://waia.nineteenpointtwo.com/login`
+- Enquiry form: `https://tally.so/r/gDgbQP`
+- Operator: Nineteen Point Two Ltd
+
+## Page Architecture
+
+The site is organised around the buyer questions a prospective customer needs to answer:
+
+- What is WAIA?
+- How does it work?
+- Is it right for an organisation like ours?
+- What does it cost?
+- What does it record and how is customer data handled?
+
+## Shared Legal Documents
+
+WAIA-specific terms and AI use information live in this repository at `/terms/` and `/ai-use-statement/`.
+
+Shared Nineteen Point Two Ltd documents remain on `www.nineteenpointtwo.com`:
+
+- Privacy policy
+- Cookie policy
+- Data Processing Agreement
+- Security
+- Subprocessors
+
+## Brand Notes
+
+The current WAIA text mark is temporary. Header and favicon references are structured so an approved standalone WAIA icon can be added in a later branding branch.
+
+## Remaining Work
+
+- Add the approved WAIA brand icon and any final visual identity assets.
+- Configure analytics for the standalone WAIA domain.
+- Configure consent management before adding analytics or marketing scripts.
+- Confirm production deployment and custom-domain DNS for `waia.co.uk`.
+- Confirm final legal review of WAIA terms, AI use statement and shared document links after domain setup.
+- Redirect old Nineteen Point Two WAIA routes only after this version is reviewed, approved and live.
+
+## Source Used For Initial Migration
 
 Source repository:
 
 `/Users/bencooper/Documents/Codex/2026-05-02/work-in-the-github-repo-for`
 
-Source pages and assets:
+Original source pages and assets:
 
 - `waia/index.html`
 - `waia/how-it-works/index.html`
@@ -45,18 +90,3 @@ Source pages and assets:
 - `assets/js/nav.js`
 - `assets/images/waia/`
 - `assets/favicon/favicon.svg`
-
-## Production Targets
-
-- Marketing site: `https://waia.co.uk/`
-- WAIA application login: `https://waia.nineteenpointtwo.com/login`
-- Enquiry form: `https://tally.so/r/gDgbQP`
-
-## Pre-Launch Tasks
-
-- Configure analytics for the standalone WAIA domain.
-- Configure consent management before adding analytics or marketing scripts.
-- Complete custom-domain DNS and hosting deployment for `waia.co.uk`.
-- Confirm final legal review of WAIA terms and AI use statement after domain setup.
-- Confirm whether any additional shared legal pages should be mirrored or remain linked to `nineteenpointtwo.com`.
-- Do not redirect the old Nineteen Point Two WAIA routes until this standalone site is approved and live.
