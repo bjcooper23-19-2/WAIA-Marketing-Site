@@ -91,6 +91,12 @@ Production web assets are copied into public paths under `assets/`:
 - `assets/favicon/favicon-32.png`
 - `assets/favicon/favicon-512.png`
 - `assets/favicon/apple-touch-icon.png`
+- `assets/favicon/waia-favicon.svg`
+- `assets/favicon/waia-favicon.ico`
+- `assets/favicon/waia-favicon-32.png`
+- `assets/favicon/waia-apple-touch-icon.png`
+
+The `waia-*` favicon filenames are used in page HTML so browser and CDN caches do not continue serving an older generic `favicon.ico`.
 
 Semantic colour rules:
 
