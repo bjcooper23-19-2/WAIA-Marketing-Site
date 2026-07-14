@@ -64,11 +64,53 @@ Shared Nineteen Point Two Ltd documents remain on `www.nineteenpointtwo.com`:
 
 ## Brand Notes
 
-The current WAIA text mark is temporary. Header and favicon references are structured so an approved standalone WAIA icon can be added in a later branding branch.
+WAIA uses the approved **Open Wayfinder** identity.
+
+Brand idea: **Make the next move visible.**
+
+The canonical brand source and documentation pack remains in `brand/`:
+
+- `brand/README.md`
+- `brand/visual-system.md`
+- `brand/accessibility.md`
+- `brand/tokens.css`
+- `brand/assets/`
+- `brand/implementation-brief.md`
+
+Production web assets are copied into public paths under `assets/`:
+
+- `assets/brand/waia-mark-gradient.svg`
+- `assets/brand/waia-mark-teal.svg`
+- `assets/brand/waia-mark-white.svg`
+- `assets/brand/waia-mark-mono-dark.svg`
+- `assets/brand/waia-lockup-dark.svg`
+- `assets/brand/waia-lockup-light.svg`
+- `assets/brand/waia-lockup-compact-dark.svg`
+- `assets/favicon/favicon.svg`
+- `assets/favicon/favicon.ico`
+- `assets/favicon/favicon-32.png`
+- `assets/favicon/favicon-512.png`
+- `assets/favicon/apple-touch-icon.png`
+
+Semantic colour rules:
+
+- Operating navy is used for navigation, product shell and high-level product framing.
+- Clarity white is used for instruction, decision content and important explanation.
+- Deep teal is used for readable action, links and emphasis on light surfaces.
+- Bright cyan is reserved for active states, focus and illumination on dark surfaces.
+- Bright cyan should not be used as body text on pale backgrounds.
+
+Accessibility expectations:
+
+- Meaningful text and controls should meet WCAG AA contrast expectations.
+- Light surfaces should use dark primary text, secondary slate text and deep-teal emphasis.
+- Dark surfaces should use white or muted light text with bright cyan as an accent.
+- All links and controls need visible hover and keyboard focus states.
+
+This branch is the marketing-site pilot only. Product-platform implementation of the WAIA identity and Clarity Panel pattern will follow separately.
 
 ## Remaining Work
 
-- Add the approved WAIA brand icon and any final visual identity assets.
 - Cloudflare Web Analytics is installed manually through the beacon stored in this repository.
 - Automatic Cloudflare RUM injection is not relied upon.
 - The site does not use Apollo website tracking or Cookiebot.
