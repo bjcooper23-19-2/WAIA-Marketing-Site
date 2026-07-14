@@ -1,0 +1,70 @@
+:root {
+  --waia-operating-navy: #081220;
+  --waia-operating-navy-soft: #101b2d;
+  --waia-deep-teal: #0d7377;
+  --waia-deep-teal-hover: #095f63;
+  --waia-bright-cyan: #22d3ee;
+  --waia-clarity-white: #ffffff;
+  --waia-neutral-light: #f2f5f7;
+  --waia-neutral-mid: #d8e0e6;
+  --waia-text-primary: #0f172a;
+  --waia-text-secondary: #475569;
+  --waia-text-on-dark: #f8fafc;
+  --waia-text-muted-on-dark: #cbd5e1;
+  --waia-border-light: #cbd5e1;
+  --waia-border-dark: rgba(248, 250, 252, 0.18);
+  --waia-success: #16794a;
+  --waia-caution: #9a6700;
+  --waia-risk: #b42318;
+  --waia-focus: #22d3ee;
+
+  --waia-radius-sm: 10px;
+  --waia-radius-md: 16px;
+  --waia-radius-lg: 24px;
+  --waia-shadow-light: 0 18px 48px rgba(8, 18, 32, 0.12);
+  --waia-shadow-dark: 0 22px 60px rgba(0, 0, 0, 0.28);
+
+  --waia-space-1: 4px;
+  --waia-space-2: 8px;
+  --waia-space-3: 12px;
+  --waia-space-4: 16px;
+  --waia-space-5: 24px;
+  --waia-space-6: 32px;
+  --waia-space-7: 48px;
+}
+
+.waia-surface-operating {
+  background: var(--waia-operating-navy);
+  color: var(--waia-text-on-dark);
+}
+
+.waia-surface-clarity {
+  background: var(--waia-clarity-white);
+  color: var(--waia-text-primary);
+  border: 1px solid var(--waia-border-light);
+  border-radius: var(--waia-radius-md);
+  box-shadow: var(--waia-shadow-light);
+}
+
+.waia-surface-supporting {
+  background: var(--waia-neutral-light);
+  color: var(--waia-text-primary);
+  border: 1px solid var(--waia-neutral-mid);
+  border-radius: var(--waia-radius-md);
+}
+
+.waia-action-primary {
+  background: var(--waia-deep-teal);
+  color: #ffffff;
+  border: 1px solid var(--waia-deep-teal);
+}
+
+.waia-action-primary:hover {
+  background: var(--waia-deep-teal-hover);
+  border-color: var(--waia-deep-teal-hover);
+}
+
+.waia-focusable:focus-visible {
+  outline: 3px solid var(--waia-focus);
+  outline-offset: 3px;
+}
