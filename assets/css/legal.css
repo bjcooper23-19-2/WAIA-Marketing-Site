@@ -1,10 +1,16 @@
 :root {
-  --ink: #f7f3ee;
-  --muted: rgba(247, 243, 238, 0.72);
-  --soft: rgba(247, 243, 238, 0.58);
-  --charcoal: #1a1a2e;
-  --line: rgba(247, 243, 238, 0.14);
-  --accent: #7bdff2;
+  --waia-operating-navy: #081220;
+  --waia-operating-navy-soft: #101b2d;
+  --waia-deep-teal: #0d7377;
+  --waia-bright-cyan: #22d3ee;
+  --waia-text-on-dark: #f8fafc;
+  --waia-text-muted-on-dark: #cbd5e1;
+  --ink: var(--waia-text-on-dark);
+  --muted: var(--waia-text-muted-on-dark);
+  --soft: #94a3b8;
+  --charcoal: var(--waia-operating-navy-soft);
+  --line: rgba(248, 250, 252, 0.18);
+  --accent: var(--waia-bright-cyan);
   --max: 1180px;
 }
 * {
@@ -35,7 +41,7 @@ a {
 }
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 3px solid var(--accent);
   outline-offset: 4px;
 }
 a:hover {
@@ -70,7 +76,6 @@ footer {
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
   flex: 0 0 auto;
   line-height: 1;
   max-width: 42vw;
@@ -78,34 +83,11 @@ footer {
 .waia-brand {
   color: var(--ink);
 }
-.brand-mark {
-  display: grid;
-  width: 44px;
-  height: 44px;
-  place-items: center;
-  border: 1px solid rgba(123, 223, 242, 0.42);
-  border-radius: 14px;
-  background: rgba(123, 223, 242, 0.12);
-  color: var(--accent);
-  font-size: 0.68rem;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-}
-.brand-lockup {
-  display: grid;
-  gap: 3px;
-  min-width: 0;
-}
-.brand-lockup strong {
-  color: var(--ink);
-  font-size: 1rem;
-  letter-spacing: 0.08em;
-}
-.brand-lockup small {
-  color: var(--muted);
-  font-size: 0.76rem;
-  line-height: 1.1;
-  white-space: nowrap;
+.brand-logo {
+  display: block;
+  width: 154px;
+  height: auto;
+  flex: 0 0 auto;
 }
 .nav-links {
   display: flex;
@@ -356,12 +338,8 @@ td p {
     order: 2;
     max-width: min(70vw, 260px);
   }
-  .brand-mark {
-    width: 40px;
-    height: 40px;
-  }
-  .brand-lockup small {
-    white-space: normal;
+  .brand-logo {
+    width: 136px;
   }
   .nav-toggle {
     order: 1;
