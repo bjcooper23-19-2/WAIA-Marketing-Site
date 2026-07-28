@@ -181,9 +181,9 @@ header {
   flex: 1;
   align-items: center;
   justify-content: center;
-  gap: 22px;
+  gap: 18px;
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
 }
 
 .nav-links a:hover {
