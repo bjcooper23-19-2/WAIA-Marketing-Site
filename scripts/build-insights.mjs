@@ -9,6 +9,7 @@ const enquiryUrl = "https://tally.so/r/gDgbQP";
 const loginUrl = "https://waia.nineteenpointtwo.com/login";
 const cloudflareToken = "9fa2711aed53428980734989cf03178a";
 const requiredFrontmatter = ["title", "slug", "date", "category", "excerpt"];
+const safeSlugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 const escapeHtml = (value = "") =>
   String(value)
@@ -55,6 +56,18 @@ const parseMarkdown = (source, file) => {
   }
 
   return { data, body: match[2].trim() };
+};
+
+const validateSlug = (slug, file) => {
+  if (!slug) {
+    throw new Error(`${file} is missing required frontmatter: slug`);
+  }
+
+  if (!safeSlugPattern.test(slug)) {
+    throw new Error(
+      `${file} has an unsafe slug "${slug}". Use lowercase letters, numbers and single hyphens only.`,
+    );
+  }
 };
 
 const paragraphClass = (paragraph) =>
@@ -315,14 +328,37 @@ const documentShell = ({
 </html>`;
 
 const loadArticles = async () => {
-  const files = (await readdir(contentDir)).filter((file) =>
-    file.endsWith(".md"),
-  );
+  let files;
+
+  try {
+    files = (await readdir(contentDir)).filter((file) => file.endsWith(".md"));
+  } catch (error) {
+    throw new Error(
+      `Unable to read Insights content directory at ${contentDir}: ${error.message}`,
+    );
+  }
+
+  if (!files.length) {
+    throw new Error(
+      `No Insights markdown sources found in ${contentDir}. Add at least one .md file with the required frontmatter.`,
+    );
+  }
+
   const articles = [];
+  const slugs = new Map();
 
   for (const file of files) {
     const source = await readFile(path.join(contentDir, file), "utf8");
     const { data, body } = parseMarkdown(source, file);
+    validateSlug(data.slug, file);
+
+    if (slugs.has(data.slug)) {
+      throw new Error(
+        `Duplicate Insights slug "${data.slug}" found in ${slugs.get(data.slug)} and ${file}.`,
+      );
+    }
+
+    slugs.set(data.slug, file);
     articles.push({
       ...data,
       body,
@@ -493,12 +529,6 @@ const renderArticle = (article) =>
   });
 
 const articles = await loadArticles();
-
-if (articles.length !== 6) {
-  throw new Error(
-    `Expected exactly 6 insight articles, found ${articles.length}.`,
-  );
-}
 
 await rm(outputDir, { recursive: true, force: true });
 await mkdir(outputDir, { recursive: true });

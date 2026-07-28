@@ -33,6 +33,8 @@ Build command:
 node scripts/build-insights.mjs
 ```
 
+The initial migration added six articles. Future Insights can be added by creating another markdown source file with the same frontmatter and running the build command.
+
 Commit both markdown source and generated HTML after every content change.
 
 ## Frontmatter

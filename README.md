@@ -73,7 +73,7 @@ Build the Insights section from markdown with:
 node scripts/build-insights.mjs
 ```
 
-The generator reads exactly six markdown source files, sorts articles newest first and writes the Insights index plus one folder-style route per article.
+The generator reads markdown source files, sorts articles newest first and writes the Insights index plus one folder-style route per article. The initial migration added six articles; future Insights can be added by creating another markdown source with the same frontmatter and running the build.
 
 Required frontmatter:
 
