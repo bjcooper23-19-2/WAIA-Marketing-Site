@@ -1,14 +1,14 @@
 ---
 title: AI Adoption Is Easy to Measure. AI Effectiveness Isn’t.
 metaTitle: AI Adoption Is Easy to Measure. AI Effectiveness Isn’t. | WAIA
-metaDescription: AI adoption metrics show access and activity. AI effectiveness reveals whether workplace AI is improving judgement, consistency, workflows and operating outcomes.
+metaDescription: Access, activity and training completion show whether AI is being used. They do not show whether it is improving judgement, consistency or the quality of work.
 ogTitle: AI Adoption Is Easy to Measure. AI Effectiveness Isn’t.
-ogDescription: AI adoption metrics show access and activity. AI effectiveness reveals whether workplace AI is improving judgement, consistency, workflows and operating outcomes.
+ogDescription: Access, activity and training completion show whether AI is being used. They do not show whether it is improving judgement, consistency or the quality of work.
 slug: ai-adoption-vs-ai-effectiveness
 date: 2026-07-13
-category: Workplace AI
+category: Measurement
 readingTime: 6 min read
-excerpt: AI adoption metrics show access and activity. AI effectiveness reveals whether workplace AI is improving judgement, consistency, workflows and operating outcomes.
+excerpt: Access, activity and training completion show whether AI is being used. They do not show whether it is improving judgement, consistency or the quality of work.
 tags: workplace AI, AI adoption, AI effectiveness, manager visibility, operational evidence
 ---
 

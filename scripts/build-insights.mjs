@@ -202,12 +202,9 @@ const articleTitleOverrides = new Map([
   ["ai-adoption-vs-ai-effectiveness", "AI Adoption vs AI Effectiveness | WAIA"],
   [
     "operational-strain-beneath-workplace-ai-adoption",
-    "Operational Strain Beneath Workplace AI | WAIA",
+    "Management Blind Spot in Workplace AI | WAIA",
   ],
-  [
-    "shadow-ai-workplace-ai-adoption",
-    "Shadow AI and Workplace AI Adoption | WAIA",
-  ],
+  ["shadow-ai-workplace-ai-adoption", "Shadow AI as a Management Issue | WAIA"],
 ]);
 
 const browserTitle = (article) =>
@@ -410,6 +407,7 @@ const renderIndex = (articles) => {
       hasPart: articles.map((article) => ({
         "@type": "Article",
         headline: article.title,
+        articleSection: article.category,
         url: article.url,
         datePublished: article.date,
       })),
@@ -478,6 +476,7 @@ const renderArticle = (article) =>
       "@type": "Article",
       headline: article.title,
       description: article.metaDescription || article.excerpt,
+      articleSection: article.category,
       datePublished: article.date,
       mainEntityOfPage: article.url,
       publisher: {

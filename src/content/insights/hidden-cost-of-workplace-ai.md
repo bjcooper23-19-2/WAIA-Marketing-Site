@@ -1,18 +1,18 @@
 ---
-title: The Hidden Cost of Workplace AI: Why Adoption Metrics Are Misleading
-metaTitle: The Hidden Cost of Workplace AI | WAIA
-metaDescription: Most organisations can see AI adoption happening. Far fewer can tell whether that use is creating leverage or hidden operational drag.
-ogTitle: The Hidden Cost of Workplace AI: Why Adoption Metrics Are Misleading
-ogDescription: Most organisations can see AI adoption happening. Far fewer can tell whether that use is creating leverage or hidden operational drag.
+title: The Rework Tax Behind Workplace AI
+metaTitle: The Rework Tax Behind Workplace AI | WAIA
+metaDescription: The cost of workplace AI often appears as rework, duplicated effort and additional review before it appears clearly in budgets or performance reporting.
+ogTitle: The Rework Tax Behind Workplace AI
+ogDescription: The cost of workplace AI often appears as rework, duplicated effort and additional review before it appears clearly in budgets or performance reporting.
 slug: hidden-cost-of-workplace-ai
 date: 2026-05-30
-category: Workplace AI
+category: Operational cost
 readingTime: 7 min read
-excerpt: AI adoption metrics can be misleading. This executive briefing explores how unmanaged workplace AI use can create hidden operational drag through rework, review burden, duplicated effort and direct tool spend.
+excerpt: The cost of workplace AI often appears as rework, duplicated effort and additional review before it appears clearly in budgets or performance reporting.
 tags: workplace AI, AI adoption, operational drag, Shadow AI, AI effectiveness
 ---
 
-Most organisations can tell you how many people have access to AI tools. Far fewer can tell you whether those tools are creating value or quietly creating operational friction.
+Most organisations can tell you how many people have access to AI tools. Far fewer can tell whether those tools are creating value or quietly creating a rework tax in the operating model.
 
 ## Executive summary
 

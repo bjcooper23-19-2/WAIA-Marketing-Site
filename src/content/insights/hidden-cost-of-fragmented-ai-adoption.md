@@ -1,9 +1,9 @@
 ---
-title: The hidden cost of fragmented AI adoption
+title: When Every Team Uses AI Differently
 slug: hidden-cost-of-fragmented-ai-adoption
 date: 2026-05-19
-category: Workplace AI
-excerpt: Fragmented workplace AI adoption creates inconsistent behaviours, weak manager visibility and hidden operational strain before leadership has enough control to manage it.
+category: Workflow consistency
+excerpt: When every team develops its own AI habits, organisations inherit inconsistent workflows, uneven standards and avoidable management overhead.
 ---
 
 Across many organisations, AI is no longer sitting at the edge of the business. It’s already inside daily work.
@@ -18,7 +18,7 @@ Different teams are using different tools, in different ways, with different sta
 
 The organisation may believe it’s moving forward. But underneath the visible activity, unmanaged variation is building.
 
-This is the hidden cost of fragmented AI adoption. Not the cost of licences. Not the cost of technology access. The cost of inconsistent behaviours becoming embedded in operational workflows before leadership has enough visibility, control or confidence to manage them.
+This is what happens when every team uses AI differently. Not the cost of licences. Not the cost of technology access. The cost of inconsistent behaviours becoming embedded in operational workflows before leadership has enough visibility, control or confidence to manage them.
 
 Most organisations have better visibility into software spend than into how AI is actually used in day-to-day work. That gap matters because AI inconsistency rarely appears first as a governance problem. It appears as execution variability.
 
