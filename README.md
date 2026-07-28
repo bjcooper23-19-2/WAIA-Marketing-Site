@@ -23,6 +23,13 @@ Then open `http://127.0.0.1:4173/`.
 - `/` - product overview
 - `/how-it-works/` - product operating model and implementation
 - `/who-its-for/` - buyer fit and organisational signals
+- `/insights/` - WAIA workplace AI editorial index
+- `/insights/ai-adoption-vs-ai-effectiveness/`
+- `/insights/shadow-ai-workplace-ai-adoption/`
+- `/insights/cost-of-ai-is-becoming-visible/`
+- `/insights/hidden-cost-of-workplace-ai/`
+- `/insights/operational-strain-beneath-workplace-ai-adoption/`
+- `/insights/hidden-cost-of-fragmented-ai-adoption/`
 - `/pricing/` - annual licence pricing, scope and commercial FAQ
 - `/data-privacy/` - data, privacy and product boundaries
 - `/terms/` - WAIA Terms of Service
@@ -47,6 +54,56 @@ The site is organised around the buyer questions a prospective customer needs to
 - Is it right for an organisation like ours?
 - What does it cost?
 - What does it record and how is customer data handled?
+
+WAIA is also the permanent editorial home for workplace AI content. Insights should stay focused on practical, operator-led thinking about workplace AI adoption, informal and Shadow AI use, operational visibility, guidance and governance as enablement, learner and manager judgement, workflow consistency, evidence of effective AI use and hidden adoption risk.
+
+## Insights Publishing
+
+Insight source content lives in:
+
+`src/content/insights/`
+
+Generated output lives in:
+
+`insights/`
+
+Build the Insights section from markdown with:
+
+```sh
+node scripts/build-insights.mjs
+```
+
+The generator reads exactly six markdown source files, sorts articles newest first and writes the Insights index plus one folder-style route per article.
+
+Required frontmatter:
+
+- `title`
+- `slug`
+- `date`
+- `category`
+- `excerpt`
+
+Optional frontmatter currently supported:
+
+- `metaTitle`
+- `metaDescription`
+- `ogTitle`
+- `ogDescription`
+- `readingTime`
+- `tags`
+
+Commit both the markdown source files and generated HTML whenever Insights content changes. Do not edit generated article HTML directly unless the generator is also updated to preserve the change.
+
+Editorial guardrails:
+
+- WAIA owns workplace AI editorial content.
+- Keep the section calm, credible, practical, commercially grounded and operator-led.
+- Do not turn Insights into a generic AI blog.
+- Do not add unsupported customer outcomes, testimonials, certifications or compliance claims.
+- Keep article CTAs aligned to the WAIA buyer journey.
+- Avoid links that send users through old Nineteen Point Two workplace AI routes.
+
+More detail is in `docs/insights.md`.
 
 ## Shared Legal Documents
 
@@ -122,7 +179,7 @@ This branch is the marketing-site pilot only. Product-platform implementation of
 - The site does not use Apollo website tracking or Cookiebot.
 - Behavioural and marketing tracking should not be added without an approved requirement.
 - Confirm final legal review of WAIA terms, AI use statement and shared document links.
-- Redirect old Nineteen Point Two WAIA routes only after this multi-page version is merged and verified live.
+- Redirect old Nineteen Point Two WAIA and workplace AI Insights routes only after the WAIA Insights branch and the corresponding Nineteen Point Two redirect branch have both been reviewed, merged and verified live.
 
 ## Source Used For Initial Migration
 
@@ -141,3 +198,10 @@ Original source pages and assets:
 - `assets/js/nav.js`
 - `assets/images/waia/`
 - `assets/favicon/favicon.svg`
+
+Additional Insights migration source:
+
+- `src/content/insights/`
+- `scripts/build-insights.mjs`
+- `insights/`
+- `assets/css/insights.css`
