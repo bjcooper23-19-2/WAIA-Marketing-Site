@@ -1,12 +1,12 @@
 ---
-title: The operational reality behind workplace AI adoption and Shadow AI
+title: Shadow AI Is a Management Problem, Not Just a Security Problem
 slug: shadow-ai-workplace-ai-adoption
 date: 2026-05-13
-category: Workplace AI
-excerpt: Shadow AI isn't a cyber scare story. It's the operating condition created when people change how work gets done faster than leadership can see, guide or support it.
+category: Shadow AI
+excerpt: Shadow AI is not only a security concern. It is what happens when work changes faster than leadership can see, guide and support it.
 ---
 
-Leadership teams often believe they understand how AI is currently being used by their people. In practice, the opposite is usually true. AI usage in SaaS and professional services organisations today exists in operational blind spots, hidden within daily workflow inconsistencies, fragmented team behaviours, and unmonitored workarounds. The mismatch between leadership assumptions and what actually happens day-to-day is a significant driver of customer experience variation, manager uncertainty, and inconsistent execution.
+Shadow AI is not only a security problem. Leadership teams often believe they understand how AI is currently being used by their people. In practice, the opposite is usually true. AI usage in SaaS and professional services organisations today exists in operational blind spots, hidden within daily workflow inconsistencies, fragmented team behaviours, and unmonitored workarounds. The mismatch between leadership assumptions and what actually happens day-to-day is a significant driver of customer experience variation, manager uncertainty, and inconsistent execution.
 
 This isn't primarily a technology problem. Most organisations already have access to AI tools. What they lack is consistent workplace behaviour, clear expectations, visible management, and coherent ownership around AI usage.
 

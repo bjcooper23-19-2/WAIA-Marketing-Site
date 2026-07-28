@@ -1,14 +1,14 @@
 ---
-title: The Cost of AI Is Becoming Visible
-metaTitle: The Cost of AI Is Becoming Visible | WAIA
-metaDescription: AI experimentation should continue, but unmanaged AI use creates hidden operational cost when leaders can't see where AI is being used, what it costs and whether it creates value.
-ogTitle: The Cost of AI Is Becoming Visible
-ogDescription: The real cost question isn't whether AI is worth using. It's whether the business can see enough to know where it's worth using well.
+title: Why Unmanaged AI Experimentation Gets Expensive
+metaTitle: Why Unmanaged AI Experimentation Gets Expensive | WAIA
+metaDescription: Unmanaged experimentation becomes expensive when tool spend, duplicated testing and unclear ownership spread faster than evidence of value.
+ogTitle: Why Unmanaged AI Experimentation Gets Expensive
+ogDescription: Unmanaged experimentation becomes expensive when tool spend, duplicated testing and unclear ownership spread faster than evidence of value.
 slug: cost-of-ai-is-becoming-visible
 date: 2026-05-27
-category: Workplace AI
+category: Experimentation
 readingTime: 7 min read
-excerpt: The answer isn't to slow adoption. The real issue is unmanaged experimentation: AI use spreading faster than visibility, ownership, review standards and evidence of value.
+excerpt: Unmanaged experimentation becomes expensive when tool spend, duplicated testing and unclear ownership spread faster than evidence of value.
 ---
 
 AI cost is starting to move out of the background. For a while, many organisations could treat AI as experimentation: a few licences, a few pilots, some team-level testing and some useful shortcuts. That phase hasn't disappeared, and it shouldn’t. But the cost profile is changing.

@@ -1,12 +1,12 @@
 ---
-title: The operational strain beneath workplace AI adoption
+title: The Management Blind Spot in Workplace AI
 slug: operational-strain-beneath-workplace-ai-adoption
 date: 2026-05-14
-category: Workplace AI
-excerpt: Workplace AI adoption is exposing management visibility gaps, workflow variation and Shadow AI behaviours inside scaling SaaS and professional services organisations.
+category: Manager visibility
+excerpt: Managers are often expected to support AI-enabled work without enough visibility into where it is used, how outputs are checked or where judgement is weakening.
 ---
 
-Most organisations discussing AI strategies today are actually facing a more familiar problem: an operating model unfit for rapid workplace-level behavioural change.
+Most organisations discussing AI strategies today are also facing a more familiar management blind spot: an operating model unfit for rapid workplace-level behavioural change.
 
 AI isn't the cause of fragmentation and inconsistency. It’s simply the accelerant exposing weaknesses already embedded in systems, workflows, and leadership visibility.
 
