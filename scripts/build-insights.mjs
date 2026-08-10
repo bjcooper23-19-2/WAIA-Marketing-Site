@@ -320,6 +320,7 @@ const documentShell = ({
       ${footer}
     </div>
     <script src="/assets/js/nav.js" defer></script>
+    <script src="/assets/js/source-attribution.js" defer></script>
     ${cloudflareBeacon}
   </body>
 </html>`;
