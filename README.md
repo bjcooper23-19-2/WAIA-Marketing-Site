@@ -105,6 +105,25 @@ Editorial guardrails:
 
 More detail is in `docs/insights.md`.
 
+## Privacy-Safe Enquiry Source Attribution
+
+WAIA supports a lightweight `s` query parameter on inbound links so enquiry source context can be passed to the existing Tally form without cookies, behavioural tracking or a consent platform.
+
+Approved source values:
+
+- `s=ap` - Apollo outbound email
+- `s=gm` - manually personalised Gmail outbound
+- `s=19` - Nineteen Point Two website or referral
+- `s=li` - LinkedIn organic
+
+The shared script at `assets/js/source-attribution.js` validates incoming values, stores only the approved short source code in `sessionStorage`, and appends it to WAIA Tally enquiry links as `?s=value`. It does not store identities, page histories, timestamps or behavioural data, and it does not alter canonical URLs, sitemap entries, metadata, legal links or the WAIA application login URL.
+
+To capture the value in Tally submissions, the Tally enquiry form needs a hidden field named exactly `s`.
+
+Cloudflare Web Analytics remains aggregate page analytics only. It cannot report the preserved `sessionStorage` source value or confirm which `s` value was submitted to Tally.
+
+More detail is in `docs/source-attribution.md`.
+
 ## Shared Legal Documents
 
 WAIA-specific terms and AI use information live in this repository at `/terms/` and `/ai-use-statement/`.
