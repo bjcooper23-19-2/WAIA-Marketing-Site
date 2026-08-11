@@ -1452,7 +1452,7 @@ h3 {
   padding: 15px 18px 17px;
   border-top: 1px solid rgba(13, 115, 119, 0.13);
   background: rgba(235, 247, 249, 0.82);
-  color: #46616b;
+  color: #334f5a;
   font-size: 0.84rem;
   line-height: 1.5;
 }
@@ -1583,7 +1583,9 @@ tr:last-child td {
 }
 
 .package-faq-grid .outcome-card {
-  min-height: 220px;
+  min-height: 0;
+  justify-content: flex-start;
+  gap: 28px;
 }
 
 .package-card-grid .check-list li {
@@ -1629,6 +1631,23 @@ tr:last-child td {
   color: #303849;
   font-size: 1.06rem;
   line-height: 1.45;
+}
+
+section:not(.waia-light-section) .buyer-fit-list {
+  border-top-color: rgba(247, 243, 238, 0.16);
+}
+
+section:not(.waia-light-section) .buyer-fit-list article {
+  border-bottom-color: rgba(247, 243, 238, 0.16);
+}
+
+section:not(.waia-light-section) .buyer-fit-list article > span {
+  border-color: rgba(var(--product-accent-rgb), 0.42);
+  color: var(--product-accent);
+}
+
+section:not(.waia-light-section) .buyer-fit-list p {
+  color: rgba(247, 243, 238, 0.82);
 }
 
 .fit-grid {
