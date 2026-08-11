@@ -4,18 +4,22 @@ WAIA Insights is the permanent editorial home for workplace AI content on the WA
 
 ## Editorial Role
 
-Insights should strengthen WAIA as the specialist authority on managed workplace AI adoption. The section should stay focused on operational questions, including:
+Insights should strengthen WAIA as the specialist authority on evidence-led workplace AI management. The section should stay focused on operational questions, including:
 
 - workplace AI adoption
+- workplace AI value evidence
 - informal and Shadow AI use
 - operational visibility
 - guidance and governance as enablement
 - learner and manager judgement
 - workflow consistency
 - evidence of effective AI use
+- checking, rework and capacity signals
 - operational drag and hidden adoption risk
 
 The section should not become a generic AI blog. Articles should feel calm, credible, practical, commercially grounded and operator-led.
+
+WAIA owns workplace AI editorial content. New Insights should support the broader move from adoption activity to workplace evidence and better management decisions without claiming precise ROI, guaranteed productivity gains, prompt monitoring or employee productivity scoring.
 
 ## Source And Output
 

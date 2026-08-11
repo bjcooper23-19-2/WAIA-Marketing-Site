@@ -3,7 +3,7 @@ title: The Management Blind Spot in Workplace AI
 slug: operational-strain-beneath-workplace-ai-adoption
 date: 2026-05-14
 category: Manager visibility
-excerpt: Managers are often expected to support AI-enabled work without enough visibility into where it is used, how outputs are checked or where judgement is weakening.
+excerpt: Managers are often expected to support AI-enabled work without enough visibility into where it’s used, how outputs are checked or where judgement is weakening.
 ---
 
 Most organisations discussing AI strategies today are also facing a more familiar management blind spot: an operating model unfit for rapid workplace-level behavioural change.

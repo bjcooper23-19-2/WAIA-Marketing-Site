@@ -388,16 +388,16 @@ const renderIndex = (articles) => {
     .join("\n");
 
   return documentShell({
-    title: "WAIA Insights | Workplace AI Adoption Thinking",
+    title: "WAIA Insights | Workplace AI Evidence and Value Thinking",
     description:
-      "Practical WAIA thinking on making workplace AI use visible, guided and manageable across teams, managers and operating workflows.",
+      "Practical WAIA thinking on workplace AI evidence, AI adoption value, workflow visibility and management decisions.",
     canonical: `${siteUrl}/insights/`,
     structuredData: {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       name: "WAIA Insights",
       description:
-        "Practical thinking on workplace AI adoption, operational visibility and managed AI use.",
+        "Practical thinking on workplace AI evidence, AI adoption value, workflow visibility and management decisions.",
       url: `${siteUrl}/insights/`,
       publisher: {
         "@type": "Organization",
@@ -418,11 +418,12 @@ const renderIndex = (articles) => {
         <section class="insights-hero">
           <div class="container">
             <div class="eyebrow">Insights</div>
-            <h1>Practical thinking for managed workplace AI adoption.</h1>
+            <h1>Practical thinking for evidence-led workplace AI management.</h1>
             <p class="lede">
               WAIA Insights is a calm editorial home for making workplace AI use visible,
-              guided and manageable. The focus is operational: how people use AI at work,
-              how managers support judgement and how organisations reduce hidden adoption risk.
+              evidenced and manageable. The focus is operational: what AI is doing to
+              real work, how managers support judgement and how organisations avoid
+              confusing activity, adoption and productivity claims with value.
             </p>
           </div>
         </section>
@@ -432,9 +433,9 @@ const renderIndex = (articles) => {
               <div class="eyebrow">Latest thinking</div>
               <h2>Operator-led notes on AI use in the work itself.</h2>
               <p>
-                These pieces are not generic AI commentary. They examine the practical
-                signals leaders need when informal use, workflow variation, governance,
-                manager confidence and evidence of effective AI use start to matter.
+                These pieces aren’t generic AI commentary. They examine the practical
+                signals leaders need when informal use, workflow variation, checking
+                burden, manager confidence and evidence of effective AI use start to matter.
               </p>
             </div>
             <div class="insight-grid">
@@ -446,10 +447,10 @@ const renderIndex = (articles) => {
           <div class="container insights-cta-panel">
             <div>
               <div class="eyebrow">From thinking to operating rhythm</div>
-              <h2>See how WAIA makes adoption visible enough to manage.</h2>
+              <h2>See how WAIA turns adoption into evidence you can use.</h2>
               <p>
                 WAIA helps organisations move from informal AI use to shared guidance,
-                manager support and evidence-led follow-up.
+                real-work evidence, management review and better decisions about AI.
               </p>
             </div>
             <div class="hero-actions">
@@ -512,11 +513,12 @@ const renderArticle = (article) =>
           <div class="container article-cta-panel">
             <div>
               <div class="eyebrow">WAIA operating note</div>
-              <h2>Make the operational signal visible.</h2>
+              <h2>Move from activity signals to workplace evidence.</h2>
               <p>
                 This article points to a practical management question: can leaders see
-                how AI use is changing work, judgement and follow-up? WAIA helps make
-                those signals visible without turning adoption into surveillance.
+                how AI use is changing work, judgement, checking and follow-up? WAIA
+                helps make those signals visible without turning evidence into
+                surveillance.
               </p>
             </div>
             <div class="hero-actions">
