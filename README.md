@@ -1,6 +1,6 @@
 # WAIA Marketing Site
 
-Standalone product marketing website for WAIA, the workplace AI adoption control product operated by Nineteen Point Two Ltd.
+Standalone product marketing website for WAIA, the workplace AI evidence and management visibility product operated by Nineteen Point Two Ltd.
 
 ## Purpose
 
@@ -55,7 +55,13 @@ The site is organised around the buyer questions a prospective customer needs to
 - What does it cost?
 - What does it record and how is customer data handled?
 
-WAIA is also the permanent editorial home for workplace AI content. Insights should stay focused on practical, operator-led thinking about workplace AI adoption, informal and Shadow AI use, operational visibility, guidance and governance as enablement, learner and manager judgement, workflow consistency, evidence of effective AI use and hidden adoption risk.
+WAIA is positioned around the move from AI adoption to workplace evidence and better management decisions. The core external expression is:
+
+**Forget vibes. Get evidence.**
+
+The site should explain that WAIA helps organisations establish where AI is being used, what is happening to the work, how strong the evidence is and where indicative capacity evidence supports management action. Safety, guidance, learning and manager support remain important because they help produce more trustworthy workplace evidence.
+
+WAIA is also the permanent editorial home for workplace AI content. Insights should stay focused on practical, operator-led thinking about workplace AI adoption value, informal and Shadow AI use, operational visibility, guidance and governance as enablement, learner and manager judgement, workflow consistency, evidence of effective AI use and hidden adoption risk.
 
 ## Insights Publishing
 
@@ -97,9 +103,11 @@ Commit both the markdown source files and generated HTML whenever Insights conte
 Editorial guardrails:
 
 - WAIA owns workplace AI editorial content.
+- WAIA should increasingly connect workplace AI adoption to evidence, value, workflow impact and management decisions.
 - Keep the section calm, credible, practical, commercially grounded and operator-led.
 - Do not turn Insights into a generic AI blog.
 - Do not add unsupported customer outcomes, testimonials, certifications or compliance claims.
+- Do not claim precise cash savings, guaranteed productivity gains, employee productivity monitoring, prompt monitoring or autonomous ROI proof.
 - Keep article CTAs aligned to the WAIA buyer journey.
 - Avoid links that send users through old Nineteen Point Two workplace AI routes.
 
