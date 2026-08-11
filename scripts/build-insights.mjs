@@ -388,16 +388,16 @@ const renderIndex = (articles) => {
     .join("\n");
 
   return documentShell({
-    title: "WAIA Insights | Workplace AI Evidence and Management Thinking",
+    title: "WAIA Insights | Workplace AI Evidence and Value Thinking",
     description:
-      "Practical WAIA thinking on workplace AI evidence, adoption value, workflow visibility and management decisions.",
+      "Practical WAIA thinking on workplace AI evidence, AI adoption value, workflow visibility and management decisions.",
     canonical: `${siteUrl}/insights/`,
     structuredData: {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       name: "WAIA Insights",
       description:
-        "Practical thinking on workplace AI evidence, adoption value, workflow visibility and management decisions.",
+        "Practical thinking on workplace AI evidence, AI adoption value, workflow visibility and management decisions.",
       url: `${siteUrl}/insights/`,
       publisher: {
         "@type": "Organization",
@@ -423,7 +423,7 @@ const renderIndex = (articles) => {
               WAIA Insights is a calm editorial home for making workplace AI use visible,
               evidenced and manageable. The focus is operational: what AI is doing to
               real work, how managers support judgement and how organisations avoid
-              confusing activity with value.
+              confusing activity, adoption and productivity claims with value.
             </p>
           </div>
         </section>
@@ -433,7 +433,7 @@ const renderIndex = (articles) => {
               <div class="eyebrow">Latest thinking</div>
               <h2>Operator-led notes on AI use in the work itself.</h2>
               <p>
-                These pieces are not generic AI commentary. They examine the practical
+                These pieces aren’t generic AI commentary. They examine the practical
                 signals leaders need when informal use, workflow variation, checking
                 burden, manager confidence and evidence of effective AI use start to matter.
               </p>
@@ -447,10 +447,10 @@ const renderIndex = (articles) => {
           <div class="container insights-cta-panel">
             <div>
               <div class="eyebrow">From thinking to operating rhythm</div>
-              <h2>See how WAIA connects adoption to workplace evidence.</h2>
+              <h2>See how WAIA turns adoption into evidence you can use.</h2>
               <p>
                 WAIA helps organisations move from informal AI use to shared guidance,
-                real-work evidence, management review and better decisions.
+                real-work evidence, management review and better decisions about AI.
               </p>
             </div>
             <div class="hero-actions">

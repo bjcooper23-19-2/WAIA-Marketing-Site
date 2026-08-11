@@ -655,6 +655,10 @@ h3 {
   display: block;
 }
 
+.evidence-device-heading span {
+  display: block;
+}
+
 .buyer-trigger-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

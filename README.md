@@ -55,11 +55,15 @@ The site is organised around the buyer questions a prospective customer needs to
 - What does it cost?
 - What does it record and how is customer data handled?
 
-WAIA is positioned around the move from AI adoption to workplace evidence and better management decisions. The core external expression is:
+WAIA is positioned around the move from AI adoption to workplace evidence and better management decisions. The primary homepage proposition is:
+
+**Turn AI adoption into evidence you can use.**
+
+The supporting marketing device remains:
 
 **Forget vibes. Get evidence.**
 
-The site should explain that WAIA helps organisations establish where AI is being used, what is happening to the work, how strong the evidence is and where indicative capacity evidence supports management action. Safety, guidance, learning and manager support remain important because they help produce more trustworthy workplace evidence.
+The site should explain that WAIA helps organisations establish where AI is being used, what’s happening to the work, how strong the evidence is and where indicative capacity evidence supports management action. Safety, guidance, learning and manager support remain important because they help produce more trustworthy workplace evidence.
 
 WAIA is also the permanent editorial home for workplace AI content. Insights should stay focused on practical, operator-led thinking about workplace AI adoption value, informal and Shadow AI use, operational visibility, guidance and governance as enablement, learner and manager judgement, workflow consistency, evidence of effective AI use and hidden adoption risk.
 
