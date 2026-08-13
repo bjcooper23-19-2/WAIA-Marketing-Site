@@ -117,6 +117,14 @@ Editorial guardrails:
 
 More detail is in `docs/insights.md`.
 
+## Customer Proof, Product Proof And Illustrative Examples
+
+WAIA does not yet have approved public customer logos, testimonials, measurable case studies or named customer outcomes for the marketing site. Until those exist, use product proof, product screenshots and clearly labelled illustrative examples to explain what WAIA can evidence.
+
+Illustrative examples must always be labelled as illustrative and must not be presented as real customer stories. Do not invent customer quotes, customer names, adoption figures, ROI claims, certifications, productivity outcomes or case studies.
+
+Founding-customer language can explain the practical advantage of closer implementation support, direct feedback loops and structured evidence review, but it must not imply existing market traction, discounts or commercial terms that have not been approved.
+
 ## Privacy-Safe Enquiry Source Attribution
 
 WAIA supports a lightweight `s` query parameter on inbound links so enquiry source context can be passed to the existing Tally form without cookies, behavioural tracking or a consent platform.

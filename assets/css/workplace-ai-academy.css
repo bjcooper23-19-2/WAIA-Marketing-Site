@@ -1776,6 +1776,10 @@ section:not(.waia-light-section) .buyer-fit-list p {
   gap: 18px;
 }
 
+.pricing-context-panel {
+  margin-bottom: clamp(42px, 6vw, 72px);
+}
+
 .pricing-card {
   display: flex;
   flex-direction: column;
