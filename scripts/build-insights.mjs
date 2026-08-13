@@ -228,7 +228,6 @@ const header = (current = "") => `
       ${navLink("/how-it-works/", "How it works", current === "how-it-works")}
       ${navLink("/who-its-for/", "Who it’s for", current === "who-its-for")}
       ${navLink("/insights/", "Insights", current === "insights")}
-      ${navLink("/pricing/", "Pricing", current === "pricing")}
       ${navLink("/data-privacy/", "Data &amp; privacy", current === "data-privacy")}
     </div>
     <div class="nav-actions">

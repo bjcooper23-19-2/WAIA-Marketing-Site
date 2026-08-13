@@ -1770,41 +1770,6 @@ section:not(.waia-light-section) .buyer-fit-list p {
   font-size: 0.96rem;
 }
 
-.waia-commercial-section .feature-panel {
-  border-color: var(--product-accent-border);
-}
-
-.waia-price-card {
-  align-self: stretch;
-  display: grid;
-  align-content: center;
-  gap: 12px;
-  min-height: 260px;
-  border: 1px solid var(--product-accent-border);
-  border-radius: var(--radius-lg);
-  padding: 28px;
-  background:
-    radial-gradient(
-      circle at 80% 0%,
-      rgba(var(--product-accent-rgb), 0.18),
-      transparent 14rem
-    ),
-    rgba(8, 18, 28, 0.72);
-  box-shadow: var(--shadow);
-}
-
-.waia-price-card span,
-.waia-price-card small {
-  color: var(--muted);
-}
-
-.waia-price-card strong {
-  color: var(--ink);
-  font-size: clamp(2.2rem, 5vw, 4.2rem);
-  line-height: 0.95;
-  letter-spacing: -0.06em;
-}
-
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
