@@ -57,6 +57,7 @@ Optional fields:
 - `metaDescription`
 - `ogTitle`
 - `ogDescription`
+- `dateModified`
 - `readingTime`
 - `tags`
 

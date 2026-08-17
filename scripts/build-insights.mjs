@@ -26,11 +26,13 @@ const linkAttributes = (href) =>
   isExternalUrl(href) ? ' target="_blank" rel="noopener noreferrer"' : "";
 
 const inlineMarkdown = (value = "") =>
-  escapeHtml(value).replace(
-    /\[([^\]]+)\]\(([^)\s]+)\)/g,
-    (_, text, href) =>
-      `<a href="${escapeHtml(href)}"${linkAttributes(href)}>${text}</a>`,
-  );
+  escapeHtml(value)
+    .replace(
+      /\[([^\]]+)\]\(([^)\s]+)\)/g,
+      (_, text, href) =>
+        `<a href="${escapeHtml(href)}"${linkAttributes(href)}>${text}</a>`,
+    )
+    .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
 
 const tidyHtml = (value) => `${value.replace(/[ \t]+$/gm, "").trimEnd()}\n`;
 
@@ -363,6 +365,7 @@ const loadArticles = async () => {
       formattedDate: formatDate(data.date),
       readingTime: data.readingTime || readingTime(body),
       url: `${siteUrl}/insights/${data.slug}/`,
+      dateModified: data.dateModified || data.date,
     });
   }
 
@@ -479,6 +482,7 @@ const renderArticle = (article) =>
       description: article.metaDescription || article.excerpt,
       articleSection: article.category,
       datePublished: article.date,
+      dateModified: article.dateModified,
       mainEntityOfPage: article.url,
       publisher: {
         "@type": "Organization",

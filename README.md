@@ -43,6 +43,7 @@ Then open `http://127.0.0.1:4173/`.
 - `/how-it-works/` - product operating model and implementation
 - `/who-its-for/` - buyer fit and organisational signals
 - `/insights/` - WAIA workplace AI editorial index
+- `/insights/how-to-measure-ai-time-savings-at-work/`
 - `/insights/ai-adoption-vs-ai-effectiveness/`
 - `/insights/shadow-ai-workplace-ai-adoption/`
 - `/insights/cost-of-ai-is-becoming-visible/`
@@ -118,6 +119,7 @@ Optional frontmatter currently supported:
 - `metaDescription`
 - `ogTitle`
 - `ogDescription`
+- `dateModified`
 - `readingTime`
 - `tags`
 
