@@ -1,3 +1,22 @@
+# Portfolio continuity — 17 August 2026
+
+This repository owns `waia.co.uk`: the public buyer journey, product explanation, pricing presentation, SEO, privacy-conscious marketing analytics, enquiry attribution, public proof, social metadata and WAIA-specific public trust/procurement presentation.
+
+The current commercial task is to turn WAIA's evidence-to-value position into credible buyer confidence: real organisational use, approved customer proof, accurate trust material and a technically sound public journey. The logged-in application, its evidence model, access and operating workflows belong in `workplace-ai-academy-7ebe4f12`.
+
+Settled:
+
+- WAIA helps organisations see where AI is used, whether work improves and what indicative capacity impact can be defended.
+- Learning, guidance and management controls support trustworthy evidence; they are not the headline proposition.
+- Privacy-conscious source attribution is implemented. Do not add Apollo website tracking or unnecessary consent/tracking infrastructure.
+- No customer proof may be invented or published without approval.
+
+Genuinely next: approved customer proof, legal/procurement accuracy where incomplete, indexing verification based on actual evidence, aggregate analytics verification and proportionate technical/accessibility/performance QA. Social asset polish is later.
+
+Do not reopen generic LMS positioning, unsupported ROI claims, speculative tracking infrastructure or pricing changes without new evidence.
+
+---
+
 # WAIA Marketing Site
 
 Standalone product marketing website for WAIA, the workplace AI evidence and management visibility product operated by Nineteen Point Two Ltd.
