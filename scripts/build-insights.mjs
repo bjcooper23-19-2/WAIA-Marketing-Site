@@ -5,7 +5,6 @@ const root = process.cwd();
 const contentDir = path.join(root, "src/content/insights");
 const outputDir = path.join(root, "insights");
 const siteUrl = "https://waia.co.uk";
-const enquiryUrl = "https://tally.so/r/gDgbQP";
 const loginUrl = "https://waia.nineteenpointtwo.com/login";
 const cloudflareToken = "9fa2711aed53428980734989cf03178a";
 const requiredFrontmatter = ["title", "slug", "date", "category", "excerpt"];
@@ -228,12 +227,12 @@ const header = (current = "") => `
     <div class="nav-links" id="site-navigation">
       ${navLink("/", "Product", current === "product")}
       ${navLink("/how-it-works/", "How it works", current === "how-it-works")}
-      ${navLink("/who-its-for/", "Who it’s for", current === "who-its-for")}
+      ${navLink("/pricing/", "Pricing", current === "pricing")}
       ${navLink("/insights/", "Insights", current === "insights")}
     </div>
     <div class="nav-actions">
       <a class="nav-sign-in" href="${loginUrl}">Sign in</a>
-      <a class="nav-cta" href="${enquiryUrl}" target="_blank" rel="noopener noreferrer">Ask to see WAIA</a>
+      <a class="nav-cta" href="/see-waia/">See WAIA</a>
     </div>
   </nav>
 </header>`;
@@ -456,7 +455,7 @@ const renderIndex = (articles) => {
             </div>
             <div class="hero-actions">
               <a class="btn primary" href="/how-it-works/">See how it works</a>
-              <a class="btn secondary" href="${enquiryUrl}" target="_blank" rel="noopener noreferrer">Ask to see WAIA</a>
+              <a class="btn secondary" href="/see-waia/">See WAIA</a>
             </div>
           </div>
         </section>
@@ -524,7 +523,7 @@ const renderArticle = (article) =>
               </p>
             </div>
             <div class="hero-actions">
-              <a class="btn primary" href="${enquiryUrl}" target="_blank" rel="noopener noreferrer">Ask to see WAIA</a>
+              <a class="btn primary" href="/see-waia/">See WAIA</a>
               <a class="btn secondary" href="/how-it-works/">How WAIA works</a>
             </div>
           </div>
