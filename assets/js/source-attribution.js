@@ -3,7 +3,7 @@
   const storageKey = "waia:source";
   const approvedSources = new Set(["ap", "gm", "19", "li"]);
   const tallyOrigin = "https://tally.so";
-  const tallyPath = "/r/gDgbQP";
+  const tallyPath = "/r/objzGM";
 
   const getSessionStorage = () => {
     try {
