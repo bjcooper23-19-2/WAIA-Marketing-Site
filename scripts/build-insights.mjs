@@ -6,6 +6,8 @@ const contentDir = path.join(root, "src/content/insights");
 const outputDir = path.join(root, "insights");
 const siteUrl = "https://waia.co.uk";
 const loginUrl = "https://waia.nineteenpointtwo.com/login";
+const walkthroughUrl =
+  "https://tally.so/r/objzGM?product=WAIA&amp;enquiry_type=walkthrough";
 const cloudflareToken = "9fa2711aed53428980734989cf03178a";
 const requiredFrontmatter = ["title", "slug", "date", "category", "excerpt"];
 const safeSlugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
@@ -232,7 +234,7 @@ const header = (current = "") => `
     </div>
     <div class="nav-actions">
       <a class="nav-sign-in" href="${loginUrl}">Sign in</a>
-      <a class="nav-cta" href="/see-waia/">See WAIA</a>
+      <a class="nav-cta" href="${walkthroughUrl}" target="_blank" rel="noopener noreferrer">See WAIA</a>
     </div>
   </nav>
 </header>`;
@@ -455,7 +457,7 @@ const renderIndex = (articles) => {
             </div>
             <div class="hero-actions">
               <a class="btn primary" href="/how-it-works/">See how it works</a>
-              <a class="btn secondary" href="/see-waia/">See WAIA</a>
+              <a class="btn secondary" href="${walkthroughUrl}" target="_blank" rel="noopener noreferrer">See WAIA</a>
             </div>
           </div>
         </section>
@@ -523,7 +525,7 @@ const renderArticle = (article) =>
               </p>
             </div>
             <div class="hero-actions">
-              <a class="btn primary" href="/see-waia/">See WAIA</a>
+              <a class="btn primary" href="${walkthroughUrl}" target="_blank" rel="noopener noreferrer">See WAIA</a>
               <a class="btn secondary" href="/how-it-works/">How WAIA works</a>
             </div>
           </div>

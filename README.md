@@ -50,7 +50,7 @@ Then open `http://127.0.0.1:4173/`.
 - `/insights/hidden-cost-of-workplace-ai/`
 - `/insights/operational-strain-beneath-workplace-ai-adoption/`
 - `/insights/hidden-cost-of-fragmented-ai-adoption/`
-- `/see-waia/` - WAIA-specific conversion route before the enquiry form
+- `/see-waia/` - WAIA-specific conversion route for campaigns and manually shared walkthrough links
 - `/who-its-for/` - secondary buyer fit and organisational signals route
 - `/data-privacy/` - data, privacy and product boundaries
 - `/terms/` - WAIA Terms of Service
@@ -164,11 +164,11 @@ Approved source values:
 
 The shared script at `assets/js/source-attribution.js` validates incoming values, stores only the approved short source code in `sessionStorage`, and appends it to WAIA Tally enquiry links as `?s=value`. It does not store identities, page histories, timestamps or behavioural data, and it does not alter canonical URLs, sitemap entries, metadata, legal links or the WAIA application login URL.
 
-To capture the value in Tally submissions, the Tally enquiry form needs a hidden field named exactly `s`. To capture WAIA walkthrough context from `/see-waia/`, it should also include hidden fields named exactly `product` and `enquiry_type`.
+To capture the value in Tally submissions, the Tally enquiry form needs a hidden field named exactly `s`. To capture WAIA walkthrough context from primary `See WAIA` CTAs and `/see-waia/`, it should also include hidden fields named exactly `product` and `enquiry_type`.
 
 Cloudflare Web Analytics remains aggregate page analytics only. It cannot report the preserved `sessionStorage` source value or confirm which `s` value was submitted to Tally.
 
-The dedicated WAIA Tally form includes the hidden fields `s`, `product` and `enquiry_type`. The `/see-waia/` route provides a privacy-light conversion-intent page that can be reviewed in aggregate page analytics. CTA clicks, Tally form starts and Tally form completions are not instrumented as behavioural events in this repository. Tally submissions remain the completion record.
+The dedicated WAIA Tally form includes the hidden fields `s`, `product` and `enquiry_type`. Primary `See WAIA` CTAs route directly to that form with WAIA walkthrough context, while `/see-waia/` remains available as a privacy-light campaign or manually shared conversion page. CTA clicks, Tally form starts and Tally form completions are not instrumented as behavioural events in this repository. Tally submissions remain the completion record.
 
 More detail is in `docs/source-attribution.md`.
 

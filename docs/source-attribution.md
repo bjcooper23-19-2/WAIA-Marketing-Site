@@ -27,7 +27,7 @@ For example:
 
 `https://tally.so/r/objzGM?s=ap`
 
-The `/see-waia/` route also passes non-identifying WAIA context in the Tally URL:
+Primary `See WAIA` CTAs and the `/see-waia/` route also pass non-identifying WAIA context in the Tally URL:
 
 `https://tally.so/r/objzGM?product=WAIA&enquiry_type=walkthrough`
 
@@ -62,7 +62,7 @@ The submitted value will be one of:
 
 `ap`, `gm`, `19`, `li`
 
-To capture the WAIA-specific walkthrough context from `/see-waia/`, the dedicated WAIA Tally form also includes hidden fields named exactly:
+To capture the WAIA-specific walkthrough context from primary `See WAIA` CTAs and `/see-waia/`, the dedicated WAIA Tally form also includes hidden fields named exactly:
 
 - `product`
 - `enquiry_type`
