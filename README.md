@@ -41,7 +41,7 @@ Then open `http://127.0.0.1:4173/`.
 
 - `/` - product overview
 - `/how-it-works/` - product operating model and implementation
-- `/who-its-for/` - buyer fit and organisational signals
+- `/pricing/` - annual licence pricing, scope and commercial FAQ
 - `/insights/` - WAIA workplace AI editorial index
 - `/insights/how-to-measure-ai-time-savings-at-work/`
 - `/insights/ai-adoption-vs-ai-effectiveness/`
@@ -50,7 +50,8 @@ Then open `http://127.0.0.1:4173/`.
 - `/insights/hidden-cost-of-workplace-ai/`
 - `/insights/operational-strain-beneath-workplace-ai-adoption/`
 - `/insights/hidden-cost-of-fragmented-ai-adoption/`
-- `/pricing/` - annual licence pricing, scope and commercial FAQ
+- `/see-waia/` - WAIA-specific conversion route before the enquiry form
+- `/who-its-for/` - secondary buyer fit and organisational signals route
 - `/data-privacy/` - data, privacy and product boundaries
 - `/terms/` - WAIA Terms of Service
 - `/ai-use-statement/` - WAIA Product and AI Use Statement
@@ -71,19 +72,23 @@ The site is organised around the buyer questions a prospective customer needs to
 
 - What is WAIA?
 - How does it work?
-- Is it right for an organisation like ours?
 - What does it cost?
+- What should I do next?
 - What does it record and how is customer data handled?
 
 WAIA is positioned around the move from AI adoption to workplace evidence and better management decisions. The primary homepage proposition is:
 
-**Turn AI adoption into evidence you can use.**
+**Can you prove what AI is doing to the work?**
 
-The supporting marketing device remains:
+The primary navigation is intentionally simpler: Product, How it works, Pricing, Insights and See WAIA. The homepage should help a first-time buyer quickly understand three questions: where AI is being used in real work, whether it is making that work better or worse, and how strong the evidence is. Deeper methodology, buyer-fit detail and trust/procurement information remain available through supporting and footer routes.
 
-**Forget vibes. Get evidence.**
+The `See WAIA` route gives the site a short WAIA-specific conversion step before the existing Tally form. It passes `product=WAIA` and `enquiry_type=walkthrough` in the Tally URL so the form can capture WAIA context through matching hidden fields.
+
+The supporting marketing device **Forget vibes. Get evidence.** remains useful where the site explains evidence strength, but it should not force methodology into the first screen.
 
 The site should explain that WAIA helps organisations establish where AI is being used, what’s happening to the work, how strong the evidence is and where indicative capacity evidence supports management action. Safety, guidance, learning and manager support remain important because they help produce more trustworthy workplace evidence.
+
+Do not publish a bounded first-deployment offer, 90-day Evidence Programme price, discount or credit against annual licence until the commercial terms are explicitly approved. The site can be structured to support such an offer later, but should not invent it.
 
 WAIA is also the permanent editorial home for workplace AI content. Insights should stay focused on practical, operator-led thinking about workplace AI adoption value, informal and Shadow AI use, operational visibility, guidance and governance as enablement, learner and manager judgement, workflow consistency, evidence of effective AI use and hidden adoption risk.
 
@@ -159,9 +164,11 @@ Approved source values:
 
 The shared script at `assets/js/source-attribution.js` validates incoming values, stores only the approved short source code in `sessionStorage`, and appends it to WAIA Tally enquiry links as `?s=value`. It does not store identities, page histories, timestamps or behavioural data, and it does not alter canonical URLs, sitemap entries, metadata, legal links or the WAIA application login URL.
 
-To capture the value in Tally submissions, the Tally enquiry form needs a hidden field named exactly `s`.
+To capture the value in Tally submissions, the Tally enquiry form needs a hidden field named exactly `s`. To capture WAIA walkthrough context from `/see-waia/`, it should also include hidden fields named exactly `product` and `enquiry_type`.
 
 Cloudflare Web Analytics remains aggregate page analytics only. It cannot report the preserved `sessionStorage` source value or confirm which `s` value was submitted to Tally.
+
+The current Tally destination is a broader Nineteen Point Two enquiry form, so making the form itself fully WAIA-specific is an immediate post-merge commercial/form task. The `/see-waia/` route provides a privacy-light conversion-intent page that can be reviewed in aggregate page analytics. CTA clicks, Tally form starts and Tally form completions are not instrumented as behavioural events in this repository. Tally submissions remain the completion record.
 
 More detail is in `docs/source-attribution.md`.
 
