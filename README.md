@@ -82,7 +82,7 @@ WAIA is positioned around the move from AI adoption to workplace evidence and be
 
 The primary navigation is intentionally simpler: Product, How it works, Pricing, Insights and See WAIA. The homepage should help a first-time buyer quickly understand three questions: where AI is being used in real work, whether it is making that work better or worse, and how strong the evidence is. Deeper methodology, buyer-fit detail and trust/procurement information remain available through supporting and footer routes.
 
-The `See WAIA` route gives the site a WAIA-specific conversion step before the existing Tally form. It should stay focused on what the buyer is struggling to see, not a broad Nineteen Point Two discovery journey.
+The `See WAIA` route gives the site a short WAIA-specific conversion step before the existing Tally form. It passes `product=WAIA` and `enquiry_type=walkthrough` in the Tally URL so the form can capture WAIA context through matching hidden fields.
 
 The supporting marketing device **Forget vibes. Get evidence.** remains useful where the site explains evidence strength, but it should not force methodology into the first screen.
 
@@ -164,11 +164,11 @@ Approved source values:
 
 The shared script at `assets/js/source-attribution.js` validates incoming values, stores only the approved short source code in `sessionStorage`, and appends it to WAIA Tally enquiry links as `?s=value`. It does not store identities, page histories, timestamps or behavioural data, and it does not alter canonical URLs, sitemap entries, metadata, legal links or the WAIA application login URL.
 
-To capture the value in Tally submissions, the Tally enquiry form needs a hidden field named exactly `s`.
+To capture the value in Tally submissions, the Tally enquiry form needs a hidden field named exactly `s`. To capture WAIA walkthrough context from `/see-waia/`, it should also include hidden fields named exactly `product` and `enquiry_type`.
 
 Cloudflare Web Analytics remains aggregate page analytics only. It cannot report the preserved `sessionStorage` source value or confirm which `s` value was submitted to Tally.
 
-The `/see-waia/` route provides a privacy-light conversion-intent page that can be reviewed in aggregate page analytics. CTA clicks, Tally form starts and Tally form completions are not instrumented as behavioural events in this repository. Tally submissions remain the completion record.
+The current Tally destination is a broader Nineteen Point Two enquiry form, so making the form itself fully WAIA-specific is an immediate post-merge commercial/form task. The `/see-waia/` route provides a privacy-light conversion-intent page that can be reviewed in aggregate page analytics. CTA clicks, Tally form starts and Tally form completions are not instrumented as behavioural events in this repository. Tally submissions remain the completion record.
 
 More detail is in `docs/source-attribution.md`.
 

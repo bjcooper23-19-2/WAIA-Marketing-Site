@@ -27,6 +27,12 @@ For example:
 
 `https://tally.so/r/gDgbQP?s=ap`
 
+The `/see-waia/` route also passes non-identifying WAIA context in the Tally URL:
+
+`https://tally.so/r/gDgbQP?product=WAIA&enquiry_type=walkthrough`
+
+If a visitor has an approved source in the same browser session, the shared script appends it as an additional `s` parameter.
+
 ## What is stored
 
 Stored:
@@ -55,6 +61,13 @@ Tally supports passing URL parameters into hidden fields. To capture this source
 The submitted value will be one of:
 
 `ap`, `gm`, `19`, `li`
+
+To capture the WAIA-specific walkthrough context from `/see-waia/`, the current Tally form should also include hidden fields named exactly:
+
+- `product`
+- `enquiry_type`
+
+The site passes `product=WAIA` and `enquiry_type=walkthrough`. The current Tally form is a broader Nineteen Point Two enquiry form, so updating the form itself to make WAIA the preselected or primary enquiry path remains an external form task.
 
 Do not add hidden fields for identity or behavioural tracking unless a separate approved requirement exists.
 
