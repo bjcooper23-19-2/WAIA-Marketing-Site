@@ -19,17 +19,17 @@ When a visitor arrives with an approved `s` value, the script stores only that s
 
 The script does not append `s` to internal navigation links. Page URLs, canonicals, sitemap entries, structured data, legal links and the WAIA application login link remain attribution-free.
 
-When a page contains the existing Tally enquiry link, the script appends the approved source as `?s=value` or `&s=value` to:
+When a page contains the dedicated WAIA Tally enquiry link, the script appends the approved source as `?s=value` or `&s=value` to:
 
-`https://tally.so/r/gDgbQP`
+`https://tally.so/r/objzGM`
 
 For example:
 
-`https://tally.so/r/gDgbQP?s=ap`
+`https://tally.so/r/objzGM?s=ap`
 
 The `/see-waia/` route also passes non-identifying WAIA context in the Tally URL:
 
-`https://tally.so/r/gDgbQP?product=WAIA&enquiry_type=walkthrough`
+`https://tally.so/r/objzGM?product=WAIA&enquiry_type=walkthrough`
 
 If a visitor has an approved source in the same browser session, the shared script appends it as an additional `s` parameter.
 
@@ -62,12 +62,12 @@ The submitted value will be one of:
 
 `ap`, `gm`, `19`, `li`
 
-To capture the WAIA-specific walkthrough context from `/see-waia/`, the current Tally form should also include hidden fields named exactly:
+To capture the WAIA-specific walkthrough context from `/see-waia/`, the dedicated WAIA Tally form also includes hidden fields named exactly:
 
 - `product`
 - `enquiry_type`
 
-The site passes `product=WAIA` and `enquiry_type=walkthrough`. The current Tally form is a broader Nineteen Point Two enquiry form, so updating the form itself to make WAIA the preselected or primary enquiry path remains an external form task.
+The site passes `product=WAIA` and `enquiry_type=walkthrough` from the walkthrough route. Procurement CTAs pass `product=WAIA` and `enquiry_type=procurement`.
 
 Do not add hidden fields for identity or behavioural tracking unless a separate approved requirement exists.
 
