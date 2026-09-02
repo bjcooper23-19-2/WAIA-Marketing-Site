@@ -392,7 +392,9 @@ main > section:not(.hero) {
 }
 
 .hero-grid-product {
-  grid-template-columns: minmax(0, 0.92fr) minmax(420px, 1fr);
+  max-width: min(100%, 1360px);
+  grid-template-columns: minmax(0, 0.76fr) minmax(560px, 1.24fr);
+  gap: clamp(38px, 4vw, 56px);
 }
 
 .eyebrow {
@@ -1507,8 +1509,22 @@ h3 {
 
 .hero-product-proof {
   align-self: center;
-  max-width: 720px;
+  width: min(100%, 850px);
+  max-width: none;
   justify-self: end;
+}
+
+.hero-product-proof.waia-screenshot-frame {
+  padding: clamp(8px, 1vw, 12px);
+  border-color: rgba(244, 250, 251, 0.9);
+  background: rgba(248, 253, 254, 0.96);
+  box-shadow:
+    0 30px 90px rgba(4, 18, 27, 0.34),
+    0 0 0 1px rgba(255, 255, 255, 0.72) inset;
+}
+
+.hero-product-proof.waia-screenshot-frame img {
+  border-radius: clamp(12px, 1.5vw, 18px);
 }
 
 .product-proof-grid {
@@ -2179,7 +2195,7 @@ footer {
 
   .hero-product-proof {
     justify-self: start;
-    max-width: 720px;
+    width: 100%;
   }
 
   .product-proof-grid {
