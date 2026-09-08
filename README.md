@@ -62,7 +62,7 @@ Then open `http://127.0.0.1:4173/`.
 ## Production Targets
 
 - Marketing site: `https://waia.co.uk/`
-- WAIA application login: `https://waia.nineteenpointtwo.com/login`
+- WAIA application login: `https://app.waia.co.uk/login`
 - Enquiry form: `https://tally.so/r/objzGM`
 - Operator: Nineteen Point Two Ltd
 
