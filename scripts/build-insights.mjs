@@ -5,7 +5,7 @@ const root = process.cwd();
 const contentDir = path.join(root, "src/content/insights");
 const outputDir = path.join(root, "insights");
 const siteUrl = "https://waia.co.uk";
-const loginUrl = "https://waia.nineteenpointtwo.com/login";
+const loginUrl = "https://app.waia.co.uk/login";
 const walkthroughUrl =
   "https://tally.so/r/objzGM?product=WAIA&amp;enquiry_type=walkthrough";
 const cloudflareToken = "9fa2711aed53428980734989cf03178a";
