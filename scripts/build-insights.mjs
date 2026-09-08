@@ -89,6 +89,7 @@ const markdownToHtml = (markdown) => {
   let paragraph = [];
   let list = [];
   let table = [];
+  let tableIndex = 0;
 
   const flushParagraph = () => {
     if (!paragraph.length) return;
@@ -119,6 +120,7 @@ const markdownToHtml = (markdown) => {
 
   const flushTable = () => {
     if (!table.length) return;
+    tableIndex += 1;
     const [header, ...rows] = table;
     const thead = `<thead><tr>${header
       .map((cell) => `<th>${inlineMarkdown(cell)}</th>`)
@@ -132,7 +134,7 @@ const markdownToHtml = (markdown) => {
           .join("")}</tbody>`
       : "";
     blocks.push(
-      `<div class="table-wrap"><table>${thead}${tbody}</table></div>`,
+      `<section class="table-wrap" aria-label="Article data table ${tableIndex}" tabindex="0"><table>${thead}${tbody}</table></section>`,
     );
     table = [];
   };
