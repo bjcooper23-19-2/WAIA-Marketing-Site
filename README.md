@@ -245,7 +245,7 @@ This branch is the marketing-site pilot only. Product-platform implementation of
 - Automatic Cloudflare RUM injection is not relied upon.
 - The site does not use Apollo website tracking or Cookiebot.
 - Behavioural and marketing tracking should not be added without an approved requirement.
-- Confirm final legal review of WAIA terms, AI use statement and shared document links.
+- The repository legal/procurement accuracy review was completed on 9 September 2026. See [the review record](docs/legal-procurement-review.md) for corrections and the specific shared-document, supplier-confirmation and post-deployment checks still blocking issue #7 closure. This is not a legal opinion or blanket sign-off of supplier controls.
 - Redirect old Nineteen Point Two WAIA and workplace AI Insights routes only after the WAIA Insights branch and the corresponding Nineteen Point Two redirect branch have both been reviewed, merged and verified live.
 
 ## Source Used For Initial Migration
