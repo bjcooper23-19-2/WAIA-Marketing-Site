@@ -162,13 +162,13 @@ Approved source values:
 - `s=19` - Nineteen Point Two website or referral
 - `s=li` - LinkedIn organic
 
-The shared script at `assets/js/source-attribution.js` validates incoming values, stores only the approved short source code in `sessionStorage`, and appends it to WAIA Tally enquiry links as `?s=value`. It does not store identities, page histories, timestamps or behavioural data, and it does not alter canonical URLs, sitemap entries, metadata, legal links or the WAIA application login URL.
+The shared script at `assets/js/source-attribution.js` validates incoming values, stores only the approved short source code in `sessionStorage`, and routes dedicated WAIA Tally links through `/go/see-waia/<source>/`. The five routes are `ap`, `gm`, `19`, `li` and `direct`. Invalid or missing values use an existing valid session source, otherwise `direct`. Internal navigation, canonicals, sitemap entries, metadata, legal links and the application login URL are unchanged.
 
 To capture the value in Tally submissions, the Tally enquiry form needs a hidden field named exactly `s`. To capture WAIA walkthrough context from primary `See WAIA` CTAs and `/see-waia/`, it should also include hidden fields named exactly `product` and `enquiry_type`.
 
-Cloudflare Web Analytics remains aggregate page analytics only. It cannot report the preserved `sessionStorage` source value or confirm which `s` value was submitted to Tally.
+Cloudflare Web Analytics remains the only analytics beacon. Path reporting on the five `noindex` handoff routes measures aggregate Tally click-throughs by source, not unique visitors or submissions. Redirects wait for the existing beacon request to complete, with a 1.5-second fail-open limit. Blockers and network failures can prevent measurement; post-deployment Cloudflare reporting must be verified before issue #45 closes. The routes are excluded from the sitemap.
 
-The dedicated WAIA Tally form includes the hidden fields `s`, `product` and `enquiry_type`. Primary `See WAIA` CTAs route directly to that form with WAIA walkthrough context, while `/see-waia/` remains available as a privacy-light campaign or manually shared conversion page. CTA clicks, Tally form starts and Tally form completions are not instrumented as behavioural events in this repository. Tally submissions remain the completion record.
+The dedicated WAIA Tally form retains hidden fields `s`, `product` and `enquiry_type`. Handoffs preserve WAIA walkthrough context, or procurement context for existing procurement CTAs; `direct` omits `s`. `/see-waia/` remains available as a campaign or manually shared conversion page. No new cookies, localStorage, visitor IDs, database or analytics platform is introduced. Tally remains the completion record; a handoff is not a submission. Run `node --test scripts/source-attribution.test.mjs` for the targeted regression suite.
 
 More detail is in `docs/source-attribution.md`.
 
