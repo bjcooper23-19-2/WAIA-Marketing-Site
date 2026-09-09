@@ -2,6 +2,18 @@
 <html lang="en-GB">
   <head>
     <link rel="stylesheet" href="/assets/css/workplace-ai-academy.css" />
+    <link
+      rel="preload"
+      as="image"
+      type="image/avif"
+      href="/assets/images/waia/waia-evidence-overview-hero-840.avif"
+      imagesrcset="
+        /assets/images/waia/waia-evidence-overview-hero-840.avif 840w,
+        /assets/images/waia/waia-evidence-overview-hero.avif 1675w
+      "
+      imagesizes="(max-width: 980px) calc(100vw - 66px), (max-width: 1440px) 56vw, 782px"
+      fetchpriority="high"
+    />
     <link rel="canonical" href="https://waia.co.uk/" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -109,20 +121,30 @@
               </p>
             </div>
             <figure class="waia-screenshot-frame hero-product-proof">
-              <img
-                src="/assets/images/waia/waia-evidence-overview-hero.webp"
-                srcset="
-                  /assets/images/waia/waia-evidence-overview-hero-840.webp  840w,
-                  /assets/images/waia/waia-evidence-overview-hero.webp     1675w
-                "
-                sizes="(max-width: 980px) calc(100vw - 66px), (max-width: 1440px) 56vw, 782px"
-                width="1675"
-                height="932"
-                loading="eager"
-                fetchpriority="high"
-                decoding="async"
-                alt="WAIA organisation evidence overview showing workflows needing attention, ready for review, current capacity signals and workflows needing grouping."
-              />
+              <picture>
+                <source
+                  type="image/avif"
+                  srcset="
+                    /assets/images/waia/waia-evidence-overview-hero-840.avif  840w,
+                    /assets/images/waia/waia-evidence-overview-hero.avif     1675w
+                  "
+                  sizes="(max-width: 980px) calc(100vw - 66px), (max-width: 1440px) 56vw, 782px"
+                />
+                <img
+                  src="/assets/images/waia/waia-evidence-overview-hero.webp"
+                  srcset="
+                    /assets/images/waia/waia-evidence-overview-hero-840.webp  840w,
+                    /assets/images/waia/waia-evidence-overview-hero.webp     1675w
+                  "
+                  sizes="(max-width: 980px) calc(100vw - 66px), (max-width: 1440px) 56vw, 782px"
+                  width="1675"
+                  height="932"
+                  loading="eager"
+                  fetchpriority="high"
+                  decoding="async"
+                  alt="WAIA organisation evidence overview showing workflows needing attention, ready for review, current capacity signals and workflows needing grouping."
+                />
+              </picture>
               <figcaption>
                 WAIA turns workplace AI evidence into management signals.
               </figcaption>
