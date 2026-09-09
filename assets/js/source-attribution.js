@@ -19,9 +19,10 @@
 
   const isApprovedSource = (value) => approvedSources.has(value);
   const storage = getSessionStorage();
-  const incomingSource = new URLSearchParams(window.location.search).get(
+  const incomingValues = new URLSearchParams(window.location.search).getAll(
     sourceParam,
   );
+  const incomingSource = incomingValues.length === 1 ? incomingValues[0] : null;
   let source = null;
 
   if (isApprovedSource(incomingSource)) {
@@ -37,8 +38,6 @@
     }
   }
 
-  if (!source) return;
-
   document.querySelectorAll("a[href]").forEach((link) => {
     const href = link.getAttribute("href");
     if (!href) return;
@@ -47,8 +46,14 @@
       const url = new URL(href, window.location.href);
 
       if (url.origin === tallyOrigin && url.pathname === tallyPath) {
-        url.searchParams.set(sourceParam, source);
-        link.setAttribute("href", url.toString());
+        const route = new URL(
+          `/go/see-waia/${source || "direct"}/`,
+          window.location.origin,
+        );
+        if (url.searchParams.get("enquiry_type") === "procurement") {
+          route.searchParams.set("enquiry_type", "procurement");
+        }
+        link.setAttribute("href", route.pathname + route.search);
       }
     } catch {
       // Leave malformed or non-standard href values untouched.
