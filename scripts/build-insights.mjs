@@ -258,9 +258,9 @@ const footer = `
       <a href="/terms/">Terms</a> |
       <a href="/ai-use-statement/">AI use statement</a>
       |
-      <a href="https://www.nineteenpointtwo.com/privacy/" target="_blank" rel="noopener noreferrer">Privacy</a>
+      <a href="https://legal.nineteenpointtwo.com/privacy/" target="_blank" rel="noopener noreferrer">Privacy</a>
       |
-      <a href="https://www.nineteenpointtwo.com/cookies/" target="_blank" rel="noopener noreferrer">Cookies</a>
+      <a href="https://legal.nineteenpointtwo.com/cookies/" target="_blank" rel="noopener noreferrer">Cookies</a>
     </span>
   </div>
 </footer>`;

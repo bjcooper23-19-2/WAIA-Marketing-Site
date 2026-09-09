@@ -174,17 +174,19 @@ More detail is in `docs/source-attribution.md`.
 
 ## Shared Legal Documents
 
-WAIA-specific terms and AI use information live in this repository at `/terms/` and `/ai-use-statement/`.
+WAIA-specific Terms, AI Use Statement and Data & Privacy remain on `waia.co.uk` at `/terms/`, `/ai-use-statement/` and `/data-privacy/`.
 
 The marketing site is live at `https://waia.co.uk/`. GitHub Pages deployment is active, custom-domain DNS is configured, and HTTPS is enforced.
 
-Shared Nineteen Point Two Ltd documents remain on `www.nineteenpointtwo.com`:
+The standalone legal estate is live over HTTPS. WAIA uses it as the canonical source for shared Nineteen Point Two Ltd legal and procurement documents, independently of the company marketing website:
 
-- Privacy policy
-- Cookie policy
-- Data Processing Agreement
-- Security
-- Subprocessors
+- [Privacy Notice](https://legal.nineteenpointtwo.com/privacy/)
+- [Cookie Notice](https://legal.nineteenpointtwo.com/cookies/)
+- [Data Processing Agreement](https://legal.nineteenpointtwo.com/data-processing-agreement/)
+- [Security Summary](https://legal.nineteenpointtwo.com/security/)
+- [Subprocessors](https://legal.nineteenpointtwo.com/subprocessors/)
+
+No legacy redirects have yet been introduced as part of this migration. Issue #7 remains subject to the owner confirmations recorded in [the legal/procurement review](docs/legal-procurement-review.md).
 
 ## Brand Notes
 
