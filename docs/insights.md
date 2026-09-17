@@ -2,6 +2,8 @@
 
 WAIA Insights is the permanent editorial home for workplace AI content on the WAIA marketing site.
 
+WAIA's broader workplace AI point of view is defined in [`docs/waia-beliefs.md`](./waia-beliefs.md). Insights should apply and develop that belief system rather than create a separate editorial philosophy.
+
 ## Editorial Role
 
 Insights should strengthen WAIA as the specialist authority on evidence-led workplace AI management. The section should stay focused on operational questions, including:
@@ -68,6 +70,7 @@ Before a proposed Insight moves into production, check:
 - Does it build topical authority around workplace AI evidence, effectiveness, capacity or management?
 - Is there a reason to publish it now?
 - Would the argument still be useful and credible if the article did not mention WAIA?
+- Does it remain consistent with the principles and boundaries in `docs/waia-beliefs.md`?
 
 ## Source And Output
 
@@ -111,7 +114,11 @@ Optional fields:
 
 ## Workflow
 
-`docs/insights.md` holds the durable editorial doctrine and roadmap for WAIA Insights. GitHub issues may be used for individual articles once they become active production priorities, but issues should not become the source of truth for the overall editorial direction.
+`docs/waia-beliefs.md` is the durable source of truth for WAIA's wider workplace AI doctrine.
+
+`docs/insights.md` is the source of truth for how that doctrine is expressed through the Insights programme, including the editorial roadmap and article-specific acceptance criteria.
+
+GitHub issues may be used for individual articles once they become active production priorities, but issues should not become the source of truth for either the wider belief system or the overall editorial direction.
 
 ## Migration Coordination
 
