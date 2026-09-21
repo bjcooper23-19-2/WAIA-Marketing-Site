@@ -8,6 +8,23 @@ This document defines the core beliefs that should guide WAIA's product, positio
 
 It is not a fixed manifesto. It is a working doctrine that should remain stable enough to create a recognisable point of view while still evolving as technology, work and organisational expectations change.
 
+## Doctrine Hierarchy
+
+This document is the parent source of truth for WAIA's external positioning and point of view.
+
+Channel-specific guidance sits underneath it:
+
+- [`docs/insights.md`](./insights.md) for the Insights editorial programme
+- [`docs/linkedin.md`](./linkedin.md) for LinkedIn content, comments and engagement
+- [`docs/website-messaging.md`](./website-messaging.md) for public website messaging
+- [`docs/outbound-messaging.md`](./outbound-messaging.md) for cold email, Apollo sequences and other first-contact sales messaging
+
+Channel guides may adapt emphasis, language, format and tactics for their audience, but they should not redefine the core doctrine.
+
+Where there is a conflict, this document wins.
+
+For future Codex or content work, read this belief system first and the relevant channel guide second before making substantive messaging, positioning or editorial changes.
+
 ## Core Belief
 
 **Technology creates meaningful business value when it improves how work gets done, not when it simply increases activity around the technology itself.**
