@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/workplace-ai-academy.css" />
+    <link rel="stylesheet" href="/assets/css/visibility-check.css" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Workplace AI Visibility Check questions | WAIA</title>
+    <meta
+      name="description"
+      content="Seven practical questions about AI use in real work."
+    />
+    <meta
+      property="og:title"
+      content="Workplace AI Visibility Check questions | WAIA"
+    />
+    <meta
+      property="og:description"
+      content="Seven practical questions about AI use in real work."
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="WAIA" />
+    <meta name="twitter:card" content="summary" />
+    <link
+      rel="icon"
+      href="/assets/favicon/waia-favicon.svg"
+      type="image/svg+xml"
+    />
+    <link rel="icon" href="/assets/favicon/waia-favicon.ico" sizes="any" />
+    <link
+      rel="apple-touch-icon"
+      href="/assets/favicon/waia-apple-touch-icon.png"
+    />
+  </head>
+  <body class="product-waia">
+    <div class="noise"></div>
+    <div class="site">
+      <header>
+        <nav class="nav" aria-label="Main navigation">
+          <a class="brand waia-brand" href="/" aria-label="WAIA home"
+            ><img
+              class="brand-logo"
+              src="/assets/brand/waia-lockup-dark.svg"
+              alt="WAIA"
+              width="360"
+              height="92"
+          /></a>
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-navigation"
+          >
+            Menu
+          </button>
+          <div class="nav-links" id="site-navigation">
+            <a href="/">Product</a><a href="/how-it-works/">How it works</a
+            ><a href="/pricing/">Pricing</a><a href="/insights/">Insights</a>
+          </div>
+          <div class="nav-actions">
+            <a class="nav-sign-in" href="https://app.waia.co.uk/login"
+              >Sign in</a
+            ><a
+              class="nav-cta"
+              href="https://tally.so/r/objzGM?product=WAIA&amp;enquiry_type=walkthrough"
+              target="_blank"
+              rel="noopener noreferrer"
+              >See WAIA</a
+            >
+          </div>
+        </nav>
+      </header>
+      <main id="top">
+        <section class="waia-light-section">
+          <div class="container check-layout">
+            <div class="check-card">
+              <div class="check-progress">
+                <span id="check-progress">Step 1 of 4</span
+                ><span>About 10–15 minutes</span>
+              </div>
+              <div class="check-progress">
+                <progress
+                  id="check-progress-bar"
+                  value="1"
+                  max="4"
+                  aria-label="Check progress"
+                ></progress>
+              </div>
+              <p
+                id="check-error"
+                class="check-error"
+                role="alert"
+                tabindex="-1"
+                hidden
+              ></p>
+              <form id="visibility-form">
+                <section class="check-step" data-step="0">
+                  <h2 tabindex="-1">AI use and work</h2>
+                  <p>
+                    Think about what people do, not which licences the
+                    organisation owns.
+                  </p>
+                  <fieldset class="check-question" data-question="use">
+                    <legend>
+                      If you asked team leads which AI tools people use in
+                      recurring work, how complete would the answer be?
+                    </legend>
+                    <div class="check-options">
+                      <label
+                        ><input type="radio" name="use" value="visible" /><span
+                          >They could name the tools and the teams using them,
+                          with recent examples.</span
+                        ></label
+                      ><label
+                        ><input type="radio" name="use" value="partial" /><span
+                          >They could give some examples, but would probably
+                          miss some teams or tools.</span
+                        ></label
+                      ><label
+                        ><input type="radio" name="use" value="unclear" /><span
+                          >We do not have a reliable answer yet.</span
+                        ></label
+                      >
+                    </div>
+                  </fieldset>
+                  <fieldset class="check-question" data-question="work">
+                    <legend>
+                      Can you name the tasks or decisions that AI now affects?
+                    </legend>
+                    <div class="check-options">
+                      <label
+                        ><input type="radio" name="work" value="visible" /><span
+                          >We can point to recurring tasks and trace where AI
+                          enters the work.</span
+                        ></label
+                      ><label
+                        ><input type="radio" name="work" value="partial" /><span
+                          >We have examples, but have not looked at the whole
+                          task or what follows it.</span
+                        ></label
+                      ><label
+                        ><input type="radio" name="work" value="unclear" /><span
+                          >We cannot yet say which work is affected.</span
+                        ></label
+                      >
+                    </div>
+                  </fieldset>
+                  <label class="check-note"
+                    >One task worth looking at
+                    <small
+                      >Optional. A short reminder for your result; it stays in
+                      this tab.</small
+                    ><input
+                      id="example"
+                      name="example"
+                      type="text"
+                      maxlength="180"
+                      placeholder="For example, preparing a customer proposal"
+                  /></label>
+                  <div class="check-actions">
+                    <button type="button" class="btn primary" data-next>
+                      Next step
+                    </button>
+                  </div>
+                </section>
+                <section class="check-step" data-step="1">
+                  <h2 tabindex="-1">Information and judgement</h2>
+                  <p>
+                    Use a real example if you can. An unclear answer is a useful
+                    finding.
+                  </p>
+                  <fieldset class="check-question" data-question="data">
+                    <legend>
+                      For a task involving AI, do you know what information
+                      people enter into the tool?
+                    </legend>
+                    <div class="check-options">
+                      <label
+                        ><input type="radio" name="data" value="visible" /><span
+                          >We can describe the information used and where it is
+                          appropriate to enter it.</span
+                        ></label
+                      ><label
+                        ><input type="radio" name="data" value="partial" /><span
+                          >We know some examples, but not what is entered in
+                          every common task.</span
+                        ></label
+                      ><label
+                        ><input type="radio" name="data" value="unclear" /><span
+                          >We do not know what information people enter.</span
+                        ></label
+                      >
+                    </div>
+                  </fieldset>
+                  <fieldset class="check-question" data-question="review">
+                    <legend>
+                      When AI contributes to work that other people rely on,
+                      what happens before it is used?
+                    </legend>
+                    <div class="check-options">
+                      <label
+                        ><input
+                          type="radio"
+                          name="review"
+                          value="visible"
+                        /><span
+                          >We can name the person who checks it, what they check
+                          and where judgement sits.</span
+                        ></label
+                      ><label
+                        ><input
+                          type="radio"
+                          name="review"
+                          value="partial"
+                        /><span
+                          >Some checking happens, but it depends on the person
+                          or task.</span
+                        ></label
+                      ><label
+                        ><input
+                          type="radio"
+                          name="review"
+                          value="unclear"
+                        /><span
+                          >We cannot describe a reliable review point.</span
+                        ></label
+                      >
+                    </div>
+                  </fieldset>
+                  <div class="check-actions">
+                    <button type="button" class="btn secondary" data-back>
+                      Back</button
+                    ><button type="button" class="btn primary" data-next>
+                      Next step
+                    </button>
+                  </div>
+                </section>
+                <section class="check-step" data-step="2">
+                  <h2 tabindex="-1">Across teams</h2>
+                  <p>
+                    Notice whether useful practice is shared and whether
+                    managers hear about exceptions.
+                  </p>
+                  <fieldset class="check-question" data-question="consistency">
+                    <legend>
+                      If two teams use AI for similar work, how would their
+                      approaches compare?
+                    </legend>
+                    <div class="check-options">
+                      <label
+                        ><input
+                          type="radio"
+                          name="consistency"
+                          value="visible"
+                        /><span
+                          >We have compared examples and can explain useful
+                          differences.</span
+                        ></label
+                      ><label
+                        ><input
+                          type="radio"
+                          name="consistency"
+                          value="partial"
+                        /><span
+                          >We know teams do things differently, but have not
+                          compared the effect.</span
+                        ></label
+                      ><label
+                        ><input
+                          type="radio"
+                          name="consistency"
+                          value="unclear"
+                        /><span
+                          >We do not know whether local approaches differ.</span
+                        ></label
+                      >
+                    </div>
+                  </fieldset>
+                  <fieldset class="check-question" data-question="managers">
+                    <legend>
+                      What could managers tell you about recent AI-assisted
+                      work?
+                    </legend>
+                    <div class="check-options">
+                      <label
+                        ><input
+                          type="radio"
+                          name="managers"
+                          value="visible"
+                        /><span
+                          >They can discuss examples, corrections and outcomes
+                          from work they have seen.</span
+                        ></label
+                      ><label
+                        ><input
+                          type="radio"
+                          name="managers"
+                          value="partial"
+                        /><span
+                          >They hear informal stories, but cannot give a
+                          dependable picture.</span
+                        ></label
+                      ><label
+                        ><input
+                          type="radio"
+                          name="managers"
+                          value="unclear"
+                        /><span
+                          >They would have little evidence beyond general
+                          impressions.</span
+                        ></label
+                      >
+                    </div>
+                  </fieldset>
+                  <div class="check-actions">
+                    <button type="button" class="btn secondary" data-back>
+                      Back</button
+                    ><button type="button" class="btn primary" data-next>
+                      Next step
+                    </button>
+                  </div>
+                </section>
+                <section class="check-step" data-step="3">
+                  <h2 tabindex="-1">Time and capacity</h2>
+                  <p>Finish by looking beyond a simple “time saved” claim.</p>
+                  <fieldset class="check-question" data-question="capacity">
+                    <legend>
+                      When AI seems to save time, what happens to that capacity?
+                    </legend>
+                    <div class="check-options">
+                      <label
+                        ><input
+                          type="radio"
+                          name="capacity"
+                          value="visible"
+                        /><span
+                          >We consider checking and rework, and decide how
+                          useful capacity is used.</span
+                        ></label
+                      ><label
+                        ><input
+                          type="radio"
+                          name="capacity"
+                          value="partial"
+                        /><span
+                          >We hear time-saved examples, but do not know the net
+                          effect or where time goes.</span
+                        ></label
+                      ><label
+                        ><input
+                          type="radio"
+                          name="capacity"
+                          value="unclear"
+                        /><span
+                          >We do not know whether time is saved or what happens
+                          to it.</span
+                        ></label
+                      >
+                    </div>
+                  </fieldset>
+                  <label class="check-note"
+                    >A conversation to start next
+                    <small
+                      >Optional. A short reminder for your result; it stays in
+                      this tab.</small
+                    ><input
+                      id="focus"
+                      name="focus"
+                      type="text"
+                      maxlength="180"
+                      placeholder="For example, ask the operations team about review"
+                  /></label>
+                  <div class="check-actions">
+                    <button type="button" class="btn secondary" data-back>
+                      Back</button
+                    ><button type="submit" class="btn primary">
+                      See my result
+                    </button>
+                  </div>
+                </section>
+              </form>
+              <p class="check-small">
+                Choose what you can actually describe today. Your answers are
+                not sent to WAIA or Tally.
+              </p>
+              <noscript
+                ><p>
+                  This check needs JavaScript to show the result in your
+                  browser.
+                </p></noscript
+              >
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <div class="footer-grid">
+          <span>&copy; 2026 Nineteen Point Two Ltd.</span
+          ><span>WAIA is a Nineteen Point Two product.</span
+          ><span
+            ><a href="/">Product</a> |
+            <a href="/how-it-works/">How it works</a> |
+            <a href="/insights/">Insights</a> |
+            <a href="/data-privacy/">Data &amp; privacy</a></span
+          ><span
+            ><a
+              href="https://legal.nineteenpointtwo.com/privacy/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Privacy</a
+            >
+            |
+            <a
+              href="https://legal.nineteenpointtwo.com/cookies/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Cookies</a
+            ></span
+          >
+        </div>
+      </footer>
+    </div>
+    <script src="/assets/js/nav.js" defer></script>
+    <script src="/assets/js/source-attribution.js" defer></script>
+    <script
+      type="module"
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "9fa2711aed53428980734989cf03178a"}'
+    ></script>
+    <script type="module" src="/assets/js/visibility-check.mjs"></script>
+  </body>
+</html>

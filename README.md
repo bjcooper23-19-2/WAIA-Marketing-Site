@@ -51,6 +51,7 @@ Then open `http://127.0.0.1:4173/`.
 - `/insights/operational-strain-beneath-workplace-ai-adoption/`
 - `/insights/hidden-cost-of-fragmented-ai-adoption/`
 - `/see-waia/` - WAIA-specific conversion route for campaigns and manually shared walkthrough links
+- `/workplace-ai-visibility-check/` - public, indexable free visibility exercise; the start, check and personal result routes are `noindex`
 - `/who-its-for/` - secondary buyer fit and organisational signals route
 - `/data-privacy/` - data, privacy and product boundaries
 - `/terms/` - WAIA Terms of Service
@@ -171,6 +172,10 @@ Cloudflare Web Analytics remains the only analytics beacon. Path reporting on th
 The dedicated WAIA Tally form retains hidden fields `s`, `product` and `enquiry_type`. Handoffs preserve WAIA walkthrough context, or procurement context for existing procurement CTAs; `direct` omits `s`. `/see-waia/` remains available as a campaign or manually shared conversion page. No new cookies, localStorage, visitor IDs, database or analytics platform is introduced. Tally remains the completion record; a handoff is not a submission. Run `node --test scripts/source-attribution.test.mjs` for the targeted regression suite.
 
 More detail is in `docs/source-attribution.md`.
+
+## Workplace AI Visibility Check
+
+The free check gives managers seven practical questions about current AI use, affected work, information entered, human review, local practices, manager visibility and capacity. It groups answers as visible, partly visible or unclear and prints a short set of next questions. The dedicated Tally lead form is pending before launch; answers and notes remain in the visitor's browser tab. The site continues to use Cloudflare Web Analytics only. See `docs/visibility-check.md` for the form, lead retrieval and measurement flow.
 
 ## Shared Legal Documents
 
