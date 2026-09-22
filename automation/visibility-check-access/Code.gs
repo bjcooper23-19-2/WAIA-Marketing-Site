@@ -1,6 +1,6 @@
 /**
  * Visibility Check access. Paste this file into a Google Apps Script project.
- * Configure SHEET_ID, WEB_APP_URL, WEBHOOK_SECRET and TALLY_FORM_ID in Script Properties.
+ * Configure SHEET_ID, WEBHOOK_SECRET and TALLY_FORM_ID in Script Properties.
  * The script runs as its owner. It creates Gmail drafts; it never sends mail.
  */
 const HEADERS = [
@@ -18,10 +18,11 @@ const HEADERS = [
   "Notes",
 ];
 const COL = Object.fromEntries(HEADERS.map((name, i) => [name, i]));
-const LANDING_URL = "https://waia.co.uk/workplace-ai-visibility-check/";
-const CHECK_URL = "https://waia.co.uk/workplace-ai-visibility-check/check/";
+const ACCESS_PAGE_URL =
+  "https://waia.co.uk/workplace-ai-visibility-check/access/";
 const EXPIRY_DAYS = 7;
 const TOKEN_PATTERN = /^[0-9a-f]{96}$/;
+const JSONP_CALLBACK = "waiaVisibilityAccessCallback";
 
 function authoriseSetup() {
   const sheetId =
@@ -33,20 +34,8 @@ function authoriseSetup() {
 
 function config_() {
   const values = PropertiesService.getScriptProperties().getProperties();
-  for (const key of [
-    "SHEET_ID",
-    "WEB_APP_URL",
-    "WEBHOOK_SECRET",
-    "TALLY_FORM_ID",
-  ]) {
+  for (const key of ["SHEET_ID", "WEBHOOK_SECRET", "TALLY_FORM_ID"]) {
     if (!values[key]) throw new Error("Missing Script Property: " + key);
-  }
-  if (
-    !/^https:\/\/script\.google\.com\/macros\/s\/[^/]+\/exec$/.test(
-      values.WEB_APP_URL,
-    )
-  ) {
-    throw new Error("WEB_APP_URL must be the deployed /exec URL");
   }
   if (values.WEBHOOK_SECRET.length < 32)
     throw new Error("WEBHOOK_SECRET is too short");
@@ -242,7 +231,7 @@ function doPost(e) {
         ],
       };
     }
-    const link = settings.WEB_APP_URL + "?token=" + value_(record, "Token");
+    const link = ACCESS_PAGE_URL + "?token=" + value_(record, "Token");
     const greeting = textField_(submission.firstName, 80);
     const body =
       "Hi " +
@@ -290,28 +279,7 @@ function tokenState_(token, sheet) {
   return record;
 }
 
-function doGet(e) {
-  let state = "invalid";
-  const token = e && e.parameter && e.parameter.token;
-  try {
-    state = tokenState_(token, ledger_(config_().SHEET_ID));
-  } catch (_) {
-    state = "invalid";
-  }
-  const valid = typeof state === "object";
-  const heading = valid
-    ? "Your Workplace AI Visibility Check is ready."
-    : "This access link is no longer active.";
-  const message = valid
-    ? "Continue when you are ready. This link works once and expires seven days after your request."
-    : "If you still need the Workplace AI Visibility Check, request a new link.";
-  const safeToken = valid ? token : "";
-  return HtmlService.createHtmlOutput(
-    `<!doctype html><html lang="en"><head><base target="_top"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Workplace AI Visibility Check access</title><style>body{margin:0;background:#f3f7f7;color:#102637;font:18px/1.55 Arial,sans-serif}main{box-sizing:border-box;max-width:680px;margin:10vh auto;padding:clamp(24px,6vw,48px);background:#fff;border:1px solid #d6e1e2;border-radius:16px}h1{font-size:clamp(1.7rem,5vw,2.5rem);line-height:1.15}button,.button{display:inline-block;border:0;border-radius:8px;background:#0d7377;color:#fff;padding:14px 20px;font:700 1rem Arial,sans-serif;cursor:pointer;text-decoration:none}button:disabled{opacity:.6;cursor:wait}a{color:#0b6468}p{max-width:56ch}</style></head><body><main><p>WAIA · Free working tool</p><h1>${heading}</h1><p>${message}</p>${valid ? `<button id="continue" type="button">Continue to the Visibility Check</button><p id="status" role="status" aria-live="polite"></p><script>const button=document.getElementById('continue');button.addEventListener('click',function(){button.disabled=true;document.getElementById('status').textContent='Opening your check…';google.script.run.withSuccessHandler(function(result){if(result.ok){try{window.top.location.assign(result.url)}catch(e){}document.getElementById('status').innerHTML='Access confirmed. <a target="_top" href="${CHECK_URL}">Open the Visibility Check</a>.'}else{button.remove();document.getElementById('status').textContent='This access link is no longer active. Please request a new link.'}}).withFailureHandler(function(){button.disabled=false;document.getElementById('status').textContent='Something went wrong. Please try again.'}).redeemAccess('${safeToken}')});</script>` : ""}<p><a href="${LANDING_URL}">Request a new link</a></p></main></body></html>`,
-  ).setTitle("Workplace AI Visibility Check access");
-}
-
-function redeemAccess(token) {
+function redeemToken_(token) {
   if (typeof token !== "string" || !TOKEN_PATTERN.test(token))
     return { ok: false };
   const lock = LockService.getScriptLock();
@@ -324,10 +292,29 @@ function redeemAccess(token) {
     sheet
       .getRange(record.row, COL["Redeemed at"] + 1)
       .setValue(new Date().toISOString());
-    return { ok: true, url: CHECK_URL };
+    return { ok: true };
   } catch (_) {
     return { ok: false };
   } finally {
     lock.releaseLock();
   }
+}
+
+function jsonp_(callback, result) {
+  if (callback !== JSONP_CALLBACK) {
+    return ContentService.createTextOutput(
+      "/* invalid callback */",
+    ).setMimeType(ContentService.MimeType.JAVASCRIPT);
+  }
+  return ContentService.createTextOutput(
+    callback + "(" + JSON.stringify(result) + ");",
+  ).setMimeType(ContentService.MimeType.JAVASCRIPT);
+}
+
+function doGet(e) {
+  const parameters = (e && e.parameter) || {};
+  if (parameters.action !== "redeem") {
+    return jsonp_(parameters.callback, { ok: false });
+  }
+  return jsonp_(parameters.callback, redeemToken_(parameters.token));
 }

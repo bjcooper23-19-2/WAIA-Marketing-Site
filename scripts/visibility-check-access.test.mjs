@@ -22,7 +22,7 @@ const headers = [
   "Notes",
 ];
 const secret = "a".repeat(64);
-const endpoint = "https://script.google.com/macros/s/example123/exec";
+const accessPage = "https://waia.co.uk/workplace-ai-visibility-check/access/";
 
 function harness() {
   const rows = [headers];
@@ -45,7 +45,6 @@ function harness() {
   };
   const properties = {
     SHEET_ID: "test-sheet",
-    WEB_APP_URL: endpoint,
     WEBHOOK_SECRET: secret,
     TALLY_FORM_ID: "form123",
   };
@@ -76,6 +75,15 @@ function harness() {
     },
     LockService: {
       getScriptLock: () => ({ tryLock: () => true, releaseLock: () => {} }),
+    },
+    ContentService: {
+      MimeType: { JAVASCRIPT: "javascript" },
+      createTextOutput: (text) => ({
+        text,
+        setMimeType() {
+          return this;
+        },
+      }),
     },
     HtmlService: {
       createHtmlOutput: (html) => ({
@@ -129,9 +137,16 @@ test("valid Tally request makes one ledger row and a Gmail draft, never sends", 
   assert.equal(drafts.length, 1);
   assert.equal(drafts[0][0], "ada@example.com");
   assert.match(drafts[0][2], /^Hi Ada,/);
-  assert.ok(drafts[0][2].includes(`${endpoint}?token=${rows[1][5]}`));
+  assert.ok(drafts[0][2].includes(`${accessPage}?token=${rows[1][5]}`));
+  assert.ok(!drafts[0][2].includes("script.google.com"));
   assert.ok(!drafts[0][2].includes("Ada@Example.com"));
   assert.ok(Date.parse(rows[1][10]) - Date.parse(rows[1][0]) === 7 * 86400000);
+});
+
+test("Apps Script contains no recipient-facing access page", () => {
+  assert.doesNotMatch(source, /Your Workplace AI Visibility Check is ready/);
+  assert.doesNotMatch(source, /Continue to the Visibility Check/);
+  assert.match(source, /ContentService\.MimeType\.JAVASCRIPT/);
 });
 
 test("unauthorised, malformed, wrong-form and invalid-field requests add nothing", () => {
@@ -167,38 +182,79 @@ test("Tally retries and duplicate active email do not create more drafts", () =>
   assert.equal(drafts.length, 1);
 });
 
-test("GET only confirms; deliberate redemption works once", () => {
+test("backend redemption callback works once and does not expose personal data", () => {
   const { context, rows } = harness();
   context.doPost(event(submission()));
   const token = rows[1][5];
-  const page = context.doGet({ parameter: { token } });
-  assert.match(page.html, /Your Workplace AI Visibility Check is ready/);
-  assert.match(page.html, /Continue to the Visibility Check/);
   assert.equal(rows[1][6], "unused");
-  assert.equal(context.redeemAccess(token).ok, true);
+  assert.equal(
+    context.doGet({
+      parameter: { token, callback: "waiaVisibilityAccessCallback" },
+    }).text,
+    'waiaVisibilityAccessCallback({"ok":false});',
+  );
+  assert.equal(rows[1][6], "unused");
+  const first = context.doGet({
+    parameter: {
+      action: "redeem",
+      token,
+      callback: "waiaVisibilityAccessCallback",
+    },
+  });
+  assert.equal(first.text, 'waiaVisibilityAccessCallback({"ok":true});');
+  assert.doesNotMatch(first.text, /Ada|example|Organisation|Token/);
   assert.equal(rows[1][6], "redeemed");
   assert.ok(Date.parse(rows[1][9]));
-  assert.equal(context.redeemAccess(token).ok, false);
-  assert.match(
-    context.doGet({ parameter: { token } }).html,
-    /no longer active/,
+  assert.equal(
+    context.doGet({
+      parameter: {
+        action: "redeem",
+        token,
+        callback: "waiaVisibilityAccessCallback",
+      },
+    }).text,
+    'waiaVisibilityAccessCallback({"ok":false});',
   );
 });
 
-test("expired and unknown tokens fail cleanly; fresh request can be issued", () => {
+test("expired, unknown and malformed callback requests fail cleanly", () => {
   const { context, rows, drafts } = harness();
   context.doPost(event(submission()));
   const token = rows[1][5];
   rows[1][10] = new Date(Date.now() - 1000).toISOString();
-  assert.match(
-    context.doGet({ parameter: { token } }).html,
-    /no longer active/,
+  assert.equal(
+    context.doGet({
+      parameter: {
+        action: "redeem",
+        token,
+        callback: "waiaVisibilityAccessCallback",
+      },
+    }).text,
+    'waiaVisibilityAccessCallback({"ok":false});',
   );
-  assert.equal(context.redeemAccess(token).ok, false);
-  assert.match(
-    context.doGet({ parameter: { token: "f".repeat(96) } }).html,
-    /no longer active/,
+  assert.equal(
+    context.doGet({
+      parameter: {
+        action: "redeem",
+        token: "f".repeat(96),
+        callback: "waiaVisibilityAccessCallback",
+      },
+    }).text,
+    'waiaVisibilityAccessCallback({"ok":false});',
   );
+  assert.equal(
+    context.doGet({
+      parameter: { action: "redeem", token, callback: "alert(1)" },
+    }).text,
+    "/* invalid callback */",
+  );
+  assert.equal(rows[1][6], "unused");
+});
+
+test("a fresh request can be issued after expiry", () => {
+  const { context, rows, drafts } = harness();
+  context.doPost(event(submission()));
+  rows[1][10] = new Date(Date.now() - 1000).toISOString();
   assert.equal(
     context.doPost(event(submission("response456"))).text,
     "Recorded; draft created",
@@ -227,6 +283,17 @@ test("site pages show request journey and generated Insight CTA points to landin
     ),
     "utf8",
   );
+  const access = readFileSync(
+    new URL(
+      "../workplace-ai-visibility-check/access/index.html",
+      import.meta.url,
+    ),
+    "utf8",
+  );
+  const accessScript = readFileSync(
+    new URL("../assets/js/visibility-check-access.mjs", import.meta.url),
+    "utf8",
+  );
   assert.match(
     article,
     /class="insight-tool-cta"[\s\S]*href="\/workplace-ai-visibility-check\/"/,
@@ -234,4 +301,12 @@ test("site pages show request journey and generated Insight CTA points to landin
   assert.match(landing, /Request access/);
   assert.match(start, /Access is not immediate/);
   assert.doesNotMatch(start, /href="\/workplace-ai-visibility-check\/check\/"/);
+  assert.match(access, /name="robots" content="noindex, nofollow"/);
+  assert.match(access, /Continue to the Visibility Check/);
+  assert.match(access, /visibility-check-access\.mjs/);
+  assert.doesNotMatch(access, /cloudflareinsights/);
+  assert.match(accessScript, /addEventListener\("click"/);
+  assert.match(accessScript, /action", "redeem"/);
+  assert.match(accessScript, /location\.assign\(checkPath\)/);
+  assert.doesNotMatch(accessScript, /fetch\(/);
 });

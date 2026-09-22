@@ -52,7 +52,7 @@ Then open `http://127.0.0.1:4173/`.
 - `/insights/operational-strain-beneath-workplace-ai-adoption/`
 - `/insights/hidden-cost-of-fragmented-ai-adoption/`
 - `/see-waia/` - WAIA-specific conversion route for campaigns and manually shared walkthrough links
-- `/workplace-ai-visibility-check/` - public, indexable free visibility exercise; the start, check and personal result routes are `noindex`
+- `/workplace-ai-visibility-check/` - public, indexable free visibility exercise; the request, access, check and personal result routes are `noindex`
 - `/who-its-for/` - secondary buyer fit and organisational signals route
 - `/data-privacy/` - data, privacy and product boundaries
 - `/terms/` - WAIA Terms of Service
