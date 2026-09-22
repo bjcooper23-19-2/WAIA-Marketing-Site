@@ -22,6 +22,7 @@ const headers = [
   "Notes",
 ];
 const secret = "a".repeat(64);
+const proxySecret = "b".repeat(64);
 const accessPage = "https://waia.co.uk/workplace-ai-visibility-check/access/";
 
 function harness() {
@@ -47,6 +48,7 @@ function harness() {
     SHEET_ID: "test-sheet",
     WEBHOOK_SECRET: secret,
     TALLY_FORM_ID: "form123",
+    PROXY_SECRET: proxySecret,
   };
   const context = vm.createContext({
     PropertiesService: {
@@ -77,7 +79,7 @@ function harness() {
       getScriptLock: () => ({ tryLock: () => true, releaseLock: () => {} }),
     },
     ContentService: {
-      MimeType: { JAVASCRIPT: "javascript" },
+      MimeType: { JSON: "application/json" },
       createTextOutput: (text) => ({
         text,
         setMimeType() {
@@ -124,6 +126,16 @@ function event(body, key = secret) {
   };
 }
 
+function redemptionEvent(token, key = proxySecret) {
+  return {
+    parameter: { action: "redeem" },
+    postData: {
+      type: "application/json",
+      contents: JSON.stringify({ token, proxy_secret: key }),
+    },
+  };
+}
+
 test("valid Tally request makes one ledger row and a Gmail draft, never sends", () => {
   const { context, rows, drafts } = harness();
   assert.equal(
@@ -142,7 +154,9 @@ test("valid Tally request makes one ledger row and a Gmail draft, never sends", 
   assert.match(drafts[0][2], /expires after one use or after seven days\./);
   assert.equal(typeof drafts[0][3], "object");
   assert.match(drafts[0][3].htmlBody, /Open the Workplace AI Visibility Check/);
-  assert.ok(drafts[0][3].htmlBody.includes(`${accessPage}?token=${rows[1][5]}`));
+  assert.ok(
+    drafts[0][3].htmlBody.includes(`${accessPage}?token=${rows[1][5]}`),
+  );
   assert.ok(!drafts[0][2].includes("Ada@Example.com"));
   assert.ok(Date.parse(rows[1][10]) - Date.parse(rows[1][0]) === 7 * 86400000);
 });
@@ -150,7 +164,8 @@ test("valid Tally request makes one ledger row and a Gmail draft, never sends", 
 test("Apps Script contains no recipient-facing access page", () => {
   assert.doesNotMatch(source, /Your Workplace AI Visibility Check is ready/);
   assert.doesNotMatch(source, /Continue to the Visibility Check/);
-  assert.match(source, /ContentService\.MimeType\.JAVASCRIPT/);
+  assert.match(source, /ContentService\.MimeType\.JSON/);
+  assert.doesNotMatch(source, /JSONP|callback/i);
 });
 
 test("unauthorised, malformed, wrong-form and invalid-field requests add nothing", () => {
@@ -186,73 +201,35 @@ test("Tally retries and duplicate active email do not create more drafts", () =>
   assert.equal(drafts.length, 1);
 });
 
-test("backend redemption callback works once and does not expose personal data", () => {
+test("backend redemption works once and does not expose personal data", () => {
   const { context, rows } = harness();
   context.doPost(event(submission()));
   const token = rows[1][5];
   assert.equal(rows[1][6], "unused");
-  assert.equal(
-    context.doGet({
-      parameter: { token, callback: "waiaVisibilityAccessCallback" },
-    }).text,
-    'waiaVisibilityAccessCallback({"ok":false});',
-  );
-  assert.equal(rows[1][6], "unused");
-  const first = context.doGet({
-    parameter: {
-      action: "redeem",
-      token,
-      callback: "waiaVisibilityAccessCallback",
-    },
-  });
-  assert.equal(first.text, 'waiaVisibilityAccessCallback({"ok":true});');
+  const first = context.doPost(redemptionEvent(token));
+  assert.equal(first.text, '{"ok":true}');
   assert.doesNotMatch(first.text, /Ada|example|Organisation|Token/);
   assert.equal(rows[1][6], "redeemed");
   assert.ok(Date.parse(rows[1][9]));
-  assert.equal(
-    context.doGet({
-      parameter: {
-        action: "redeem",
-        token,
-        callback: "waiaVisibilityAccessCallback",
-      },
-    }).text,
-    'waiaVisibilityAccessCallback({"ok":false});',
-  );
+  assert.equal(context.doPost(redemptionEvent(token)).text, '{"ok":false}');
 });
 
-test("expired, unknown and malformed callback requests fail cleanly", () => {
+test("expired, unknown, malformed and unauthorised redemptions fail cleanly", () => {
   const { context, rows, drafts } = harness();
   context.doPost(event(submission()));
   const token = rows[1][5];
   rows[1][10] = new Date(Date.now() - 1000).toISOString();
+  assert.equal(context.doPost(redemptionEvent(token)).text, '{"ok":false}');
   assert.equal(
-    context.doGet({
-      parameter: {
-        action: "redeem",
-        token,
-        callback: "waiaVisibilityAccessCallback",
-      },
-    }).text,
-    'waiaVisibilityAccessCallback({"ok":false});',
+    context.doPost(redemptionEvent("f".repeat(96))).text,
+    '{"ok":false}',
   );
   assert.equal(
-    context.doGet({
-      parameter: {
-        action: "redeem",
-        token: "f".repeat(96),
-        callback: "waiaVisibilityAccessCallback",
-      },
-    }).text,
-    'waiaVisibilityAccessCallback({"ok":false});',
-  );
-  assert.equal(
-    context.doGet({
-      parameter: { action: "redeem", token, callback: "alert(1)" },
-    }).text,
-    "/* invalid callback */",
+    context.doPost(redemptionEvent(token, "wrong")).text,
+    '{"ok":false}',
   );
   assert.equal(rows[1][6], "unused");
+  assert.equal(drafts.length, 1);
 });
 
 test("a fresh request can be issued after expiry", () => {
@@ -310,7 +287,125 @@ test("site pages show request journey and generated Insight CTA points to landin
   assert.match(access, /visibility-check-access\.mjs/);
   assert.doesNotMatch(access, /cloudflareinsights/);
   assert.match(accessScript, /addEventListener\("click"/);
-  assert.match(accessScript, /action", "redeem"/);
+  assert.match(accessScript, /fetch\(redemptionPath/);
+  assert.match(accessScript, /method: "POST"/);
   assert.match(accessScript, /location\.assign\(checkPath\)/);
-  assert.doesNotMatch(accessScript, /fetch\(/);
+  assert.doesNotMatch(accessScript, /script\.google\.com/);
+  assert.doesNotMatch(
+    accessScript,
+    /JSONP|callbackName|createElement\("script"\)/i,
+  );
+});
+
+function accessHarness({ token = "a".repeat(96), fetchResult } = {}) {
+  const elements = Object.fromEntries(
+    [
+      "#access-title",
+      "#access-message",
+      "#access-action",
+      "#access-status",
+      "#access-request-link",
+    ].map((selector) => [
+      selector,
+      {
+        textContent: "",
+        hidden: true,
+        disabled: false,
+        addEventListener(_event, listener) {
+          this.listener = listener;
+        },
+      },
+    ]),
+  );
+  const requests = [];
+  const navigations = [];
+  const accessScript = readFileSync(
+    new URL("../assets/js/visibility-check-access.mjs", import.meta.url),
+    "utf8",
+  );
+  const context = vm.createContext({
+    AbortController,
+    URLSearchParams,
+    clearTimeout,
+    document: { querySelector: (selector) => elements[selector] },
+    fetch: async (...args) => {
+      requests.push(args);
+      if (fetchResult instanceof Error) throw fetchResult;
+      return (
+        fetchResult || {
+          ok: true,
+          json: async () => ({ ok: true }),
+        }
+      );
+    },
+    JSON,
+    location: {
+      search: token === null ? "" : `?token=${token}`,
+      assign: (path) => navigations.push(path),
+    },
+    setTimeout,
+  });
+  vm.runInContext(accessScript, context);
+  return {
+    action: elements["#access-action"],
+    elements,
+    navigations,
+    requests,
+  };
+}
+
+test("valid token shows Continue and makes no request on page load", () => {
+  const { action, elements, requests } = accessHarness();
+  assert.equal(
+    elements["#access-title"].textContent,
+    "Your Workplace AI Visibility Check is ready.",
+  );
+  assert.equal(action.hidden, false);
+  assert.equal(requests.length, 0);
+});
+
+test("invalid token shows the inactive state without a request", () => {
+  const { action, elements, requests } = accessHarness({ token: "invalid" });
+  assert.equal(
+    elements["#access-title"].textContent,
+    "This access link is no longer active.",
+  );
+  assert.equal(action.hidden, true);
+  assert.equal(elements["#access-request-link"].hidden, false);
+  assert.equal(requests.length, 0);
+});
+
+test("Continue makes one same-origin POST and success opens the check", async () => {
+  const { action, navigations, requests } = accessHarness();
+  await action.listener();
+  assert.equal(requests.length, 1);
+  assert.equal(requests[0][0], "/api/visibility-check/redeem");
+  assert.equal(requests[0][1].method, "POST");
+  assert.deepEqual(JSON.parse(requests[0][1].body), { token: "a".repeat(96) });
+  assert.deepEqual(navigations, ["/workplace-ai-visibility-check/check/"]);
+});
+
+test("inactive response shows the existing inactive state", async () => {
+  const { action, elements } = accessHarness({
+    fetchResult: { ok: true, json: async () => ({ ok: false }) },
+  });
+  await action.listener();
+  assert.equal(
+    elements["#access-title"].textContent,
+    "This access link is no longer active.",
+  );
+  assert.equal(action.hidden, true);
+});
+
+test("transient failure re-enables Continue and allows retry", async () => {
+  const result = { ok: false, status: 502, json: async () => ({ ok: false }) };
+  const { action, elements, requests } = accessHarness({ fetchResult: result });
+  await action.listener();
+  assert.equal(action.disabled, false);
+  assert.equal(
+    elements["#access-status"].textContent,
+    "Access could not be confirmed. Please try again.",
+  );
+  await action.listener();
+  assert.equal(requests.length, 2);
 });

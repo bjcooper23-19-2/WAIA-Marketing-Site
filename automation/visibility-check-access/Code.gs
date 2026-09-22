@@ -1,6 +1,7 @@
 /**
  * Visibility Check access. Paste this file into a Google Apps Script project.
- * Configure SHEET_ID, WEBHOOK_SECRET and TALLY_FORM_ID in Script Properties.
+ * Configure SHEET_ID, WEBHOOK_SECRET, TALLY_FORM_ID and PROXY_SECRET in Script
+ * Properties.
  * The script runs as its owner. It creates Gmail drafts; it never sends mail.
  */
 const HEADERS = [
@@ -22,7 +23,6 @@ const ACCESS_PAGE_URL =
   "https://waia.co.uk/workplace-ai-visibility-check/access/";
 const EXPIRY_DAYS = 7;
 const TOKEN_PATTERN = /^[0-9a-f]{96}$/;
-const JSONP_CALLBACK = "waiaVisibilityAccessCallback";
 
 function authoriseSetup() {
   const sheetId =
@@ -34,11 +34,18 @@ function authoriseSetup() {
 
 function config_() {
   const values = PropertiesService.getScriptProperties().getProperties();
-  for (const key of ["SHEET_ID", "WEBHOOK_SECRET", "TALLY_FORM_ID"]) {
+  for (const key of [
+    "SHEET_ID",
+    "WEBHOOK_SECRET",
+    "TALLY_FORM_ID",
+    "PROXY_SECRET",
+  ]) {
     if (!values[key]) throw new Error("Missing Script Property: " + key);
   }
   if (values.WEBHOOK_SECRET.length < 32)
     throw new Error("WEBHOOK_SECRET is too short");
+  if (values.PROXY_SECRET.length < 32)
+    throw new Error("PROXY_SECRET is too short");
   return values;
 }
 
@@ -146,6 +153,9 @@ function value_(record, heading) {
 }
 
 function doPost(e) {
+  if (e && e.parameter && e.parameter.action === "redeem") {
+    return redemptionResponse_(e);
+  }
   // Apps Script exposes query parameters and POST body, but not HTTP headers.
   // The private webhook URL secret is checked before reading any contact data.
   let settings;
@@ -303,7 +313,7 @@ function redeemToken_(token) {
   if (typeof token !== "string" || !TOKEN_PATTERN.test(token))
     return { ok: false };
   const lock = LockService.getScriptLock();
-  if (!lock.tryLock(2000)) return { ok: false };
+  if (!lock.tryLock(2000)) throw new Error("Redemption busy");
   try {
     const sheet = ledger_(config_().SHEET_ID);
     const record = tokenState_(token, sheet);
@@ -313,28 +323,39 @@ function redeemToken_(token) {
       .getRange(record.row, COL["Redeemed at"] + 1)
       .setValue(new Date().toISOString());
     return { ok: true };
-  } catch (_) {
-    return { ok: false };
   } finally {
     lock.releaseLock();
   }
 }
 
-function jsonp_(callback, result) {
-  if (callback !== JSONP_CALLBACK) {
-    return ContentService.createTextOutput(
-      "/* invalid callback */",
-    ).setMimeType(ContentService.MimeType.JAVASCRIPT);
-  }
-  return ContentService.createTextOutput(
-    callback + "(" + JSON.stringify(result) + ");",
-  ).setMimeType(ContentService.MimeType.JAVASCRIPT);
+function json_(result) {
+  return ContentService.createTextOutput(JSON.stringify(result)).setMimeType(
+    ContentService.MimeType.JSON,
+  );
 }
 
-function doGet(e) {
-  const parameters = (e && e.parameter) || {};
-  if (parameters.action !== "redeem") {
-    return jsonp_(parameters.callback, { ok: false });
+function redemptionResponse_(e) {
+  if (
+    !e.postData ||
+    !/^application\/json(?:\s*;|$)/i.test(e.postData.type || "") ||
+    typeof e.postData.contents !== "string" ||
+    e.postData.contents.length > 1000
+  ) {
+    return json_({ ok: false });
   }
-  return jsonp_(parameters.callback, redeemToken_(parameters.token));
+  let request;
+  try {
+    request = JSON.parse(e.postData.contents);
+  } catch (_) {
+    return json_({ ok: false });
+  }
+  const settings = config_();
+  if (
+    !request ||
+    typeof request !== "object" ||
+    !constantTimeEqual_(request.proxy_secret, settings.PROXY_SECRET)
+  ) {
+    return json_({ ok: false });
+  }
+  return json_(redeemToken_(request.token));
 }

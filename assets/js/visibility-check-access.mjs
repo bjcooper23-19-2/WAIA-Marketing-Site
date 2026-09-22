@@ -1,8 +1,6 @@
-import { redemptionEndpoint } from "./visibility-check-access-config.mjs";
-
 const tokenPattern = /^[0-9a-f]{96}$/;
 const checkPath = "/workplace-ai-visibility-check/check/";
-const callbackName = "waiaVisibilityAccessCallback";
+const redemptionPath = "/api/visibility-check/redeem";
 const timeoutMs = 20000;
 
 const title = document.querySelector("#access-title");
@@ -30,53 +28,36 @@ if (!tokenPattern.test(token)) {
   action.hidden = false;
 }
 
-action.addEventListener("click", () => {
+action.addEventListener("click", async () => {
   if (!tokenPattern.test(token) || action.disabled) return;
-  if (
-    !/^https:\/\/script\.google\.com\/macros\/s\/[^/]+\/exec$/.test(
-      redemptionEndpoint,
-    )
-  ) {
-    status.textContent =
-      "Access is temporarily unavailable. Please try again later.";
-    return;
-  }
 
   action.disabled = true;
   status.textContent = "Opening your check…";
-  let script;
-  const cleanup = () => {
-    clearTimeout(timeout);
-    delete window[callbackName];
-    script?.remove();
-  };
-  const timeout = setTimeout(() => {
-    cleanup();
-    action.disabled = false;
-    status.textContent = "Access could not be confirmed. Please try again.";
-  }, timeoutMs);
-
-  window[callbackName] = (result) => {
-    cleanup();
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const response = await fetch(redemptionPath, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ token }),
+      credentials: "same-origin",
+      signal: controller.signal,
+    });
+    if (!response.ok) throw new Error("Redemption request failed");
+    const result = await response.json();
     if (result && result.ok === true) {
       location.assign(checkPath);
       return;
     }
-    showInactive();
-  };
-
-  const url = new URL(redemptionEndpoint);
-  url.searchParams.set("action", "redeem");
-  url.searchParams.set("token", token);
-  url.searchParams.set("callback", callbackName);
-  url.searchParams.set("_", Date.now().toString());
-  script = document.createElement("script");
-  script.src = url.href;
-  script.referrerPolicy = "no-referrer";
-  script.addEventListener("error", () => {
-    cleanup();
+    if (result && result.ok === false) {
+      showInactive();
+      return;
+    }
+    throw new Error("Unexpected redemption response");
+  } catch (_) {
     action.disabled = false;
     status.textContent = "Access could not be confirmed. Please try again.";
-  });
-  document.head.append(script);
+  } finally {
+    clearTimeout(timeout);
+  }
 });
