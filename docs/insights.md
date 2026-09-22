@@ -77,9 +77,6 @@ This roadmap is a prioritised direction of travel, not a rigid publishing calend
 
 - **How do you measure whether AI is actually saving time at work?**
   Role: cornerstone article connecting time savings, net capacity, redeployment and business value.
-
-### Next
-
 - **AI adoption is rising. That doesn’t mean organisations know whether it is working.**
   Role: distinguish adoption and activity from evidence of effectiveness while beginning to widen the discussion from technology use to transformation of work.
 
