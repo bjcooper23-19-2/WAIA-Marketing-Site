@@ -6,18 +6,19 @@
     <link rel="stylesheet" href="/assets/css/workplace-ai-academy.css" />
     <link rel="stylesheet" href="/assets/css/visibility-check.css" />
     <meta name="robots" content="noindex, nofollow" />
-    <title>Request the Workplace AI Visibility Check | WAIA</title>
+    <meta name="referrer" content="no-referrer" />
+    <title>Access the Workplace AI Visibility Check | WAIA</title>
     <meta
       name="description"
-      content="Request the free Workplace AI Visibility Check. Access will be emailed after review."
+      content="Confirm your unique access link for the Workplace AI Visibility Check."
     />
     <meta
       property="og:title"
-      content="Request the Workplace AI Visibility Check | WAIA"
+      content="Access the Workplace AI Visibility Check | WAIA"
     />
     <meta
       property="og:description"
-      content="Request the free Workplace AI Visibility Check. Access will be emailed after review."
+      content="Confirm your unique access link for the Workplace AI Visibility Check."
     />
 
     <meta property="og:type" content="website" />
@@ -34,7 +35,7 @@
       href="/assets/favicon/waia-apple-touch-icon.png"
     />
   </head>
-  <body class="product-waia visibility-start">
+  <body class="product-waia visibility-access">
     <div class="noise"></div>
     <div class="site">
       <header>
@@ -73,53 +74,42 @@
         </nav>
       </header>
       <main id="top">
-        <section class="hero check-hero">
+        <section class="hero check-hero access-hero">
           <div class="container check-layout">
-            <div class="eyebrow">Request access</div>
-            <h1>Get the Visibility Check by email.</h1>
-            <p class="lede">
-              Seven practical questions. Allow around 10–15 minutes, especially
-              if you pause to think about a real task. Your result appears as
-              soon as you finish and can be printed or saved. First, request an
-              access link using your work email.
+            <div class="eyebrow">Free working tool · Secure access</div>
+            <h1 id="access-title">Checking your access link.</h1>
+            <p class="lede" id="access-message">
+              We are checking that this link has the expected format.
             </p>
-          </div>
-        </section>
-        <section class="waia-light-section">
-          <div class="container check-layout">
-            <div class="check-card">
-              <h2>A few details to send your link.</h2>
-              <p>
-                We ask for your first name, work email and organisation to
-                fulfil your request. Tally stores these details. We review the
-                request, then email a unique access link to the address you
-                provide. Access is not immediate. Your check answers stay in
-                your browser tab and are not sent with your contact details.
-              </p>
-              <p>
-                No promotional email sign-up is required. Read the
-                <a
-                  href="https://legal.nineteenpointtwo.com/privacy/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >privacy policy</a
-                >
-                for how contact details are handled.
-              </p>
-              <div class="check-actions">
-                <a
-                  class="btn primary"
-                  id="gate-link"
-                  href="https://tally.so/r/GxPbRz"
-                  >Request an access link</a
-                >
-              </div>
-              <p class="check-small">
-                The short contact form opens on Tally. After submitting, check
-                your work inbox for a personal link once your request has been
-                reviewed. Each link expires after seven days or when used.
-              </p>
+            <div class="hero-actions access-actions">
+              <button
+                class="btn primary"
+                id="access-action"
+                type="button"
+                hidden
+              >
+                Continue to the Visibility Check
+              </button>
+              <a
+                class="btn primary"
+                id="access-request-link"
+                href="/workplace-ai-visibility-check/"
+                hidden
+                >Request a new link</a
+              >
             </div>
+            <p
+              class="access-status"
+              id="access-status"
+              role="status"
+              aria-live="polite"
+            ></p>
+            <noscript
+              ><p class="access-status">
+                JavaScript is required to redeem this access link. Enable it and
+                reload this page.
+              </p></noscript
+            >
           </div>
         </section>
       </main>
@@ -151,11 +141,6 @@
       </footer>
     </div>
     <script src="/assets/js/nav.js" defer></script>
-    <script src="/assets/js/source-attribution.js" defer></script>
-    <script
-      type="module"
-      src="https://static.cloudflareinsights.com/beacon.min.js"
-      data-cf-beacon='{"token": "9fa2711aed53428980734989cf03178a"}'
-    ></script>
+    <script type="module" src="/assets/js/visibility-check-access.mjs"></script>
   </body>
 </html>

@@ -92,7 +92,7 @@ test("only the public explanation is indexed", () => {
     sitemap,
     /https:\/\/waia.co.uk\/workplace-ai-visibility-check\//,
   );
-  for (const state of ["start", "check", "results"]) {
+  for (const state of ["start", "access", "check", "results"]) {
     const page = readFileSync(new URL(`${state}/index.html`, route), "utf8");
     assert.match(page, /name="robots" content="noindex, nofollow"/);
     assert.doesNotMatch(

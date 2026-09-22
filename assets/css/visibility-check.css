@@ -61,6 +61,38 @@
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+.visibility-access main {
+  min-height: calc(100vh - 190px);
+}
+.access-hero {
+  display: flex;
+  min-height: 620px;
+  align-items: center;
+}
+.access-hero h1 {
+  max-width: 850px;
+}
+.access-actions {
+  align-items: center;
+}
+.access-actions .btn[hidden] {
+  display: none;
+}
+.access-actions button {
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+.access-actions button:disabled {
+  cursor: wait;
+  opacity: 0.68;
+}
+.access-status {
+  min-height: 1.6em;
+  margin-top: 18px;
+  color: var(--muted);
+}
 .check-small {
   font-size: 0.92rem;
 }
