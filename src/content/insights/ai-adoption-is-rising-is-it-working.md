@@ -9,6 +9,7 @@ date: 2026-09-22
 category: Workplace AI evidence
 excerpt: Rising AI adoption tells us little about whether work is improving. The useful questions concern people, workflows, capacity and evidence.
 tags: AI adoption, workplace AI, workflow improvement, management visibility, business value
+visibilityCheckCta: true
 ---
 
 More people are using AI at work. That much is clear.

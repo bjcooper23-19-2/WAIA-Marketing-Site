@@ -511,6 +511,17 @@ const renderArticle = (article) =>
           <div class="article-body">
             <div class="article-shell">
               ${article.html}
+              ${
+                article.visibilityCheckCta === "true"
+                  ? `
+                <aside class="insight-tool-cta" aria-labelledby="visibility-check-cta-title">
+                  <div class="eyebrow">Free working tool</div>
+                  <h2 id="visibility-check-cta-title">Not sure how much visibility you actually have?</h2>
+                  <p>The free Workplace AI Visibility Check gives you seven practical questions about current use, affected work, human review and capacity. Allow around 10–15 minutes and take a practical result back into the business.</p>
+                  <a class="btn primary" href="/workplace-ai-visibility-check/">Start the Workplace AI Visibility Check →</a>
+                </aside>`
+                  : ""
+              }
             </div>
           </div>
         </article>

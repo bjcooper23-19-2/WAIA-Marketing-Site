@@ -129,6 +129,7 @@ Optional frontmatter currently supported:
 - `dateModified`
 - `readingTime`
 - `tags`
+- `visibilityCheckCta` (`true` to show the contextual Visibility Check CTA after an article)
 
 Commit both the markdown source files and generated HTML whenever Insights content changes. Do not edit generated article HTML directly unless the generator is also updated to preserve the change.
 
