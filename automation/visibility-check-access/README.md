@@ -1,37 +1,43 @@
-# Visibility Check access: post-merge setup
+# Visibility Check access: issue #59 post-merge setup
 
-The repository source is [`Code.gs`](Code.gs). No Google account, Tally setting or secret is configured by merging the PR. This uses Tally's free webhook, one private Google Sheet and Ben's Gmail drafts.
+The repository source for the existing Google Apps Script project is [`Code.gs`](Code.gs). The WAIA site remains on GitHub Pages. Redemption now uses the dedicated Cloudflare Worker in [`cloudflare/visibility-check-redemption/`](../../cloudflare/visibility-check-redemption/) so the browser never contacts Apps Script.
 
-## One-time setup for Ben
+## Already configured and unchanged
 
-1. In Google Sheets, create a **private** spreadsheet named `WAIA Visibility Check requests`. Rename its first tab exactly `Requests`. Paste this tab-separated header row into A1:
+- The published Tally form, its First name, Work email and Organisation fields, thank-you message and webhook remain unchanged.
+- The private Google Sheet, `Requests` tab and columns remain unchanged.
+- The existing Apps Script project remains the Tally webhook, token authority and Sheet writer.
+- `SHEET_ID`, `TALLY_FORM_ID` and `WEBHOOK_SECRET` remain unchanged. Do not reuse `WEBHOOK_SECRET` for the proxy.
+- Existing Google Sheets and Gmail permissions remain unchanged.
+- Gmail draft creation, the current email copy and HTML CTA remain unchanged. Ben still reviews and sends or deletes each draft manually and records `Sent at`.
+- Access links remain on `https://waia.co.uk/workplace-ai-visibility-check/access/?token=...`; tokens still expire after seven days and are single-use.
+- The live access page design, `/check/` route and client-side Visibility Check answers remain unchanged.
 
-   ```text
-   Requested at	First name	Email	Organisation	Tally response ID	Token	Token status	Draft created at	Sent at	Redeemed at	Expires at	Notes
+## New manual setup required after merge
+
+1. Generate one new random secret of at least 32 characters, for example with `openssl rand -hex 32`. In the existing Apps Script project's **Project Settings → Script properties**, add it as `PROXY_SECRET`. Keep the value private and separate from `WEBHOOK_SECRET`.
+2. Replace the existing Apps Script source with the merged [`Code.gs`](Code.gs), save it, then use **Deploy → Manage deployments → Edit → New version → Deploy**. The existing `/exec` URL stays the same. This redeploy is required because redemption changes from public JSONP GET to an authenticated JSON POST from the Worker; the Tally webhook contract is unchanged.
+3. In Cloudflare DNS for `waia.co.uk`, change the existing apex GitHub Pages A records from **DNS only** to **Proxied**. Do not change their addresses. The Worker route requires the hostname to pass through Cloudflare; GitHub Pages remains the site origin.
+4. From `cloudflare/visibility-check-redemption/`, set both Worker secrets interactively. Use the existing production Apps Script URL ending `/exec` for the first and the exact `PROXY_SECRET` value from step 1 for the second:
+
+   ```sh
+   npx wrangler secret put APPS_SCRIPT_REDEMPTION_URL
+   npx wrangler secret put APPS_SCRIPT_PROXY_SECRET
    ```
 
-   Keep the Sheet private. Copy its spreadsheet ID from the URL between `/d/` and `/edit`.
+5. Still in that directory, deploy the Worker:
 
-2. At `script.google.com`, create a new Apps Script project named `WAIA Visibility Check backend`. Replace the starter code with the complete contents of `Code.gs` and save it. Apps Script is the webhook and redemption backend only; recipients never use its web page.
+   ```sh
+   npx wrangler deploy
+   ```
 
-3. In **Project Settings → Script properties**, create `SHEET_ID` with the copied ID, `TALLY_FORM_ID` with `GxPbRz` (the published form ID), and `WEBHOOK_SECRET` with a freshly generated random value of at least 32 characters, preferably `openssl rand -hex 32`. Keep the secret private. Run `authoriseSetup` once from the Apps Script editor and approve the requested Sheets and Gmail permissions as Ben. The function checks access and creates no draft.
+   The committed configuration attaches only `waia.co.uk/api/visibility-check/redeem*`; it does not replace the GitHub Pages site.
 
-4. Choose **Deploy → New deployment → Web app**. Set **Execute as: Me** and **Who has access: Anyone** so Tally and the WAIA access page can call it without Google login. Approve the Sheets and Gmail scopes. Copy the production URL ending `/exec`. If Apps Script code changes later, deploy a new version through **Manage deployments → Edit**.
-
-5. In `assets/js/visibility-check-access-config.mjs`, replace `REPLACE_WITH_APPS_SCRIPT_WEB_APP_URL` with that exact `/exec` URL. Commit and deploy this one configuration change to `waia.co.uk`. Open `https://waia.co.uk/workplace-ai-visibility-check/access/?token=test` and confirm the WAIA-designed inactive-link page appears. Do this before enabling the Tally webhook.
-
-6. In the published Tally form `https://tally.so/r/GxPbRz`, **turn off Redirect on completion** to `https://waia.co.uk/workplace-ai-visibility-check/check/`. Set the thank-you message to:
-
-   > Thank you. Your request has been received. Access to the Workplace AI Visibility Check will be sent to the email address you provided after review.
-
-7. Keep exactly the existing **First name**, **Work email**, and **Organisation** fields in that Tally form. Their labels must match those strings, ignoring case. Under **Integrations → Webhooks**, set the endpoint to `<APPS_SCRIPT_EXEC_URL>?webhook_key=<WEBHOOK_SECRET>`. Do not share this URL. Tally's signing-secret option cannot be verified by Apps Script because Apps Script does not expose request headers. The private URL secret is the required check.
-
-8. Submit the live Tally form once with an inbox you control. Confirm one new `Requests` row, `Token status = unused`, a seven-day `Expires at`, and one addressed Gmail draft whose link starts `https://waia.co.uk/workplace-ai-visibility-check/access/?token=`. Check Tally's webhook event log for `Recorded; draft created`. If it says `Invalid payload`, compare its request body's `data.formId` and field labels with step 3 and step 7, correct the Script Property or labels, then submit again. Review and **manually send** the draft, then enter the send date/time in `Sent at`. Open the WAIA link: the ready page should appear and the Sheet must still say `unused`. Press **Continue to the Visibility Check**: `/check/` should open and the Sheet should say `redeemed` with `Redeemed at`. Open the email link again, press Continue, and confirm the WAIA page shows the inactive-link state. Delete the test row and draft only if appropriate to your records policy.
+6. Run one final end-to-end test with an inbox you control. Submit the existing Tally form and confirm one Sheet row with `Token status = unused`, a seven-day `Expires at` value and one addressed Gmail draft containing only the WAIA access URL. Manually send the draft. Opening the link must leave the row `unused`; pressing **Continue to the Visibility Check** must open `/check/` and set the row to `redeemed` with `Redeemed at`; pressing Continue from the same link again must show the inactive-link state.
 
 ## Operating notes
 
-- For each new request, review the Sheet row and Gmail draft; send or delete the draft. Fill `Sent at` manually when sent. No email is sent by code.
-- A repeated webhook delivery with the same Tally response ID produces no new row or draft. A fresh submission from an email with an unused, unexpired token is also ignored. After redemption or expiry, a fresh submission creates a new link.
-- If Tally's event log says `Processing failed`, inspect the `Requests` row and Apps Script **Executions**. A `draft_pending` row means draft creation or status update did not finish; check Gmail Drafts before asking for a new submission, to avoid a duplicate draft. Do not paste personal data or secret URLs into public issues.
-- If the webhook secret leaks, set a new random `WEBHOOK_SECRET` Script Property and update the Tally endpoint URL. Old access links use separate tokens and continue until redeemed or expired.
-- The WAIA access page checks only the token format on load. It does not contact Apps Script until the person presses **Continue to the Visibility Check**. That click loads a JSONP callback from Apps Script, avoiding a CORS dependency. The callback returns only `{ok: true}` or `{ok: false}` and no lead data.
+- A repeated webhook delivery with the same Tally response ID creates no new row or draft. A fresh submission from an email with an unused, unexpired token is also ignored. After redemption or expiry, a fresh submission creates a new link.
+- If Tally reports `Processing failed`, inspect the `Requests` row and Apps Script **Executions**. A `draft_pending` row means draft creation or its status update did not finish; check Gmail Drafts before asking for another submission.
+- If `WEBHOOK_SECRET` leaks, rotate it in Apps Script and the existing Tally webhook URL. If `PROXY_SECRET` leaks, rotate both `PROXY_SECRET` in Apps Script and `APPS_SCRIPT_PROXY_SECRET` in the Worker, then redeploy the Apps Script version. Existing unused access tokens remain valid.
+- Do not paste personal data, token-bearing links, Apps Script URLs or either secret into public issues or logs.

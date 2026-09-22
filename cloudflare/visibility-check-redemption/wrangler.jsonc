@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developers.cloudflare.com/schema/wrangler.json",
+  "name": "waia-visibility-check-redemption",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-09-22",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": false,
+  "routes": [
+    {
+      "pattern": "waia.co.uk/api/visibility-check/redeem*",
+      "zone_name": "waia.co.uk",
+    },
+  ],
+  "observability": {
+    "enabled": true,
+    "logs": { "head_sampling_rate": 1 },
+  },
+}

@@ -183,7 +183,7 @@ The free check gives managers seven practical questions about current AI use, af
 
 WAIA-specific Terms, AI Use Statement and Data & Privacy remain on `waia.co.uk` at `/terms/`, `/ai-use-statement/` and `/data-privacy/`.
 
-The marketing site is live at `https://waia.co.uk/`. GitHub Pages deployment is active, custom-domain DNS is configured, and HTTPS is enforced.
+The marketing site is live at `https://waia.co.uk/`. GitHub Pages deployment is active, Cloudflare is the authoritative DNS provider, custom-domain DNS is configured, and HTTPS is enforced. The Visibility Check redemption API is the only server-side route: a dedicated Cloudflare Worker at `/api/visibility-check/redeem` proxies redemption to Apps Script while GitHub Pages remains the origin for the static site.
 
 The standalone legal estate is live over HTTPS. WAIA uses it as the canonical source for shared Nineteen Point Two Ltd legal and procurement documents, independently of the company marketing website:
 
