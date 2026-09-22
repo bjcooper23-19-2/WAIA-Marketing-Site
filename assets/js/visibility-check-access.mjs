@@ -1,7 +1,7 @@
 const tokenPattern = /^[0-9a-f]{96}$/;
 const checkPath = "/workplace-ai-visibility-check/check/";
 const redemptionPath = "/api/visibility-check/redeem";
-const timeoutMs = 60000;
+const timeoutMs = 90000;
 
 const title = document.querySelector("#access-title");
 const message = document.querySelector("#access-message");
@@ -34,8 +34,8 @@ action.addEventListener("click", async () => {
   action.disabled = true;
   status.textContent = "Opening your check…";
   const slowMessage = setTimeout(() => {
-    status.textContent = "Still confirming access. This can take a few moments…";
-  }, 10000);
+    status.textContent = "Still confirming access. This is taking a little longer than usual…";
+  }, 3000);
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), timeoutMs);
   try {
