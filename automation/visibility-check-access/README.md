@@ -12,7 +12,7 @@ The repository source is [`Code.gs`](Code.gs). No Google account, Tally setting 
 
    Keep the Sheet private. Copy its spreadsheet ID from the URL between `/d/` and `/edit`.
 
-2. From that Sheet, choose **Extensions → Apps Script**. Replace the starter code with the complete contents of `Code.gs` and save the project as `WAIA Visibility Check access`.
+2. At `script.google.com`, create a **new standalone Apps Script project** named `WAIA Visibility Check access`. Replace the starter code with the complete contents of `Code.gs` and save it. Use a standalone project because Google permits user-activated top-level navigation from standalone web apps.
 
 3. In **Project Settings → Script properties**, create `SHEET_ID` with the copied ID, `TALLY_FORM_ID` with `GxPbRz` (the published form ID), and `WEBHOOK_SECRET` with a freshly generated random value of at least 32 characters, preferably `openssl rand -hex 32`. Keep the secret private. `WEB_APP_URL` is filled in after deployment. Run `authoriseSetup` once from the Apps Script editor and approve the requested Sheets and Gmail permissions as Ben. The function checks access and creates no draft.
 
