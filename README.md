@@ -43,6 +43,7 @@ Then open `http://127.0.0.1:4173/`.
 - `/how-it-works/` - product operating model and implementation
 - `/pricing/` - annual licence pricing, scope and commercial FAQ
 - `/insights/` - WAIA workplace AI editorial index
+- `/insights/ai-adoption-is-rising-is-it-working/`
 - `/insights/how-to-measure-ai-time-savings-at-work/`
 - `/insights/ai-adoption-vs-ai-effectiveness/`
 - `/insights/shadow-ai-workplace-ai-adoption/`
