@@ -139,6 +139,10 @@ test("valid Tally request makes one ledger row and a Gmail draft, never sends", 
   assert.match(drafts[0][2], /^Hi Ada,/);
   assert.ok(drafts[0][2].includes(`${accessPage}?token=${rows[1][5]}`));
   assert.ok(!drafts[0][2].includes("script.google.com"));
+  assert.match(drafts[0][2], /expires after one use or after seven days\./);
+  assert.equal(typeof drafts[0][3], "object");
+  assert.match(drafts[0][3].htmlBody, /Open the Workplace AI Visibility Check/);
+  assert.ok(drafts[0][3].htmlBody.includes(`${accessPage}?token=${rows[1][5]}`));
   assert.ok(!drafts[0][2].includes("Ada@Example.com"));
   assert.ok(Date.parse(rows[1][10]) - Date.parse(rows[1][0]) === 7 * 86400000);
 });
