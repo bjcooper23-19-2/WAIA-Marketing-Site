@@ -1,2 +1,2 @@
-// Replace this value with the deployed Apps Script /exec URL before enabling the Tally webhook.
-export const redemptionEndpoint = "REPLACE_WITH_APPS_SCRIPT_WEB_APP_URL";
+export const redemptionEndpoint =
+  "https://script.google.com/macros/s/AKfycbzDlY_pdY9SCAizsBW7Hcs0BEYaZOsdqB3otbG-HUx95EFQfdeOrrlf0o32jSeIv3Fg1g/exec";
