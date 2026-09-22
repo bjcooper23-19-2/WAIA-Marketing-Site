@@ -65,6 +65,15 @@ function textField_(field, max) {
     .slice(0, max);
 }
 
+function escapeHtml_(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 function parseSubmission_(raw, expectedFormId) {
   if (typeof raw !== "string" || raw.length > 50000)
     throw new Error("Invalid payload");
@@ -241,12 +250,23 @@ function doPost(e) {
       "You can access it using this link:\n" +
       link +
       "\n\n" +
-      "The link is unique to your request and expires after one use or seven days.\n\n" +
+      "The link is unique to your request and expires after one use or after seven days.\n\n" +
       "Thank you,\nBen";
+    const htmlBody =
+      "<p>Hi " +
+      escapeHtml_(greeting) +
+      ",</p>" +
+      "<p>Thank you for requesting the Workplace AI Visibility Check.</p>" +
+      '<p><a href="' +
+      link +
+      '">Open the Workplace AI Visibility Check</a></p>' +
+      "<p>The link is unique to your request and expires after one use or after seven days.</p>" +
+      "<p>Thank you,<br>Ben</p>";
     GmailApp.createDraft(
       submission.email,
       "Your Workplace AI Visibility Check",
       body,
+      { htmlBody },
     );
     sheet
       .getRange(record.row, COL["Draft created at"] + 1)
