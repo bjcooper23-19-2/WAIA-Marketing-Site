@@ -16,40 +16,40 @@ test("requires an answer for every area", () => {
   );
 });
 
-test("groups answers by visibility without a score", () => {
-  const result = buildResult({
-    ...all("visible"),
-    data: "unclear",
-    review: "partial",
-  });
-  assert.deepEqual(
-    result.groups.unclear.map(({ id }) => id),
-    ["data"],
-  );
-  assert.deepEqual(
-    result.groups.partial.map(({ id }) => id),
-    ["review"],
-  );
-  assert.equal(result.groups.visible.length, 5);
+test("mostly middle gives a fragmented operating picture and relevant capabilities", () => {
+  const result = buildResult({ ...all("partial"), data: "visible" });
+  assert.equal(result.pattern, "fragmented");
+  assert.match(result.headline, /activity.*consistent operating picture/i);
+  assert.deepEqual(result.priorities.map(({ id }) => id), ["visibility", "review", "capacity"]);
+  assert.deepEqual(result.capabilities, ["Evidence for managers", "Human review and judgement", "Turning AI-created capacity into useful work"]);
+  assert.match(result.meaning, /shared visibility and repeatability/);
+  assert.match(result.start, /one recurring workflow/);
   assert.equal(Object.hasOwn(result, "score"), false);
 });
 
-test("prioritises unclear areas before partly visible ones and keeps next steps short", () => {
-  const result = buildResult({
-    ...all("partial"),
-    capacity: "unclear",
-    data: "unclear",
-  });
-  assert.deepEqual(
-    result.next.map(({ id }) => id),
-    ["data", "capacity", "review", "work"],
-  );
-  assert.ok(result.next.every(({ next }) => next.length > 50));
+test("mostly strong moves towards scaling and value", () => {
+  const result = buildResult(all("visible"));
+  assert.equal(result.pattern, "emerging");
+  assert.match(result.headline, /foundations/);
+  assert.deepEqual(result.priorities.map(({ id }) => id), ["scaling", "value", "capacityOpportunity"]);
+  assert.match(result.start, /compare how two teams/);
 });
 
-test("a fully visible result still offers useful checks", () => {
-  const result = buildResult(all("visible"));
-  assert.equal(result.next.length, 3);
+test("mostly weak starts with discovery", () => {
+  const result = buildResult(all("unclear"));
+  assert.equal(result.pattern, "limited");
+  assert.equal(result.priorities[0].id, "discovery");
+  assert.match(result.start, /ask the people doing it/);
+  assert.doesNotMatch(result.start, /scale|reinvest/i);
+});
+
+test("mixed answers surface the strongest contrast", () => {
+  const result = buildResult({ ...all("partial"), use: "visible", work: "visible", data: "visible", review: "unclear", capacity: "unclear" });
+  assert.equal(result.pattern, "contrast");
+  assert.match(result.interpretation, /strongest contrast/);
+  assert.deepEqual(result.priorities.map(({ id }) => id), ["review", "capacity", "practice"]);
+  assert.match(result.priorities[0].title, /unclear/);
+  assert.match(result.priorities[1].title, /unclear/);
 });
 
 test("question names and answer categories match the result logic", () => {
@@ -100,4 +100,11 @@ test("only the public explanation is indexed", () => {
       new RegExp(`workplace-ai-visibility-check/${state}/`),
     );
   }
+});
+
+test("result retains only print/save and WAIA actions", () => {
+  const page = readFileSync(new URL("../workplace-ai-visibility-check/results/index.html", import.meta.url), "utf8");
+  assert.match(page, /id="print-result"/);
+  assert.match(page, /href="\/go\/visibility-check\/"/);
+  assert.doesNotMatch(page, /Run the check again|Retake|Improve your score/i);
 });
