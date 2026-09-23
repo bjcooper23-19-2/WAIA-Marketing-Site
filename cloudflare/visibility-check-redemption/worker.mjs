@@ -3,6 +3,7 @@ const tokenPattern = /^[0-9a-f]{96}$/;
 const appsScriptPattern =
   /^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/;
 const contentPath = "/macros/echo";
+const maxResponseBytes = 1000;
 
 const responseLocation = (response) => {
   try {
@@ -27,7 +28,7 @@ const logUpstreamFailure = (category, response, length = null) => {
     error_category: category,
     status: response?.status ?? null,
     ...location,
-    content_type: mimeType && /^[a-z0-9.+-]+\/[a-z0-9.+-]+$/.test(mimeType)
+    content_type: ["application/json", "text/html", "text/plain"].includes(mimeType)
       ? mimeType
       : "other-or-unknown",
     response_length: length ?? (Number(response?.headers.get("content-length")) || null),
@@ -101,67 +102,51 @@ export async function handleRequest(request, env, fetchUpstream = fetch) {
         token: body.token,
         proxy_secret: env.APPS_SCRIPT_PROXY_SECRET,
       }),
-      redirect: "manual",
+      redirect: "follow",
     });
   } catch (_) {
     logUpstreamFailure("post_fetch_failed");
     return jsonResponse(false, 502);
   }
 
-  if (upstream.status !== 302 && upstream.status !== 303) {
-    logUpstreamFailure("unexpected_post_status", upstream);
-    return jsonResponse(false, 502);
-  }
-
-  let contentUrl;
-  try {
-    contentUrl = new URL(upstream.headers.get("location"));
-    if (
-      contentUrl.protocol !== "https:" ||
-      contentUrl.hostname !== "script.googleusercontent.com" ||
-      contentUrl.pathname !== contentPath ||
-      contentUrl.port ||
-      contentUrl.username ||
-      contentUrl.password
-    ) throw new Error("Unexpected ContentService redirect");
-  } catch (_) {
-    logUpstreamFailure("invalid_redirect", upstream);
-    return jsonResponse(false, 502);
-  }
-
-  try {
-    upstream = await fetchUpstream(contentUrl, {
-      method: "GET",
-      headers: { Accept: "application/json" },
-      redirect: "manual",
-    });
-  } catch (_) {
-    logUpstreamFailure("content_fetch_failed");
-    return jsonResponse(false, 502);
-  }
   if (upstream.status !== 200) {
-    logUpstreamFailure("unexpected_content_status", upstream);
+    logUpstreamFailure("unexpected_final_status", upstream);
     return jsonResponse(false, 502);
   }
   if (!/^application\/json(?:\s*;|$)/i.test(upstream.headers.get("content-type") || "")) {
-    logUpstreamFailure("unexpected_content_type", upstream);
+    logUpstreamFailure("unexpected_final_type", upstream);
     return jsonResponse(false, 502);
   }
 
   const responseLength = Number(upstream.headers.get("content-length") || 0);
-  if (responseLength > 1000) {
-    logUpstreamFailure("content_too_large", upstream, responseLength);
+  if (responseLength > maxResponseBytes) {
+    logUpstreamFailure("final_body_too_large", upstream, responseLength);
     return jsonResponse(false, 502);
   }
 
   let result;
-  let responseText;
+  let responseText = "";
+  let bytesRead = 0;
   try {
-    responseText = await upstream.text();
-    if (responseText.length > 1000) throw new Error("Content too large");
+    const reader = upstream.body?.getReader();
+    const decoder = new TextDecoder();
+    if (reader) {
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        bytesRead += value.byteLength;
+        if (bytesRead > maxResponseBytes) {
+          await reader.cancel();
+          logUpstreamFailure("final_body_too_large", upstream, bytesRead);
+          return jsonResponse(false, 502);
+        }
+        responseText += decoder.decode(value, { stream: true });
+      }
+      responseText += decoder.decode();
+    }
     result = JSON.parse(responseText);
   } catch (_) {
-    logUpstreamFailure("invalid_content_body", upstream, responseText?.length ?? null);
+    logUpstreamFailure("invalid_final_body", upstream, bytesRead);
     return jsonResponse(false, 502);
   }
   if (
@@ -171,7 +156,7 @@ export async function handleRequest(request, env, fetchUpstream = fetch) {
     Object.keys(result).length !== 1 ||
     typeof result.ok !== "boolean"
   ) {
-    logUpstreamFailure("invalid_content_shape", upstream, responseText.length);
+    logUpstreamFailure("invalid_final_shape", upstream, bytesRead);
     return jsonResponse(false, 502);
   }
   return jsonResponse(result.ok);
