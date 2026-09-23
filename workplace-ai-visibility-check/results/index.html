@@ -9,7 +9,7 @@
     <title>Your Workplace AI Visibility Check result | WAIA</title>
     <meta
       name="description"
-      content="Your private Workplace AI Visibility Check result and practical next questions."
+      content="Your private Workplace AI Visibility Check result with priority findings and a practical first step."
     />
     <meta
       property="og:title"
@@ -17,7 +17,7 @@
     />
     <meta
       property="og:description"
-      content="Your private Workplace AI Visibility Check result and practical next questions."
+      content="Your private Workplace AI Visibility Check result with priority findings and a practical first step."
     />
 
     <meta property="og:type" content="website" />
@@ -75,22 +75,30 @@
       <main id="top">
         <section class="hero check-hero">
           <div class="container check-layout">
-            <div class="eyebrow">Your working result</div>
-            <h1>What you can see today.</h1>
-            <p class="lede">
-              This is a snapshot of your answers, not an audit or an
-              organisational score. Use it to check examples with the people
-              doing the work.
-            </p>
+            <div class="eyebrow">Your Workplace AI Visibility Check result</div>
+            <h1 id="result-headline">Your working picture</h1>
+            <p class="lede" id="result-interpretation"></p>
           </div>
         </section>
         <section class="waia-light-section">
           <div class="container check-layout">
             <div class="check-card">
-              <div id="results-content" class="result-groups-wrapper"></div>
+              <div id="results-content">
+                <section aria-labelledby="findings-title">
+                  <h2 id="findings-title">Three priority findings</h2>
+                  <ol id="priority-findings" class="result-findings"></ol>
+                </section>
+              </div>
               <div class="result-details">
-                <h2>Questions to take into the work</h2>
-                <ol id="next-questions" class="result-next"></ol>
+                <section class="result-synthesis">
+                  <h2>What this means</h2>
+                  <p id="result-meaning"></p>
+                </section>
+                <section class="result-start">
+                  <h2>Start here</h2>
+                  <p id="result-start"></p>
+                  <p class="check-small" id="result-then"></p>
+                </section>
                 <div class="result-note" hidden>
                   <strong>Task you had in mind</strong
                   ><span id="note-example"></span>
@@ -98,33 +106,21 @@
                 <div class="result-note" hidden>
                   <strong>Where to start</strong><span id="note-focus"></span>
                 </div>
-                <p class="check-small">
-                  These suggestions come from your answers. Discuss them with
-                  colleagues before deciding what to change.
-                </p>
-                <div class="check-actions">
-                  <button type="button" class="btn primary" id="print-result">
-                    Print or save result</button
-                  ><a
-                    class="btn secondary"
-                    href="/workplace-ai-visibility-check/check/"
-                    >Run the check again</a
-                  >
-                </div>
               </div>
             </div>
             <div class="check-bridge">
-              <h2>From visibility to better ways of working.</h2>
+              <h2>From visibility to capability</h2>
               <p class="large-copy">
-                Visibility shows what is happening. WAIA helps organisations
-                build practical AI capability, use human judgement well, gather
-                evidence from real work and learn what should become repeatable
-                practice.
+                Seeing where AI is used is the first step. WAIA helps teams
+                build consistent ways of working, stronger human judgement and
+                review, practical application in real work, evidence for
+                managers and deliberate use of capacity gained.
               </p>
+              <p>Based on your answers, the most relevant areas are:</p>
+              <ul id="result-capabilities" class="result-capabilities"></ul>
               <div class="check-actions">
-                <a class="btn primary" href="/go/visibility-check/"
-                  >See WAIA in practice</a
-                >
+                <button type="button" class="btn secondary" id="print-result">Print or save result</button>
+                <a class="btn primary" href="/go/visibility-check/">See how WAIA develops these capabilities</a>
               </div>
             </div>
           </div>
