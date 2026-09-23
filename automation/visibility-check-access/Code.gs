@@ -261,7 +261,13 @@ function doPost(e) {
       link +
       "\n\n" +
       "The link is unique to your request and expires after one use or after seven days.\n\n" +
-      "Thank you,\nBen";
+      "Thank you,\n\n" +
+      "Ben Cooper\n" +
+      "Founder | WAIA\n" +
+      "Helping organisations make workplace AI visible, consistent and safe\n" +
+      "https://waia.co.uk/\n" +
+      "https://www.linkedin.com/in/ben-cooper-72564824/\n\n" +
+      "WAIA is a product of Nineteen Point Two Ltd";
     const htmlBody =
       "<p>Hi " +
       escapeHtml_(greeting) +
@@ -271,7 +277,13 @@ function doPost(e) {
       link +
       '">Open the Workplace AI Visibility Check</a></p>' +
       "<p>The link is unique to your request and expires after one use or after seven days.</p>" +
-      "<p>Thank you,<br>Ben</p>";
+      "<p>Thank you,</p>" +
+      "<p><strong>Ben Cooper</strong><br>" +
+      "<strong>Founder | WAIA</strong><br>" +
+      "<strong>Helping organisations make workplace AI visible, consistent and safe</strong></p>" +
+      '<p><a href="https://waia.co.uk/"><strong>waia.co.uk</strong></a><br>' +
+      '<a href="https://www.linkedin.com/in/ben-cooper-72564824/">LinkedIn</a></p>' +
+      "<p>WAIA is a product of Nineteen Point Two Ltd</p>";
     GmailApp.createDraft(
       submission.email,
       "Your Workplace AI Visibility Check",
