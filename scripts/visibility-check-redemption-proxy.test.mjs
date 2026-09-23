@@ -20,6 +20,18 @@ const request = (body = { token }, options = {}) =>
   });
 
 const resultBody = async (response) => JSON.parse(await response.text());
+const contentUrl =
+  "https://script.googleusercontent.com/macros/echo?user_content_key=one-time-key";
+const redirect = () =>
+  new Response(null, { status: 302, headers: { Location: contentUrl } });
+const content = (body, options = {}) =>
+  new Response(body, {
+    status: 200,
+    headers: { "Content-Type": "application/json" },
+    ...options,
+  });
+const redirectedFetch = (body) => async (_url, options) =>
+  options.method === "POST" ? redirect() : content(JSON.stringify(body));
 
 test("wrong method is rejected", async () => {
   const response = await handleRequest(
@@ -55,50 +67,103 @@ test("malformed body and token are rejected before Apps Script", async () => {
   assert.equal(calls, 0);
 });
 
-test("valid token calls Apps Script with redirect following and private secret", async () => {
+test("redeem POST follows the ContentService redirect with a separate GET", async () => {
   const calls = [];
   const response = await handleRequest(request(), env, async (...args) => {
     calls.push(args);
-    return Response.json({ ok: true });
+    return calls.length === 1 ? redirect() : content('{"ok":true}');
   });
   assert.equal(response.status, 200);
   assert.deepEqual(await resultBody(response), { ok: true });
-  assert.equal(calls.length, 1);
+  assert.equal(calls.length, 2);
   assert.equal(calls[0][0].origin, "https://script.google.com");
   assert.equal(calls[0][0].searchParams.get("action"), "redeem");
-  assert.equal(calls[0][1].redirect, "follow");
+  assert.equal(calls[0][1].redirect, "manual");
   assert.deepEqual(JSON.parse(calls[0][1].body), {
     token,
     proxy_secret: proxySecret,
   });
+  assert.equal(calls[1][0].href, contentUrl);
+  assert.equal(calls[1][1].method, "GET");
+  assert.equal(calls[1][1].redirect, "manual");
+  assert.equal(calls[1][1].body, undefined);
 });
 
 test("Apps Script true and false results are normalised", async () => {
   for (const ok of [true, false]) {
-    const response = await handleRequest(request(), env, async () =>
-      Response.json({ ok, email: "must-not-leak@example.com" }),
-    );
-    assert.equal(response.status, 200);
-    assert.deepEqual(await resultBody(response), { ok });
+    const confirmed = await handleRequest(request(), env, redirectedFetch({ ok }));
+    assert.equal(confirmed.status, 200);
+    assert.deepEqual(await resultBody(confirmed), { ok });
   }
+});
+
+test("a 303 ContentService redirect is accepted", async () => {
+  const response = await handleRequest(request(), env, async (_url, options) =>
+    options.method === "POST"
+      ? new Response(null, { status: 303, headers: { Location: contentUrl } })
+      : content('{"ok":true}'),
+  );
+  assert.deepEqual(await resultBody(response), { ok: true });
 });
 
 test("unexpected or failed upstream responses are retryable and safe", async () => {
   const responses = [
     async () => new Response("upstream failed", { status: 500 }),
-    async () => new Response("not json", { status: 200 }),
-    async () => Response.json({ email: "private@example.com" }),
+    async () => content('{"ok":true}'),
+    async () =>
+      new Response(null, {
+        status: 302,
+        headers: { Location: "https://example.com/macros/echo" },
+      }),
+    async () => new Response(null, { status: 307, headers: { Location: contentUrl } }),
+    async (_url, options) =>
+      options.method === "POST"
+        ? redirect()
+        : new Response("not json", {
+            status: 200,
+            headers: { "Content-Type": "text/html" },
+          }),
+    async (_url, options) =>
+      options.method === "POST" ? redirect() : content("not json"),
+    redirectedFetch({ ok: true, email: "private@example.com" }),
+    async (_url, options) =>
+      options.method === "POST"
+        ? redirect()
+        : new Response("no", { status: 405 }),
     async () => {
       throw new Error(`do not expose ${proxySecret}`);
     },
   ];
   for (const fetchUpstream of responses) {
-    const response = await handleRequest(request(), env, fetchUpstream);
+    const originalWarn = console.warn;
+    const logs = [];
+    console.warn = (...args) => logs.push(args);
+    let response;
+    try {
+      response = await handleRequest(request(), env, fetchUpstream);
+    } finally {
+      console.warn = originalWarn;
+    }
     const text = await response.text();
     assert.equal(response.status, 502);
     assert.equal(text, '{"ok":false}');
     assert.doesNotMatch(text, /private|example|proxy|script|secret/i);
+    assert.equal(logs.length, 1);
+    assert.doesNotMatch(JSON.stringify(logs), new RegExp(`${token}|${proxySecret}|private@example`));
   }
+});
+
+test("a second redemption remains inactive", async () => {
+  let redemptions = 0;
+  const fetchUpstream = async (_url, options) => {
+    if (options.method === "POST") {
+      redemptions += 1;
+      return redirect();
+    }
+    return content(JSON.stringify({ ok: redemptions === 1 }));
+  };
+  assert.deepEqual(await resultBody(await handleRequest(request(), env, fetchUpstream)), { ok: true });
+  assert.deepEqual(await resultBody(await handleRequest(request(), env, fetchUpstream)), { ok: false });
 });
 
 test("configuration details are never returned", async () => {
