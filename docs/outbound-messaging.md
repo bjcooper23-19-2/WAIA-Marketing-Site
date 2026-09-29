@@ -90,6 +90,20 @@ Do not present hours saved as realised financial value unless there is evidence 
 
 Outbound should sound commercially credible, not inflated.
 
+## Voice And Conviction
+
+Outbound should be direct about WAIA's established point of view without pretending to know facts about the recipient's organisation.
+
+State doctrinal positions clearly, then distinguish them from prospect-specific assumptions.
+
+For example:
+
+> AI adoption is not evidence that work has improved. I don't know whether that gap is showing up at your organisation, but it is the problem WAIA is built to make visible.
+
+Avoid weakening the WAIA position itself with habitual "I think", "perhaps" or "I wonder" language. Use qualification where the uncertainty concerns the prospect, the evidence or the specific situation.
+
+Conviction should improve clarity, not turn outbound into provocation.
+
 ## CTA Guidance
 
 Prefer low-friction language such as:
