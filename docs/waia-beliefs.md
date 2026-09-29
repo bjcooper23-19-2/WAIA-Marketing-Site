@@ -374,6 +374,40 @@ Prefer language such as:
 
 Do not replace **AI** with vague euphemisms where that would reduce clarity. The aim is not to avoid the term. It is to stop making the technology the subject of every sentence.
 
+## Voice Principle: State The Position
+
+WAIA has a defined point of view. Where that point of view is established by this doctrine, public content should state it clearly rather than habitually soften it into a personal reflection or rhetorical question.
+
+**Write from conviction, not observation.**
+
+Lead with the claim, then support it with reasoning, evidence or a practical example. Give the reader something meaningful to agree or disagree with.
+
+Prefer:
+
+- **AI adoption is not AI usage.**
+- **Time saved by AI has no inherent business value until the released capacity is deliberately used.**
+- **Human review is not an effective control if the reviewer lacks the context, capability or authority to challenge the output.**
+- **The goal is not to put AI into more work. It is to make the work better.**
+
+Avoid unnecessarily weakening an established position with phrases such as:
+
+- I think
+- I wonder
+- perhaps
+- it feels like
+- maybe
+- question-led endings used to avoid taking a position
+
+This is not a licence to manufacture controversy or certainty. Where evidence is genuinely incomplete, contested or uncertain, say so. Claims should remain proportionate and evidence-led.
+
+**Certainty should come from doctrine and evidence, not performance.**
+
+Before publishing, ask:
+
+**What does WAIA actually believe here?**
+
+If the answer is clear, state it.
+
 ## Implications For Insights And LinkedIn
 
 WAIA content should repeatedly apply this belief system to current conversations about technology, work, management and organisational change.
