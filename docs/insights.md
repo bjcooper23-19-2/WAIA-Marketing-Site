@@ -91,6 +91,27 @@ This roadmap is a prioritised direction of travel, not a rigid publishing calend
 
 Future roadmap additions should deliberately broaden into people, management, culture, workflow design, organisational learning and automation where they strengthen the core doctrine.
 
+## Editorial Voice
+
+Insights should make an argument, not merely explore a topic.
+
+Where WAIA has an established position, lead with the governing claim and support it with evidence, reasoning and practical implications. Do not weaken a clear conclusion with unnecessary "I think", "I wonder", "perhaps", "maybe" or question-led framing.
+
+Titles and openings may be deliberately assertive when the article can substantiate the claim. Useful forms include:
+
+- a direct proposition
+- a challenge to a common assumption
+- a clear distinction between activity and outcome
+- a practical question that the article then answers decisively
+
+The objective is not provocation for its own sake. Strong claims still need proportionate evidence, and genuine uncertainty should remain visible.
+
+Before approving an Insight, ask:
+
+**What does WAIA actually believe here?**
+
+If the answer is clear, the article should state it.
+
 ## Editorial Acceptance Test
 
 Before a proposed Insight moves into production, check:
