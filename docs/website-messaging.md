@@ -162,6 +162,16 @@ Prefer the language of:
 
 Do not replace AI with vague wording when the reader needs to know what technology is being discussed.
 
+## Voice And Point Of View
+
+Website copy should state WAIA's established positions directly.
+
+Do not dilute a clear proposition with unnecessary qualifiers such as "we think", "we believe", "perhaps" or "maybe". If the doctrine supports the claim, make the claim and then explain or evidence it.
+
+This does not override the proof and claims boundaries above. Uncertain, emerging or externally contested claims should remain appropriately qualified.
+
+The site should sound confident because the position is considered and defensible, not because the copy is trying to sound provocative.
+
 ## CTA Guidance
 
 Calls to action should match the problem WAIA solves.

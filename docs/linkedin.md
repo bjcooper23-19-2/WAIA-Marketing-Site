@@ -122,6 +122,44 @@ Avoid:
 
 The doctrine should be visible in the thinking, not pasted into every comment.
 
+## Conviction-Led Voice
+
+LinkedIn should make WAIA's point of view recognisable.
+
+Where the doctrine establishes a position, state it directly. Do not habitually turn a clear belief into "I think", "I wonder", "perhaps", "maybe" or a rhetorical question simply to make the post feel conversational.
+
+A strong post or comment should usually contain a proposition the reader can meaningfully agree or disagree with.
+
+Prefer:
+
+> AI literacy isn't enough.
+
+over:
+
+> I wonder whether we're putting too much emphasis on AI literacy.
+
+Prefer:
+
+> Saving time with AI creates potential capacity. It does not create business value on its own.
+
+over:
+
+> I think there is an interesting question about what happens to the time AI saves.
+
+Prefer:
+
+> Putting a human in the loop does not automatically make AI safe.
+
+over:
+
+> Perhaps we need to think differently about human review.
+
+Questions remain useful when the subject is genuinely unresolved or when asking for specific evidence. They should not be used to avoid stating an established WAIA position.
+
+Comments may disagree directly and constructively. "I disagree with this part, and here's why" can be more useful than searching for a polite question to add.
+
+Do not manufacture hot takes, exaggerate certainty or become combative. The standard is **clear, defensible conviction**.
+
 ## Content Strategy
 
 WAIA and personal-account content can explore the same worldview from different angles.
