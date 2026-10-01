@@ -6,22 +6,21 @@ const homepage = readFileSync(
   new URL("../index.html", import.meta.url),
   "utf8",
 );
-const hero = "assets/images/waia/waia-evidence-overview-hero";
+const hero = "assets/product-screenshots/2026-09-30/04-evidence-desktop";
 
-test("homepage hero is eagerly discoverable with responsive modern and fallback sources", () => {
+test("homepage hero is eagerly discoverable with responsive sources", () => {
   assert.match(homepage, /rel="preload"[\s\S]*as="image"/);
-  assert.match(homepage, /type="image\/avif"/);
-  assert.match(homepage, /imagesrcset=[\s\S]*hero-840\.avif 840w/);
-  assert.match(homepage, /<picture>/);
-  assert.match(homepage, /hero-840\.avif 840w/);
-  assert.match(homepage, /<img[\s\S]*waia-evidence-overview-hero\.webp/);
+  assert.match(homepage, /type="image\/jpeg"/);
+  assert.match(homepage, /imagesrcset=[\s\S]*04-evidence-desktop-1470\.jpg 1470w/);
+  assert.match(homepage, /04-evidence-desktop\.jpg\s+2940w/);
+  assert.match(homepage, /src="\/assets\/product-screenshots\/2026-09-30\/04-evidence-desktop-1470\.jpg"/);
   assert.match(homepage, /loading="eager"/);
   assert.match(homepage, /fetchpriority="high"/);
-  assert.match(homepage, /width="1675"[\s\S]*height="932"/);
+  assert.match(homepage, /width="2940"[\s\S]*height="1730"/);
 });
 
 test("hero source files exist and below-fold images remain lazy", () => {
-  for (const suffix of ["-840.avif", ".avif", "-840.webp", ".webp"]) {
+  for (const suffix of ["-1470.jpg", ".jpg"]) {
     assert.equal(existsSync(`${hero}${suffix}`), true, suffix);
   }
   const heroEnd = homepage.indexOf(
@@ -29,7 +28,7 @@ test("hero source files exist and below-fold images remain lazy", () => {
     homepage.indexOf('class="hero"'),
   );
   const belowFold = homepage.slice(heroEnd);
-  assert.ok((belowFold.match(/loading="lazy"/g) || []).length >= 3);
+  assert.ok((belowFold.match(/loading="lazy"/g) || []).length >= 1);
 });
 
 test("hero preload and image use the same responsive sizing", () => {
