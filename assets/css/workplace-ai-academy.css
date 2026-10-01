@@ -545,6 +545,28 @@ h3 {
   pointer-events: none;
 }
 
+.commercial-entry-card .card-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 24px;
+  align-items: start;
+}
+
+.commercial-entry-card {
+  align-self: center;
+}
+
+.commercial-entry-card .card-inner > p {
+  grid-column: 1;
+  margin-bottom: 0;
+}
+
+.commercial-entry-card .btn {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: end;
+}
+
 .card-inner,
 .feature-panel > * {
   position: relative;
@@ -872,7 +894,7 @@ h3 {
 .waia-operating-loop {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 12px;
   padding: 30px 0 26px;
 }
@@ -1184,8 +1206,19 @@ h3 {
 .buyer-route-grid,
 .document-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
+}
+
+.buyer-route-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.buyer-route-grid > article {
+  grid-column: span 2;
+}
+
+.buyer-route-grid > article:nth-last-child(-n + 2) {
+  grid-column: span 3;
 }
 
 .document-grid {
@@ -1234,12 +1267,33 @@ h3 {
   background: var(--waia-clarity-white);
 }
 
-.journey-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+.waia-start-steps.journey-grid-five {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
-.journey-grid article:last-child {
+.journey-grid-five > article {
   grid-column: span 2;
+}
+
+.journey-grid-five > article:nth-last-child(-n + 2) {
+  grid-column: span 3;
+}
+
+.waia-start-steps.journey-grid-seven {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.journey-grid-seven > article {
+  grid-column: span 3;
+}
+
+.journey-grid-seven > article:nth-last-child(-n + 3) {
+  grid-column: span 4;
+}
+
+.journey-grid-five > article:nth-child(3)::after,
+.journey-grid-seven > article:nth-child(4)::after {
+  display: none;
 }
 
 .product-card,
@@ -1255,10 +1309,9 @@ h3 {
 .product-card,
 .step-card,
 .outcome-card {
-  min-height: 230px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .index {
@@ -1317,7 +1370,6 @@ h3 {
 
 .simple-process-grid .outcome-card {
   grid-column: span 2;
-  min-height: 170px;
 }
 
 .simple-process-grid .outcome-card:nth-child(4) {
@@ -1691,13 +1743,21 @@ tr:last-child td {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.package-card-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .package-card-grid-two,
 .package-faq-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.package-step-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+.waia-start-steps.package-step-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.package-step-grid > article:nth-child(2)::after {
+  display: none;
 }
 
 .package-card-grid .outcome-card,
@@ -1706,13 +1766,16 @@ tr:last-child td {
 }
 
 .package-faq-grid .outcome-card {
-  min-height: 0;
-  justify-content: flex-start;
-  gap: 28px;
+  gap: 0;
 }
 
 .package-card-grid .check-list li {
   line-height: 1.48;
+}
+
+.outcome-card .check-list,
+.fit-route-card .check-list {
+  margin-top: 8px;
 }
 
 .light-check-list li::before {
@@ -1864,7 +1927,6 @@ section:not(.waia-light-section) .buyer-fit-list p {
 
 .waia-start-steps article {
   position: relative;
-  min-height: 250px;
   padding: 22px;
   border: 1px solid rgba(var(--product-accent-rgb), 0.24);
   border-radius: var(--radius-md);
@@ -1896,7 +1958,7 @@ section:not(.waia-light-section) .buyer-fit-list p {
   width: 34px;
   height: 34px;
   place-items: center;
-  margin-bottom: 34px;
+  margin-bottom: 24px;
   border: 1px solid var(--product-accent-border);
   border-radius: 999px;
   color: var(--product-accent);
@@ -2196,17 +2258,29 @@ footer {
   .document-grid,
   .waia-evidence-scale,
   .waia-value-grid,
-  .conversion-question-grid,
   .workflow-example-grid,
-  .simple-process-grid,
   .product-proof-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .outcomes-grid,
+  .conversion-question-grid,
+  .simple-process-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .outcomes-grid > *,
+  .conversion-question-grid > *,
   .simple-process-grid .outcome-card,
   .simple-process-grid .outcome-card:nth-child(4),
   .simple-process-grid .outcome-card:nth-child(5) {
-    grid-column: auto;
+    grid-column: span 2;
+  }
+
+  .outcomes-grid > :last-child:nth-child(odd),
+  .conversion-question-grid > :last-child:nth-child(odd),
+  .simple-process-grid .outcome-card:last-child {
+    grid-column: 2 / span 2;
   }
 
   .hero-product-proof {
@@ -2256,7 +2330,7 @@ footer {
   }
 
   .waia-operating-loop {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     row-gap: 28px;
   }
 
@@ -2280,12 +2354,32 @@ footer {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .journey-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .waia-start-steps.journey-grid-five,
+  .waia-start-steps.journey-grid-seven {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .journey-grid article:last-child {
-    grid-column: auto;
+  .journey-grid > article,
+  .journey-grid-five > article:nth-last-child(-n + 2),
+  .journey-grid-seven > article:nth-last-child(-n + 3) {
+    grid-column: span 2;
+  }
+
+  .journey-grid > article:last-child {
+    grid-column: 2 / span 2;
+  }
+
+  .buyer-route-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .buyer-route-grid > article,
+  .buyer-route-grid > article:nth-last-child(-n + 2) {
+    grid-column: span 2;
+  }
+
+  .buyer-route-grid > article:last-child {
+    grid-column: 2 / span 2;
   }
 
   .pricing-grid {
@@ -2508,6 +2602,49 @@ footer {
   .document-grid,
   .summary-card-grid {
     grid-template-columns: 1fr;
+  }
+
+  .waia-start-steps.journey-grid-five,
+  .waia-start-steps.journey-grid-seven,
+  .waia-start-steps.package-step-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .journey-grid > article,
+  .journey-grid > article:last-child,
+  .journey-grid-five > article:nth-last-child(-n + 2),
+  .journey-grid-seven > article:nth-last-child(-n + 3),
+  .buyer-route-grid > article,
+  .buyer-route-grid > article:last-child,
+  .buyer-route-grid > article:nth-last-child(-n + 2) {
+    grid-column: auto;
+  }
+
+  .outcomes-grid > *,
+  .outcomes-grid > :last-child:nth-child(odd),
+  .conversion-question-grid > *,
+  .conversion-question-grid > :last-child:nth-child(odd),
+  .simple-process-grid .outcome-card,
+  .simple-process-grid .outcome-card:nth-child(4),
+  .simple-process-grid .outcome-card:nth-child(5),
+  .simple-process-grid .outcome-card:last-child {
+    grid-column: auto;
+  }
+
+  .commercial-entry-card .card-inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .commercial-entry-card {
+    align-self: start;
+  }
+
+  .commercial-entry-card .btn {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+    margin-top: 16px;
   }
 
   .clarity-panel-head,
