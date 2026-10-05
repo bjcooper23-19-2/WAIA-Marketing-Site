@@ -1,17 +1,22 @@
 (() => {
   const sources = new Set(["ap", "gm", "19", "li"]);
+  const safeContentPattern = /^[a-z0-9][a-z0-9-]{0,63}$/;
   const match = window.location.pathname.match(/^\/go\/see-waia\/([^/]+)\/$/);
   const source = match && sources.has(match[1]) ? match[1] : null;
+  const params = new URLSearchParams(window.location.search);
+  const contentValues = params.getAll("c");
+  const content =
+    contentValues.length === 1 && safeContentPattern.test(contentValues[0])
+      ? contentValues[0]
+      : null;
   const destination = new URL("https://tally.so/r/objzGM");
   destination.searchParams.set("product", "WAIA");
   destination.searchParams.set(
     "enquiry_type",
-    new URLSearchParams(window.location.search).get("enquiry_type") ===
-      "procurement"
-      ? "procurement"
-      : "walkthrough",
+    params.get("enquiry_type") === "procurement" ? "procurement" : "walkthrough",
   );
   if (source) destination.searchParams.set("s", source);
+  if (content) destination.searchParams.set("c", content);
 
   let forwarded = false;
   let observer;
