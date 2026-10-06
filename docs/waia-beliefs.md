@@ -408,6 +408,55 @@ Before publishing, ask:
 
 If the answer is clear, state it.
 
+## Natural Voice Principle: Do Not Polish The Person Out Of The Point
+
+WAIA content should sound like an experienced person explaining a considered point to another intelligent person.
+
+**Write closer to how Ben would actually say it out loud.**
+
+Preserve the directness, judgement, rhythm and personality of the original thought. Editing should make the point clearer and tighter. It should not make it safer, more corporate, more abstract or more like conventional thought leadership.
+
+A useful test is:
+
+**If the polished version sounds less like something Ben would actually say, it is worse.**
+
+Prefer ordinary, specific language over professional sanitisation. A straightforward opinion should remain a straightforward opinion.
+
+For example, prefer:
+
+> Are we actually making this better, or just changing it because we think we need AI?
+
+over:
+
+> It raises an interesting question about whether organisations are sufficiently focused on improving the underlying work.
+
+Prefer:
+
+> Saving time isn't ROI.
+
+over:
+
+> There may be another dimension worth considering when evaluating productivity gains.
+
+This does not mean copying another creator's mannerisms, manufacturing informality, adding profanity for effect, or making every sentence abrupt. It means removing the unnecessary layer of corporate and thought-leadership language between the underlying judgement and the published words.
+
+The voice should feel:
+
+- human rather than generated
+- direct rather than sanitised
+- specific rather than abstract
+- commercially experienced rather than consultant-like
+- comfortable making a judgement
+- natural enough to say aloud
+
+Before publishing, read the copy aloud and ask:
+
+**Would Ben actually say this?**
+
+If not, rewrite it.
+
+This principle applies across LinkedIn posts and comments, Insights, website copy, outbound messaging and other public WAIA content.
+
 ## Implications For Insights And LinkedIn
 
 WAIA content should repeatedly apply this belief system to current conversations about technology, work, management and organisational change.
