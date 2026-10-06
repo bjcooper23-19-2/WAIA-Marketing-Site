@@ -160,6 +160,35 @@ Comments may disagree directly and constructively. "I disagree with this part, a
 
 Do not manufacture hot takes, exaggerate certainty or become combative. The standard is **clear, defensible conviction**.
 
+## Sound Like Ben
+
+LinkedIn is the channel where the natural voice rule matters most.
+
+Draft from the underlying thought before polishing it. Keep the language Ben would use when explaining the point out loud to an intelligent person sitting opposite him.
+
+Do not translate a clear opinion into conventional LinkedIn thought-leadership language.
+
+Editing should remove clutter, repetition and ambiguity without removing personality, judgement or edge.
+
+Avoid openings and transitions such as:
+
+- "One thing that struck me..."
+- "This got me thinking..."
+- "It raises an interesting question..."
+- "There's an important conversation to be had..."
+- "In today's rapidly changing landscape..."
+- other generic framing that delays the actual point
+
+Start with the point when the point is already clear.
+
+Do not manufacture casualness, slang, profanity or controversy to sound human. The goal is not performance. It is to preserve the way Ben naturally reasons and speaks.
+
+Final read-aloud test:
+
+**Would Ben actually say this to someone?**
+
+If the answer is no, rewrite it before publishing.
+
 ## Content Strategy
 
 WAIA and personal-account content can explore the same worldview from different angles.
@@ -224,5 +253,6 @@ Before posting or commenting, check:
 4. Is the language natural rather than doctrinal or over-produced?
 5. Is any material claim credible and proportionate?
 6. Would the comment or post still be worthwhile if WAIA were not mentioned?
+7. Would Ben actually say this out loud, or has the editing made it sound like thought leadership?
 
 If the answer is mostly no, it is probably not worth publishing.
