@@ -172,6 +172,16 @@ This does not override the proof and claims boundaries above. Uncertain, emergin
 
 The site should sound confident because the position is considered and defensible, not because the copy is trying to sound provocative.
 
+## Natural Voice
+
+Website copy still needs clarity and structure, but it should not become generic SaaS language.
+
+Prefer straightforward explanations and concrete claims over polished marketing abstractions. Keep the judgement and plain language that make WAIA sound like it is run by experienced operators rather than a marketing department.
+
+Editing should make copy easier to understand, not more corporate.
+
+Do not force Ben's conversational mannerisms into product UI or functional copy. Apply the principle proportionately: the website should sound human and direct while remaining clear, concise and usable.
+
 ## CTA Guidance
 
 Calls to action should match the problem WAIA solves.
@@ -203,5 +213,6 @@ When reviewing a page, ask:
 5. Does it avoid unsupported productivity and ROI claims?
 6. Does it sound distinct from generic AI training and governance providers?
 7. Is the language commercially clear rather than abstract?
+8. Does it sound human and direct rather than like generic SaaS or AI marketing?
 
 If a page fails several of these tests, it should be reviewed against the doctrine before further optimisation.
