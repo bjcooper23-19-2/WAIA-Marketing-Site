@@ -47,9 +47,9 @@ const patterns = {
     priorities: ["review", "capacity", "practice"],
   },
   fragmented: {
-    headline: "You have activity, but not yet a consistent operating picture.",
+    headline: "AI use varies across teams, and managers cannot yet see the full picture.",
     interpretation: "Your answers suggest AI is already part of work, but management visibility varies by team or workflow. Human review and useful ways of working may depend on local habits. That makes it harder to decide where to improve practice or deliberately use capacity gained.",
-    meaning: "The issue is not a lack of AI activity. It is a lack of shared visibility and repeatability around that activity.",
+    meaning: "Teams are using AI, but managers cannot yet compare how the work is done or reviewed.",
     start: "Choose one recurring workflow where AI is already used. Document how AI contributes, who reviews the output, where human judgement sits and what happens to any time saved.",
     then: "Compare that workflow across two teams to see what differs.",
     priorities: ["visibility", "review", "capacity"],
@@ -65,7 +65,7 @@ const patterns = {
   emerging: {
     headline: "You have the foundations of a more repeatable way of working.",
     interpretation: "Your answers suggest comparatively strong visibility and human review. The next test is whether useful approaches are shared across teams and whether time gained is put to deliberate use.",
-    meaning: "A clearer operating picture creates room to scale what works. Real examples, comparison across teams and evidence of value will keep that picture current.",
+    meaning: "Compare real examples across teams to decide what is worth repeating and where local differences still matter.",
     start: "Select one AI-assisted workflow with a useful outcome and compare how two teams carry it out, including review and the use of any time saved.",
     then: "Agree which parts should become common practice.",
     priorities: ["scaling", "value", "capacityOpportunity"],

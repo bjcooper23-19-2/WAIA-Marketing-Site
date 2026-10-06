@@ -16,9 +16,9 @@ Most organisations can tell you how many people have access to AI tools. Far few
 
 ## Executive summary
 
-AI tools are increasingly embedded in the daily operations of small and medium-sized businesses. However, inconsistent and unmanaged AI use can generate hidden operational drag that gradually erodes financial performance.
+AI tools are becoming part of daily work in small and medium-sized businesses. When teams use them without shared standards or review, checking, rework and duplicated effort can add costs that are easy to miss.
 
-This briefing presents a scenario-based thought experiment for a 50-person SMB illustrating potential annual labour and direct AI tool costs under conservative, moderate and high-friction assumptions. The model deliberately uses illustrative assumptions, not industry benchmarks or guaranteed outcomes, to help leaders appreciate where operational friction may accumulate. Common sources of drag include rework, manager review burden, duplicated effort and unmanaged AI-related spend.
+The 50-person business model below estimates annual labour and direct AI tool costs under conservative, moderate and high-friction assumptions. Its figures are illustrative, not industry benchmarks or guaranteed outcomes. It shows how rework, manager review, duplicated effort and unmanaged tool spend can add up.
 
 Training alone rarely eliminates these hidden costs, so leaders should measure and address behavioural patterns through an AI effectiveness baseline.
 
@@ -44,7 +44,7 @@ Leadership often underestimates these hidden costs, assuming AI is inherently a 
 
 AI amplifies existing work patterns but doesn't replace the need for clear standards, ownership and leadership oversight.
 
-Unmanaged AI use creates operational noise and friction, generating labour drag and unpredictable costs. The commercial impact comes not from the technology itself but from inconsistent behavioural execution.
+When AI use varies across teams, managers may spend more time checking work, people may repeat tasks and tool costs can be harder to control.
 
 ## Scenario model: a 50-person SMB thought experiment
 
@@ -163,4 +163,4 @@ Responsible AI adoption demands measured management of behaviours, workflows and
 
 ## Related
 
-[WAIA](/) supports organisations seeking greater visibility into workplace AI adoption, behaviour and operational risk.
+[WAIA](/) helps organisations see where AI is being used in work and what the evidence says about its effect.

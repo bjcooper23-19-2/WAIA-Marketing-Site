@@ -422,12 +422,11 @@ const renderIndex = (articles) => {
         <section class="insights-hero">
           <div class="container">
             <div class="eyebrow">Insights</div>
-            <h1>Practical thinking for evidence-led workplace AI management.</h1>
+            <h1>Clear thinking on workplace AI and the work it changes.</h1>
             <p class="lede">
-              WAIA Insights is a calm editorial home for making workplace AI use visible,
-              evidenced and manageable. The focus is operational: what AI is doing to
-              real work, how managers support judgement and how organisations avoid
-              confusing activity, adoption and productivity claims with value.
+              AI use is spreading through everyday work. These articles look at what
+              changes for people and managers, where checking or rework grows, and
+              what evidence helps a business decide whether the work improved.
             </p>
           </div>
         </section>
@@ -435,11 +434,11 @@ const renderIndex = (articles) => {
           <div class="container">
             <div class="section-head">
               <div class="eyebrow">Latest thinking</div>
-              <h2>Operator-led notes on AI use in the work itself.</h2>
+              <h2>Where AI helps, adds work or goes unseen.</h2>
               <p>
-                These pieces aren’t generic AI commentary. They examine the practical
-                signals leaders need when informal use, workflow variation, checking
-                burden, manager confidence and evidence of effective AI use start to matter.
+                Read about AI use in everyday tasks, differences between teams,
+                checking and rework, and what managers need to see before they can
+                judge its value.
               </p>
             </div>
             <div class="insight-grid">
@@ -450,11 +449,11 @@ const renderIndex = (articles) => {
         <section class="insights-cta-section">
           <div class="container insights-cta-panel">
             <div>
-              <div class="eyebrow">From thinking to operating rhythm</div>
-              <h2>See how WAIA turns adoption into evidence you can use.</h2>
+              <div class="eyebrow">See WAIA at work</div>
+              <h2>See how WAIA helps managers review the work.</h2>
               <p>
-                WAIA helps organisations move from informal AI use to shared guidance,
-                real-work evidence, management review and better decisions about AI.
+                WAIA brings guidance, examples from real work and evidence strength
+                together so managers can decide what needs attention.
               </p>
             </div>
             <div class="hero-actions">
@@ -516,7 +515,7 @@ const renderArticle = (article) =>
                   ? `
                 <aside class="insight-tool-cta" aria-labelledby="visibility-check-cta-title">
                   <div class="eyebrow">Free working tool</div>
-                  <h2 id="visibility-check-cta-title">Not sure how much visibility you actually have?</h2>
+                  <h2 id="visibility-check-cta-title">Check what managers can actually see.</h2>
                   <p>The free Workplace AI Visibility Check gives you seven practical questions about current use, affected work, human review and capacity. Allow around 10–15 minutes and take a practical result back into the business.</p>
                   <a class="btn primary" href="/workplace-ai-visibility-check/">Start the Workplace AI Visibility Check →</a>
                 </aside>`
@@ -528,13 +527,12 @@ const renderArticle = (article) =>
         <section class="article-cta-section">
           <div class="container article-cta-panel">
             <div>
-              <div class="eyebrow">WAIA operating note</div>
-              <h2>Move from activity signals to workplace evidence.</h2>
+              <div class="eyebrow">What WAIA helps you see</div>
+              <h2>See what AI is doing to the work.</h2>
               <p>
-                This article points to a practical management question: can leaders see
-                how AI use is changing work, judgement, checking and follow-up? WAIA
-                helps make those signals visible without turning evidence into
-                surveillance.
+                WAIA helps managers review where AI is changing work, what needs
+                checking and what the evidence supports, without monitoring prompts
+                or scoring people.
               </p>
             </div>
             <div class="hero-actions">
