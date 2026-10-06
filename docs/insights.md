@@ -112,6 +112,18 @@ Before approving an Insight, ask:
 
 If the answer is clear, the article should state it.
 
+### Natural Voice
+
+An Insight can be more developed than a LinkedIn post without becoming impersonal.
+
+Write as an experienced operator explaining a real problem clearly. Preserve straightforward judgements and ordinary language where they carry the argument better than polished business phrasing.
+
+Do not inflate a simple point into thought-leadership language. Do not add scene-setting, rhetorical framing or professional-sounding transitions merely to make an article feel substantial.
+
+Editing should improve structure, evidence and precision while preserving the human voice underneath.
+
+Read important passages aloud. If they sound unlike something Ben would naturally explain to another operator, simplify them.
+
 ## Editorial Acceptance Test
 
 Before a proposed Insight moves into production, check:
@@ -126,6 +138,8 @@ Before a proposed Insight moves into production, check:
 - Is there a reason to publish it now?
 - Would the argument still be useful and credible if the article did not mention WAIA?
 - Does it remain consistent with the principles and boundaries in `docs/waia-beliefs.md`?
+- Does it sound like a real operator making an argument rather than polished thought leadership or generated copy?
+- Would Ben naturally say the key claims out loud?
 
 ## Source And Output
 
