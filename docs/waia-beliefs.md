@@ -457,6 +457,18 @@ If not, rewrite it.
 
 This principle applies across LinkedIn posts and comments, Insights, website copy, outbound messaging and other public WAIA content.
 
+## Writing Quality Principle: Generated-Sounding Writing Is A Quality Failure
+
+WAIA content should not rely on formulaic hooks, artificial contrasts, faux profundity, generic business language, manufactured punchlines or other recognisable patterns of generated thought-leadership content.
+
+**Generated-sounding writing is a quality failure.**
+
+Do not fix these patterns mechanically or simply swap one stock phrase for another. If removing them exposes a weak argument, return to the underlying idea and rewrite it.
+
+The objective is not to disguise AI involvement or to optimise for AI-detection tools. It is to ensure the finished work is genuinely worth publishing, carries a real point of view and sounds like the person or organisation publishing it.
+
+Detailed channel or workflow instructions may apply stricter editorial checks where useful. Those checks should implement this principle rather than create a separate voice.
+
 ## Implications For Insights And LinkedIn
 
 WAIA content should repeatedly apply this belief system to current conversations about technology, work, management and organisational change.
