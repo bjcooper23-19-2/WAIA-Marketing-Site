@@ -16,13 +16,13 @@ test("requires an answer for every area", () => {
   );
 });
 
-test("mostly middle gives a fragmented operating picture and relevant capabilities", () => {
+test("mostly middle shows gaps across teams and relevant capabilities", () => {
   const result = buildResult({ ...all("partial"), data: "visible" });
   assert.equal(result.pattern, "fragmented");
-  assert.match(result.headline, /activity.*consistent operating picture/i);
+  assert.match(result.headline, /AI use varies across teams/i);
   assert.deepEqual(result.priorities.map(({ id }) => id), ["visibility", "review", "capacity"]);
   assert.deepEqual(result.capabilities, ["Evidence for managers", "Human review and judgement", "Turning AI-created capacity into useful work"]);
-  assert.match(result.meaning, /shared visibility and repeatability/);
+  assert.match(result.meaning, /compare how the work is done or reviewed/);
   assert.match(result.start, /one recurring workflow/);
   assert.equal(Object.hasOwn(result, "score"), false);
 });

@@ -18,7 +18,7 @@ Different teams are using different tools, in different ways, with different sta
 
 The organisation may believe it’s moving forward. But underneath the visible activity, unmanaged variation is building.
 
-This is what happens when every team uses AI differently. Not the cost of licences. Not the cost of technology access. The cost of inconsistent behaviours becoming embedded in operational workflows before leadership has enough visibility, control or confidence to manage them.
+When every team uses AI differently, the cost goes beyond licences. Different review habits and ways of working can take hold before managers can see or address them.
 
 Most organisations have better visibility into software spend than into how AI is actually used in day-to-day work. That gap matters because AI inconsistency rarely appears first as a governance problem. It appears as execution variability.
 
@@ -34,7 +34,7 @@ That isn’t surprising. The tools are easy to access, easy to trial and immedia
 
 This creates a misleading picture for leadership. High usage can be mistaken for mature adoption. Enthusiasm can be mistaken for capability. Individual productivity gains can be mistaken for organisational performance improvement.
 
-Many organisations believe they are adopting AI strategically when they are actually accumulating unmanaged behavioural variation.
+Many organisations see rising AI use without seeing how differently their teams are doing the work.
 
 The distinction is important. One team using AI effectively doesn’t mean the organisation has an AI operating model. A group of employees achieving efficiency gains doesn’t mean managers can consistently supervise AI-assisted work. A policy document doesn’t mean governance is understood or usable in the flow of work.
 
@@ -106,7 +106,7 @@ Without operational visibility, AI’s impact becomes difficult to separate from
 
 This matters because competitive advantage depends on repeatability. Isolated productivity gains are useful, but they don’t create a durable advantage unless they can be made consistent, measurable and manager-supported.
 
-Fragmented AI adoption creates commercial movement without commercial control.
+The work changes, but management cannot yet see which changes are helping.
 
 ## Why the issue is becoming urgent now
 
@@ -218,4 +218,4 @@ The next stage of AI adoption will belong to organisations that treat AI as an o
 
 AI is a tool. Operational adoption is the capability.
 
-As access becomes commoditised, operational coherence becomes the competitive advantage.
+The question is whether teams can use those tools well in work the business can review and improve.

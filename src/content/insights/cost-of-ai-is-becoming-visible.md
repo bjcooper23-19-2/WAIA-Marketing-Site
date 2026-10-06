@@ -11,7 +11,7 @@ readingTime: 7 min read
 excerpt: Unmanaged experimentation becomes expensive when tool spend, duplicated testing and unclear ownership spread faster than evidence of value.
 ---
 
-AI cost is starting to move out of the background. For a while, many organisations could treat AI as experimentation: a few licences, a few pilots, some team-level testing and some useful shortcuts. That phase hasn't disappeared, and it shouldn’t. But the cost profile is changing.
+AI cost is starting to move out of the background. For a while, many organisations could treat AI as experimentation: a few licences, some team-level testing and some useful shortcuts. That phase hasn't disappeared, and it shouldn’t. But the costs are becoming harder to ignore.
 
 Gartner forecasts worldwide AI spending will reach $2.59 trillion in 2026, up 47% year on year. That figure needs careful handling because Gartner says much of this spending is dominated by vendors and hyperscalers, rather than direct enterprise operating budgets. Even so, the direction is clear. AI is becoming a much more visible commercial category.
 
@@ -21,7 +21,7 @@ The practical question for leadership teams is no longer whether AI should be ex
 
 The visible cost of AI is usually the easiest part to understand. Licences, cloud usage, infrastructure, model access, consulting support and training budgets may all become significant, but they can usually be found somewhere. They appear on invoices, contracts, budgets or procurement records.
 
-The harder costs sit inside the work itself. Two teams pay for overlapping AI tools because neither knows what the other is using. A pilot continues after the original sponsor has moved on because nobody has made a clear decision to stop it. A support team saves time drafting customer replies, but managers spend more time reviewing tone, accuracy and context.
+The harder costs sit inside the work itself. Two teams pay for overlapping AI tools because neither knows what the other is using. A trial continues after the original sponsor has moved on because nobody has made a clear decision to stop it. A support team saves time drafting customer replies, but managers spend more time reviewing tone, accuracy and context.
 
 A customer success team starts using AI summaries, but different people trust those summaries in different ways. A manager reviews an AI-assisted customer update without knowing whether it was built from notes, copied from a tool, edited properly or sent with unchecked assumptions.
 
@@ -59,9 +59,9 @@ That’s the real cost question. Not just how much AI costs, but whether the bus
 
 Experimentation matters. Organisations shouldn’t try to control AI so tightly that people stop learning, because a new technology only becomes useful when people can test it against real work. But experimentation becomes expensive when it remains invisible.
 
-When every team experiments separately, the business loses the ability to compare what is working. When every manager sets their own standard, review quality varies. When every department buys or trials its own tools, spend fragments. When pilots keep running without value evidence, activity becomes a substitute for progress.
+When every team experiments separately, the business loses the ability to compare what is working. When every manager sets their own standard, review quality varies. When every department buys or trials its own tools, spend fragments. When trials keep running without evidence of value, activity becomes a substitute for progress.
 
-This is how AI cost builds quietly. Not always through one large, failed programme, but through many small, reasonable decisions that are never joined up. A licence here, a pilot there, a prompt library in one team, a separate tool in another, a new review burden for managers, a few customer communications that need correcting, a few reports that look polished but contain assumptions nobody checked.
+This is how AI cost builds quietly, through small decisions that are never joined up. A licence here, a trial there, a prompt library in one team, a separate tool in another, more review for managers, customer communications that need correcting and reports built on assumptions nobody checked.
 
 Gartner reported that in infrastructure and operations, only 28% of AI use cases fully succeed and meet ROI expectations, while 20% fail outright. That finding is specific to infrastructure and operations, so it shouldn’t be treated as a universal claim about every AI project. But the underlying message is still useful: AI doesn't deliver value simply because it exists. It delivers value when it fits the work, has clear ownership, is reviewed properly and is measured against outcomes that matter.
 
@@ -81,7 +81,7 @@ Most importantly, they protect the space for useful AI adoption by making it eas
 
 Leaders don’t need to start by shutting AI usage down. They need to make the current reality visible.
 
-That means understanding where teams are already using AI, which tools are being paid for twice, which customer-facing tasks are now AI-assisted, and who checks the output before it reaches a customer. It also means looking beyond the invoice and asking which workflows are genuinely faster, which workflows have simply moved effort into review or correction, and which pilots are still running because nobody has made a decision to stop them.
+That means understanding where teams are already using AI, which tools are being paid for twice, which customer-facing tasks are now AI-assisted, and who checks the output before it reaches a customer. It also means looking beyond the invoice and asking which workflows are genuinely faster, which have moved effort into review or correction, and which trials are still running because nobody has made a decision to stop them.
 
 These are practical operating questions. They sit close to the work. They show whether AI is improving the business or simply spreading through it.
 
@@ -89,7 +89,7 @@ This is also where governance needs to be understood properly. Good governance s
 
 The organisations that get this right won’t be the ones with the most slogans about AI. They’ll be the ones who can see how AI is changing work, where it’s creating value and where it’s quietly adding cost.
 
-[WAIA](/) is designed around this practical operating layer: shared standards, manager support, role-aware guidance and visible adoption signals for workplace AI adoption.
+[WAIA](/) helps organisations set shared guidance and see evidence from real work, so managers can review where AI is helping and where it is adding work.
 
 ## Closing point
 

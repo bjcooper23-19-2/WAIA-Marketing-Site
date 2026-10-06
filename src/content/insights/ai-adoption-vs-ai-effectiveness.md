@@ -64,7 +64,7 @@ That is the limitation of adoption data. It can show that people are using AI, b
 
 What looks like broad adoption can still mask operational inconsistency.
 
-## Managers need a clearer operating picture
+## Managers need to see how work is changing
 
 Many managers do not yet have a reliable way to judge whether AI-assisted work has been properly reviewed, aligned with internal expectations or used appropriately within a workflow.
 
