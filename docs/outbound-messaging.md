@@ -104,6 +104,16 @@ Avoid weakening the WAIA position itself with habitual "I think", "perhaps" or "
 
 Conviction should improve clarity, not turn outbound into provocation.
 
+## Natural Voice
+
+Outbound should sound like Ben wrote it to one person, not like a sequence generated for a segment.
+
+Use ordinary commercial language. State the problem and the reason for contacting the prospect without dressing either up in sales or thought-leadership phrasing.
+
+Preserve directness and personality, but do not manufacture informality. Personalisation should come from relevance, not fake familiarity.
+
+Read the message aloud before approving it. If Ben would not naturally say the sentence in a real commercial conversation, rewrite it.
+
 ## CTA Guidance
 
 Prefer low-friction language such as:
@@ -170,5 +180,6 @@ Before sending or approving a sequence, check:
 5. Are claims proportionate and evidence-led?
 6. Is the CTA natural and commercially useful?
 7. Does the message sound like a senior operator rather than generic sales automation?
+8. Would Ben naturally say this in a real commercial conversation?
 
 If the answer is mostly no, the message should be rewritten before use.
