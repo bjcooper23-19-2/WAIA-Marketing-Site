@@ -1706,6 +1706,10 @@ h3 {
   color: var(--waia-operating-navy);
 }
 
+.waia-light-section .btn.primary:focus-visible {
+  outline-color: var(--waia-deep-teal);
+}
+
 .table-wrap {
   width: 100%;
   overflow-x: auto;
@@ -2501,6 +2505,16 @@ footer {
 
   table {
     min-width: 520px;
+  }
+
+  .pricing-bands table {
+    min-width: 0;
+    table-layout: fixed;
+  }
+
+  .pricing-bands th,
+  .pricing-bands td {
+    padding: 14px 12px;
   }
 
   header {
