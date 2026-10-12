@@ -1,6 +1,6 @@
 # Stage 2 homepage visual pilot
 
-The `before-*` screenshots were captured from `origin/main` at `d5f519f`, which includes Stage 1 PR #82. The `after-*` screenshots were captured from this branch. Both sets use local Chrome, the same viewport dimensions, a device scale factor of 1, and reduced motion. `first` is the initial viewport; `section-2` through `section-4` show the start of the Admin Home story, three buyer questions, and illustrative workflow respectively. The section screenshots are viewport captures, so the sticky navigation remains visible as it would during normal scrolling.
+The `before-*` screenshots were captured from `origin/main` at `d5f519f`, which includes Stage 1 PR #82. The `after-*` screenshots show the initial PR #83 design. The [mobile refinement evidence](mobile-refinement/README.md) compares that design with the final phone presentation. All captures use local Chrome, the same viewport dimensions, a device scale factor of 1, and reduced motion. `first` is the initial viewport; `section-2` through `section-4` show the start of the Admin Home story, three buyer questions, and illustrative workflow respectively. The section screenshots are viewport captures, so the sticky navigation remains visible as it would during normal scrolling.
 
 | Width  | Initial viewport before              | Initial viewport after             |
 | ------ | ------------------------------------ | ---------------------------------- |
@@ -39,4 +39,4 @@ The [mobile focus state](after-home-390-focus.png) and [expanded navigation](aft
 
 ## Review points
 
-The Evidence image is intentionally cropped so its central content is larger; the full image remains available in the caption. At 320px, the top of the mobile product view appears in the first screen and its main content follows immediately below. The Admin Home mobile asset is reused later in the product story because it is the only approved mobile management screenshot; a distinct approved screenshot would make a future iteration stronger. Visual polish may improve credibility and comprehension, but any effect on enquiries requires measurement after release.
+The Evidence image is intentionally cropped so its central content is larger; the full image remains available in the caption. At 320px, the top of the mobile product view appears in the first screen and its main content follows immediately below. The mobile refinement removes the repeated Admin Home image from the later story while keeping its approved explanation and action. Visual polish may improve credibility and comprehension, but any effect on enquiries requires measurement after release.

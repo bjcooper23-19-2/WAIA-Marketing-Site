@@ -432,16 +432,6 @@
 }
 
 @media (max-width: 600px) {
-  .home-page .home-caption-desktop {
-    display: none !important;
-  }
-
-  .home-page .home-caption-mobile {
-    display: block !important;
-  }
-}
-
-@media (max-width: 380px) {
   .home-page .home-product-stage {
     padding-top: 0;
   }
@@ -449,6 +439,24 @@
   .home-page .hero-product-proof {
     margin-bottom: -18px;
     transform: translateY(-18px);
+  }
+
+  .home-page .home-caption-desktop {
+    display: none !important;
+  }
+
+  .home-page .home-caption-mobile {
+    display: block !important;
+  }
+
+  .home-page #product-proof .waia-screenshot-frame {
+    display: none;
+  }
+
+  .home-page #product-proof .waia-story-copy {
+    max-width: none;
+    padding-top: 24px;
+    border-top: 1px solid var(--waia-border-light);
   }
 }
 

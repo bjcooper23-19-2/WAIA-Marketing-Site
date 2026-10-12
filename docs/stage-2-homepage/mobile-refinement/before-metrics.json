@@ -1,0 +1,24 @@
+[
+  {
+    "phase": "before",
+    "width": 320,
+    "height": 700,
+    "errors": [],
+    "viewport": 320,
+    "document": 320,
+    "storyImageVisible": true,
+    "heroImage": "http://127.0.0.1:4177/assets/product-screenshots/2026-09-30/08-admin-home-mobile.jpg",
+    "heroHeight": 536
+  },
+  {
+    "phase": "before",
+    "width": 390,
+    "height": 844,
+    "errors": [],
+    "viewport": 390,
+    "document": 390,
+    "storyImageVisible": true,
+    "heroImage": "http://127.0.0.1:4177/assets/product-screenshots/2026-09-30/08-admin-home-mobile.jpg",
+    "heroHeight": 469
+  }
+]
