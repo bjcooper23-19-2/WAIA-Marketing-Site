@@ -1,0 +1,260 @@
+[
+  {
+    "route": "how-it-works",
+    "width": 320,
+    "overflow": false,
+    "scrollWidth": 320,
+    "viewport": 320,
+    "stylesheet": true,
+    "images": [],
+    "errors": [],
+    "focus": {
+      "style": "solid",
+      "width": "3px",
+      "color": "rgb(13, 115, 119)"
+    },
+    "mobileMenu": "true",
+    "pricing": null
+  },
+  {
+    "route": "pricing",
+    "width": 320,
+    "overflow": false,
+    "scrollWidth": 320,
+    "viewport": 320,
+    "stylesheet": true,
+    "images": [],
+    "errors": [],
+    "focus": {
+      "style": "solid",
+      "width": "3px",
+      "color": "rgb(13, 115, 119)"
+    },
+    "mobileMenu": "true",
+    "pricing": {
+      "scrollWidth": 278,
+      "clientWidth": 278
+    }
+  },
+  {
+    "route": "how-it-works",
+    "width": 390,
+    "overflow": false,
+    "scrollWidth": 390,
+    "viewport": 390,
+    "stylesheet": true,
+    "images": [],
+    "errors": [],
+    "focus": {
+      "style": "solid",
+      "width": "3px",
+      "color": "rgb(13, 115, 119)"
+    },
+    "mobileMenu": "true",
+    "pricing": null
+  },
+  {
+    "route": "pricing",
+    "width": 390,
+    "overflow": false,
+    "scrollWidth": 390,
+    "viewport": 390,
+    "stylesheet": true,
+    "images": [],
+    "errors": [],
+    "focus": {
+      "style": "solid",
+      "width": "3px",
+      "color": "rgb(13, 115, 119)"
+    },
+    "mobileMenu": "true",
+    "pricing": {
+      "scrollWidth": 348,
+      "clientWidth": 348
+    }
+  },
+  {
+    "route": "how-it-works",
+    "width": 640,
+    "overflow": false,
+    "scrollWidth": 640,
+    "viewport": 640,
+    "stylesheet": true,
+    "images": [],
+    "errors": [],
+    "focus": {
+      "style": "solid",
+      "width": "3px",
+      "color": "rgb(13, 115, 119)"
+    },
+    "mobileMenu": null,
+    "pricing": null
+  },
+  {
+    "route": "pricing",
+    "width": 640,
+    "overflow": false,
+    "scrollWidth": 640,
+    "viewport": 640,
+    "stylesheet": true,
+    "images": [],
+    "errors": [],
+    "focus": {
+      "style": "solid",
+      "width": "3px",
+      "color": "rgb(13, 115, 119)"
+    },
+    "mobileMenu": null,
+    "pricing": {
+      "scrollWidth": 598,
+      "clientWidth": 598
+    }
+  },
+  {
+    "route": "how-it-works",
+    "width": 768,
+    "overflow": false,
+    "scrollWidth": 768,
+    "viewport": 768,
+    "stylesheet": true,
+    "images": [],
+    "errors": [],
+    "focus": {
+      "style": "solid",
+      "width": "3px",
+      "color": "rgb(13, 115, 119)"
+    },
+    "mobileMenu": null,
+    "pricing": null
+  },
+  {
+    "route": "pricing",
+    "width": 768,
+    "overflow": false,
+    "scrollWidth": 768,
+    "viewport": 768,
+    "stylesheet": true,
+    "images": [],
+    "errors": [],
+    "focus": {
+      "style": "solid",
+      "width": "3px",
+      "color": "rgb(13, 115, 119)"
+    },
+    "mobileMenu": null,
+    "pricing": {
+      "scrollWidth": 718,
+      "clientWidth": 718
+    }
+  },
+  {
+    "route": "how-it-works",
+    "width": 1280,
+    "overflow": false,
+    "scrollWidth": 1280,
+    "viewport": 1280,
+    "stylesheet": true,
+    "images": [],
+    "errors": [],
+    "focus": {
+      "style": "solid",
+      "width": "3px",
+      "color": "rgb(13, 115, 119)"
+    },
+    "mobileMenu": null,
+    "pricing": null
+  },
+  {
+    "route": "pricing",
+    "width": 1280,
+    "overflow": false,
+    "scrollWidth": 1280,
+    "viewport": 1280,
+    "stylesheet": true,
+    "images": [],
+    "errors": [],
+    "focus": {
+      "style": "solid",
+      "width": "3px",
+      "color": "rgb(13, 115, 119)"
+    },
+    "mobileMenu": null,
+    "pricing": {
+      "scrollWidth": 1178,
+      "clientWidth": 1178
+    }
+  },
+  {
+    "route": "how-it-works",
+    "width": 1440,
+    "overflow": false,
+    "scrollWidth": 1440,
+    "viewport": 1440,
+    "stylesheet": true,
+    "images": [],
+    "errors": [],
+    "focus": {
+      "style": "solid",
+      "width": "3px",
+      "color": "rgb(13, 115, 119)"
+    },
+    "mobileMenu": null,
+    "pricing": null
+  },
+  {
+    "route": "pricing",
+    "width": 1440,
+    "overflow": false,
+    "scrollWidth": 1440,
+    "viewport": 1440,
+    "stylesheet": true,
+    "images": [],
+    "errors": [],
+    "focus": {
+      "style": "solid",
+      "width": "3px",
+      "color": "rgb(13, 115, 119)"
+    },
+    "mobileMenu": null,
+    "pricing": {
+      "scrollWidth": 1178,
+      "clientWidth": 1178
+    }
+  },
+  {
+    "route": "/",
+    "width": 390,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "route": "/",
+    "width": 1440,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "route": "/see-waia/",
+    "width": 390,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "route": "/see-waia/",
+    "width": 1440,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "route": "/workplace-ai-visibility-check/",
+    "width": 390,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "route": "/workplace-ai-visibility-check/",
+    "width": 1440,
+    "overflow": false,
+    "errors": []
+  }
+]
