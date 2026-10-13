@@ -1,0 +1,119 @@
+[
+  {
+    "name": "see-hero",
+    "default": {
+      "background": "rgb(13, 115, 119)",
+      "color": "rgb(255, 255, 255)",
+      "outline": "3px none rgb(255, 255, 255)",
+      "transition": "1e-05s",
+      "transform": "none",
+      "width": 265.03125,
+      "height": 50.796875
+    },
+    "hover": {
+      "background": "rgb(9, 95, 99)",
+      "color": "rgb(255, 255, 255)",
+      "outline": "3px none rgb(255, 255, 255)",
+      "transition": "1e-05s",
+      "transform": "matrix(1, 0, 0, 1, 0, -2)",
+      "width": 265.03125,
+      "height": 50.796875
+    },
+    "focus": {
+      "background": "rgb(9, 95, 99)",
+      "color": "rgb(255, 255, 255)",
+      "outline": "3px solid rgb(13, 115, 119)",
+      "transition": "1e-05s",
+      "transform": "matrix(1, 0, 0, 1, 0, -2)",
+      "width": 265.03125,
+      "height": 50.796875
+    },
+    "active": {
+      "background": "rgb(9, 95, 99)",
+      "color": "rgb(255, 255, 255)",
+      "outline": "3px solid rgb(13, 115, 119)",
+      "transition": "1e-05s",
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "width": 265.03125,
+      "height": 50.796875
+    }
+  },
+  {
+    "name": "see-final",
+    "default": {
+      "background": "rgb(13, 115, 119)",
+      "color": "rgb(255, 255, 255)",
+      "outline": "3px none rgb(255, 255, 255)",
+      "transition": "1e-05s",
+      "transform": "none",
+      "width": 265.03125,
+      "height": 50.796875
+    },
+    "hover": {
+      "background": "rgb(9, 95, 99)",
+      "color": "rgb(255, 255, 255)",
+      "outline": "3px none rgb(255, 255, 255)",
+      "transition": "1e-05s",
+      "transform": "matrix(1, 0, 0, 1, 0, -2)",
+      "width": 265.03125,
+      "height": 50.796875
+    },
+    "focus": {
+      "background": "rgb(9, 95, 99)",
+      "color": "rgb(255, 255, 255)",
+      "outline": "3px solid rgb(13, 115, 119)",
+      "transition": "1e-05s",
+      "transform": "matrix(1, 0, 0, 1, 0, -2)",
+      "width": 265.03125,
+      "height": 50.796875
+    },
+    "active": {
+      "background": "rgb(9, 95, 99)",
+      "color": "rgb(255, 255, 255)",
+      "outline": "3px solid rgb(13, 115, 119)",
+      "transition": "1e-05s",
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "width": 265.03125,
+      "height": 50.796875
+    }
+  },
+  {
+    "name": "visibility",
+    "default": {
+      "background": "rgb(13, 115, 119)",
+      "color": "rgb(255, 255, 255)",
+      "outline": "3px none rgb(255, 255, 255)",
+      "transition": "1e-05s",
+      "transform": "none",
+      "width": 161.609375,
+      "height": 50.796875
+    },
+    "hover": {
+      "background": "rgb(9, 95, 99)",
+      "color": "rgb(255, 255, 255)",
+      "outline": "3px none rgb(255, 255, 255)",
+      "transition": "1e-05s",
+      "transform": "matrix(1, 0, 0, 1, 0, -2)",
+      "width": 161.609375,
+      "height": 50.796875
+    },
+    "focus": {
+      "background": "rgb(9, 95, 99)",
+      "color": "rgb(255, 255, 255)",
+      "outline": "3px solid rgb(13, 115, 119)",
+      "transition": "1e-05s",
+      "transform": "matrix(1, 0, 0, 1, 0, -2)",
+      "width": 161.609375,
+      "height": 50.796875
+    },
+    "active": {
+      "background": "rgb(9, 95, 99)",
+      "color": "rgb(255, 255, 255)",
+      "outline": "3px solid rgb(13, 115, 119)",
+      "transition": "1e-05s",
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "width": 161.609375,
+      "height": 50.796875
+    }
+  }
+]
