@@ -1,0 +1,72 @@
+[
+  {
+    "phase": "before",
+    "route": "how-it-works",
+    "width": 320,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "phase": "before",
+    "route": "pricing",
+    "width": 320,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "phase": "before",
+    "route": "how-it-works",
+    "width": 390,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "phase": "before",
+    "route": "pricing",
+    "width": 390,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "phase": "before",
+    "route": "how-it-works",
+    "width": 768,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "phase": "before",
+    "route": "pricing",
+    "width": 768,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "phase": "before",
+    "route": "how-it-works",
+    "width": 1280,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "phase": "before",
+    "route": "pricing",
+    "width": 1280,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "phase": "before",
+    "route": "how-it-works",
+    "width": 1440,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "phase": "before",
+    "route": "pricing",
+    "width": 1440,
+    "overflow": false,
+    "errors": []
+  }
+]

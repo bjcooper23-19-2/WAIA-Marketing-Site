@@ -1,0 +1,468 @@
+/* Pricing: the annual basis and bands lead; qualifications stay visible. */
+.pricing-page .noise {
+  display: none;
+}
+
+.pricing-page .pricing-hero {
+  display: block;
+  min-height: 0;
+  padding: clamp(76px, 7vw, 112px) 24px clamp(68px, 7vw, 108px);
+  background: var(--waia-clarity-white);
+  color: var(--waia-text-primary);
+}
+
+.pricing-page .pricing-hero .hero-grid {
+  display: block;
+}
+
+.pricing-page .pricing-hero .hero-grid > div:first-child {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  gap: 0 clamp(44px, 6vw, 96px);
+  align-items: end;
+}
+
+.pricing-page .pricing-hero h1 {
+  grid-column: 1;
+  max-width: 17ch;
+  margin-bottom: 34px;
+  font-size: clamp(3.5rem, 5.6vw, 5.8rem);
+  line-height: 1.01;
+  letter-spacing: -0.07em;
+  text-wrap: balance;
+}
+
+.pricing-page .pricing-hero .lede {
+  grid-column: 1;
+  max-width: 48ch;
+  margin-bottom: 30px;
+  color: var(--waia-text-secondary);
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  line-height: 1.6;
+}
+
+.pricing-page .pricing-hero .hero-actions {
+  grid-column: 1;
+  margin: 0;
+  gap: 12px;
+}
+
+.pricing-page .pricing-hero .btn.secondary {
+  border-color: var(--waia-deep-teal);
+  background: var(--waia-clarity-white);
+  color: var(--waia-deep-teal);
+}
+
+.pricing-page .pricing-hero .btn.secondary:hover {
+  background: #e4f3f3;
+}
+
+.pricing-page .pricing-hero a:focus-visible,
+.pricing-page .pricing-inclusions a:focus-visible,
+.pricing-page .waia-light-section a:focus-visible {
+  outline-color: var(--waia-deep-teal);
+}
+
+.pricing-page .btn:active {
+  transform: translateY(0);
+}
+
+.pricing-page .pricing-hero .product-summary-card {
+  grid-column: 2;
+  grid-row: 1 / 4;
+  padding: 0 0 0 30px;
+  border: 0;
+  border-left: 2px solid var(--waia-deep-teal);
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.pricing-page .pricing-hero .product-summary-card::before {
+  display: none;
+}
+
+.pricing-page .pricing-hero .eyebrow {
+  color: var(--waia-deep-teal);
+}
+
+.pricing-page .pricing-hero .metric-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 18px;
+}
+
+.pricing-page .pricing-hero .metric {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+}
+
+.pricing-page .pricing-hero .metric:first-child {
+  grid-column: 1 / -1;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--waia-border-light);
+}
+
+.pricing-page .pricing-hero .metric span,
+.pricing-page .pricing-hero .metric strong {
+  display: block;
+  color: var(--waia-text-primary);
+}
+
+.pricing-page .pricing-hero .metric span {
+  color: var(--waia-text-secondary);
+  font-size: 0.84rem;
+}
+
+.pricing-page .pricing-hero .metric:first-child strong {
+  font-size: clamp(3.2rem, 5vw, 5.2rem);
+  line-height: 1;
+  letter-spacing: -0.07em;
+  font-variant-numeric: tabular-nums;
+}
+
+.pricing-page .pricing-hero .metric:not(:first-child) strong {
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+
+.pricing-page .pricing-hero .product-summary-card p {
+  margin: 24px 0 0;
+  color: var(--waia-text-secondary);
+  font-size: 0.98rem;
+}
+
+.pricing-page .pricing-bands-section {
+  padding-top: clamp(80px, 8vw, 128px);
+  padding-bottom: clamp(90px, 8vw, 132px);
+  background: var(--waia-operating-navy);
+  color: var(--waia-text-on-dark);
+  box-shadow: none;
+}
+
+.pricing-page
+  main
+  > section:not(.pricing-hero):not(.pricing-bands-section)
+  .section-head
+  h2 {
+  max-width: 18ch;
+  font-size: clamp(2.45rem, 3.7vw, 3.9rem);
+  line-height: 1.04;
+}
+
+.pricing-page .pricing-context-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.7fr);
+  gap: clamp(36px, 5vw, 76px);
+  align-items: end;
+  margin-bottom: clamp(76px, 8vw, 116px);
+  padding: 0 0 clamp(48px, 5vw, 72px);
+  border: 0;
+  border-bottom: 1px solid var(--waia-border-dark);
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  color: var(--waia-text-on-dark);
+}
+
+.pricing-page .pricing-context-panel::before {
+  display: none;
+}
+
+.pricing-page .pricing-context-panel .eyebrow,
+.pricing-page .pricing-bands-section .section-head .eyebrow {
+  color: var(--waia-bright-cyan);
+}
+
+.pricing-page .pricing-context-panel h2 {
+  max-width: 14ch;
+  margin: 0;
+  font-size: clamp(2.7rem, 4.5vw, 4.6rem);
+}
+
+.pricing-page .pricing-context-panel p {
+  max-width: 38ch;
+  margin: 0;
+  color: var(--waia-text-muted-on-dark);
+  font-size: 1.14rem;
+  line-height: 1.65;
+}
+
+.pricing-page .pricing-bands-section .section-head {
+  display: grid;
+  max-width: none;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.75fr);
+  gap: 0 clamp(32px, 5vw, 78px);
+  align-items: end;
+  margin-bottom: 32px;
+}
+
+.pricing-page .pricing-bands-section .section-head .eyebrow {
+  grid-column: 1 / -1;
+}
+
+.pricing-page .pricing-bands-section .section-head h2 {
+  margin: 0;
+  font-size: clamp(3rem, 5vw, 5rem);
+}
+
+.pricing-page .pricing-bands-section .section-head p {
+  margin: 0;
+  color: var(--waia-text-muted-on-dark);
+  line-height: 1.6;
+}
+
+.pricing-page .pricing-bands {
+  overflow: hidden;
+  border: 1px solid var(--waia-border-light);
+  border-radius: 18px;
+  background: var(--waia-clarity-white);
+}
+
+.pricing-page .pricing-bands table {
+  min-width: 0;
+  table-layout: fixed;
+  font-variant-numeric: tabular-nums;
+}
+
+.pricing-page .pricing-bands th,
+.pricing-page .pricing-bands td {
+  width: 50%;
+  padding: clamp(20px, 2.6vw, 35px) clamp(20px, 3vw, 44px);
+  border-bottom-color: var(--waia-border-light);
+}
+
+.pricing-page .pricing-bands th {
+  color: var(--waia-text-secondary);
+  font-size: 0.8rem;
+}
+
+.pricing-page .pricing-bands td {
+  color: var(--waia-text-primary);
+  font-size: clamp(1.15rem, 1.8vw, 1.65rem);
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+.pricing-page .pricing-bands td:last-child {
+  color: var(--waia-deep-teal-hover);
+}
+
+.pricing-page .pricing-inclusions {
+  padding-top: clamp(92px, 9vw, 140px);
+  padding-bottom: clamp(92px, 9vw, 140px);
+  background: var(--waia-clarity-white);
+  color: var(--waia-text-primary);
+}
+
+.pricing-page .pricing-inclusions .section-head h2 {
+  max-width: 14ch;
+}
+
+.pricing-page .pricing-inclusions .eyebrow {
+  color: var(--waia-deep-teal);
+}
+
+.pricing-page .pricing-inclusions .eyebrow::before {
+  background: var(--waia-deep-teal);
+  box-shadow: none;
+}
+
+.pricing-page .pricing-inclusions .outcomes-grid {
+  gap: 0 clamp(30px, 5vw, 76px);
+}
+
+.pricing-page .pricing-inclusions .outcome-card {
+  min-height: 0;
+  padding: 28px 0 34px;
+  border: 0;
+  border-top: 1px solid var(--waia-border-light);
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.pricing-page .pricing-inclusions .outcome-card h3 {
+  color: var(--waia-text-primary);
+  font-size: 1.38rem;
+}
+
+.pricing-page .pricing-inclusions .check-list li {
+  color: var(--waia-text-secondary);
+  font-size: 1rem;
+}
+
+.pricing-page .pricing-inclusions .check-list li::before {
+  background: var(--waia-deep-teal);
+  box-shadow: none;
+}
+
+.pricing-page .pricing-start .waia-start-steps {
+  gap: 0 clamp(28px, 5vw, 72px);
+}
+
+.pricing-page .pricing-start .waia-start-steps article {
+  padding: 28px 0 32px;
+  border: 0;
+  border-top: 1px solid var(--waia-border-light);
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.pricing-page .pricing-start .waia-start-steps article::after {
+  display: none;
+}
+
+.pricing-page .pricing-start .waia-start-steps span {
+  width: auto;
+  height: auto;
+  margin-bottom: 14px;
+  border: 0;
+  background: none;
+}
+
+.pricing-page .pricing-start .waia-start-steps h3 {
+  font-size: 1.34rem;
+}
+
+.pricing-page .pricing-start .waia-start-steps p {
+  max-width: 46ch;
+  font-size: 1rem;
+}
+
+.pricing-page .pricing-qualifications {
+  background: var(--waia-operating-navy-soft);
+}
+
+.pricing-page .pricing-qualifications .outcomes-grid {
+  gap: clamp(34px, 5vw, 72px);
+}
+
+.pricing-page .pricing-qualifications .outcome-card {
+  padding: 24px 0 0;
+  border: 0;
+  border-top: 2px solid var(--waia-bright-cyan);
+  border-radius: 0;
+  background: none;
+}
+
+.pricing-page .pricing-qualifications .outcome-card h3 {
+  font-size: clamp(1.5rem, 2.5vw, 2.3rem);
+}
+
+.pricing-page .pricing-qualifications .outcome-card p strong {
+  color: var(--waia-text-on-dark);
+  font-size: 1.4rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.pricing-page .pricing-faq {
+  padding-top: clamp(88px, 8vw, 128px);
+  padding-bottom: clamp(88px, 8vw, 128px);
+  background: var(--waia-neutral-light);
+}
+
+.pricing-page .pricing-faq .faq-grid {
+  gap: 0 clamp(28px, 5vw, 76px);
+}
+
+.pricing-page .pricing-faq .outcome-card {
+  min-height: 0;
+  padding: 26px 0 30px;
+  border: 0;
+  border-top: 1px solid var(--waia-border-light);
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.pricing-page .pricing-faq .outcome-card h3 {
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
+.pricing-page .pricing-faq .outcome-card p {
+  max-width: 50ch;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.pricing-page .pricing-faq .section-actions {
+  margin-top: 38px;
+}
+
+.pricing-page .cta-box {
+  border-radius: 18px;
+  background: var(--waia-operating-navy-soft);
+}
+
+@media (max-width: 980px) {
+  .pricing-page .pricing-hero .hero-grid > div:first-child,
+  .pricing-page .pricing-context-panel,
+  .pricing-page .pricing-bands-section .section-head {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .pricing-page .pricing-hero h1,
+  .pricing-page .pricing-hero .product-summary-card,
+  .pricing-page .pricing-hero .lede,
+  .pricing-page .pricing-hero .hero-actions {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .pricing-page .pricing-hero .product-summary-card {
+    max-width: 650px;
+    margin: 32px 0;
+  }
+
+  .pricing-page .pricing-context-panel p,
+  .pricing-page .pricing-bands-section .section-head p {
+    margin-top: 22px;
+  }
+}
+
+@media (max-width: 760px) {
+  .pricing-page .pricing-hero {
+    padding: 62px 20px 66px;
+  }
+
+  .pricing-page .pricing-hero h1 {
+    font-size: clamp(2.7rem, 9vw, 4.2rem);
+    line-height: 1.02;
+  }
+
+  .pricing-page .pricing-hero .product-summary-card {
+    padding-left: 20px;
+  }
+
+  .pricing-page .pricing-hero .metric:first-child strong {
+    font-size: 3.6rem;
+  }
+
+  .pricing-page .pricing-bands th,
+  .pricing-page .pricing-bands td {
+    padding: 18px 12px;
+  }
+
+  .pricing-page .pricing-bands td {
+    font-size: 1.02rem;
+  }
+
+  .pricing-page .pricing-inclusions .outcomes-grid,
+  .pricing-page .pricing-start .waia-start-steps,
+  .pricing-page .pricing-qualifications .outcomes-grid,
+  .pricing-page .pricing-faq .faq-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pricing-page .btn {
+    transition: none;
+  }
+}
