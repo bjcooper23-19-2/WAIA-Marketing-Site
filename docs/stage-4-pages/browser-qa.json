@@ -1,0 +1,495 @@
+[
+  {
+    "documentWidth": 320,
+    "viewportWidth": 320,
+    "primary": [
+      {
+        "text": "Request a WAIA walkthrough",
+        "href": "/go/see-waia/direct/",
+        "width": 265,
+        "height": 51,
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(13, 115, 119)",
+        "contrast": 5.62
+      },
+      {
+        "text": "Request a WAIA walkthrough",
+        "href": "/go/see-waia/direct/",
+        "width": 265,
+        "height": 51,
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(13, 115, 119)",
+        "contrast": 5.62
+      }
+    ],
+    "images": [
+      {
+        "src": "/assets/images/waia/waia-evidence-overview-hero.webp",
+        "loaded": true,
+        "alt": "WAIA Evidence view showing workflow evidence, capacity signals and items needing management attention"
+      }
+    ],
+    "stylesheet": [
+      "http://127.0.0.1:4377/assets/css/workplace-ai-academy.css",
+      "http://127.0.0.1:4377/assets/css/see-waia.css"
+    ],
+    "name": "see-waia",
+    "width": 320,
+    "errors": [],
+    "focus": {
+      "outlineStyle": "solid",
+      "outlineWidth": "3px",
+      "outlineColor": "rgb(13, 115, 119)"
+    }
+  },
+  {
+    "documentWidth": 320,
+    "viewportWidth": 320,
+    "primary": [
+      {
+        "text": "Request access",
+        "href": "/workplace-ai-visibility-check/start/",
+        "width": 162,
+        "height": 51,
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(13, 115, 119)",
+        "contrast": 5.62
+      },
+      {
+        "text": "Request access",
+        "href": "/workplace-ai-visibility-check/start/",
+        "width": 162,
+        "height": 51,
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(13, 115, 119)",
+        "contrast": 5.62
+      }
+    ],
+    "images": [],
+    "stylesheet": [
+      "http://127.0.0.1:4377/assets/css/workplace-ai-academy.css",
+      "http://127.0.0.1:4377/assets/css/visibility-check.css",
+      "http://127.0.0.1:4377/assets/css/visibility-landing.css"
+    ],
+    "name": "visibility-check",
+    "width": 320,
+    "errors": [],
+    "focus": {
+      "outlineStyle": "solid",
+      "outlineWidth": "3px",
+      "outlineColor": "rgb(13, 115, 119)"
+    }
+  },
+  {
+    "documentWidth": 390,
+    "viewportWidth": 390,
+    "primary": [
+      {
+        "text": "Request a WAIA walkthrough",
+        "href": "/go/see-waia/direct/",
+        "width": 265,
+        "height": 51,
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(13, 115, 119)",
+        "contrast": 5.62
+      },
+      {
+        "text": "Request a WAIA walkthrough",
+        "href": "/go/see-waia/direct/",
+        "width": 265,
+        "height": 51,
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(13, 115, 119)",
+        "contrast": 5.62
+      }
+    ],
+    "images": [
+      {
+        "src": "/assets/images/waia/waia-evidence-overview-hero.webp",
+        "loaded": true,
+        "alt": "WAIA Evidence view showing workflow evidence, capacity signals and items needing management attention"
+      }
+    ],
+    "stylesheet": [
+      "http://127.0.0.1:4377/assets/css/workplace-ai-academy.css",
+      "http://127.0.0.1:4377/assets/css/see-waia.css"
+    ],
+    "name": "see-waia",
+    "width": 390,
+    "errors": [],
+    "focus": {
+      "outlineStyle": "solid",
+      "outlineWidth": "3px",
+      "outlineColor": "rgb(13, 115, 119)"
+    },
+    "menuExpanded": "true",
+    "menuVisible": true
+  },
+  {
+    "documentWidth": 390,
+    "viewportWidth": 390,
+    "primary": [
+      {
+        "text": "Request access",
+        "href": "/workplace-ai-visibility-check/start/",
+        "width": 162,
+        "height": 51,
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(13, 115, 119)",
+        "contrast": 5.62
+      },
+      {
+        "text": "Request access",
+        "href": "/workplace-ai-visibility-check/start/",
+        "width": 162,
+        "height": 51,
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(13, 115, 119)",
+        "contrast": 5.62
+      }
+    ],
+    "images": [],
+    "stylesheet": [
+      "http://127.0.0.1:4377/assets/css/workplace-ai-academy.css",
+      "http://127.0.0.1:4377/assets/css/visibility-check.css",
+      "http://127.0.0.1:4377/assets/css/visibility-landing.css"
+    ],
+    "name": "visibility-check",
+    "width": 390,
+    "errors": [],
+    "focus": {
+      "outlineStyle": "solid",
+      "outlineWidth": "3px",
+      "outlineColor": "rgb(13, 115, 119)"
+    },
+    "menuExpanded": "true",
+    "menuVisible": true
+  },
+  {
+    "name": "home",
+    "width": 390,
+    "documentWidth": 390,
+    "viewportWidth": 390,
+    "brokenImages": [],
+    "pageErrors": []
+  },
+  {
+    "name": "how",
+    "width": 390,
+    "documentWidth": 390,
+    "viewportWidth": 390,
+    "brokenImages": [],
+    "pageErrors": []
+  },
+  {
+    "name": "pricing",
+    "width": 390,
+    "documentWidth": 390,
+    "viewportWidth": 390,
+    "brokenImages": [],
+    "pageErrors": []
+  },
+  {
+    "name": "start",
+    "width": 390,
+    "documentWidth": 390,
+    "viewportWidth": 390,
+    "brokenImages": [],
+    "pageErrors": []
+  },
+  {
+    "documentWidth": 768,
+    "viewportWidth": 768,
+    "primary": [
+      {
+        "text": "Request a WAIA walkthrough",
+        "href": "/go/see-waia/direct/",
+        "width": 265,
+        "height": 51,
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(13, 115, 119)",
+        "contrast": 5.62
+      },
+      {
+        "text": "Request a WAIA walkthrough",
+        "href": "/go/see-waia/direct/",
+        "width": 265,
+        "height": 51,
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(13, 115, 119)",
+        "contrast": 5.62
+      }
+    ],
+    "images": [
+      {
+        "src": "/assets/images/waia/waia-evidence-overview-hero.webp",
+        "loaded": true,
+        "alt": "WAIA Evidence view showing workflow evidence, capacity signals and items needing management attention"
+      }
+    ],
+    "stylesheet": [
+      "http://127.0.0.1:4377/assets/css/workplace-ai-academy.css",
+      "http://127.0.0.1:4377/assets/css/see-waia.css"
+    ],
+    "name": "see-waia",
+    "width": 768,
+    "errors": [],
+    "focus": {
+      "outlineStyle": "solid",
+      "outlineWidth": "3px",
+      "outlineColor": "rgb(13, 115, 119)"
+    }
+  },
+  {
+    "documentWidth": 768,
+    "viewportWidth": 768,
+    "primary": [
+      {
+        "text": "Request access",
+        "href": "/workplace-ai-visibility-check/start/",
+        "width": 162,
+        "height": 51,
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(13, 115, 119)",
+        "contrast": 5.62
+      },
+      {
+        "text": "Request access",
+        "href": "/workplace-ai-visibility-check/start/",
+        "width": 162,
+        "height": 51,
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(13, 115, 119)",
+        "contrast": 5.62
+      }
+    ],
+    "images": [],
+    "stylesheet": [
+      "http://127.0.0.1:4377/assets/css/workplace-ai-academy.css",
+      "http://127.0.0.1:4377/assets/css/visibility-check.css",
+      "http://127.0.0.1:4377/assets/css/visibility-landing.css"
+    ],
+    "name": "visibility-check",
+    "width": 768,
+    "errors": [],
+    "focus": {
+      "outlineStyle": "solid",
+      "outlineWidth": "3px",
+      "outlineColor": "rgb(13, 115, 119)"
+    }
+  },
+  {
+    "documentWidth": 1280,
+    "viewportWidth": 1280,
+    "primary": [
+      {
+        "text": "Request a WAIA walkthrough",
+        "href": "/go/see-waia/direct/",
+        "width": 265,
+        "height": 51,
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(13, 115, 119)",
+        "contrast": 5.62
+      },
+      {
+        "text": "Request a WAIA walkthrough",
+        "href": "/go/see-waia/direct/",
+        "width": 265,
+        "height": 51,
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(13, 115, 119)",
+        "contrast": 5.62
+      }
+    ],
+    "images": [
+      {
+        "src": "/assets/images/waia/waia-evidence-overview-hero.webp",
+        "loaded": true,
+        "alt": "WAIA Evidence view showing workflow evidence, capacity signals and items needing management attention"
+      }
+    ],
+    "stylesheet": [
+      "http://127.0.0.1:4377/assets/css/workplace-ai-academy.css",
+      "http://127.0.0.1:4377/assets/css/see-waia.css"
+    ],
+    "name": "see-waia",
+    "width": 1280,
+    "errors": [],
+    "focus": {
+      "outlineStyle": "solid",
+      "outlineWidth": "3px",
+      "outlineColor": "rgb(13, 115, 119)"
+    }
+  },
+  {
+    "documentWidth": 1280,
+    "viewportWidth": 1280,
+    "primary": [
+      {
+        "text": "Request access",
+        "href": "/workplace-ai-visibility-check/start/",
+        "width": 162,
+        "height": 51,
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(13, 115, 119)",
+        "contrast": 5.62
+      },
+      {
+        "text": "Request access",
+        "href": "/workplace-ai-visibility-check/start/",
+        "width": 162,
+        "height": 51,
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(13, 115, 119)",
+        "contrast": 5.62
+      }
+    ],
+    "images": [],
+    "stylesheet": [
+      "http://127.0.0.1:4377/assets/css/workplace-ai-academy.css",
+      "http://127.0.0.1:4377/assets/css/visibility-check.css",
+      "http://127.0.0.1:4377/assets/css/visibility-landing.css"
+    ],
+    "name": "visibility-check",
+    "width": 1280,
+    "errors": [],
+    "focus": {
+      "outlineStyle": "solid",
+      "outlineWidth": "3px",
+      "outlineColor": "rgb(13, 115, 119)"
+    }
+  },
+  {
+    "documentWidth": 1440,
+    "viewportWidth": 1440,
+    "primary": [
+      {
+        "text": "Request a WAIA walkthrough",
+        "href": "/go/see-waia/direct/",
+        "width": 265,
+        "height": 51,
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(13, 115, 119)",
+        "contrast": 5.62
+      },
+      {
+        "text": "Request a WAIA walkthrough",
+        "href": "/go/see-waia/direct/",
+        "width": 265,
+        "height": 51,
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(13, 115, 119)",
+        "contrast": 5.62
+      }
+    ],
+    "images": [
+      {
+        "src": "/assets/images/waia/waia-evidence-overview-hero.webp",
+        "loaded": true,
+        "alt": "WAIA Evidence view showing workflow evidence, capacity signals and items needing management attention"
+      }
+    ],
+    "stylesheet": [
+      "http://127.0.0.1:4377/assets/css/workplace-ai-academy.css",
+      "http://127.0.0.1:4377/assets/css/see-waia.css"
+    ],
+    "name": "see-waia",
+    "width": 1440,
+    "errors": [],
+    "focus": {
+      "outlineStyle": "solid",
+      "outlineWidth": "3px",
+      "outlineColor": "rgb(13, 115, 119)"
+    }
+  },
+  {
+    "documentWidth": 1440,
+    "viewportWidth": 1440,
+    "primary": [
+      {
+        "text": "Request access",
+        "href": "/workplace-ai-visibility-check/start/",
+        "width": 162,
+        "height": 51,
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(13, 115, 119)",
+        "contrast": 5.62
+      },
+      {
+        "text": "Request access",
+        "href": "/workplace-ai-visibility-check/start/",
+        "width": 162,
+        "height": 51,
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(13, 115, 119)",
+        "contrast": 5.62
+      }
+    ],
+    "images": [],
+    "stylesheet": [
+      "http://127.0.0.1:4377/assets/css/workplace-ai-academy.css",
+      "http://127.0.0.1:4377/assets/css/visibility-check.css",
+      "http://127.0.0.1:4377/assets/css/visibility-landing.css"
+    ],
+    "name": "visibility-check",
+    "width": 1440,
+    "errors": [],
+    "focus": {
+      "outlineStyle": "solid",
+      "outlineWidth": "3px",
+      "outlineColor": "rgb(13, 115, 119)"
+    }
+  },
+  {
+    "name": "home",
+    "width": 1440,
+    "documentWidth": 1440,
+    "viewportWidth": 1440,
+    "brokenImages": [],
+    "pageErrors": []
+  },
+  {
+    "name": "how",
+    "width": 1440,
+    "documentWidth": 1440,
+    "viewportWidth": 1440,
+    "brokenImages": [],
+    "pageErrors": []
+  },
+  {
+    "name": "pricing",
+    "width": 1440,
+    "documentWidth": 1440,
+    "viewportWidth": 1440,
+    "brokenImages": [],
+    "pageErrors": []
+  },
+  {
+    "name": "start",
+    "width": 1440,
+    "documentWidth": 1440,
+    "viewportWidth": 1440,
+    "brokenImages": [],
+    "pageErrors": []
+  },
+  {
+    "name": "see-waia-attribution",
+    "hrefs": [
+      "/go/see-waia/li/",
+      "/go/see-waia/li/",
+      "/go/see-waia/li/"
+    ]
+  },
+  {
+    "name": "visibility-entry",
+    "mainCTAs": [
+      "/workplace-ai-visibility-check/start/",
+      "/workplace-ai-visibility-check/start/"
+    ]
+  },
+  {
+    "name": "visibility-start",
+    "formLink": "https://tally.so/r/GxPbRz",
+    "noindex": "noindex, nofollow"
+  }
+]

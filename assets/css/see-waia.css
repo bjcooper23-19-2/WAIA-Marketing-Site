@@ -1,0 +1,322 @@
+/* See WAIA: a direct invitation, a compact agenda, and real product evidence. */
+.see-page .noise {
+  display: none;
+}
+
+.see-page .see-hero {
+  display: block;
+  min-height: 0;
+  padding: clamp(76px, 7vw, 112px) 24px clamp(72px, 7vw, 112px);
+  background: var(--waia-clarity-white);
+  color: var(--waia-text-primary);
+}
+
+.see-page .see-hero .hero-grid {
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.7fr);
+  gap: clamp(48px, 7vw, 112px);
+  align-items: end;
+}
+
+.see-page .see-hero h1 {
+  max-width: 12ch;
+  margin-bottom: 30px;
+  font-size: clamp(3.5rem, 5.7vw, 5.7rem);
+  line-height: 1.01;
+  letter-spacing: -0.07em;
+  text-wrap: balance;
+}
+
+.see-page .see-hero .lede {
+  max-width: 51ch;
+  color: var(--waia-text-secondary);
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  line-height: 1.6;
+}
+
+.see-page .see-hero .trust-line {
+  max-width: 54ch;
+  margin: 0 0 26px;
+  color: var(--waia-text-secondary);
+  line-height: 1.55;
+}
+
+.see-page .see-hero .hero-actions {
+  margin: 0;
+}
+
+.see-page .see-hero .btn.secondary {
+  border-color: var(--waia-deep-teal);
+  background: var(--waia-clarity-white);
+  color: var(--waia-deep-teal);
+}
+
+.see-page .see-hero .btn.secondary:hover {
+  background: #e4f3f3;
+}
+
+.see-page .see-hero .product-summary-card {
+  padding: 24px 0 0;
+  border: 0;
+  border-top: 2px solid var(--waia-deep-teal);
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.see-page .see-hero .product-summary-card::before {
+  display: none;
+}
+
+.see-page .see-hero .eyebrow {
+  color: var(--waia-deep-teal);
+}
+
+.see-page .see-hero .eyebrow::before {
+  background: var(--waia-deep-teal);
+  box-shadow: none;
+}
+
+.see-page .see-hero .signal-list {
+  gap: 0;
+}
+
+.see-page .see-hero .signal-list li {
+  display: grid;
+  grid-template-columns: minmax(90px, 0.6fr) minmax(0, 1fr);
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--waia-border-light);
+  color: var(--waia-text-secondary);
+  font-size: 0.95rem;
+}
+
+.see-page .see-hero .signal-list strong {
+  color: var(--waia-text-primary);
+  font-size: 1rem;
+  font-weight: 650;
+  white-space: normal;
+}
+
+.see-page .see-agenda {
+  padding-top: clamp(88px, 9vw, 136px);
+  padding-bottom: clamp(88px, 9vw, 136px);
+  background: var(--waia-operating-navy);
+  color: var(--waia-text-on-dark);
+  box-shadow: none;
+}
+
+.see-page .see-agenda .section-head {
+  display: grid;
+  max-width: none;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.7fr);
+  gap: 0 clamp(36px, 6vw, 90px);
+  align-items: end;
+  margin-bottom: clamp(42px, 5vw, 68px);
+}
+
+.see-page .see-agenda .eyebrow {
+  grid-column: 1 / -1;
+  color: var(--waia-bright-cyan);
+}
+
+.see-page .see-agenda .section-head h2 {
+  max-width: 15ch;
+  margin: 0;
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 1.03;
+}
+
+.see-page .see-agenda .section-head p {
+  max-width: 42ch;
+  margin: 0;
+  color: var(--waia-text-muted-on-dark);
+  line-height: 1.65;
+}
+
+.see-page .see-agenda .conversion-question-grid {
+  gap: clamp(26px, 4vw, 54px);
+}
+
+.see-page .see-agenda .outcome-card {
+  min-height: 0;
+  padding: 22px 0 0;
+  border: 0;
+  border-top: 2px solid var(--waia-bright-cyan);
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.see-page .see-agenda .outcome-card span {
+  color: var(--waia-bright-cyan);
+}
+
+.see-page .see-agenda .outcome-card h3 {
+  color: var(--waia-text-on-dark);
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  line-height: 1.16;
+}
+
+.see-page .see-agenda .outcome-card p {
+  max-width: 38ch;
+  color: var(--waia-text-muted-on-dark);
+  line-height: 1.6;
+}
+
+.see-page .see-product-proof {
+  margin: clamp(64px, 8vw, 112px) 0 0;
+  padding: clamp(10px, 1.5vw, 20px);
+  border: 1px solid var(--waia-border-dark);
+  border-radius: 20px;
+  background: var(--waia-operating-navy-soft);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.22);
+}
+
+.see-page .see-product-proof a {
+  display: block;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.see-page .see-product-proof img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.see-page .see-product-proof figcaption {
+  padding: 14px 4px 2px;
+  color: var(--waia-text-muted-on-dark);
+  font-size: 0.91rem;
+}
+
+.see-page .see-final {
+  padding-top: clamp(88px, 8vw, 128px);
+  padding-bottom: clamp(88px, 8vw, 128px);
+  background: var(--waia-neutral-light);
+  color: var(--waia-text-primary);
+}
+
+.see-page .see-final .cta-box {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.7fr);
+  gap: 0 clamp(36px, 6vw, 88px);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  text-align: left;
+}
+
+.see-page .see-final .eyebrow {
+  grid-column: 1 / -1;
+  color: var(--waia-deep-teal);
+}
+
+.see-page .see-final h2 {
+  max-width: 17ch;
+  margin: 0;
+  font-size: clamp(2.75rem, 4.3vw, 4.3rem);
+  line-height: 1.05;
+}
+
+.see-page .see-final p {
+  max-width: 42ch;
+  margin: 0;
+  color: var(--waia-text-secondary);
+  font-size: 1.13rem;
+  line-height: 1.65;
+}
+
+.see-page .see-final .section-actions {
+  grid-column: 1 / -1;
+  margin-top: 44px;
+}
+
+.see-page .see-final .btn.secondary {
+  border-color: var(--waia-deep-teal);
+  background: var(--waia-clarity-white);
+  color: var(--waia-deep-teal);
+}
+
+.see-page .see-final .btn.secondary:hover {
+  background: #e4f3f3;
+}
+
+.see-page .see-final .centered-actions {
+  grid-column: 1 / -1;
+  justify-content: flex-start;
+  margin: 32px 0 0;
+  padding-top: 28px;
+  border-top: 1px solid var(--waia-border-light);
+}
+
+.see-page .see-hero a:focus-visible,
+.see-page .see-final a:focus-visible {
+  outline-color: var(--waia-deep-teal);
+}
+
+.see-page .btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .see-page .see-hero .hero-grid,
+  .see-page .see-agenda .section-head,
+  .see-page .see-final .cta-box {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .see-page .see-hero .product-summary-card {
+    margin-top: 52px;
+  }
+
+  .see-page .see-agenda .section-head p,
+  .see-page .see-final p {
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 760px) {
+  .see-page .see-hero {
+    padding: 62px 20px 76px;
+  }
+
+  .see-page .see-hero h1 {
+    max-width: 11ch;
+    font-size: clamp(2.75rem, 11vw, 4.1rem);
+  }
+
+  .see-page .see-hero .lede,
+  .see-page .see-hero .trust-line {
+    max-width: 40ch;
+  }
+
+  .see-page .see-agenda .section-head h2,
+  .see-page .see-final h2 {
+    font-size: clamp(2.5rem, 10vw, 3.4rem);
+  }
+
+  .see-page .see-agenda .conversion-question-grid {
+    gap: 32px;
+  }
+
+  .see-page .see-product-proof {
+    margin-top: 58px;
+  }
+
+  .see-page .see-product-proof a {
+    height: 310px;
+  }
+
+  .see-page .see-product-proof img {
+    width: 300%;
+    max-width: none;
+  }
+
+  .see-page .see-final .section-actions,
+  .see-page .see-final .centered-actions {
+    gap: 12px;
+  }
+}
