@@ -108,3 +108,54 @@ test("result retains only print/save and WAIA actions", () => {
   assert.match(page, /href="\/go\/visibility-check\/"/);
   assert.doesNotMatch(page, /Run the check again|Retake|Improve your score/i);
 });
+
+test("completed answers and notes remain available in the same browser tab", async () => {
+  const values = new Map();
+  const handlers = {};
+  const answers = all("partial");
+  const step = { hidden: false, querySelectorAll: () => [] };
+  const form = {
+    querySelectorAll: () => [step],
+    addEventListener: (name, handler) => { handlers[name] = handler; },
+  };
+  const elements = {
+    "#visibility-form": form,
+    "#check-progress": { textContent: "" },
+    "#check-progress-bar": { value: 0 },
+    "#check-error": { hidden: true },
+  };
+  const previous = {
+    document: globalThis.document,
+    FormData: globalThis.FormData,
+    sessionStorage: globalThis.sessionStorage,
+    location: globalThis.location,
+  };
+  let destination;
+  try {
+    globalThis.document = { querySelector: (selector) => elements[selector] };
+    globalThis.FormData = class {
+      get(id) {
+        return id === "example" ? "  Example work  " :
+          id === "focus" ? "  Next question  " : answers[id];
+      }
+    };
+    globalThis.sessionStorage = {
+      setItem: (key, value) => values.set(key, value),
+      getItem: (key) => values.get(key),
+    };
+    globalThis.location = { assign: (path) => { destination = path; } };
+    await import("../assets/js/visibility-check.mjs");
+    handlers.submit({ preventDefault() {} });
+    assert.equal(destination, "/workplace-ai-visibility-check/results/");
+    const saved = JSON.parse(values.get("waia:visibility-check"));
+    assert.deepEqual(saved.answers, answers);
+    assert.equal(saved.example, "Example work");
+    assert.equal(saved.focus, "Next question");
+    assert.ok(buildResult(JSON.parse(globalThis.sessionStorage.getItem("waia:visibility-check")).answers));
+  } finally {
+    for (const [key, value] of Object.entries(previous)) {
+      if (value === undefined) delete globalThis[key];
+      else globalThis[key] = value;
+    }
+  }
+});

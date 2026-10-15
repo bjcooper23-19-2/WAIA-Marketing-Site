@@ -135,7 +135,7 @@ test("invalid content route omits content id", () => {
   assert.equal(r.result, "/workplace-ai-visibility-check/check/?s=li");
 });
 
-test("route is noindex and contains one Cloudflare beacon", () => {
+test("route is noindex and uses the guarded Cloudflare loader", () => {
   const html = readFileSync(
     new URL(
       "../go/content/2026-10-evidence-value/index.html",
@@ -144,10 +144,6 @@ test("route is noindex and contains one Cloudflare beacon", () => {
     "utf8",
   );
   assert.match(html, /content="noindex, nofollow"/);
-  assert.equal((html.match(/beacon\.min\.js/g) || []).length, 1);
-  assert.equal(
-    (html.match(/9fa2711aed53428980734989cf03178a/g) || []).length,
-    1,
-  );
+  assert.equal((html.match(/assets\/js\/analytics\.js/g) || []).length, 1);
   assert.ok(!html.includes('rel="canonical"'));
 });
