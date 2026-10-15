@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, follow" />
+    <title>Analytics preferences | WAIA</title>
+    <link rel="stylesheet" href="/assets/css/workplace-ai-academy.css" />
+    <style>
+      .analytics-preferences .hero { min-height: auto; }
+      .analytics-preferences .hero-actions .btn[hidden] { display: none; }
+    </style>
+    <link rel="icon" href="/assets/favicon/waia-favicon.svg" type="image/svg+xml" />
+  </head>
+  <body class="product-waia analytics-preferences">
+    <div class="site">
+      <header>
+        <nav class="nav" aria-label="Main navigation">
+          <a class="brand waia-brand" href="/" aria-label="WAIA home">
+            <img class="brand-logo" src="/assets/brand/waia-lockup-dark.svg" alt="WAIA" width="360" height="92" />
+          </a>
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">
+            Menu
+          </button>
+          <div class="nav-links" id="site-navigation">
+            <a href="/">Product</a>
+            <a href="/data-privacy/">Data &amp; privacy</a>
+          </div>
+        </nav>
+      </header>
+      <main id="top">
+        <section class="hero compact-hero inner-page-hero">
+          <div class="container">
+            <h1>Analytics preferences</h1>
+            <p class="lede">
+              WAIA uses Cloudflare Web Analytics to see aggregate visits to this website.
+              You can object to this analytics in this browser.
+            </p>
+          </div>
+        </section>
+        <section class="waia-light-section">
+          <div class="container">
+            <h2>Your choice</h2>
+            <p id="analytics-status" role="status" aria-live="polite">
+              Checking this browser’s setting…
+            </p>
+            <p>
+              We store your objection in this browser so the Cloudflare beacon
+              does not load on later pages. You can change this setting here at
+              any time. The setting does not affect the Visibility Check or
+              enquiry forms.
+            </p>
+            <div class="hero-actions">
+              <button class="btn primary" type="button" id="object-to-analytics" hidden>
+                Object to analytics
+              </button>
+              <button class="btn secondary" type="button" id="allow-analytics" hidden>
+                Allow analytics
+              </button>
+            </div>
+            <p>
+              Read the <a href="https://legal.nineteenpointtwo.com/cookies/">Cookie Notice</a>
+              and <a href="https://legal.nineteenpointtwo.com/privacy/">Privacy Notice</a>.
+            </p>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <div class="footer-grid">
+          <span>&copy; 2026 Nineteen Point Two Ltd.</span>
+          <span>WAIA is a Nineteen Point Two product.</span>
+          <span><a href="/">Product</a> | <a href="/data-privacy/">Data &amp; privacy</a></span>
+          <span><a href="/terms/">WAIA terms</a> | <a href="/analytics-preferences/">Analytics preferences</a></span>
+        </div>
+      </footer>
+    </div>
+    <script src="/assets/js/nav.js" defer></script>
+    <script src="/assets/js/analytics-preferences.js" defer></script>
+  </body>
+</html>

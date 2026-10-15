@@ -14,11 +14,7 @@ const handoff = readFileSync(
 const sources = ["ap", "gm", "19", "li"];
 const tally = "https://tally.so/r/objzGM?product=WAIA&enquiry_type=walkthrough";
 
-function attribute(search = "", stored = {}, unavailable = false) {
-  const values = new Map();
-  if (stored.source) values.set("waia:source", stored.source);
-  if (stored.content) values.set("waia:content", stored.content);
-
+function attribute(search = "") {
   const unchanged = [
     "/how-it-works/",
     "/terms/",
@@ -28,29 +24,12 @@ function attribute(search = "", stored = {}, unavailable = false) {
     "https://example.com/",
     "mailto:example@example.com",
   ];
-  const hrefs = [
-    tally,
-    tally.replace("walkthrough", "procurement"),
-    ...unchanged,
-  ];
+  const hrefs = [tally, tally.replace("walkthrough", "procurement"), ...unchanged];
   const links = hrefs.map((href) => ({
     href,
-    getAttribute() {
-      return this.href;
-    },
-    setAttribute(_, value) {
-      this.href = value;
-    },
+    getAttribute() { return this.href; },
+    setAttribute(_, value) { this.href = value; },
   }));
-  const storage = {
-    setItem(k, v) {
-      if (unavailable) throw Error("blocked");
-      values.set(k, v);
-    },
-    getItem: (k) => values.get(k),
-    removeItem: (k) => values.delete(k),
-  };
-
   vm.runInNewContext(attribution, {
     URL,
     URLSearchParams,
@@ -60,105 +39,38 @@ function attribute(search = "", stored = {}, unavailable = false) {
         origin: "https://waia.co.uk",
         href: "https://waia.co.uk/" + search,
       },
-      sessionStorage: storage,
+      get sessionStorage() { throw Error("marketing storage accessed"); },
+      get localStorage() { throw Error("marketing storage accessed"); },
     },
     document: { querySelectorAll: () => links },
   });
-
-  assert.deepEqual(
-    links.slice(2).map((l) => l.href),
-    unchanged,
-  );
-  assert.ok(
-    [...values.keys()].every((k) =>
-      ["waia:source", "waia:content"].includes(k),
-    ),
-  );
-
-  return {
-    links: links.map((l) => l.href),
-    stored: {
-      source: values.get("waia:source"),
-      content: values.get("waia:content"),
-    },
-  };
+  assert.deepEqual(links.slice(2).map((l) => l.href), unchanged);
+  return links.map((l) => l.href);
 }
 
 for (const source of sources)
-  test(`${source}: CTA routing, content and session persistence`, () => {
-    const result = attribute(`?s=${source}&c=2026-10-evidence-value`);
-    assert.equal(
-      result.links[0],
-      `/go/see-waia/${source}/?c=2026-10-evidence-value`,
-    );
-    assert.equal(
-      result.links[1],
-      `/go/see-waia/${source}/?c=2026-10-evidence-value&enquiry_type=procurement`,
-    );
-    assert.deepEqual(result.stored, {
-      source,
-      content: "2026-10-evidence-value",
-    });
-    assert.equal(
-      attribute("", result.stored).links[0],
-      result.links[0],
-    );
-    assert.equal(
-      attribute(`?s=${source}&c=2026-10-evidence-value`, {}, true).links[0],
-      result.links[0],
-    );
+  test(`${source}: current-URL source reaches the enquiry handoff`, () => {
+    const links = attribute(`?s=${source}&c=2026-10-evidence-value`);
+    assert.equal(links[0], `/go/see-waia/${source}/`);
+    assert.equal(links[1], `/go/see-waia/${source}/?enquiry_type=procurement`);
+    assert.equal(attribute("")[0], "/go/see-waia/direct/");
   });
 
 for (const search of [
-  "",
-  "?s=test",
-  "?s=",
-  "?s=AP",
-  "?s=%2Fbad",
-  "?s=gm&s=ap",
-  "?s=%00",
-  "?s=direct",
+  "", "?s=test", "?s=", "?s=AP", "?s=%2Fbad", "?s=gm&s=ap", "?s=%00", "?s=direct",
 ])
   test(`safe direct fallback ${search}`, () =>
-    assert.equal(attribute(search).links[0], "/go/see-waia/direct/"));
+    assert.equal(attribute(search)[0], "/go/see-waia/direct/"));
 
-for (const content of [
-  "",
-  "UPPER",
-  "bad_value",
-  "/bad",
-  "a".repeat(65),
-])
+for (const content of ["", "UPPER", "bad_value", "/bad", "a".repeat(65)])
   test(`invalid content ignored: ${content}`, () => {
-    const result = attribute(`?s=li&c=${encodeURIComponent(content)}`, {
-      source: "li",
-      content: "old-post",
-    });
-    assert.equal(result.links[0], "/go/see-waia/li/");
-    assert.equal(result.stored.content, undefined);
+    assert.equal(attribute(`?s=li&c=${encodeURIComponent(content)}`)[0], "/go/see-waia/li/");
   });
 
-test("duplicate content is ignored", () => {
-  const result = attribute("?s=li&c=one&c=two");
-  assert.equal(result.links[0], "/go/see-waia/li/");
-  assert.equal(result.stored.content, undefined);
-});
-
-test("invalid source does not overwrite a valid session", () => {
-  const result = attribute("?s=bad&c=bad-post", {
-    source: "gm",
-    content: "existing-post",
-  });
-  assert.equal(result.links[0], "/go/see-waia/gm/?c=existing-post");
-});
-
-test("new approved source without content clears stale content", () => {
-  const result = attribute("?s=li", {
-    source: "gm",
-    content: "old-post",
-  });
-  assert.equal(result.links[0], "/go/see-waia/li/");
-  assert.deepEqual(result.stored, { source: "li", content: undefined });
+test("duplicate content and content without a valid source are ignored", () => {
+  assert.equal(attribute("?s=li&c=one&c=two")[0], "/go/see-waia/li/");
+  assert.equal(attribute("?c=one")[0], "/go/see-waia/direct/");
+  assert.equal(attribute("?s=bad&c=one")[0], "/go/see-waia/direct/");
 });
 
 function redirect(source, query = "", observerAvailable = true) {
@@ -247,14 +159,15 @@ for (const source of [...sources, "direct", "invalid"])
       url.searchParams.get("s"),
       sources.includes(source) ? source : null,
     );
-    assert.equal(url.searchParams.get("c"), "2026-10-evidence-value");
+    assert.equal(url.searchParams.get("c"), null);
     assert.equal(r.disconnected, true);
     r.timeout();
     assert.equal(r.count, 1);
   });
 
-test("invalid and duplicate content never reach Tally", () => {
+test("content values are not sent to Tally without a matching hidden field", () => {
   for (const query of [
+    "?c=valid-content",
     "?c=BAD",
     "?c=one&c=two",
     "?c=bad_value",
@@ -271,7 +184,7 @@ test("preserve procurement; same-origin Cloudflare endpoint", () => {
   r.resource("https://waia.co.uk/cdn-cgi/rum?x=1");
   const url = new URL(r.result);
   assert.equal(url.searchParams.get("enquiry_type"), "procurement");
-  assert.equal(url.searchParams.get("c"), "proposal-followup");
+  assert.equal(url.searchParams.get("c"), null);
 });
 
 test("blocked/slow/unsupported analytics never blocks conversion", () => {
@@ -284,7 +197,7 @@ test("blocked/slow/unsupported analytics never blocks conversion", () => {
   r.error();
   const url = new URL(r.result);
   assert.equal(url.searchParams.get("s"), "ap");
-  assert.equal(url.searchParams.get("c"), "apollo-followup");
+  assert.equal(url.searchParams.get("c"), null);
 });
 
 test("five noindex routes, one unchanged beacon, no sitemap entries", () => {
@@ -298,15 +211,12 @@ test("five noindex routes, one unchanged beacon, no sitemap entries", () => {
   for (const source of [...sources, "direct"]) {
     const html = readFileSync(new URL(`${source}/index.html`, root), "utf8");
     assert.match(html, /content="noindex, nofollow"/);
-    assert.equal((html.match(/beacon\.min\.js/g) || []).length, 1);
-    assert.equal(
-      (html.match(/9fa2711aed53428980734989cf03178a/g) || []).length,
-      1,
-    );
+    assert.match(html, /assets\/js\/analytics\.js/);
     assert.ok(!html.includes('rel="canonical"'));
     assert.ok(!html.includes("source-attribution.js"));
   }
   assert.ok(!handoff.includes("sessionStorage"));
+  assert.doesNotMatch(attribution, /sessionStorage|waia:source|waia:content/);
   for (const code of [attribution, handoff])
     assert.doesNotMatch(
       code,
