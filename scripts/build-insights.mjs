@@ -8,7 +8,6 @@ const siteUrl = "https://waia.co.uk";
 const loginUrl = "https://app.waia.co.uk/login";
 const walkthroughUrl =
   "https://tally.so/r/objzGM?product=WAIA&amp;enquiry_type=walkthrough";
-const cloudflareToken = "9fa2711aed53428980734989cf03178a";
 const requiredFrontmatter = ["title", "slug", "date", "category", "excerpt"];
 const safeSlugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
@@ -273,11 +272,7 @@ const faviconLinks = `
 
 const cloudflareBeacon = `
 <!-- Cloudflare Web Analytics -->
-<script
-  type="module"
-  src="https://static.cloudflareinsights.com/beacon.min.js"
-  data-cf-beacon='{"token": "${cloudflareToken}"}'
-></script>
+<script src="/assets/js/analytics.js" defer></script>
 <!-- End Cloudflare Web Analytics -->`;
 
 const jsonLdScript = (data) =>

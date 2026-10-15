@@ -9,13 +9,13 @@ WAIA uses a small `s` query parameter to preserve enquiry source context without
 - `s=19` - Nineteen Point Two website or referral
 - `s=li` - LinkedIn organic
 
-Only these exact values are accepted. Unknown, empty, mixed-case, duplicate or malformed values are ignored. An existing valid session source is retained; without one, the handoff is `direct`.
+Only these exact values are accepted. Unknown, empty, mixed-case, duplicate or malformed values are ignored; the handoff is then `direct`.
 
 ## How it works
 
 The shared script at `assets/js/source-attribution.js` runs on public WAIA pages.
 
-When a visitor arrives with an approved `s` value, the script stores only that short source code in `sessionStorage` under `waia:source`. This keeps the value available while the visitor moves between WAIA pages in the same browser session.
+When a visitor arrives with an approved `s` value, the script applies that source to enquiry links on the current page. It does not store `waia:source` or `waia:content`. Source context is lost when the visitor navigates to a URL without it.
 
 The script does not append `s` to internal navigation links. Page URLs, canonicals, sitemap entries, structured data, legal links and the WAIA application login link remain attribution-free.
 
@@ -27,30 +27,15 @@ Links targeting the dedicated `https://tally.so/r/objzGM` form are rewritten to 
 - `/go/see-waia/li/`
 - `/go/see-waia/direct/`
 
-These minimal `noindex` pages are excluded from the sitemap. They load the existing Cloudflare beacon exactly once, then use `location.replace` to forward to Tally. They do not read or write browser storage. The approved source comes from the path, not arbitrary query parameters.
+These minimal `noindex` pages are excluded from the sitemap. When no objection is stored, they load the existing Cloudflare beacon once, then use `location.replace` to forward to Tally. A saved objection prevents the beacon from loading, and the handoff still proceeds after its 1.5-second fail-open limit. The pages do not store marketing attribution. The approved source comes from the path, not arbitrary query parameters.
 
-For example, `/go/see-waia/gm/` forwards to `https://tally.so/r/objzGM?product=WAIA&enquiry_type=walkthrough&s=gm`. `direct` omits `s` entirely. Procurement CTAs retain the existing bounded `enquiry_type=procurement` context through the redirect; all other values default to `walkthrough`. No other query parameters are forwarded.
+For example, `/go/see-waia/gm/` forwards to `https://tally.so/r/objzGM?product=WAIA&enquiry_type=walkthrough&s=gm`. `direct` omits `s` entirely. Procurement CTAs retain the existing bounded `enquiry_type=procurement` context through the redirect; all other values default to `walkthrough`. The published Tally form has no `c` hidden field, so `c` is not forwarded to Tally. No other query parameters are forwarded.
 
 Static CTA destinations remain direct Tally links as a no-JavaScript fallback. A manually opened redirect with JavaScript disabled offers a plain continuation link with walkthrough context; it is not a measured automatic handoff. No new external form or hidden field is introduced.
 
 ## What is stored
 
-Stored:
-
-- the approved source code only: `ap`, `gm`, `19` or `li`
-
-Not stored:
-
-- names
-- email addresses
-- organisation details
-- page history
-- timestamps
-- user IDs
-- campaign IDs beyond the approved short code
-- arbitrary behavioural events or click histories
-
-The value uses `sessionStorage`, not cookies or `localStorage`, so it naturally disappears when the browser session ends. If `sessionStorage` is unavailable, the approved source still applies to enquiry links on the current page but will not persist across navigation.
+Marketing attribution is not stored in browser storage. Approved source values are used only from the current URL. The separate Visibility Check result uses `sessionStorage` for answers and optional notes within the browser tab.
 
 ## Tally configuration
 
@@ -93,15 +78,15 @@ Forwarding occurs as soon as that request completes. A script-load error forward
 
 ## Validation and deployment acceptance
 
-Run `node --test scripts/source-attribution.test.mjs` for source validation, persistence, non-Tally preservation, route selection, bounded query handling, beacon sequencing, fail-open behaviour, noindex/sitemap and privacy boundaries. Existing formatting, HTML, site link/asset and browser checks still apply.
+Run `node --test scripts/source-attribution.test.mjs` for source validation, non-Tally preservation, route selection, bounded query handling, beacon sequencing, fail-open behaviour, noindex/sitemap and privacy boundaries.
 
-After deployment, test `gm` and `ap` separately in fresh browser sessions:
+After deployment, test `gm` and `ap` separately:
 
 1. Open `https://waia.co.uk/?s=gm` (then repeat with `?s=ap`).
-2. Navigate to How it works; confirm internal URLs remain attribution-free.
-3. Enable Preserve log in browser Network tools and click See WAIA.
+2. Confirm internal URLs remain attribution-free. Click See WAIA on the landing page.
+3. Enable Preserve log in browser Network tools.
 4. Inspect the new tab: its first-party path must be `/go/see-waia/gm/` (or `/ap/`). Confirm the existing Cloudflare beacon sends a request containing that path before Tally navigation.
 5. Confirm Tally receives `product=WAIA`, `enquiry_type=walkthrough` and the correct `s`. Do not submit a real enquiry solely for QA.
 6. Confirm the matching path appears in Cloudflare Web Analytics after reporting catches up. Record this evidence before closing issue #45.
 
-Repeat with no source and an invalid source in fresh sessions: both must use `direct` and omit `s` at Tally. Test procurement separately to confirm its existing enquiry type remains intact. Until deployed-path ingestion is observed, acceptance criterion 5 remains a deployment verification dependency; a simulated or local browser request is not proof of live reporting.
+Repeat with no source and an invalid source: both must use `direct` and omit `s` at Tally. Test procurement separately to confirm its existing enquiry type remains intact. Until deployed-path ingestion is observed, acceptance criterion 5 remains a deployment verification dependency; a simulated or local browser request is not proof of live reporting.
