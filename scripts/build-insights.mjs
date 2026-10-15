@@ -259,7 +259,8 @@ const footer = `
       |
       <a href="https://legal.nineteenpointtwo.com/privacy/" target="_blank" rel="noopener noreferrer">Privacy</a>
       |
-      <a href="https://legal.nineteenpointtwo.com/cookies/" target="_blank" rel="noopener noreferrer">Cookies</a>
+      <a href="https://legal.nineteenpointtwo.com/cookies/" target="_blank" rel="noopener noreferrer">Cookies</a> |
+      <a href="/analytics-preferences/">Analytics preferences</a>
     </span>
   </div>
 </footer>`;
