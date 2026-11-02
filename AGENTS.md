@@ -19,6 +19,8 @@ Preserve WAIA's established brand identity. Avoid generic SaaS layouts, excessiv
 
 Prioritise buyer comprehension, credibility and clear conversion journeys. Never introduce unsupported commercial or customer claims.
 
+For educational infographics, diagrams and LinkedIn carousels, use the shared [visual-explainer skill](https://github.com/bjcooper23-19-2/codex-operating-system/blob/main/skills/visual-explainer/SKILL.md) and the WAIA-specific [visual explainer guidance](docs/visual-explainers.md). Read the WAIA belief system and channel guidance first. Do not copy the shared skill into this repository. Apply the beginner comprehension, terminology, accuracy and mobile-readability gates before requesting approval.
+
 Use No AI Slop for newly created or materially revised public copy.
 
 Review rendered desktop and mobile pages when practical and report any limitations.
