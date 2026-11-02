@@ -243,6 +243,10 @@ Avoid turning every discussion into:
 
 The stronger long-term signal is that WAIA consistently helps people think more clearly about how work is changing.
 
+## Educational visual explainers
+
+Consider a visual when it makes an unfamiliar concept easier to understand than prose alone. Use the [WAIA visual explainer guidance](./visual-explainers.md) and shared [visual-explainer skill](https://github.com/bjcooper23-19-2/codex-operating-system/blob/main/skills/visual-explainer/SKILL.md). Teach the real technical vocabulary alongside familiar analogies and practical examples; never sacrifice accuracy for simplicity. Visuals are an occasional editorial format, not a quota or default for every post. Preserve human approval before Buffer scheduling.
+
 ## Decision Test
 
 Before posting or commenting, check:
