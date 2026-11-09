@@ -262,6 +262,7 @@ const footer = `
       <a href="https://legal.nineteenpointtwo.com/cookies/" target="_blank" rel="noopener noreferrer">Cookies</a> |
       <a href="/analytics-preferences/">Analytics preferences</a>
     </span>
+    <span role="group" aria-label="Market">Market: <a href="https://waia.co.uk/" aria-current="page">UK (current)</a> | <a href="https://waiausa.com/">USA</a></span>
   </div>
 </footer>`;
 
