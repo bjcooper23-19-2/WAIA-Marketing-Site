@@ -1,0 +1,566 @@
+/*
+ * Issue #98 review concept: one homepage-only editorial direction.
+ * Deliberately separate from the production stylesheet until visual approval.
+ */
+
+.home-page {
+  --home-paper: #fafbfa;
+  --home-mist: #edf3f2;
+  --home-ink: #102433;
+  --home-muted: #425569;
+  background: var(--waia-operating-navy);
+}
+
+.home-page main > section:not(.hero) {
+  box-shadow: none;
+}
+
+.home-page .section-head h2,
+.home-page .cta-box h2 {
+  font-weight: 600;
+  letter-spacing: -0.055em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.home-page .section-head p {
+  line-height: 1.68;
+}
+
+.home-page .eyebrow {
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.home-page .eyebrow::before {
+  box-shadow: none;
+}
+
+.home-page .home-hero {
+  background: var(--home-paper);
+}
+
+.home-page .home-hero-intro {
+  padding-top: clamp(88px, 7.8vw, 124px);
+  padding-bottom: clamp(120px, 12vw, 184px);
+  background:
+    radial-gradient(ellipse at 98% 0%, rgba(13, 115, 119, 0.08), transparent 39%),
+    var(--home-paper);
+}
+
+.home-page .home-hero-grid {
+  grid-template-columns: minmax(0, 1.55fr) minmax(310px, 0.75fr);
+  gap: clamp(50px, 6vw, 94px);
+  align-items: center;
+}
+
+.home-page .home-hero h1 {
+  max-width: 13ch;
+  color: var(--home-ink);
+  font-size: clamp(3.5rem, 5.45vw, 5.45rem);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.067em;
+}
+
+.home-page .home-hero-support {
+  padding-top: clamp(22px, 3vw, 46px);
+}
+
+.home-page .home-hero .lede {
+  max-width: 39ch;
+  margin-bottom: 32px;
+  color: var(--home-muted);
+  font-size: clamp(1.08rem, 1.37vw, 1.25rem);
+  line-height: 1.65;
+}
+
+.home-page .home-hero .btn,
+.home-page .home-visibility-entry .btn {
+  border-radius: 999px;
+  min-height: 50px;
+  padding-inline: 22px;
+}
+
+.home-page .home-product-stage {
+  position: relative;
+  isolation: isolate;
+  margin-top: -72px;
+  padding-top: 0;
+  padding-bottom: clamp(92px, 10vw, 148px);
+  border-radius: clamp(28px, 4.5vw, 68px) clamp(28px, 4.5vw, 68px) 0 0;
+  background:
+    radial-gradient(ellipse at 16% 78%, rgba(34, 211, 238, 0.12), transparent 36%),
+    radial-gradient(ellipse at 92% 15%, rgba(13, 115, 119, 0.29), transparent 37%),
+    linear-gradient(150deg, #10283a, var(--waia-operating-navy) 66%);
+}
+
+.home-page .home-product-stage-grid {
+  position: relative;
+  grid-template-columns: minmax(0, 1fr) minmax(170px, 0.22fr);
+  gap: clamp(40px, 4vw, 66px);
+  align-items: end;
+}
+
+.home-page .hero-product-proof {
+  position: relative;
+  margin: -49px 0 0;
+}
+
+.home-page .hero-product-proof::before {
+  content: "";
+  position: absolute;
+  inset: 22px -18px -18px 26px;
+  z-index: -1;
+  border: 1px solid rgba(203, 229, 229, 0.23);
+  border-radius: 30px;
+  background: rgba(121, 202, 200, 0.08);
+  transform: rotate(1.3deg);
+}
+
+.home-page .hero-product-proof.waia-screenshot-frame {
+  padding: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.77);
+  border-radius: 23px;
+  box-shadow: 0 37px 100px rgba(0, 5, 15, 0.42);
+}
+
+.home-page .home-product-image {
+  height: clamp(350px, 36vw, 500px);
+  border-radius: 16px 16px 0 0;
+}
+
+.home-page .home-product-stage .trust-line {
+  max-width: 23ch;
+  margin-bottom: 48px;
+  padding-left: 0;
+  border: 0;
+  color: #d5e5ea;
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+.home-page .home-product-stage .trust-line::before {
+  content: "";
+  display: block;
+  width: 34px;
+  height: 2px;
+  margin-bottom: 20px;
+  background: var(--waia-bright-cyan);
+}
+
+.home-page #buyer-questions {
+  padding-top: clamp(105px, 12vw, 170px);
+  padding-bottom: clamp(88px, 10vw, 140px);
+  background: linear-gradient(180deg, #eaf1f2 0%, var(--home-paper) 78%);
+}
+
+.home-page #buyer-questions > .container {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1fr);
+  gap: clamp(56px, 8vw, 120px);
+}
+
+.home-page #buyer-questions .section-head {
+  margin: 0;
+}
+
+.home-page #buyer-questions h2 {
+  max-width: 12ch;
+  color: var(--home-ink);
+  font-size: clamp(3rem, 4.7vw, 4.6rem);
+}
+
+.home-page #buyer-questions .conversion-question-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+}
+
+.home-page #buyer-questions .outcome-card {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  column-gap: 20px;
+  padding: 24px 0 27px;
+  border-top: 1px solid #b9d0d3;
+}
+
+.home-page #buyer-questions .outcome-card > span {
+  grid-row: 1 / span 2;
+  margin: 4px 0 0;
+  color: var(--waia-deep-teal);
+  font-size: 0.8rem;
+}
+
+.home-page #buyer-questions .outcome-card h3 {
+  max-width: none;
+  margin-bottom: 7px;
+  font-size: clamp(1.4rem, 1.8vw, 1.75rem);
+  font-weight: 600;
+}
+
+.home-page #buyer-questions .outcome-card p {
+  max-width: 46ch;
+  grid-column: 2;
+  line-height: 1.62;
+}
+
+.home-page .home-visibility-entry {
+  padding-top: clamp(64px, 7vw, 96px);
+  padding-bottom: clamp(78px, 8vw, 110px);
+  background: var(--home-paper);
+}
+
+.home-page .home-visibility-entry > .container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px 60px;
+  align-items: end;
+  padding-top: 54px;
+  border-top: 1px solid #d5e3e4;
+}
+
+.home-page .home-visibility-entry .section-head {
+  max-width: 750px;
+  margin: 0;
+}
+
+.home-page .home-visibility-entry h2 {
+  max-width: 15ch;
+  color: var(--home-ink);
+  font-size: clamp(2.8rem, 4vw, 4rem);
+}
+
+.home-page .home-visibility-entry .btn {
+  white-space: nowrap;
+}
+
+.home-page #product-proof {
+  padding-top: clamp(100px, 10vw, 145px);
+  padding-bottom: clamp(105px, 11vw, 160px);
+  background:
+    radial-gradient(ellipse at 94% 80%, rgba(13, 115, 119, 0.08), transparent 35%),
+    #f4f8f8;
+}
+
+.home-page #product-proof .section-head {
+  margin-bottom: clamp(48px, 6vw, 76px);
+}
+
+.home-page #product-proof h2 {
+  max-width: 12ch;
+  color: var(--home-ink);
+  font-size: clamp(3rem, 4.6vw, 4.7rem);
+}
+
+.home-page #product-proof .waia-story-feature {
+  grid-template-columns: minmax(0, 1.7fr) minmax(240px, 0.6fr);
+  gap: clamp(36px, 6vw, 88px);
+}
+
+.home-page #product-proof .waia-screenshot-frame {
+  padding: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.96);
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 30px 80px rgba(14, 40, 56, 0.17);
+}
+
+.home-page #product-proof .waia-story-copy {
+  padding-left: 28px;
+  border-left: 2px solid #b0d3d1;
+}
+
+.home-page #product-proof .waia-story-copy h3 {
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.home-page #product-proof .section-actions {
+  margin-top: 40px;
+}
+
+.home-page #workflow-example {
+  padding-top: clamp(92px, 10vw, 145px);
+  padding-bottom: clamp(100px, 10vw, 145px);
+  background: var(--home-paper);
+}
+
+.home-page #workflow-example h2 {
+  color: var(--home-ink);
+  font-size: clamp(3rem, 4.5vw, 4.5rem);
+}
+
+.home-page #workflow-example .workflow-example-grid {
+  border-top-width: 1px;
+}
+
+.home-page #workflow-example .workflow-example-grid article {
+  padding-top: 42px;
+}
+
+.home-page #workflow-example .workflow-example-grid article::before {
+  width: 7px;
+  height: 7px;
+  top: -4px;
+}
+
+.home-page #workflow-example .workflow-example-grid h3 {
+  font-weight: 600;
+}
+
+.home-page #why-waia,
+.home-page #who-waia-is-for {
+  background:
+    radial-gradient(ellipse at 5% 10%, rgba(13, 115, 119, 0.17), transparent 39%),
+    #102437;
+}
+
+.home-page #why-waia,
+.home-page #how-waia-works,
+.home-page #who-waia-is-for,
+.home-page #trust {
+  padding-top: clamp(100px, 10vw, 150px);
+  padding-bottom: clamp(100px, 10vw, 150px);
+}
+
+.home-page #why-waia h2,
+.home-page #who-waia-is-for h2 {
+  font-size: clamp(3rem, 4.5vw, 4.65rem);
+}
+
+.home-page #why-waia .buyer-fit-list article,
+.home-page #who-waia-is-for .product-summary-card {
+  border-color: rgba(213, 231, 235, 0.16);
+}
+
+.home-page #why-waia .compact-fit-list article > span {
+  border: 0;
+  padding: 0;
+  color: #8bdbdf;
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+.home-page #who-waia-is-for .commercial-entry-card {
+  background: rgba(255, 255, 255, 0.065);
+  box-shadow: 0 22px 65px rgba(0, 8, 19, 0.2);
+}
+
+.home-page #how-waia-works,
+.home-page #trust {
+  background: #f4f8f8;
+}
+
+.home-page #how-waia-works h2,
+.home-page #trust h2 {
+  color: var(--home-ink);
+  font-size: clamp(3rem, 4.5vw, 4.6rem);
+}
+
+.home-page #how-waia-works .simple-process-grid {
+  gap: 0;
+  border-top: 1px solid #b9d0d3;
+}
+
+.home-page #how-waia-works .outcome-card {
+  padding: 30px 20px 10px 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.home-page #how-waia-works .outcome-card h3 {
+  font-weight: 600;
+}
+
+.home-page #trust .outcome-card {
+  border-color: #d5e2e4;
+  border-radius: 18px;
+  box-shadow: none;
+}
+
+.home-page .cta-section {
+  padding-top: clamp(100px, 10vw, 150px);
+  padding-bottom: clamp(100px, 10vw, 150px);
+  background: #081220;
+}
+
+.home-page .cta-box {
+  border-color: rgba(209, 236, 238, 0.15);
+  background:
+    radial-gradient(ellipse at 85% 0%, rgba(34, 211, 238, 0.13), transparent 45%),
+    #112538;
+}
+
+.home-page .cta-box h2 {
+  font-size: clamp(3rem, 4.6vw, 4.8rem);
+}
+
+@media (max-width: 980px) {
+  .home-page .home-hero-grid,
+  .home-page #buyer-questions > .container,
+  .home-page .home-visibility-entry > .container,
+  .home-page #product-proof .section-head,
+  .home-page #product-proof .waia-story-feature {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-page .home-hero h1 {
+    max-width: 16ch;
+  }
+
+  .home-page .home-hero-support {
+    padding-top: 0;
+  }
+
+  .home-page .home-product-stage-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 38px;
+  }
+
+  .home-page .home-product-stage .trust-line {
+    max-width: 52ch;
+    margin: 0;
+  }
+
+  .home-page #buyer-questions .conversion-question-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-page #buyer-questions .conversion-question-grid > * {
+    grid-column: auto;
+  }
+
+  .home-page .home-visibility-entry .btn {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 700px) {
+  .home-page .home-hero-intro {
+    padding: 54px 20px 112px;
+  }
+
+  .home-page .home-hero-grid {
+    gap: 25px;
+  }
+
+  .home-page .home-hero h1 {
+    max-width: 12ch;
+    font-size: clamp(2.62rem, 10.5vw, 4rem);
+    line-height: 1.08;
+    letter-spacing: -0.062em;
+  }
+
+  .home-page .home-hero .lede {
+    margin-bottom: 25px;
+    font-size: 1.04rem;
+  }
+
+  .home-page .home-product-stage {
+    margin-top: -44px;
+    padding: 0 20px 74px;
+    border-radius: 32px 32px 0 0;
+  }
+
+  .home-page .hero-product-proof {
+    margin-top: -22px;
+    margin-bottom: 0;
+    transform: none;
+  }
+
+  .home-page .hero-product-proof::before {
+    inset: 10px -7px -10px 9px;
+    border-radius: 18px;
+  }
+
+  .home-page .hero-product-proof.waia-screenshot-frame {
+    padding: 5px;
+    border-radius: 16px;
+    box-shadow: 0 22px 58px rgba(0, 5, 15, 0.32);
+  }
+
+  .home-page .home-product-image {
+    height: auto;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .home-page .home-product-stage-grid {
+    gap: 30px;
+  }
+
+  .home-page .home-product-stage .trust-line {
+    font-size: 0.93rem;
+  }
+
+  .home-page #buyer-questions,
+  .home-page #product-proof,
+  .home-page #workflow-example,
+  .home-page #why-waia,
+  .home-page #how-waia-works,
+  .home-page #who-waia-is-for,
+  .home-page #trust,
+  .home-page .cta-section {
+    padding-top: 78px;
+    padding-bottom: 82px;
+  }
+
+  .home-page #buyer-questions > .container {
+    gap: 38px;
+  }
+
+  .home-page #buyer-questions h2,
+  .home-page #product-proof h2,
+  .home-page #workflow-example h2,
+  .home-page #why-waia h2,
+  .home-page #how-waia-works h2,
+  .home-page #who-waia-is-for h2,
+  .home-page #trust h2,
+  .home-page .cta-box h2 {
+    font-size: clamp(2.42rem, 9vw, 3.3rem);
+  }
+
+  .home-page #buyer-questions .outcome-card {
+    grid-template-columns: 40px minmax(0, 1fr);
+    column-gap: 11px;
+  }
+
+  .home-page .home-visibility-entry {
+    padding: 28px 20px 82px;
+  }
+
+  .home-page .home-visibility-entry > .container {
+    padding-top: 44px;
+  }
+
+  .home-page #product-proof .waia-story-copy {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .home-page #product-proof .waia-story-copy,
+  .home-page #product-proof .waia-screenshot-frame {
+    max-width: 100%;
+  }
+
+  .home-page #workflow-example .workflow-example-grid {
+    border-top: 0;
+  }
+
+  .home-page #how-waia-works .simple-process-grid {
+    border-top: 0;
+  }
+
+  .home-page #how-waia-works .outcome-card {
+    padding: 20px 0;
+    border-top: 1px solid #b9d0d3;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .hero-product-proof::before {
+    transform: none;
+  }
+}
