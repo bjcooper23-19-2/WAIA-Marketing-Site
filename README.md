@@ -78,9 +78,11 @@ The site is organised around the buyer questions a prospective customer needs to
 - What should I do next?
 - What does it record and how is customer data handled?
 
-WAIA is positioned around the move from AI adoption to workplace evidence and better management decisions. The primary homepage proposition is:
+WAIA is positioned around the move from AI adoption to workplace evidence and better management decisions. The approved homepage proposition is:
 
-**Can you prove what AI is doing to the work?**
+**Turn AI use into managed, measurable value.**
+
+The eight-section editorial narrative moves from visibility and evidence to management action, a clearly fictional worked example, trust boundaries, the free Visibility Check and a walkthrough enquiry.
 
 The primary navigation is intentionally simpler: Product, How it works, Pricing, Insights and See WAIA. The homepage should help a first-time buyer quickly understand three questions: where AI is being used in real work, whether it is making that work better or worse, and how strong the evidence is. Deeper methodology, buyer-fit detail and trust/procurement information remain available through supporting and footer routes.
 

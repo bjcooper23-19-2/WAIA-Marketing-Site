@@ -1,23 +1,32 @@
 <!doctype html>
 <html lang="en-GB">
   <head>
-    <link
-      rel="stylesheet"
-      href="/assets/css/workplace-ai-academy.css?v=20261001-3"
-    />
-    <link rel="stylesheet" href="/assets/css/homepage.css?v=20261012-1" />
+    <link rel="stylesheet" href="/assets/css/homepage.css?v=20261121-1" />
     <link
       rel="preload"
       as="image"
       type="image/jpeg"
-      media="(min-width: 601px)"
       href="/assets/product-screenshots/2026-09-30/04-evidence-desktop-1470.jpg"
       imagesrcset="
         /assets/product-screenshots/2026-09-30/04-evidence-desktop-1470.jpg 1470w,
         /assets/product-screenshots/2026-09-30/04-evidence-desktop.jpg 2940w
       "
-      imagesizes="(max-width: 1440px) 78vw, 1000px"
+      imagesizes="(max-width: 600px) 100vw, (max-width: 820px) 90vw, (max-width: 1440px) 51vw, 700px"
       fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/instrument-serif-regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/dm-sans-variable.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
     />
     <link rel="canonical" href="https://waia.co.uk/" />
     <link rel="alternate" hreflang="en-GB" href="https://waia.co.uk/" />
@@ -58,505 +67,447 @@
       href="/assets/favicon/waia-apple-touch-icon.png"
     />
   </head>
-  <body class="product-waia home-page">
-    <div class="noise"></div>
-    <div class="site">
-      <header>
-        <nav class="nav" aria-label="Main navigation">
-          <a class="brand waia-brand" href="/" aria-label="WAIA home">
-            <img
-              class="brand-logo"
-              src="/assets/brand/waia-lockup-dark.svg"
-              alt="WAIA"
-              width="360"
-              height="92"
-            />
-          </a>
-          <button
-            class="nav-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="site-navigation"
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-inner nav">
+        <a class="brand" href="/" aria-label="WAIA home"
+          ><img
+            src="/assets/brand/waia-lockup-light.svg"
+            alt="WAIA"
+            width="360"
+            height="92"
+        /></a>
+        <nav
+          class="nav-links"
+          id="site-navigation"
+          aria-label="Main navigation"
+        >
+          <a href="/" aria-current="page">Product</a>
+          <a href="/how-it-works/">How it works</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/insights/">Insights</a>
+          <a class="mobile-sign-in" href="https://app.waia.co.uk/login"
+            >Sign in</a
           >
-            Menu
-          </button>
-          <div class="nav-links" id="site-navigation">
-            <a href="/" aria-current="page">Product</a>
-            <a href="/how-it-works/">How it works</a>
-            <a href="/pricing/">Pricing</a>
-            <a href="/insights/">Insights</a>
-          </div>
-          <div class="nav-actions">
-            <a class="nav-sign-in" href="https://app.waia.co.uk/login"
-              >Sign in</a
-            >
-            <a
-              class="nav-cta"
-              href="https://tally.so/r/objzGM?product=WAIA&amp;enquiry_type=walkthrough"
-              target="_blank"
-              rel="noopener noreferrer"
-              >See WAIA</a
-            >
-          </div>
         </nav>
-      </header>
-      <main id="top">
-        <section class="hero home-hero">
-          <div class="home-hero-intro">
-            <div class="container home-hero-grid">
-              <h1 class="waia-hero-title">
-                Your people are using AI. Do you know what it's doing for your business?
-              </h1>
-              <div class="home-hero-support">
-                <p class="lede">
-                  ChatGPT, Claude and Copilot can help your people get work done.
-                  WAIA helps you see how AI is being used across the organisation,
-                  whether it's improving the work, and where management needs to
-                  act.
-                </p>
-                <div class="hero-actions">
-                  <a
-                    class="btn primary"
-                    href="https://tally.so/r/objzGM?product=WAIA&amp;enquiry_type=walkthrough"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >See WAIA</a
-                  >
-                  <a class="btn secondary" href="/how-it-works/"
-                    >How it works</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="home-product-stage">
-            <div class="container home-product-stage-grid">
-              <figure class="waia-screenshot-frame hero-product-proof">
-                <div class="home-product-image">
-                  <picture>
-                    <source
-                      media="(max-width: 600px)"
-                      srcset="
-                        /assets/product-screenshots/2026-09-30/08-admin-home-mobile.jpg
-                      "
-                      width="780"
-                      height="991"
-                    />
-                    <img
-                      src="/assets/product-screenshots/2026-09-30/04-evidence-desktop-1470.jpg"
-                      srcset="
-                        /assets/product-screenshots/2026-09-30/04-evidence-desktop-1470.jpg 1470w,
-                        /assets/product-screenshots/2026-09-30/04-evidence-desktop.jpg      2940w
-                      "
-                      sizes="(max-width: 1440px) 78vw, 1000px"
-                      width="2940"
-                      height="1730"
-                      loading="eager"
-                      fetchpriority="high"
-                      decoding="async"
-                      alt="WAIA product view showing evidence and management actions."
-                    />
-                  </picture>
-                </div>
-                <figcaption>
-                  <span class="home-caption-desktop"
-                    >Evidence from real work, with management review and
-                    capacity signals kept in context.</span
-                  >
-                  <span class="home-caption-mobile"
-                    >Admin Home highlights what needs attention and follow-up
-                    from a person.</span
-                  >
-                  <a
-                    class="home-caption-desktop"
-                    href="/assets/product-screenshots/2026-09-30/04-evidence-desktop.jpg"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >View full-size Evidence image</a
-                  >
-                  <a
-                    class="home-caption-mobile"
-                    href="/assets/product-screenshots/2026-09-30/08-admin-home-mobile.jpg"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >View full-size Admin Home image</a
-                  >
-                </figcaption>
-              </figure>
-              <p class="trust-line">
-                No prompt monitoring. No employee productivity scoring. No
-                automatic ROI claim.
-              </p>
-            </div>
-          </div>
-        </section>
+        <div class="header-actions">
+          <a class="sign-in" href="https://app.waia.co.uk/login">Sign in</a>
+          <a
+            class="button button-small"
+            href="https://tally.so/r/objzGM?product=WAIA&amp;enquiry_type=walkthrough"
+            target="_blank"
+            rel="noopener noreferrer"
+            >See WAIA</a
+          >
+        </div>
+        <button
+          class="menu-toggle nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+        >
+          Menu <span aria-hidden="true">☰</span>
+        </button>
+      </div>
+    </header>
 
-        <section id="buyer-questions" class="waia-light-section">
-          <div class="container">
-            <div class="section-head wide">
-              <div class="eyebrow">The three questions</div>
-              <h2>Make workplace AI easier to judge.</h2>
-              <p>
-                Most AI dashboards show activity. WAIA is built around the
-                management questions that decide whether AI is actually helping.
-              </p>
-            </div>
-            <div class="conversion-question-grid">
-              <article class="outcome-card">
-                <span>01</span>
-                <h3>Where is AI being used?</h3>
-                <p>
-                  Identify recurring workplace workflows and real application,
-                  not just licence access, training completion or survey
-                  responses.
-                </p>
-              </article>
-              <article class="outcome-card">
-                <span>02</span>
-                <h3>Is it actually working?</h3>
-                <p>
-                  Understand net impact, including checking, rework, negative
-                  outcomes and mixed results.
-                </p>
-              </article>
-              <article class="outcome-card">
-                <span>03</span>
-                <h3>What can management rely on?</h3>
-                <p>
-                  Separate isolated stories from stronger evidence and see where
-                  conclusions are ready for review.
-                </p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section class="waia-light-section">
-          <div class="container">
-            <div class="section-head wide">
-              <div class="eyebrow">Free working tool</div>
-              <h2>Start by seeing what is happening.</h2>
-              <p>
-                The Workplace AI Visibility Check helps a manager look at real
-                AI use, affected work, review and the questions that remain
-                unanswered. Seven questions, around 10–15 minutes, with a result
-                you can take into a team conversation.
-              </p>
-            </div>
-            <a
-              class="btn secondary dark-on-light"
-              href="/workplace-ai-visibility-check/"
-              >Explore the Visibility Check</a
-            >
-          </div>
-        </section>
-
-        <section id="product-proof" class="waia-product-story">
-          <div class="container">
-            <div class="section-head wide">
-              <div class="eyebrow">Inside WAIA</div>
-              <h2>See what needs attention, and why.</h2>
-              <p>
-                Home brings the evidence picture, learning participation and
-                Guidance follow-up into one place so management can see what
-                needs attention next.
-              </p>
-            </div>
-            <div class="product-proof-grid">
-              <article class="waia-story-feature">
-                <figure class="waia-screenshot-frame">
-                  <picture>
-                    <source
-                      media="(max-width: 600px)"
-                      srcset="
-                        /assets/product-screenshots/2026-09-30/08-admin-home-mobile.jpg
-                      "
-                      width="780"
-                      height="991"
-                    />
-                    <img
-                      src="/assets/product-screenshots/2026-09-30/01-admin-home-desktop.jpg"
-                      width="2940"
-                      height="1846"
-                      loading="lazy"
-                      decoding="async"
-                      alt="WAIA Admin Home showing guidance follow-up in its Needs attention area."
-                    />
-                  </picture>
-                  <figcaption>
-                    Admin Home highlights what needs attention and follow-up
-                    from a person.
-                  </figcaption>
-                </figure>
-                <div class="waia-story-copy">
-                  <span>Action</span>
-                  <h3>See what needs attention next.</h3>
-                  <p>
-                    Home brings Needs attention, the Current picture and a
-                    Recommended next action together across People, Guidance,
-                    learning participation and examples from real work.
-                  </p>
-                </div>
-              </article>
-            </div>
-            <div class="section-actions">
-              <a class="btn secondary dark-on-light" href="/how-it-works/"
-                >See how WAIA works</a
-              >
-            </div>
-          </div>
-        </section>
-
-        <section id="workflow-example" class="waia-light-section">
-          <div class="container">
-            <div class="section-head wide">
-              <div class="eyebrow">Illustrative example</div>
-              <h2>What one workflow can tell management.</h2>
-              <p>
-                This fictional example shows how a reported time saving can
-                become evidence for management to review. It is not a customer
-                case study.
-              </p>
-            </div>
-            <div class="workflow-example-grid">
-              <article>
-                <span>Workflow</span>
-                <h3>Weekly customer reporting</h3>
-                <p>AI is used to prepare a first draft from existing notes.</p>
-              </article>
-              <article>
-                <span>Net impact</span>
-                <h3>About 35 minutes less effort</h3>
-                <p>
-                  Preparation falls, but checking and rework are counted before
-                  any capacity signal is shown.
-                </p>
-              </article>
-              <article>
-                <span>Evidence</span>
-                <h3>Reported, then repeated</h3>
-                <p>
-                  One example is useful. Comparable evidence over time gives
-                  management a stronger basis for review.
-                </p>
-              </article>
-              <article>
-                <span>Decision signal</span>
-                <h3>Indicative capacity released</h3>
-                <p>
-                  The conclusion remains evidence dependent and doesn’t become
-                  an automatic financial saving.
-                </p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section id="why-waia">
-          <div class="container split-summary">
-            <div class="section-head">
-              <div class="eyebrow">Why WAIA</div>
-              <h2>AI assistants help individuals. WAIA helps management.</h2>
-              <p>
-                You don't need another AI assistant. You need a way to understand
-                what happens when people use those tools at work. WAIA brings
-                local guidance, learning participation and evidence from real
-                workflows into a picture management can review and act on.
-              </p>
-            </div>
-            <div class="buyer-fit-list compact-fit-list">
-              <article>
-                <span>Adoption</span>
-                <p>
-                  Having access to ChatGPT or Copilot doesn't show where AI is
-                  being applied to work or whether the result is useful.
-                </p>
-              </article>
-              <article>
-                <span>Guidance</span>
-                <p>
-                  People need shared expectations and practical support, not
-                  just access to a tool or a completed training course.
-                </p>
-              </article>
-              <article>
-                <span>Evidence</span>
-                <p>
-                  Individual success stories are useful, but management needs
-                  repeated evidence, including checking and rework, before
-                  drawing conclusions about value.
-                </p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section id="how-waia-works" class="waia-light-section">
-          <div class="container">
-            <div class="section-head wide">
-              <div class="eyebrow">How it works</div>
-              <h2>Build evidence from work people already do.</h2>
-              <p>
-                WAIA doesn’t ask employees to become analysts. It captures
-                structured evidence as people learn and apply AI at work.
-              </p>
-            </div>
-            <div class="simple-process-grid">
-              <article class="outcome-card">
-                <span>01</span>
-                <h3>People use AI in real work.</h3>
-              </article>
-              <article class="outcome-card">
-                <span>02</span>
-                <h3>They capture what happened.</h3>
-              </article>
-              <article class="outcome-card">
-                <span>03</span>
-                <h3>WAIA builds evidence over time.</h3>
-              </article>
-              <article class="outcome-card">
-                <span>04</span>
-                <h3>Management reviews what holds up.</h3>
-              </article>
-              <article class="outcome-card">
-                <span>05</span>
-                <h3>Management decides what to do next.</h3>
-              </article>
-            </div>
-            <div class="section-actions">
-              <a class="btn secondary dark-on-light" href="/how-it-works/"
-                >See the full method</a
-              >
-            </div>
-          </div>
-        </section>
-
-        <section id="who-waia-is-for">
-          <div class="container split-summary">
-            <div class="section-head">
-              <div class="eyebrow">Buyer relevance</div>
-              <h2>
-                For leaders asked whether AI investment is changing the work.
-              </h2>
-              <p>
-                WAIA is most relevant when operations, people, transformation,
-                finance or senior leadership need a clearer answer than “people
-                seem to be using AI more”.
-              </p>
-              <a class="btn secondary" href="/who-its-for/"
-                >Check organisational fit</a
-              >
-            </div>
-            <div class="product-summary-card commercial-entry-card">
-              <div class="card-inner">
-                <div class="eyebrow">Commercial entry</div>
-                <p>
-                  WAIA licence quantity, subscription dates and total price are
-                  agreed for each organisation in a signed Customer Order Form.
-                  Start by exploring what evidence your management team needs.
-                </p>
-                <a class="btn secondary" href="/pricing/">View pricing</a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="trust" class="waia-light-section">
-          <div class="container split-summary">
-            <div class="section-head">
-              <div class="eyebrow">Trust and boundaries</div>
-              <h2>Visibility without surveillance.</h2>
-              <p>
-                WAIA is operated by Nineteen Point Two Ltd. It doesn’t monitor
-                employee prompts, score productivity or intentionally use
-                Customer Data to train AI models. Human review remains
-                accountable.
-              </p>
-              <a class="btn secondary dark-on-light" href="/data-privacy/"
-                >Read data and privacy boundaries</a
-              >
-            </div>
-            <div class="outcomes-grid summary-card-grid">
-              <article class="outcome-card">
-                <h3>No prompt monitoring</h3>
-                <p>WAIA isn’t designed to inspect every AI interaction.</p>
-              </article>
-              <article class="outcome-card">
-                <h3>No productivity scoring</h3>
-                <p>The focus is evidence about work, not ranking people.</p>
-              </article>
-              <article class="outcome-card">
-                <h3>No automatic ROI</h3>
-                <p>
-                  Indicative capacity is evidence dependent and not a cash
-                  saving claim.
-                </p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section class="cta-section">
-          <div class="container cta-box">
-            <div class="eyebrow">Next step</div>
-            <h2>See what WAIA would show you.</h2>
-            <p>
-              Start with one question: what are you currently struggling to see
-              about workplace AI?
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">
+              <span class="eyebrow-rule"></span> Workplace AI, clearer
             </p>
-            <div class="hero-actions centered-actions">
+            <h1 id="hero-title">
+              Turn AI use into managed, <em>measurable value.</em>
+            </h1>
+            <p class="hero-lede">
+              WAIA helps you see where AI's being used, understand what it's
+              changing in real work and give managers the evidence and guidance
+              to decide what to do next.
+            </p>
+            <div class="actions">
               <a
-                class="btn primary"
+                class="button"
                 href="https://tally.so/r/objzGM?product=WAIA&amp;enquiry_type=walkthrough"
                 target="_blank"
                 rel="noopener noreferrer"
-                >See WAIA in practice</a
+                >See WAIA <span aria-hidden="true">↗</span></a
               >
-              <a class="btn secondary" href="/how-it-works/"
-                >Read how it works</a
+              <a class="text-link" href="/how-it-works/"
+                >How it works <span aria-hidden="true">↗</span></a
               >
             </div>
           </div>
-        </section>
-      </main>
-      <footer>
-        <div class="footer-grid">
-          <span>&copy; 2026 Nineteen Point Two Ltd.</span>
-          <span>WAIA is a Nineteen Point Two product.</span>
-          <span>
-            <a href="/">Product</a> |
-            <a href="/how-it-works/">How it works</a> |
-            <a href="/who-its-for/">Who it’s for</a> |
-            <a href="/insights/">Insights</a> |
-            <a href="/pricing/">Pricing</a> |
-            <a href="/data-privacy/">Data &amp; privacy</a>
-          </span>
-          <span>
-            <a href="/terms/">Terms</a> |
-            <a href="/ai-use-statement/">AI use statement</a>
-            |
-            <a
-              href="https://legal.nineteenpointtwo.com/privacy/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Privacy</a
-            >
-            |
-            <a
-              href="https://legal.nineteenpointtwo.com/cookies/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Cookies</a
-            >
-            |
-            <a href="/analytics-preferences/">Analytics preferences</a>
-          </span>
-          <span role="group" aria-label="Market">Market: <a href="https://waia.co.uk/" aria-current="page">UK (current)</a> | <a href="https://waiausa.com/">USA</a></span>
+          <figure class="hero-visual">
+            <div class="hero-aura" aria-hidden="true"></div>
+            <div class="hero-evidence">
+              <img
+                src="/assets/product-screenshots/2026-09-30/04-evidence-desktop-1470.jpg"
+                srcset="
+                  /assets/product-screenshots/2026-09-30/04-evidence-desktop-1470.jpg 1470w,
+                  /assets/product-screenshots/2026-09-30/04-evidence-desktop.jpg      2940w
+                "
+                sizes="(max-width: 600px) 100vw, (max-width: 820px) 90vw, (max-width: 1440px) 51vw, 700px"
+                width="1470"
+                height="865"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+                alt="WAIA Evidence view showing practical examples from work and items awaiting management judgement."
+              />
+            </div>
+            <div class="hero-admin" aria-hidden="true">
+              <img
+                src="/assets/product-screenshots/2026-09-30/08-admin-home-mobile.jpg"
+                width="780"
+                height="991"
+                loading="eager"
+                decoding="async"
+                alt=""
+              />
+            </div>
+            <figcaption>
+              Real WAIA product views: Evidence and Admin Home.
+            </figcaption>
+          </figure>
         </div>
-      </footer>
-    </div>
-    <script src="/assets/js/nav.js" defer></script>
+      </section>
+
+      <section class="benefits section-pad" aria-labelledby="benefits-title">
+        <div class="wrap">
+          <div class="benefits-intro">
+            <p class="eyebrow">What customers get</p>
+            <h2 id="benefits-title">
+              See where your AI's working.<br /><em
+                >Know where to focus next.</em
+              >
+            </h2>
+          </div>
+          <div class="benefit-list">
+            <article>
+              <span class="number">01 / Visibility</span>
+              <h3>See where it's used</h3>
+              <p>
+                Understand where people are applying AI in everyday work, not
+                simply who has access to a licence.
+              </p>
+            </article>
+            <article>
+              <span class="number">02 / Evidence</span>
+              <h3>Understand what's changing</h3>
+              <p>
+                Review the reported impact on quality, effort, checking and
+                rework, including mixed or negative outcomes.
+              </p>
+            </article>
+            <article>
+              <span class="number">03 / Action</span>
+              <h3>Know what needs attention</h3>
+              <p>
+                Give managers a clearer basis for deciding where to support
+                people, review evidence or change approach.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="product section-pad" aria-labelledby="product-title">
+        <div class="wrap">
+          <div class="section-heading product-heading">
+            <div>
+              <p class="eyebrow">Inside WAIA</p>
+              <h2 id="product-title">
+                From everyday work to <em>evidence you can use.</em>
+              </h2>
+            </div>
+            <p>
+              WAIA connects examples from real work with guidance and management
+              review. Over time, comparable evidence helps you understand what's
+              improving, what's uncertain and where action makes sense.
+            </p>
+          </div>
+          <div class="product-gallery">
+            <figure class="gallery-evidence">
+              <img
+                src="/assets/product-screenshots/2026-09-30/04-evidence-desktop-1470.jpg"
+                width="1470"
+                height="865"
+                loading="lazy"
+                alt="WAIA Evidence view listing practical examples and workflows needing judgement."
+              />
+              <figcaption>
+                <strong>Evidence</strong
+                ><span
+                  >Examples from real work, with what's known and what still
+                  needs review.</span
+                >
+              </figcaption>
+            </figure>
+            <figure class="gallery-admin">
+              <img
+                src="/assets/product-screenshots/2026-09-30/01-admin-home-attention-detail.jpg"
+                width="660"
+                height="400"
+                loading="lazy"
+                alt="Cropped detail of the genuine WAIA Admin Home demo account showing guidance follow-up and a review action."
+              />
+              <figcaption>
+                <strong>Admin Home · demo account</strong
+                ><span
+                  >Cropped Needs attention item showing guidance follow-up for
+                  human review.</span
+                >
+              </figcaption>
+            </figure>
+          </div>
+          <div class="process">
+            <p class="eyebrow">How the evidence develops</p>
+            <ol>
+              <li>
+                <span>01</span>
+                <div>
+                  <h3>Use AI in real work.</h3>
+                  <p>People apply the tools to everyday tasks.</p>
+                </div>
+              </li>
+              <li>
+                <span>02</span>
+                <div>
+                  <h3>Capture what happened.</h3>
+                  <p>Record the outcome, including checking and rework.</p>
+                </div>
+              </li>
+              <li>
+                <span>03</span>
+                <div>
+                  <h3>Review the evidence.</h3>
+                  <p>Understand the impact and how reliable the picture is.</p>
+                </div>
+              </li>
+              <li>
+                <span>04</span>
+                <div>
+                  <h3>Decide what comes next.</h3>
+                  <p>Use the findings to guide management action.</p>
+                </div>
+              </li>
+            </ol>
+            <a class="text-link" href="/how-it-works/"
+              >See the full method <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="example section-pad" aria-labelledby="example-title">
+        <div class="wrap example-grid">
+          <div class="example-intro">
+            <p class="eyebrow">Fictional example · not a customer result</p>
+            <h2 id="example-title">
+              See what better <em>evidence looks like.</em>
+            </h2>
+            <p>
+              This fictional weekly customer reporting example shows how a
+              reported reduction in effort becomes a signal for management to
+              review. It isn't a customer case study.
+            </p>
+          </div>
+          <div class="example-sequence">
+            <div class="example-step">
+              <span class="number">The work</span>
+              <p>
+                AI prepares a first draft of the weekly customer report from
+                existing notes.
+              </p>
+            </div>
+            <div class="example-impact">
+              <span class="number">Reported net impact</span
+              ><strong>≈35 <small>minutes</small></strong>
+              <p>
+                Less effort in the example, after checking and rework are
+                included.
+              </p>
+            </div>
+            <div class="example-step">
+              <span class="number">The evidence</span>
+              <p>
+                Repeated comparable examples strengthen confidence in the
+                pattern.
+              </p>
+            </div>
+            <div class="example-step">
+              <span class="number">The decision</span>
+              <p>
+                Indicative capacity can inform a management discussion. It isn't
+                automatically a financial saving.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="assistants section-pad"
+        aria-labelledby="assistants-title"
+      >
+        <div class="wrap assistants-grid">
+          <div>
+            <p class="eyebrow">Why WAIA</p>
+            <h2 id="assistants-title">
+              Your AI assistants do the work.<br /><em
+                >WAIA helps you manage what follows.</em
+              >
+            </h2>
+          </div>
+          <div class="assistants-copy">
+            <p>
+              ChatGPT, Claude and Copilot help people get things done. WAIA
+              gives your organisation a way to bring guidance, real-work
+              evidence and management review together, so you can understand how
+              AI's being used and whether it's making a difference.
+            </p>
+            <div class="related-links">
+              <a href="/who-its-for/"
+                >Check organisational fit <span aria-hidden="true">↗</span></a
+              ><a href="/pricing/"
+                >View pricing <span aria-hidden="true">↗</span></a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust section-pad" aria-labelledby="trust-title">
+        <div class="wrap">
+          <div class="trust-head">
+            <div>
+              <p class="eyebrow">Trust and boundaries</p>
+              <h2 id="trust-title">
+                Visibility without <em>surveillance.</em>
+              </h2>
+            </div>
+            <p>
+              WAIA is operated by Nineteen Point Two Ltd. Accountable human
+              review stays central to how evidence is used.
+            </p>
+          </div>
+          <ul class="trust-list">
+            <li><span>01</span>Doesn’t monitor employee prompts.</li>
+            <li>
+              <span>02</span>Doesn’t score individual employee productivity.
+            </li>
+            <li>
+              <span>03</span>Doesn’t automatically calculate or guarantee ROI.
+            </li>
+            <li><span>04</span>Keeps accountable human review central.</li>
+          </ul>
+          <a class="light-link" href="/data-privacy/"
+            >Read data and privacy boundaries
+            <span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </section>
+
+      <section
+        class="visibility section-pad"
+        aria-labelledby="visibility-title"
+      >
+        <div class="wrap visibility-grid">
+          <div class="visibility-number" aria-hidden="true">
+            07<span>questions</span>
+          </div>
+          <div class="visibility-copy">
+            <p class="eyebrow">Free working tool</p>
+            <h2 id="visibility-title">
+              Start with a clearer picture of <em>your AI use.</em>
+            </h2>
+            <p>
+              The free Workplace AI Visibility Check helps you examine how AI's
+              being used, what's affecting the work and where the gaps are.
+              Seven questions, around 10–15 minutes, and a result you can use in
+              a team conversation.
+            </p>
+            <a class="button" href="/workplace-ai-visibility-check/"
+              >Explore the Visibility Check <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta section-pad" aria-labelledby="final-title">
+        <div class="wrap final-inner">
+          <p class="eyebrow">Next step</p>
+          <h2 id="final-title">
+            See what WAIA could show <em>your business.</em>
+          </h2>
+          <p>
+            Explore how WAIA brings workplace AI use, evidence and management
+            decisions into a clearer picture.
+          </p>
+          <div class="actions">
+            <a
+              class="button"
+              href="https://tally.so/r/objzGM?product=WAIA&amp;enquiry_type=walkthrough"
+              target="_blank"
+              rel="noopener noreferrer"
+              >See WAIA in practice <span aria-hidden="true">↗</span></a
+            ><a class="text-link" href="/how-it-works/"
+              >How it works <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer-top">
+        <img
+          src="/assets/brand/waia-lockup-dark.svg"
+          alt="WAIA"
+          width="360"
+          height="92"
+        />
+        <p>Make the next move visible.</p>
+      </div>
+      <div class="wrap footer-links">
+        <div>
+          <a href="/">Product</a><a href="/how-it-works/">How it works</a
+          ><a href="/who-its-for/">Who it's for</a
+          ><a href="/insights/">Insights</a><a href="/pricing/">Pricing</a>
+        </div>
+        <div>
+          <a href="/data-privacy/">Data &amp; privacy</a
+          ><a href="/terms/">Terms</a
+          ><a href="/ai-use-statement/">AI use statement</a
+          ><a
+            href="https://legal.nineteenpointtwo.com/privacy/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Privacy</a
+          ><a
+            href="https://legal.nineteenpointtwo.com/cookies/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Cookies</a
+          ><a href="/analytics-preferences/">Analytics preferences</a>
+        </div>
+      </div>
+      <div class="wrap footer-bottom">
+        <span
+          >© 2026 Nineteen Point Two Ltd. WAIA is a Nineteen Point Two
+          product.</span
+        ><span
+          >Market:
+          <a href="https://waia.co.uk/" aria-current="page">UK (current)</a> ·
+          <a href="https://waiausa.com/">USA</a></span
+        >
+      </div>
+    </footer>
     <script src="/assets/js/source-attribution.js" defer></script>
+    <script src="/assets/js/nav.js" defer></script>
     <!-- Cloudflare Web Analytics -->
     <script src="/assets/js/analytics.js" defer></script>
     <!-- End Cloudflare Web Analytics -->
