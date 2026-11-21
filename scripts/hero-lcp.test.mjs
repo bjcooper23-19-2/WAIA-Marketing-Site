@@ -22,7 +22,7 @@ test("homepage hero is eagerly discoverable with responsive sources", () => {
   );
   assert.match(homepage, /loading="eager"/);
   assert.match(homepage, /fetchpriority="high"/);
-  assert.match(homepage, /width="2940"[\s\S]*height="1730"/);
+  assert.match(homepage, /width="1470"[\s\S]*height="865"/);
 });
 
 test("hero source files exist and below-fold images remain lazy", () => {
@@ -31,7 +31,7 @@ test("hero source files exist and below-fold images remain lazy", () => {
   }
   const heroEnd = homepage.indexOf(
     "</section>",
-    homepage.indexOf('class="hero home-hero"'),
+    homepage.indexOf('class="hero"'),
   );
   const belowFold = homepage.slice(heroEnd);
   assert.ok((belowFold.match(/loading="lazy"/g) || []).length >= 1);
@@ -45,9 +45,5 @@ test("hero preload and image use the same responsive sizing", () => {
   assert.ok(preload);
   assert.ok(image);
   assert.equal(preload[1], image[1]);
-  assert.match(homepage, /rel="preload"[\s\S]*?media="\(min-width: 601px\)"/);
-  assert.match(
-    homepage,
-    /<source\s+media="\(max-width: 600px\)"[\s\S]*?08-admin-home-mobile\.jpg/,
-  );
+  assert.match(homepage, /class="hero-admin"[\s\S]*?08-admin-home-mobile\.jpg/);
 });
