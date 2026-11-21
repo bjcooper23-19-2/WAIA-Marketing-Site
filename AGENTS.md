@@ -2,6 +2,18 @@
 
 Read README.md and relevant project documentation before making changes. Preserve WAIA's positioning, approved claims, branding, buyer journey, accessibility and conversion paths.
 
+
+## Approved marketing-site visual exploration (21 November 2026)
+
+**Scope:** This authorises a new visual *design direction* for WAIA's public UK and US marketing sites. It is a deliberate exception to prior "preserve existing layouts", "refine rather than redesign" and default interface-font instructions **for marketing presentation only**. It does not authorise a production implementation or deployment.
+
+- **Keep fixed:** Open Wayfinder mark and approved logo geometry/lockups; core brand colour identities and their semantic/contrast roles; WAIA proposition, approved visible copy, factual product claims, real screenshots, legal and commercial terms, SEO, navigation, CTA wording and destinations, analytics, enquiry routing and accessible behaviour.
+- **Explicitly open to redesign:** marketing-page display font family and weights (the product/interface may continue to use Inter), headline composition, editorial hierarchy, proportions and whitespace, relative amount of light/neutral versus navy surfaces, additional compatible subtle supporting tones, section rhythm, card/border usage, real product screenshot layering/fades, and restrained visual depth or motion. Core colours need not dominate page area. No fabricated product UI, customer proof or generic AI imagery.
+- **Design first:** Before spending credits on a production build, present materially different, holistic **desktop and mobile** visual concepts for owner review, using approved copy and genuine product assets. Judge whether the concept changes the *overall impression*, not just spacing/shadows. Screenshots from an incremental CSS PR are not automatic design sign-off. Do not infer aesthetic approval from test results.
+- **Approval gates:** (1) Explicit owner approval of the visual concept; (2) a separately scoped production implementation with portable/licensed fonts, maintainable code and proportionate accessibility, responsive, reduced-motion, performance and complete enquiry-path checks; (3) explicit merge/publish approval. A design approval does not authorise deployment.
+- **Relationship to other instructions:** This bounded marketing visual-authorisation supersedes historical design-conservation wording **where it conflicts**. The established WAIA brand identity, accessibility, privacy, security and engineering/release rules continue to apply. The logged-in WAIA product and shared Codex operating system are not being redesigned here.
+- **Current status:** Earlier prototypes #98 / #99 and production attempt #100 / #101 are *references, not an approved new visual system*. Do not use those layouts or Inter-heavy treatment as an automatic target for a new concept; #101 is not authorised to merge or publish.
+
 ## Shared operating system
 
 Follow Investigate → Implement → Release from bjcooper23-19-2/codex-operating-system.

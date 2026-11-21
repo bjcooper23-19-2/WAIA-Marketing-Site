@@ -132,3 +132,14 @@ The marketing site may use more editorial spacing and larger headings than the p
 ## Product alignment
 
 The product rollout will follow after the marketing pilot is approved. The product should replace the Nineteen Point Two mark in its shell with the WAIA mark, then adopt the Clarity Panel in session opening and next-action contexts.
+## Public marketing expression: approved exploration (21 November 2026)
+
+This document defines the **brand identity and semantic colour roles**, not a requirement that the public website mimic the logged-in product UI. The canonical Open Wayfinder logo/lockups, colour identity, contrast, button semantics and factual product representation are retained.
+
+For **UK and US marketing-site visual concept work only**:
+- Inter 600–800 remains the **product/interface baseline**, but **marketing display headings may use a distinct, suitably licensed and portable type family**, with a more varied weight scale. Do not alter wordmark typography or redistribute proprietary fonts.
+- Operating navy remains the brand/product-frame colour, but **it need not dominate the website**. Use white and pale-neutral surfaces more extensively if the composition benefits, with compatible low-saturation supporting colours and restrained gradients. Deep teal and cyan retain their semantic/contrast roles.
+- Existing card grids, bordered clarity panels, block section ordering and rectangular screenshot frames are **patterns available for use, not mandatory templates**. Marketing layouts may use more editorial pacing, asymmetry, genuine screenshot overlap, soft fades, depth and purposeful motion while preserving reading order and accessibility.
+- Maintain the established copy, commercial claims, genuine screenshot content, conversion routes, SEO, mobile ergonomics, reduced-motion support and performance. Do not invent proof or imply product features that do not exist.
+
+This is **permission to explore and seek owner approval**, not approval of a specific visual solution or release. Review desktop/mobile concepts before production engineering. Historical brand-rollout instructions to "refine rather than redesign" do not restrict this later, explicitly authorised marketing exploration. The product design system remains unchanged.
