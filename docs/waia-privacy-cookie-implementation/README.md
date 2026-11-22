@@ -31,3 +31,19 @@ On 22 November 2026, the site owner observed `beacon.min.js` HTTP 200 initiated 
 No WAIA USA or Outside Clarity changes; no change to WAIA Terms, DPA, platform, legal host, DNS, Cloudflare configuration or enquiry tracking.
 
 **Do not treat this draft PR as an assertion that either notice is complete or approved.**
+
+## Owner direction: WAIA UK standalone legal destination (22 November 2026)
+The intended public brand is **WAIA**, with clear identification of **Nineteen Point Two Limited trading as WAIA** as the operating and contracting company, subject to verification of corporate trading disclosures and approval of exact wording.
+
+The branch now also includes **review-only** candidate pages for:
+- `/website-terms/` (source v1.1, 15 October 2026)
+- `/security/` (source v1.2, 15 October 2026)
+- `/subprocessors/` (source v1.3, 15 October 2026)
+
+They reuse the WAIA editorial layout but preserve original source text for redlining. The pages are not final WAIA UK-specific notices; they retain clear review warnings and noindex.
+
+**Current WAIA documents remain:** `/terms/` and `/ai-use-statement/`. The legal-source DPA v1.4 (11 November 2026) explicitly incorporates `legal.nineteenpointtwo.com/data-processing-agreement/` for signed agreements. New agreements can use a future WAIA-hosted DPA only after contract-owner sign-off and a controlled Order Form/version cutover. Existing agreed terms and source URLs must remain retrievable. Do not redirect the original DPA URL.
+
+**Cut ties means customer-facing link and publication independence, not changing the operating company, deleting a legal archive or breaking signed customer agreements.** No existing customer-facing link should be repointed until the exact destination is approved, tested and live. The old corporate marketing website and shared legal estate are outside this PR's implementation authority.
+
+**Release execution proposal:** Replace corporate source baseline in the five candidates with approved WAIA UK-specific documents, create the approved WAIA DPA for new contracts if signed-version rules permit, set approved canonicals/date/version, remove noindex, verify company disclosure and registered office, update all site and generated links, add sitemap routes, test end-to-end, then obtain separate merge and publication approval. Legal owner must confirm which documents can be approved while the PECR consent assessment and supplier inventory remain open.
