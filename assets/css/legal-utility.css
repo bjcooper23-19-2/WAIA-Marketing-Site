@@ -205,3 +205,44 @@
     margin-top: 48px;
   }
 }
+
+
+/* Legal source tables must stay readable and horizontally navigable on phones. */
+.legal-utility-page .legal-content .table-wrap {
+  max-width: 100%;
+  margin: 28px 0 35px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.legal-utility-page .legal-content table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.legal-utility-page .legal-content td,
+.legal-utility-page .legal-content th {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  vertical-align: top;
+  text-align: left;
+}
+
+.legal-utility-page .legal-content tr:first-child td {
+  font-weight: 700;
+  background: #f5f9f9;
+}
+
+.legal-utility-page .legal-content td p,
+.legal-utility-page .legal-content th p {
+  margin: 0;
+}
+
+.legal-utility-page .legal-content a:focus-visible,
+.legal-utility-page .legal-content .table-wrap:focus-visible {
+  outline: 3px solid var(--teal-dark);
+  outline-offset: 3px;
+}
