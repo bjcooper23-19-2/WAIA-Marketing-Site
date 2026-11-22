@@ -300,7 +300,7 @@ html {
 
 /* Introductory sections use type and practical signals instead of a second hero image. */
 .editorial-page .hero {
-  padding-block: clamp(80px, 8vw, 122px) clamp(68px, 7vw, 104px);
+  padding-block: clamp(52px, 5vw, 82px) clamp(68px, 7vw, 104px);
 }
 .editorial-page .hero-grid {
   display: block;
