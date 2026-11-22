@@ -1,11 +1,36 @@
 <!doctype html>
 <html lang="en-GB">
   <head>
-    <link rel="stylesheet" href="/assets/css/workplace-ai-academy.css" />
-    <link rel="stylesheet" href="/assets/css/see-waia.css" />
+    <link
+      rel="stylesheet"
+      href="/assets/css/editorial-pages.css?v=20261122-2"
+    />
+    <link rel="stylesheet" href="/assets/css/see-waia.css?v=20261122-1" />
+    <link
+      rel="preload"
+      href="/assets/fonts/instrument-serif-regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/dm-sans-variable.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
     <link rel="canonical" href="https://waia.co.uk/see-waia/" />
-    <link rel="alternate" hreflang="en-GB" href="https://waia.co.uk/see-waia/" />
-    <link rel="alternate" hreflang="en-US" href="https://waiausa.com/see-waia/" />
+    <link
+      rel="alternate"
+      hreflang="en-GB"
+      href="https://waia.co.uk/see-waia/"
+    />
+    <link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://waiausa.com/see-waia/"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>See WAIA in Practice | Workplace AI Evidence</title>
@@ -42,58 +67,61 @@
       href="/assets/favicon/waia-apple-touch-icon.png"
     />
   </head>
-  <body class="product-waia see-page">
-    <div class="noise"></div>
+  <body class="editorial-page see-page">
     <div class="site">
-      <header>
-        <nav class="nav" aria-label="Main navigation">
-          <a class="brand waia-brand" href="/" aria-label="WAIA home">
-            <img
-              class="brand-logo"
-              src="/assets/brand/waia-lockup-dark.svg"
+      <a class="skip-link" href="#main">Skip to content</a>
+      <header class="site-header">
+        <div class="wrap header-inner nav">
+          <a class="brand" href="/" aria-label="WAIA home"
+            ><img
+              src="/assets/brand/waia-lockup-light.svg"
               alt="WAIA"
               width="360"
               height="92"
-            />
-          </a>
-          <button
-            class="nav-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="site-navigation"
+          /></a>
+          <nav
+            class="nav-links"
+            id="site-navigation"
+            aria-label="Main navigation"
           >
-            Menu
-          </button>
-          <div class="nav-links" id="site-navigation">
             <a href="/">Product</a>
             <a href="/how-it-works/">How it works</a>
             <a href="/pricing/">Pricing</a>
             <a href="/insights/">Insights</a>
-          </div>
-          <div class="nav-actions">
-            <a class="nav-sign-in" href="https://app.waia.co.uk/login"
+            <a class="mobile-sign-in" href="https://app.waia.co.uk/login"
               >Sign in</a
             >
+          </nav>
+          <div class="header-actions">
+            <a class="sign-in" href="https://app.waia.co.uk/login">Sign in</a>
             <a
-              class="nav-cta"
+              class="button button-small"
               href="https://tally.so/r/objzGM?product=WAIA&amp;enquiry_type=walkthrough"
               target="_blank"
               rel="noopener noreferrer"
               >See WAIA</a
             >
           </div>
-        </nav>
+          <button
+            class="menu-toggle nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-navigation"
+          >
+            Menu <span aria-hidden="true">☰</span>
+          </button>
+        </div>
       </header>
-      <main id="top">
-        <section class="hero compact-hero inner-page-hero see-hero">
+      <main id="main">
+        <section class="hero see-hero" aria-labelledby="see-title">
           <div class="container hero-grid">
             <div>
-              <h1>See WAIA in practice.</h1>
+              <p class="eyebrow">A useful first conversation</p>
+              <h1 id="see-title">See WAIA in practice.</h1>
               <p class="lede">
-                A short walkthrough should show the product answering the three
-                questions that matter: where AI is being used, whether it is
-                helping or adding work, and what evidence management can rely
-                on.
+                A walkthrough shows how WAIA helps management see where AI is
+                being used, what it is doing to the work and how strong the
+                evidence is.
               </p>
               <p class="trust-line">
                 Tell us what you want to understand about workplace AI, and
@@ -112,38 +140,38 @@
                 >
               </div>
             </div>
-            <aside class="product-summary-card">
-              <div class="card-inner">
-                <div class="eyebrow">What to bring</div>
-                <ul class="signal-list">
-                  <li>
-                    <span>AI use</span><strong>Where is it happening?</strong>
-                  </li>
-                  <li>
-                    <span>Work impact</span><strong>Better or worse?</strong>
-                  </li>
-                  <li><span>Evidence</span><strong>What holds up?</strong></li>
-                  <li>
-                    <span>Decision</span><strong>What happens next?</strong>
-                  </li>
-                </ul>
-              </div>
+            <aside class="product-summary-card" aria-label="Questions to bring">
+              <p class="eyebrow">What to bring</p>
+              <ul class="signal-list">
+                <li>
+                  <span>AI use</span><strong>Where is it happening?</strong>
+                </li>
+                <li>
+                  <span>Work impact</span><strong>Better or worse?</strong>
+                </li>
+                <li><span>Evidence</span><strong>What holds up?</strong></li>
+                <li>
+                  <span>Decision</span><strong>What happens next?</strong>
+                </li>
+              </ul>
             </aside>
           </div>
         </section>
 
-        <section class="waia-light-section see-agenda">
+        <section class="see-agenda" aria-labelledby="agenda-title">
           <div class="container">
             <div class="section-head wide">
-              <div class="eyebrow">Walkthrough focus</div>
-              <h2>What the walkthrough should make clear.</h2>
+              <div>
+                <p class="eyebrow">Walkthrough focus</p>
+                <h2 id="agenda-title">Bring a question from your own work.</h2>
+              </div>
               <p>
-                This page is intentionally short. The useful next step is seeing
-                the product against the management questions you already have.
+                We'll show how WAIA approaches the management questions you
+                already have.
               </p>
             </div>
             <div class="conversion-question-grid">
-              <article class="outcome-card">
+              <article>
                 <span>Use</span>
                 <h3>Where AI is being used</h3>
                 <p>
@@ -151,7 +179,7 @@
                   recurring workplace use.
                 </p>
               </article>
-              <article class="outcome-card">
+              <article>
                 <span>Impact</span>
                 <h3>Whether it is saving time</h3>
                 <p>
@@ -159,7 +187,7 @@
                   accepting productivity claims.
                 </p>
               </article>
-              <article class="outcome-card">
+              <article>
                 <span>Decision</span>
                 <h3>Evidence for investment decisions</h3>
                 <p>
@@ -181,7 +209,7 @@
                     /assets/images/waia/waia-evidence-overview-hero-840.webp  840w,
                     /assets/images/waia/waia-evidence-overview-hero.webp     1675w
                   "
-                  sizes="(max-width: 760px) 1050px, (max-width: 1280px) 90vw, 1180px"
+                  sizes="(max-width: 600px) 450px, (max-width: 1280px) 90vw, 1160px"
                   alt="WAIA Evidence view showing workflow evidence, capacity signals and items needing management attention"
                   width="1675"
                   height="932"
@@ -195,13 +223,30 @@
           </div>
         </section>
 
-        <section class="cta-section see-final">
-          <div class="container cta-box">
-            <div class="eyebrow">Boundaries</div>
-            <h2>A walkthrough is not a claim that WAIA is right for you.</h2>
+        <section class="see-boundary" aria-labelledby="boundary-title">
+          <div class="container see-boundary-grid">
+            <div>
+              <p class="eyebrow">What it can establish</p>
+              <h2 id="boundary-title">
+                A walkthrough shows the method, not your results.
+              </h2>
+            </div>
             <p>
-              It is a short way to understand whether WAIA can help answer the
-              management questions you already have about workplace AI evidence.
+              You can see how WAIA captures and reviews evidence, and discuss
+              whether it fits your organisation. A walkthrough can't establish
+              outcomes for your organisation before there's evidence from your
+              own work.
+            </p>
+          </div>
+        </section>
+
+        <section class="cta-section see-final" aria-labelledby="next-title">
+          <div class="container cta-box">
+            <p class="eyebrow">Next step</p>
+            <h2 id="next-title">See how WAIA could work for you.</h2>
+            <p>
+              Tell us the question you need to answer. We’ll follow up about a
+              walkthrough and the scope that makes sense for your organisation.
             </p>
             <div class="section-actions">
               <a
@@ -211,11 +256,9 @@
                 rel="noopener noreferrer"
                 >Request a WAIA walkthrough</a
               >
-              <a class="btn secondary dark-on-light" href="/pricing/"
-                >View pricing</a
-              >
+              <a class="btn secondary" href="/pricing/">View pricing</a>
             </div>
-            <div class="hero-actions centered-actions">
+            <div class="hero-actions supporting-links">
               <a class="btn secondary" href="/data-privacy/"
                 >Read data and privacy boundaries</a
               >
@@ -226,39 +269,48 @@
           </div>
         </section>
       </main>
-      <footer>
-        <div class="footer-grid">
-          <span>&copy; 2026 Nineteen Point Two Ltd.</span>
-          <span>WAIA is a Nineteen Point Two product.</span>
-          <span>
-            <a href="/">Product</a> |
-            <a href="/how-it-works/">How it works</a> |
-            <a href="/who-its-for/">Who it’s for</a> |
-            <a href="/insights/">Insights</a> |
-            <a href="/pricing/">Pricing</a> |
-            <a href="/data-privacy/">Data &amp; privacy</a>
-          </span>
-          <span>
-            <a href="/terms/">Terms</a> |
-            <a href="/ai-use-statement/">AI use statement</a>
-            |
-            <a
+      <footer class="footer">
+        <div class="wrap footer-top">
+          <img
+            src="/assets/brand/waia-lockup-dark.svg"
+            alt="WAIA"
+            width="360"
+            height="92"
+          />
+          <p>Make the next move visible.</p>
+        </div>
+        <div class="wrap footer-links">
+          <div>
+            <a href="/">Product</a><a href="/how-it-works/">How it works</a
+            ><a href="/who-its-for/">Who it's for</a
+            ><a href="/insights/">Insights</a><a href="/pricing/">Pricing</a>
+          </div>
+          <div>
+            <a href="/data-privacy/">Data &amp; privacy</a
+            ><a href="/terms/">Terms</a
+            ><a href="/ai-use-statement/">AI use statement</a
+            ><a
               href="https://legal.nineteenpointtwo.com/privacy/"
               target="_blank"
               rel="noopener noreferrer"
               >Privacy</a
-            >
-            |
-            <a
+            ><a
               href="https://legal.nineteenpointtwo.com/cookies/"
               target="_blank"
               rel="noopener noreferrer"
               >Cookies</a
-            >
-            |
-            <a href="/analytics-preferences/">Analytics preferences</a>
-          </span>
-          <span role="group" aria-label="Market">Market: <a href="https://waia.co.uk/" aria-current="page">UK (current)</a> | <a href="https://waiausa.com/">USA</a></span>
+            ><a href="/analytics-preferences/">Analytics preferences</a>
+          </div>
+        </div>
+        <div class="wrap footer-bottom">
+          <span
+            >© 2026 Nineteen Point Two Ltd. WAIA is a Nineteen Point Two
+            product.</span
+          ><span
+            >Market:
+            <a href="https://waia.co.uk/" aria-current="page">UK (current)</a> ·
+            <a href="https://waiausa.com/">USA</a></span
+          >
         </div>
       </footer>
     </div>
