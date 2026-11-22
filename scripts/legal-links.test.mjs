@@ -14,38 +14,38 @@ const pages = [
   "workplace-ai-visibility-check/start/index.html", "insights/index.html",
   "scripts/build-insights.mjs",
 ];
-const html = (file) => readFileSync(path.join(root, file), "utf8");
+const read = (file) => readFileSync(path.join(root, file), "utf8");
 
-test("six WAIA UK legal routes exist with approved publication metadata", () => {
+test("six WAIA UK legal routes have publication metadata", () => {
   for (const route of legalRoutes) {
     const relative = `${route}/index.html`;
     assert.ok(existsSync(path.join(root, relative)), `Missing ${relative}`);
-    const content = html(relative);
-    assert.match(content, new RegExp(`href="https://waia\\.co\\.uk/${route}/"`));
+    const content = read(relative);
+    assert.ok(content.includes(`href="https://waia.co.uk/${route}/"`), `Canonical missing in ${route}`);
     assert.doesNotMatch(content, /noindex|INTERNAL REVIEW|DRAFT FOR REVIEW|NOT APPROVED FOR PUBLICATION/i);
-    assert.match(content, /Nineteen Point Two Limited trading as WAIA/);
+    assert.ok(content.includes("Nineteen Point Two Limited trading as WAIA"));
   }
 });
 
-test("legal source and core public pages no longer link to the corporate legal host", () => {
-  for (const file of [...pages, ...legalRoutes.map(r => `${r}/index.html`)]) {
-    assert.doesNotMatch(html(file), /legal\\.nineteenpointtwo\\.com/i, `Stale legal host in ${file}`);
+test("core pages and legal routes no longer link to corporate legal host", () => {
+  for (const file of [...pages, ...legalRoutes.map(route => `${route}/index.html`)]) {
+    assert.ok(!read(file).includes("legal.nineteenpointtwo.com"), `Stale legal host in ${file}`);
   }
 });
 
-test("Insights generator and sitemap include WAIA legal destinations", () => {
-  const sitemap = html("sitemap.xml");
+test("sitemap and Insights generator use first-party legal URLs", () => {
+  const sitemap = read("sitemap.xml");
   for (const route of legalRoutes) {
-    assert.match(sitemap, new RegExp(`https://waia\\.co\\.uk/${route}/`));
+    assert.ok(sitemap.includes(`https://waia.co.uk/${route}/`), `Sitemap missing ${route}`);
   }
-  const generator = html("scripts/build-insights.mjs");
-  assert.match(generator, /href=\\\"\\/privacy\\/\\\"/);
-  assert.match(generator, /href=\\\"\\/cookies\\/\\\"/);
+  const generator = read("scripts/build-insights.mjs");
+  assert.ok(generator.includes('href="/privacy/"'));
+  assert.ok(generator.includes('href="/cookies/"'));
 });
 
-test("sensitive data, contact and hosted DPA cross references stay aligned", () => {
-  assert.match(html("terms/index.html"), /\\/data-processing-agreement\\//);
-  assert.match(html("privacy/index.html"), /ben@waia\\.co\\.uk/);
-  assert.match(html("security/index.html"), /Customers must not submit special category personal data/);
-  assert.match(html("cookies/index.html"), /waia:analytics-objection/);
+test("contact, restricted data and DPA cross-references are present", () => {
+  assert.ok(read("terms/index.html").includes("/data-processing-agreement/"));
+  assert.ok(read("privacy/index.html").includes("ben@waia.co.uk"));
+  assert.ok(read("security/index.html").includes("Customers must not submit special category personal data"));
+  assert.ok(read("cookies/index.html").includes("waia:analytics-objection"));
 });
