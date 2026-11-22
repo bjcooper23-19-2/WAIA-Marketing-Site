@@ -3,9 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/assets/css/workplace-ai-academy.css" />
-    <link rel="stylesheet" href="/assets/css/visibility-check.css" />
-    <link rel="stylesheet" href="/assets/css/visibility-landing.css" />
+    <link
+      rel="stylesheet"
+      href="/assets/css/editorial-pages.css?v=20261122-2"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/visibility-landing.css?v=20261122-1"
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/instrument-serif-regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/dm-sans-variable.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
     <link
       rel="canonical"
       href="https://waia.co.uk/workplace-ai-visibility-check/"
@@ -38,50 +57,59 @@
       href="/assets/favicon/waia-apple-touch-icon.png"
     />
   </head>
-  <body class="product-waia visibility-landing">
-    <div class="noise"></div>
+  <body class="editorial-page visibility-landing">
     <div class="site">
-      <header>
-        <nav class="nav" aria-label="Main navigation">
-          <a class="brand waia-brand" href="/" aria-label="WAIA home"
+      <a class="skip-link" href="#main">Skip to content</a>
+      <header class="site-header">
+        <div class="wrap header-inner nav">
+          <a class="brand" href="/" aria-label="WAIA home"
             ><img
-              class="brand-logo"
-              src="/assets/brand/waia-lockup-dark.svg"
+              src="/assets/brand/waia-lockup-light.svg"
               alt="WAIA"
               width="360"
               height="92"
           /></a>
-          <button
-            class="nav-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="site-navigation"
+          <nav
+            class="nav-links"
+            id="site-navigation"
+            aria-label="Main navigation"
           >
-            Menu
-          </button>
-          <div class="nav-links" id="site-navigation">
-            <a href="/">Product</a><a href="/how-it-works/">How it works</a
-            ><a href="/pricing/">Pricing</a><a href="/insights/">Insights</a>
-          </div>
-          <div class="nav-actions">
-            <a class="nav-sign-in" href="https://app.waia.co.uk/login"
+            <a href="/">Product</a>
+            <a href="/how-it-works/">How it works</a>
+            <a href="/pricing/">Pricing</a>
+            <a href="/insights/">Insights</a>
+            <a class="mobile-sign-in" href="https://app.waia.co.uk/login"
               >Sign in</a
-            ><a
-              class="nav-cta"
+            >
+          </nav>
+          <div class="header-actions">
+            <a class="sign-in" href="https://app.waia.co.uk/login">Sign in</a>
+            <a
+              class="button button-small"
               href="https://tally.so/r/objzGM?product=WAIA&amp;enquiry_type=walkthrough"
               target="_blank"
               rel="noopener noreferrer"
               >See WAIA</a
             >
           </div>
-        </nav>
+          <button
+            class="menu-toggle nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-navigation"
+          >
+            Menu <span aria-hidden="true">☰</span>
+          </button>
+        </div>
       </header>
-      <main id="top">
-        <section class="hero check-hero landing-hero">
+      <main id="main">
+        <section class="hero landing-hero" aria-labelledby="landing-title">
           <div class="container landing-hero-grid">
             <div class="landing-intro">
-              <div class="eyebrow">Free working tool · 10–15 minutes</div>
-              <h1>Workplace AI Visibility Check.</h1>
+              <p class="eyebrow">
+                Free working tool · seven questions · 10–15 minutes
+              </p>
+              <h1 id="landing-title">Workplace AI Visibility Check.</h1>
               <p class="lede">
                 Find out what you can actually see about AI use in your
                 organisation: where it is happening, which work it touches, and
@@ -123,25 +151,31 @@
             </figure>
           </div>
         </section>
-        <section class="waia-light-section landing-reasons">
+        <section class="landing-reasons" aria-labelledby="reasons-title">
           <div class="container">
             <div class="section-head wide">
-              <div class="eyebrow">Why start here</div>
-              <h2>See the work before setting the response.</h2>
-              <p>
-                People may already use AI to draft, summarise, analyse or answer
-                questions. Tool licences and training records will not tell you
-                which tasks have changed, what information is being entered, or
-                where a person still checks the result.
-              </p>
-              <p>
-                That is why visibility should come before blanket rules, more
-                training or another tool. Start with the work people are doing,
-                then decide which guidance or support would help.
-              </p>
+              <div>
+                <p class="eyebrow">Why start here</p>
+                <h2 id="reasons-title">
+                  See the work before setting the response.
+                </h2>
+              </div>
+              <div>
+                <p>
+                  People may already use AI to draft, summarise, analyse or
+                  answer questions. Tool licences and training records will not
+                  tell you which tasks have changed, what information is being
+                  entered, or where a person still checks the result.
+                </p>
+                <p>
+                  That is why visibility should come before blanket rules, more
+                  training or another tool. Start with the work people are
+                  doing, then decide which guidance or support would help.
+                </p>
+              </div>
             </div>
             <div class="conversion-question-grid">
-              <article class="outcome-card">
+              <article>
                 <span>Ask</span>
                 <h3>Where is use happening?</h3>
                 <p>
@@ -149,7 +183,7 @@
                   people doing recurring work.
                 </p>
               </article>
-              <article class="outcome-card">
+              <article>
                 <span>Trace</span>
                 <h3>What changed in the task?</h3>
                 <p>
@@ -157,7 +191,7 @@
                   passed to somebody else.
                 </p>
               </article>
-              <article class="outcome-card">
+              <article>
                 <span>Decide</span>
                 <h3>What needs attention?</h3>
                 <p>
@@ -168,58 +202,81 @@
             </div>
           </div>
         </section>
-        <section class="landing-close">
-          <div class="container check-layout">
-            <div class="eyebrow">What you will do</div>
-            <h2>Seven questions. A clearer next conversation.</h2>
-            <p class="large-copy">
-              You will consider AI use, affected work, data handling, human
-              review, differences between teams, manager visibility and what
-              happens to any time saved. It helps to have one real task in mind.
-              If you do not know an answer, choose “Unclear”. That is useful
-              information.
-            </p>
-            <p class="large-copy">
-              At the end you will get a plain summary of what is visible, partly
-              visible or unclear, plus a short list of questions to take back to
-              colleagues. You can print or save that result. Your answers stay
-              in this browser tab and are not sent with your contact details.
-            </p>
-            <div class="hero-actions">
-              <a
-                class="btn primary"
-                href="/workplace-ai-visibility-check/start/"
-                >Request access</a
-              >
+        <section class="landing-close" aria-labelledby="close-title">
+          <div class="container landing-close-grid">
+            <div>
+              <p class="eyebrow">What you'll do</p>
+              <h2 id="close-title">
+                Seven questions. A clearer next conversation.
+              </h2>
+            </div>
+            <div>
+              <p class="large-copy">
+                You'll consider AI use, affected work, data handling, human
+                review, differences between teams, manager visibility and what
+                happens to any time saved. It helps to have one real task in
+                mind. If you don't know an answer, choose “Unclear”. That is
+                useful information.
+              </p>
+              <p class="large-copy">
+                At the end you'll get a plain summary of what is visible, partly
+                visible or unclear, plus a short list of questions to take back
+                to colleagues. You can print or save that result. Your answers
+                stay in this browser tab and are not sent with your contact
+                details.
+              </p>
+              <div class="hero-actions">
+                <a
+                  class="btn primary"
+                  href="/workplace-ai-visibility-check/start/"
+                  >Request access</a
+                >
+              </div>
             </div>
           </div>
         </section>
       </main>
-      <footer>
-        <div class="footer-grid">
-          <span>&copy; 2026 Nineteen Point Two Ltd.</span
-          ><span>WAIA is a Nineteen Point Two product.</span
-          ><span
-            ><a href="/">Product</a> |
-            <a href="/how-it-works/">How it works</a> |
-            <a href="/insights/">Insights</a> |
-            <a href="/data-privacy/">Data &amp; privacy</a></span
-          ><span
+      <footer class="footer">
+        <div class="wrap footer-top">
+          <img
+            src="/assets/brand/waia-lockup-dark.svg"
+            alt="WAIA"
+            width="360"
+            height="92"
+          />
+          <p>Make the next move visible.</p>
+        </div>
+        <div class="wrap footer-links">
+          <div>
+            <a href="/">Product</a><a href="/how-it-works/">How it works</a
+            ><a href="/who-its-for/">Who it's for</a
+            ><a href="/insights/">Insights</a><a href="/pricing/">Pricing</a>
+          </div>
+          <div>
+            <a href="/data-privacy/">Data &amp; privacy</a
+            ><a href="/terms/">Terms</a
+            ><a href="/ai-use-statement/">AI use statement</a
             ><a
               href="https://legal.nineteenpointtwo.com/privacy/"
               target="_blank"
               rel="noopener noreferrer"
               >Privacy</a
-            >
-            |
-            <a
+            ><a
               href="https://legal.nineteenpointtwo.com/cookies/"
               target="_blank"
               rel="noopener noreferrer"
               >Cookies</a
-            >
-            |
-            <a href="/analytics-preferences/">Analytics preferences</a></span
+            ><a href="/analytics-preferences/">Analytics preferences</a>
+          </div>
+        </div>
+        <div class="wrap footer-bottom">
+          <span
+            >© 2026 Nineteen Point Two Ltd. WAIA is a Nineteen Point Two
+            product.</span
+          ><span
+            >Market:
+            <a href="https://waia.co.uk/" aria-current="page">UK (current)</a> ·
+            <a href="https://waiausa.com/">USA</a></span
           >
         </div>
       </footer>
