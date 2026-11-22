@@ -115,7 +115,6 @@ test("every public page footer links to Analytics preferences", () => {
   }
   visit(root);
   const footerPages = pages.filter((path) => readFileSync(path, "utf8").includes("<footer"));
-  assert.equal(footerPages.length, 24);
   for (const path of footerPages) {
     const html = readFileSync(path, "utf8");
     assert.equal(

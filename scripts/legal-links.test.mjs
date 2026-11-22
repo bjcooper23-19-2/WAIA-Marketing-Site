@@ -35,7 +35,7 @@ test("all HTML routes remove old legal host and corporate website dependencies",
     const content = read(file);
     assert.ok(!content.includes("legal.nineteenpointtwo.com"), `Legacy legal host in ${file}`);
     assert.ok(!content.includes("https://nineteenpointtwo.com") && !content.includes("https://www.nineteenpointtwo.com") && !content.includes("http://nineteenpointtwo.com"), `Corporate website link in ${file}`);
-    assert.ok(!content.includes("WAIA is a Nineteen Point Two product."), `Old company footer in ${file}`);
+    assert.ok(!/WAIA is a Nineteen Point Two\s+product\./.test(content), `Old company footer in ${file}`);
   }
 });
 
