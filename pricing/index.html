@@ -3,9 +3,23 @@
   <head>
     <link
       rel="stylesheet"
-      href="/assets/css/workplace-ai-academy.css?v=20261001-3"
+      href="/assets/css/editorial-pages.css?v=20261122-2"
     />
-    <link rel="stylesheet" href="/assets/css/pricing-page.css?v=20261013-1" />
+    <link rel="stylesheet" href="/assets/css/pricing-page.css?v=20261122-1" />
+    <link
+      rel="preload"
+      href="/assets/fonts/instrument-serif-regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/dm-sans-variable.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
     <link rel="canonical" href="https://waia.co.uk/pricing/" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -40,80 +54,63 @@
       href="/assets/favicon/waia-apple-touch-icon.png"
     />
   </head>
-  <body class="product-waia pricing-page">
-    <div class="noise"></div>
+  <body class="editorial-page pricing-page">
     <div class="site">
-      <header>
-        <nav class="nav" aria-label="Main navigation">
-          <a class="brand waia-brand" href="/" aria-label="WAIA home">
-            <img
-              class="brand-logo"
-              src="/assets/brand/waia-lockup-dark.svg"
+      <a class="skip-link" href="#main">Skip to content</a>
+      <header class="site-header">
+        <div class="wrap header-inner nav">
+          <a class="brand" href="/" aria-label="WAIA home"
+            ><img
+              src="/assets/brand/waia-lockup-light.svg"
               alt="WAIA"
               width="360"
               height="92"
-            />
-          </a>
-          <button
-            class="nav-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="site-navigation"
+          /></a>
+          <nav
+            class="nav-links"
+            id="site-navigation"
+            aria-label="Main navigation"
           >
-            Menu
-          </button>
-          <div class="nav-links" id="site-navigation">
             <a href="/">Product</a>
             <a href="/how-it-works/">How it works</a>
             <a href="/pricing/" aria-current="page">Pricing</a>
             <a href="/insights/">Insights</a>
-          </div>
-          <div class="nav-actions">
-            <a class="nav-sign-in" href="https://app.waia.co.uk/login"
+            <a class="mobile-sign-in" href="https://app.waia.co.uk/login"
               >Sign in</a
             >
+          </nav>
+          <div class="header-actions">
+            <a class="sign-in" href="https://app.waia.co.uk/login">Sign in</a>
             <a
-              class="nav-cta"
+              class="button button-small"
               href="https://tally.so/r/objzGM?product=WAIA&amp;enquiry_type=walkthrough"
               target="_blank"
               rel="noopener noreferrer"
               >See WAIA</a
             >
           </div>
-        </nav>
+          <button
+            class="menu-toggle nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-navigation"
+          >
+            Menu <span aria-hidden="true">☰</span>
+          </button>
+        </div>
       </header>
-      <main id="top">
-        <section class="hero compact-hero inner-page-hero pricing-hero">
+      <main id="main">
+        <section class="hero pricing-hero" aria-labelledby="pricing-title">
           <div class="container hero-grid">
             <div>
-              <h1>WAIA pricing, agreed for your organisation.</h1>
-              <aside class="product-summary-card">
-                <div class="card-inner">
-                  <div class="eyebrow">Commercial terms</div>
-                  <div class="metric-row">
-                    <div class="metric">
-                      <span>Product</span><strong>WAIA</strong>
-                    </div>
-                    <div class="metric">
-                      <span>Licences</span><strong>Agreed</strong>
-                    </div>
-                    <div class="metric">
-                      <span>Term</span><strong>Fixed dates</strong>
-                    </div>
-                    <div class="metric">
-                      <span>Price</span><strong>Order Form</strong>
-                    </div>
-                  </div>
-                  <p>
-                    The signed Customer Order Form sets the learner licence
-                    quantity, subscription dates and total price.
-                  </p>
-                </div>
-              </aside>
+              <p class="eyebrow">One integrated WAIA service</p>
+              <h1 id="pricing-title">
+                WAIA pricing, agreed for your organisation.
+              </h1>
               <p class="lede">
-                WAIA is one integrated service. We agree the learner licences,
-                fixed subscription period and total price in a signed Customer
-                Order Form.
+                WAIA brings Guidance, learning and evidence from real work
+                together, so managers can see where AI is helping, where it
+                needs attention and what to review next.
               </p>
               <div class="hero-actions">
                 <a
@@ -122,80 +119,78 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   >See WAIA in practice</a
-                ><a class="btn secondary" href="/how-it-works/"
+                >
+                <a class="btn secondary" href="/how-it-works/"
                   >How WAIA works</a
                 >
               </div>
             </div>
+            <div class="pricing-at-a-glance" aria-label="Commercial overview">
+              <div>
+                <span>Service</span
+                ><strong>One integrated WAIA subscription</strong>
+              </div>
+              <div>
+                <span>Learner licences</span
+                ><strong>Agreed per organisation</strong>
+              </div>
+              <div>
+                <span>Subscription</span
+                ><strong>Fixed start and end dates</strong>
+              </div>
+              <div>
+                <span>Total price</span
+                ><strong>In the signed Customer Order Form</strong>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section class="waia-light-section pricing-bands-section">
+        <section class="pricing-inclusions" aria-labelledby="inclusions-title">
           <div class="container">
-            <div class="feature-panel grid-surface pricing-context-panel">
+            <div class="section-head wide">
               <div>
-                <div class="eyebrow">What you’re buying</div>
-                <h2>A structured way to judge workplace AI value.</h2>
+                <p class="eyebrow">What's included</p>
+                <h2 id="inclusions-title">What WAIA brings together.</h2>
               </div>
               <p>
-                You’re not buying another AI content library. WAIA gives you a
-                structured way to see how AI is being used, whether it’s
-                improving work and where the evidence remains weak.
+                WAIA gives you a structured way to see how AI is being used,
+                whether it’s improving work and where the evidence remains weak.
               </p>
             </div>
-            <div class="section-head wide">
-              <div class="eyebrow">Subscription</div>
-              <h2>One agreed scope.</h2>
-              <p>
-                The Order Form records the number of learner licences, the
-                subscription start and end dates, and the total subscription
-                price. Implementation is optional and scoped separately if
-                agreed.
-              </p>
-            </div>
-            <p>
-              Ask us for a price based on the learner licences you need. The
-              signed Order Form confirms the amount in GBP, plus applicable
-              taxes. WAIA does not renew automatically.
-            </p>
-          </div>
-        </section>
-
-        <section class="pricing-inclusions">
-          <div class="container">
-            <div class="section-head">
-              <div class="eyebrow">WAIA service</div>
-              <h2>What WAIA brings together.</h2>
-            </div>
-            <div class="outcomes-grid package-card-grid">
-              <article class="outcome-card">
-                <h3>Platform and population</h3>
-                <ul class="check-list">
+            <div class="pricing-inclusion-list">
+              <article>
+                <span class="pricing-index">01 / Platform and population</span>
+                <h3>Access for the agreed group.</h3>
+                <ul>
                   <li>Agreed learner licences.</li>
                   <li>Organisation administration.</li>
                   <li>Standard learning pathways and toolkit.</li>
                 </ul>
               </article>
-              <article class="outcome-card">
-                <h3>Guidance and evidence</h3>
-                <ul class="check-list">
+              <article>
+                <span class="pricing-index">02 / Guidance and evidence</span>
+                <h3>Shared expectations and real work.</h3>
+                <ul>
                   <li>Organisation-specific workplace AI guidance.</li>
                   <li>Acknowledgement and completion records.</li>
                   <li>Application Evidence capture.</li>
                   <li>Admin dashboards, evidence views and review signals.</li>
                 </ul>
               </article>
-              <article class="outcome-card">
-                <h3>AI Baseline</h3>
-                <ul class="check-list">
+              <article>
+                <span class="pricing-index">03 / AI Baseline</span>
+                <h3>A clearer starting picture.</h3>
+                <ul>
                   <li>AI Baseline assessment.</li>
                   <li>AI Use Inventory.</li>
                   <li>Organisation views of learning and evidence.</li>
                 </ul>
               </article>
-              <article class="outcome-card">
-                <h3>Service support</h3>
-                <ul class="check-list">
+              <article>
+                <span class="pricing-index">04 / Service support</span>
+                <h3>Support as you use WAIA.</h3>
+                <ul>
                   <li>Standard email support.</li>
                   <li>Product and content updates.</li>
                 </ul>
@@ -204,97 +199,99 @@
           </div>
         </section>
 
-        <section class="waia-light-section pricing-start">
+        <section class="pricing-terms" aria-labelledby="terms-title">
           <div class="container">
-            <div class="section-head">
-              <div class="eyebrow">Implementation</div>
-              <h2>Implementation, if agreed.</h2>
+            <div class="section-head wide">
+              <div>
+                <p class="eyebrow">How pricing works</p>
+                <h2 id="terms-title">One scope, agreed in the Order Form.</h2>
+              </div>
+              <p>Ask us for a price based on the learner licences you need.</p>
+            </div>
+            <div class="pricing-term-statements">
+              <p>
+                The Order Form records the number of learner licences, the
+                subscription start and end dates, and the total subscription
+                price.
+              </p>
+              <p>
+                The signed Order Form confirms the amount in GBP, plus
+                applicable taxes. WAIA does not renew automatically.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="pricing-implementation"
+          aria-labelledby="implementation-title"
+        >
+          <div class="container pricing-implementation-grid">
+            <div>
+              <p class="eyebrow">Optional implementation</p>
+              <h2 id="implementation-title">Implementation, if agreed.</h2>
+              <p>
+                If implementation services are needed, their selection, scope
+                and price are set out in the signed Customer Order Form. They do
+                not create an entitlement to continuing consultancy.
+              </p>
+            </div>
+            <div class="pricing-outside">
+              <p class="eyebrow">Outside the standard scope</p>
+              <ul>
+                <li>Bespoke policy drafting.</li>
+                <li>Custom learning content.</li>
+                <li>Managed programme ownership.</li>
+                <li>System integrations.</li>
+                <li>Unlimited advisory time.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="pricing-invoice" aria-labelledby="invoice-title">
+          <div class="container pricing-invoice-grid">
+            <div>
+              <p class="eyebrow">Payment</p>
+              <h2 id="invoice-title">One upfront invoice.</h2>
             </div>
             <p>
-              If implementation services are needed, their selection, scope and
-              price are set out in the signed Customer Order Form. They do not
-              create an entitlement to continuing consultancy.
+              The full subscription fee and any agreed implementation fee appear
+              on one upfront invoice. Payment is due within 30 days unless the
+              signed Customer Order Form says otherwise.
             </p>
           </div>
         </section>
 
-        <section class="pricing-qualifications">
-          <div class="container">
-            <div class="outcomes-grid package-card-grid package-card-grid-two">
-              <article class="outcome-card">
-                <h3>One upfront invoice</h3>
-                <p>
-                  The full subscription fee and any agreed implementation fee
-                  appear on one upfront invoice. Payment is due within 30 days
-                  unless the signed Customer Order Form says otherwise.
-                </p>
-              </article>
-              <article class="outcome-card">
-                <h3>Outside the agreed scope</h3>
-                <ul class="check-list">
-                  <li>Bespoke policy drafting.</li>
-                  <li>Custom learning content.</li>
-                  <li>Managed programme ownership.</li>
-                  <li>System integrations.</li>
-                  <li>Unlimited advisory time.</li>
-                </ul>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section class="waia-light-section pricing-faq">
+        <section class="pricing-faq" aria-labelledby="faq-title">
           <div class="container">
             <div class="section-head">
-              <div class="eyebrow">Commercial FAQ</div>
-              <h2>Short answers before the first call.</h2>
+              <p class="eyebrow">Commercial FAQ</p>
+              <h2 id="faq-title">A few useful details before we talk.</h2>
             </div>
-            <div class="outcomes-grid faq-grid package-faq-grid">
-              <article class="outcome-card">
-                <h3>How are learner licences set?</h3>
-                <p>
-                  The signed Customer Order Form records the number of learner
-                  licences for the subscription period.
-                </p>
-              </article>
-              <article class="outcome-card">
+            <div class="pricing-faq-grid">
+              <article>
                 <h3>Can we start with a smaller group?</h3>
                 <p>
                   We can discuss the number of learner licences you need. The
                   agreed quantity will be in the signed Customer Order Form.
                 </p>
               </article>
-              <article class="outcome-card">
+              <article>
                 <h3>Is implementation required?</h3>
                 <p>
                   No. Implementation is optional and only provided where its
                   scope is agreed in the signed Customer Order Form.
                 </p>
               </article>
-              <article class="outcome-card">
+              <article>
                 <h3>Are ongoing advisory services included?</h3>
                 <p>
                   No. The subscription does not include continuing consultancy
                   or other services beyond any agreed implementation scope.
                 </p>
               </article>
-              <article class="outcome-card">
-                <h3>How long is the licence term?</h3>
-                <p>
-                  The signed Customer Order Form sets the start and end dates.
-                  The subscription does not renew automatically.
-                </p>
-              </article>
-              <article class="outcome-card">
-                <h3>How is pricing quoted?</h3>
-                <p>
-                  The signed Customer Order Form confirms the total price in
-                  GBP, applicable taxes and any agreed implementation fee. One
-                  upfront invoice is payable within 30 days unless that form
-                  says otherwise.
-                </p>
-              </article>
-              <article class="outcome-card">
+              <article>
                 <h3>Does WAIA replace legal or compliance advice?</h3>
                 <p>
                   No. WAIA supports practical Guidance and evidence from real
@@ -302,29 +299,22 @@
                   platform or a financial ROI calculator.
                 </p>
               </article>
-              <article class="outcome-card">
-                <h3>What happens after the first enquiry?</h3>
-                <p>
-                  The first conversation is used to understand the current
-                  evidence gap, the number of learner licences needed and the
-                  first evidence priority.
-                </p>
-              </article>
             </div>
             <div class="section-actions">
-              <a class="btn secondary dark-on-light" href="/who-its-for/"
+              <a class="btn secondary" href="/who-its-for/"
                 >Check suitability</a
-              ><a class="btn secondary dark-on-light" href="/data-privacy/"
+              >
+              <a class="btn secondary" href="/data-privacy/"
                 >Legal and data boundaries</a
               >
             </div>
           </div>
         </section>
 
-        <section class="cta-section">
+        <section class="cta-section pricing-cta" aria-labelledby="next-title">
           <div class="container cta-box">
-            <div class="eyebrow">Next step</div>
-            <h2>Discuss the right WAIA scope.</h2>
+            <p class="eyebrow">Next step</p>
+            <h2 id="next-title">Discuss the right WAIA scope.</h2>
             <p>
               The first conversation is used to understand fit, the learner
               licences needed and the first evidence priority.
@@ -336,46 +326,56 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 >See WAIA in practice</a
-              ><a class="btn secondary" href="/how-it-works/"
+              >
+              <a class="btn secondary" href="/how-it-works/"
                 >See how WAIA works</a
               >
             </div>
           </div>
         </section>
       </main>
-      <footer>
-        <div class="footer-grid">
-          <span>&copy; 2026 Nineteen Point Two Ltd.</span>
-          <span>WAIA is a Nineteen Point Two product.</span>
-          <span>
-            <a href="/">Product</a> |
-            <a href="/how-it-works/">How it works</a> |
-            <a href="/who-its-for/">Who it’s for</a> |
-            <a href="/insights/">Insights</a> |
-            <a href="/pricing/">Pricing</a> |
-            <a href="/data-privacy/">Data &amp; privacy</a>
-          </span>
-          <span>
-            <a href="/terms/">Terms</a> |
-            <a href="/ai-use-statement/">AI use statement</a>
-            |
-            <a
+      <footer class="footer">
+        <div class="wrap footer-top">
+          <img
+            src="/assets/brand/waia-lockup-dark.svg"
+            alt="WAIA"
+            width="360"
+            height="92"
+          />
+          <p>Make the next move visible.</p>
+        </div>
+        <div class="wrap footer-links">
+          <div>
+            <a href="/">Product</a><a href="/how-it-works/">How it works</a
+            ><a href="/who-its-for/">Who it's for</a
+            ><a href="/insights/">Insights</a><a href="/pricing/">Pricing</a>
+          </div>
+          <div>
+            <a href="/data-privacy/">Data &amp; privacy</a
+            ><a href="/terms/">Terms</a
+            ><a href="/ai-use-statement/">AI use statement</a
+            ><a
               href="https://legal.nineteenpointtwo.com/privacy/"
               target="_blank"
               rel="noopener noreferrer"
               >Privacy</a
-            >
-            |
-            <a
+            ><a
               href="https://legal.nineteenpointtwo.com/cookies/"
               target="_blank"
               rel="noopener noreferrer"
               >Cookies</a
-            >
-            |
-            <a href="/analytics-preferences/">Analytics preferences</a>
-          </span>
-          <span role="group" aria-label="Market">Market: <a href="https://waia.co.uk/" aria-current="page">UK (current)</a> | <a href="https://waiausa.com/">USA</a></span>
+            ><a href="/analytics-preferences/">Analytics preferences</a>
+          </div>
+        </div>
+        <div class="wrap footer-bottom">
+          <span
+            >© 2026 Nineteen Point Two Ltd. WAIA is a Nineteen Point Two
+            product.</span
+          ><span
+            >Market:
+            <a href="https://waia.co.uk/" aria-current="page">UK (current)</a> ·
+            <a href="https://waiausa.com/">USA</a></span
+          >
         </div>
       </footer>
     </div>
