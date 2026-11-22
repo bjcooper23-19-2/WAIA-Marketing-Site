@@ -1,0 +1,207 @@
+/* Shared reading treatment for WAIA's legal, privacy and preference routes. */
+.legal-utility-page .legal-reading {
+  padding-block: clamp(68px, 8vw, 112px) clamp(95px, 11vw, 156px);
+}
+
+.legal-utility-page .legal-reading .wrap {
+  max-width: 880px;
+}
+
+.legal-utility-page .legal-reading .hero {
+  padding: 0 0 52px;
+  border-bottom: 1px solid var(--line);
+}
+
+.legal-utility-page .legal-reading .hero h1 {
+  max-width: 16ch;
+  font-size: clamp(58px, 6vw, 88px);
+}
+
+.legal-utility-page .standfirst {
+  margin-top: 25px;
+  color: var(--body);
+  font-size: clamp(17px, 1.5vw, 20px);
+  line-height: 1.6;
+}
+
+.legal-utility-page .meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+  margin-top: 32px;
+  color: var(--body);
+  font-size: 13px;
+}
+
+.legal-utility-page .legal-content {
+  padding-top: 44px;
+  color: #263749;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.legal-utility-page .legal-content h2 {
+  margin: 56px 0 19px;
+  font-size: clamp(35px, 3.4vw, 47px);
+  line-height: 1.1;
+}
+
+.legal-utility-page .legal-content p,
+.legal-utility-page .legal-content ul {
+  max-width: none;
+  margin: 0 0 19px;
+}
+
+.legal-utility-page .legal-content ul {
+  padding-left: 24px;
+}
+
+.legal-utility-page .legal-content li {
+  margin-bottom: 9px;
+}
+
+.legal-utility-page .legal-content a,
+.utility-page main a:not(.btn) {
+  color: var(--teal-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.privacy-page .hero {
+  background: #f5f9f9;
+}
+
+.privacy-page .hero .hero-grid > div:first-child {
+  max-width: 920px;
+}
+
+.privacy-page .hero-watermark {
+  display: none;
+}
+
+.privacy-page .trust-line {
+  max-width: 66ch;
+  margin-top: 24px;
+  color: var(--body);
+  font-size: 16px;
+}
+
+.privacy-page .product-summary-card {
+  margin-top: 62px;
+}
+
+.privacy-page main > section:nth-child(even) {
+  background: #f5f9f9;
+}
+
+.privacy-page .document-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 7%;
+}
+
+.privacy-page .doc-card {
+  padding: 25px 0 29px;
+  border-top: 1px solid var(--line);
+}
+
+.privacy-page .doc-card h3 {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: 31px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.privacy-page .doc-card p {
+  margin-top: 12px;
+  color: var(--body);
+}
+
+.privacy-page .doc-card a {
+  display: inline-block;
+  margin-top: 16px;
+  color: var(--teal-dark);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.privacy-page .cta-section {
+  background: #e8f1f3;
+}
+
+.utility-page .hero {
+  background: #f5f9f9;
+}
+
+.utility-page .hero h1 {
+  max-width: 15ch;
+}
+
+.utility-page .waia-light-section .container {
+  max-width: 880px;
+}
+
+.utility-page .waia-light-section h2 {
+  margin-bottom: 24px;
+  font-size: clamp(40px, 4vw, 60px);
+}
+
+.utility-page .waia-light-section p {
+  margin-bottom: 20px;
+  color: var(--body);
+  line-height: 1.7;
+}
+
+.utility-page #analytics-status {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.utility-page .hero-actions .btn[hidden] {
+  display: none;
+}
+
+.not-found-page .hero {
+  min-height: 65vh;
+  background: #f5f9f9;
+}
+
+.not-found-page .product-badge {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 28px;
+  color: var(--teal-dark);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.not-found-page .product-badge strong {
+  font-size: 20px;
+}
+
+.not-found-page .hero h1 {
+  max-width: 14ch;
+}
+
+@media (max-width: 700px) {
+  .legal-utility-page .legal-reading {
+    padding-block: 65px 100px;
+  }
+  .legal-utility-page .legal-reading .hero {
+    padding-bottom: 36px;
+  }
+  .legal-utility-page .legal-content {
+    padding-top: 30px;
+  }
+  .privacy-page .document-grid {
+    grid-template-columns: 1fr;
+  }
+  .privacy-page .product-summary-card {
+    margin-top: 48px;
+  }
+}
