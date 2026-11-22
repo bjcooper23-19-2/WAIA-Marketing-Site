@@ -64,3 +64,33 @@ Release source-level audit: **PASS with corrections**. Protected end-to-end rele
 - **OPEN, external controls:** Cloudflare automatic injection, other tracker settings and the precise PECR exception conditions remain unverified in the account. Production supplier access, transfer, backup and export/deletion facts and signed Order Form incorporation remain subject to the earlier checks above. No associated GitHub Actions workflow run or PR review was returned for the inspected candidate head; this local pass does not substitute for required CI or human approval.
 
 After the Tally link and external controls are verified, rerun the protected gates on the final PR head, obtain explicit owner merge approval, and perform separate post-deployment live checks before claiming publication complete.
+
+## Owner confirmations and product-security reconciliation (22 November 2026, evening)
+
+**Purpose:** Reconcile WAIA UK PR #110 against the current WAIA Product security findings without implying draft product fixes have reached production.
+
+### Confirmed in the conversation (not independently exercised in this GitHub review)
+- **Tally:** Owner reports the live Visibility Check form Privacy Policy link has been corrected and now works. The prior broken split link is closed on **owner confirmation**. This session has not independently reopened the public form; a post-publish form handoff and submission test remains advisable.
+- **Cloudflare:** Owner supplied a screenshot of the `waia.co.uk` Real User Measurements setting, with **“Enable with JS Snippet installation”** selected. The option's own description states manual script installation is required. This confirms the selected RUM configuration is *not* automatic injection. Earlier owner browser test showed the manual beacon absent after a saved objection. Does not establish a formal PECR opinion or exclude unrelated tracking features.
+- **Database location:** Owner supplied Lovable production database-settings screenshot showing **Europe (Stockholm), PostgreSQL 17.6.1.111**. The region is factually confirmed. The generic database-export button is *not* evidence of a tested per-customer export/deletion process.
+- **Tally settings and suppliers:** Owner confirms optional partial-response saving/additional tracking are off and knows of no other recipients than the listed providers. This is owner attestation, not account-admin or supplier-contract verification.
+
+### Security Summary and DPA audit
+
+Source documents checked: `security/index.html`, `data-processing-agreement/index.html`, `subprocessors/index.html`, and the **actual** WAIA product PR #397 description and current product security finding evidence.
+
+- **Finding A, legacy cleanup:** The existing product source contains a privileged prelaunch cleanup function protected using an email claim. The security scan describes a plausible route to previewing user identifiers, addresses and related record counts (and a separate deletion operation exists). The exploit requires identity/authentication conditions that have **not** been established in production. **The code-level removal exists only in draft product PR #397; it is not deployed.** The Security Summary was narrowed from an absolute claim that platform admin access is limited to authorised personnel to intended administrative restriction plus ongoing review/remediation. This is not a substitute for fixing or verifying the privileged endpoint.
+- **Finding B, assessment integrity:** Product migrations allowed authorised organisation admins to write derived AI baseline/drag scores directly. This is a plausible evidence-integrity defect, not proof of cross-tenant data exposure. Draft product PR #397 restricts direct writes and adds a trusted atomic score-saving pathway; **the changes are not yet merged or deployed**. The legal text makes no guarantee that derived scores are tamper-proof or independently certified.
+- **DPA:** Reviewed processor obligations under Article 28, security measures under Article 32, incident notification, subprocessors, transfer safeguards and return/deletion obligations. **No specific existing security control, certification, fixed backup retention, or guarantee of zero vulnerabilities is claimed as already achieved** in the DPA. These remain binding *future obligations* on any signed Order Form; removing them would not be an appropriate response to scan findings. No current signed WAIA customers have been reported. No DPA edits were justified by these two findings alone.
+- **Subprocessor List:** Role and Stockholm location descriptions remain aligned with owner screenshot and known provider architecture. It does not claim independent auditing of the entire supplier chain or guaranteed UK-only processing.
+
+**Risk and release interpretation:** Marketing PR #110 and product PR #397 have independent engineering release workflows. Publishing accurate legal documents does not remediate a product vulnerability. This review does **not** certify the deployed WAIA application as secure, compliant or free of the two findings. A risk owner should explicitly accept or mitigate exposure from the privileged cleanup pathway before relying on the Security Summary for procurement, and the product security release must remain prioritised. Avoid claiming the product findings resolved until #397 is merged, migrated, deployed and hosted-denial-tested.
+
+### PR #110 readiness delta
+
+- Closed on owner confirmation: live Tally privacy-link defect.
+- Closed by screenshot: Cloudflare RUM **manual snippet installation** and production database location.
+- Completed in repo: Security Summary wording reconciliation; DPA read for contradiction, no change justified.
+- Remaining independent release evidence: final head QA for the single text edit, real Tally submission/Visibility Check handoff and URL check after publication, any supplier account verification material to claims, targeted PECR legal review, and explicit approval for protected merge/publish.
+
+**Do not describe the external controls as fully audited.** PR remains draft pending final release authorisation and any material risk-disposition decision. Product PR #397 is still separate and draft.
