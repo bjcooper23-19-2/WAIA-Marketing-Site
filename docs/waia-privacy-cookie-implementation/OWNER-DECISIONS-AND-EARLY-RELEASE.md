@@ -68,3 +68,13 @@ Current external references (checked 22 November 2026):
 ### Release execution progress
 - Replaced legacy legal-host links in core pages and the eight generated Insights articles on this branch; the Insights generator was updated to persist the same links on future rebuilds. This was a narrowly scoped generated-HTML footer update, **not a full new generation run**.
 - Draft legal pages remain noindex and carry review markers; their release gating is not yet closed. Do not merge until final document content and technical verification are accepted.
+
+## Final factual confirmations from the owner (22 November 2026)
+
+1. Cloudflare is used **solely for aggregate website statistics and improving the WAIA website**, not advertising, behavioural targeting or visitor profiling. This is an owner statement about use, not evidence of every Cloudflare account setting.
+2. The owner has **not enabled Tally partial-submission saving or additional tracking** on WAIA enquiry/Visibility Check forms. Tally's service-level handling still depends on provider settings and privacy terms. The notices should say only what WAIA has configured, not categorically that Tally never retains drafts.
+3. The owner knows of **no additional recipients of WAIA learner/customer personal data** beyond the identified Lovable/Supabase, Resend, Cloudflare, Tally and Google-based Visibility Check arrangement. This is a reasonable basis for the disclosed current supplier categories, subject to vendor supply-chain visibility and the operative app config.
+4. The owner again instructs **limited, defensible security/recovery claims**, not an assertion of independent backup or hosted RLS verification.
+5. The owner explicitly prefers **earliest defensible release** and Cloudflare to remain on during the focused PECR review.
+
+**Delivery impact:** This completes the owner questionnaire. Remaining checks are technical/document validation and release execution, not another commercial approval survey. The legal opinion, if obtained, should be limited to unresolved statutory interpretation and future binding contract terms.
