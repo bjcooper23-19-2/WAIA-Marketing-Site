@@ -3,12 +3,33 @@
   <head>
     <link
       rel="stylesheet"
-      href="/assets/css/workplace-ai-academy.css?v=20261001-3"
+      href="/assets/css/editorial-pages.css?v=20261122-1"
     />
-    <link rel="stylesheet" href="/assets/css/how-it-works.css?v=20261013-1" />
+    <link
+      rel="preload"
+      href="/assets/fonts/instrument-serif-regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/dm-sans-variable.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
     <link rel="canonical" href="https://waia.co.uk/how-it-works/" />
-    <link rel="alternate" hreflang="en-GB" href="https://waia.co.uk/how-it-works/" />
-    <link rel="alternate" hreflang="en-US" href="https://waiausa.com/how-it-works/" />
+    <link
+      rel="alternate"
+      hreflang="en-GB"
+      href="https://waia.co.uk/how-it-works/"
+    />
+    <link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://waiausa.com/how-it-works/"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>How WAIA Works | From Real Work to Better Decisions</title>
@@ -45,59 +66,61 @@
       href="/assets/favicon/waia-apple-touch-icon.png"
     />
   </head>
-  <body class="product-waia how-page">
-    <div class="noise"></div>
+  <body class="editorial-page how-page">
     <div class="site">
-      <header>
-        <nav class="nav" aria-label="Main navigation">
-          <a class="brand waia-brand" href="/" aria-label="WAIA home">
-            <img
-              class="brand-logo"
-              src="/assets/brand/waia-lockup-dark.svg"
+      <a class="skip-link" href="#main">Skip to content</a>
+      <header class="site-header">
+        <div class="wrap header-inner nav">
+          <a class="brand" href="/" aria-label="WAIA home"
+            ><img
+              src="/assets/brand/waia-lockup-light.svg"
               alt="WAIA"
               width="360"
               height="92"
-            />
-          </a>
-          <button
-            class="nav-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="site-navigation"
+          /></a>
+          <nav
+            class="nav-links"
+            id="site-navigation"
+            aria-label="Main navigation"
           >
-            Menu
-          </button>
-          <div class="nav-links" id="site-navigation">
             <a href="/">Product</a>
             <a href="/how-it-works/" aria-current="page">How it works</a>
             <a href="/pricing/">Pricing</a>
             <a href="/insights/">Insights</a>
-          </div>
-          <div class="nav-actions">
-            <a class="nav-sign-in" href="https://app.waia.co.uk/login"
+            <a class="mobile-sign-in" href="https://app.waia.co.uk/login"
               >Sign in</a
             >
+          </nav>
+          <div class="header-actions">
+            <a class="sign-in" href="https://app.waia.co.uk/login">Sign in</a>
             <a
-              class="nav-cta"
+              class="button button-small"
               href="https://tally.so/r/objzGM?product=WAIA&amp;enquiry_type=walkthrough"
               target="_blank"
               rel="noopener noreferrer"
               >See WAIA</a
             >
           </div>
-        </nav>
+          <button
+            class="menu-toggle nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-navigation"
+          >
+            Menu <span aria-hidden="true">☰</span>
+          </button>
+        </div>
       </header>
-      <main id="top">
+      <main id="main">
         <section class="hero compact-hero inner-page-hero how-hero">
           <div class="container hero-grid">
             <div>
-              <h1>How WAIA helps management see what AI is doing to work.</h1>
+              <h1>See what AI's doing to the work. Decide what comes next.</h1>
               <p class="lede">
-                Employees can keep using ChatGPT, Claude or Copilot for their
-                tasks. WAIA adds an organisation-level view: local Guidance,
-                learning participation and evidence of what happened in real
-                work. Managers can then decide where more support, checking or
-                follow-up is needed.
+                People can keep using ChatGPT, Claude or Copilot for their
+                tasks. WAIA brings local Guidance, learning participation and
+                evidence from real work into an organisation-level view.
+                Managers can see where support, checking or follow-up is needed.
               </p>
               <div class="hero-actions">
                 <a
@@ -134,7 +157,7 @@
           <div class="container">
             <div class="section-head wide">
               <div class="eyebrow">Operating model</div>
-              <h2>Turn individual AI use into decisions management can make.</h2>
+              <h2>Move from AI use to decisions management can make.</h2>
               <p>
                 WAIA connects these parts of the work. Learning participation
                 shows who has engaged; examples from real work show what may be
@@ -212,8 +235,8 @@
                   <span>AI Baseline</span>
                   <h3>Use reported concerns to guide action</h3>
                   <p>
-                    AI Baseline now leads with what the answers suggest, what to
-                    do next and what to check later.
+                    AI Baseline shows what the answers suggest, what to do next
+                    and what to check later.
                   </p>
                 </div>
                 <figure class="waia-screenshot-frame">
@@ -341,7 +364,7 @@
           <div class="container">
             <div class="section-head wide">
               <div class="eyebrow">Capacity discipline</div>
-              <h2>Indicative capacity is evidence dependent.</h2>
+              <h2>Capacity signals need strong evidence.</h2>
               <p>
                 Where evidence is strong enough, consistent and current, WAIA
                 can show conservative indicative capacity ranges. Weak evidence,
@@ -435,7 +458,7 @@
           <div class="container">
             <div class="section-head wide">
               <div class="eyebrow">Getting started</div>
-              <h2>A practical start, not a transformation programme.</h2>
+              <h2>Start with a real management question.</h2>
               <p>
                 WAIA begins with the organisation's current questions, then
                 makes Guidance, learning and evidence from real work useful for
@@ -588,10 +611,10 @@
           </div>
         </section>
 
-        <section class="cta-section">
+        <section class="cta-section how-cta">
           <div class="container cta-box">
             <div class="eyebrow">Next step</div>
-            <h2>Ask to see WAIA in the context of your organisation.</h2>
+            <h2>See how WAIA could work in your organisation.</h2>
             <p>
               The first conversation is used to understand the current evidence
               gap, the eligible population and a practical first evidence
@@ -609,39 +632,48 @@
           </div>
         </section>
       </main>
-      <footer>
-        <div class="footer-grid">
-          <span>&copy; 2026 Nineteen Point Two Ltd.</span>
-          <span>WAIA is a Nineteen Point Two product.</span>
-          <span>
-            <a href="/">Product</a> |
-            <a href="/how-it-works/">How it works</a> |
-            <a href="/who-its-for/">Who it’s for</a> |
-            <a href="/insights/">Insights</a> |
-            <a href="/pricing/">Pricing</a> |
-            <a href="/data-privacy/">Data &amp; privacy</a>
-          </span>
-          <span>
-            <a href="/terms/">Terms</a> |
-            <a href="/ai-use-statement/">AI use statement</a>
-            |
-            <a
+      <footer class="footer">
+        <div class="wrap footer-top">
+          <img
+            src="/assets/brand/waia-lockup-dark.svg"
+            alt="WAIA"
+            width="360"
+            height="92"
+          />
+          <p>Make the next move visible.</p>
+        </div>
+        <div class="wrap footer-links">
+          <div>
+            <a href="/">Product</a><a href="/how-it-works/">How it works</a
+            ><a href="/who-its-for/">Who it's for</a
+            ><a href="/insights/">Insights</a><a href="/pricing/">Pricing</a>
+          </div>
+          <div>
+            <a href="/data-privacy/">Data &amp; privacy</a
+            ><a href="/terms/">Terms</a
+            ><a href="/ai-use-statement/">AI use statement</a
+            ><a
               href="https://legal.nineteenpointtwo.com/privacy/"
               target="_blank"
               rel="noopener noreferrer"
               >Privacy</a
-            >
-            |
-            <a
+            ><a
               href="https://legal.nineteenpointtwo.com/cookies/"
               target="_blank"
               rel="noopener noreferrer"
               >Cookies</a
-            >
-            |
-            <a href="/analytics-preferences/">Analytics preferences</a>
-          </span>
-          <span role="group" aria-label="Market">Market: <a href="https://waia.co.uk/" aria-current="page">UK (current)</a> | <a href="https://waiausa.com/">USA</a></span>
+            ><a href="/analytics-preferences/">Analytics preferences</a>
+          </div>
+        </div>
+        <div class="wrap footer-bottom">
+          <span
+            >© 2026 Nineteen Point Two Ltd. WAIA is a Nineteen Point Two
+            product.</span
+          ><span
+            >Market:
+            <a href="https://waia.co.uk/" aria-current="page">UK (current)</a> ·
+            <a href="https://waiausa.com/">USA</a></span
+          >
         </div>
       </footer>
     </div>
