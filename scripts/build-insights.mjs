@@ -282,8 +282,8 @@ const documentShell = ({
 }) => `<!doctype html>
 <html lang="en-GB">
   <head>
-    <link rel="stylesheet" href="/assets/css/editorial-pages.css?v=20261122-2" />
-    <link rel="stylesheet" href="/assets/css/insights.css?v=20261122-1" />
+    <link rel="stylesheet" href="/assets/css/editorial-pages.css?v=20261122-3" />
+    <link rel="stylesheet" href="/assets/css/insights.css?v=20261122-3" />
     <link rel="preload" href="/assets/fonts/instrument-serif-regular.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="/assets/fonts/dm-sans-variable.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="canonical" href="${canonical}" />
