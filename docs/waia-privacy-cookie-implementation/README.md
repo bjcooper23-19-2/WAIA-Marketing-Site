@@ -47,3 +47,24 @@ They reuse the WAIA editorial layout but preserve original source text for redli
 **Cut ties means customer-facing link and publication independence, not changing the operating company, deleting a legal archive or breaking signed customer agreements.** No existing customer-facing link should be repointed until the exact destination is approved, tested and live. The old corporate marketing website and shared legal estate are outside this PR's implementation authority.
 
 **Release execution proposal:** Replace corporate source baseline in the five candidates with approved WAIA UK-specific documents, create the approved WAIA DPA for new contracts if signed-version rules permit, set approved canonicals/date/version, remove noindex, verify company disclosure and registered office, update all site and generated links, add sitemap routes, test end-to-end, then obtain separate merge and publication approval. Legal owner must confirm which documents can be approved while the PECR consent assessment and supplier inventory remain open.
+
+## Reconciliation update: owner confirms no existing customer contracts (22 November 2026)
+
+The owner confirms WAIA currently has **no signed customer contracts**. The proposed migration can therefore designate WAIA UK documents as the initial authoritative set for future contracts, rather than maintaining multiple incorporated versions for existing WAIA customers. Verify before release that no other signed WAIA agreements, Order Forms or procurement commitments exist.
+
+**On this draft branch:**
+- Six proposed WAIA UK document routes now exist: Website Terms, Privacy, Cookies, DPA, Security and Subprocessors. Existing WAIA `/terms/` and `/ai-use-statement/` remain part of the standalone suite.
+- All six candidates were reconciled towards UK-only WAIA scope and linked internally to the future WAIA document routes. Existing source material and commercial/legal protections are retained where possible; specific edits include WAIA company/trading-name presentation and proposed DPA/UK terms incorporation.
+- `/terms/` now references the proposed WAIA-hosted DPA on **this draft branch only**; the live contract URL has not changed. The Customer Order Form template and any pre-contract materials must be aligned to both `/terms/` and `/data-processing-agreement/` before first signature.
+- Original legal-host URLs need not remain the entry point for new WAIA customers, but should not be deleted or redirected until legacy inbound links and the corporate legal estate are separately reviewed.
+- The documents still contain review warnings and noindex directives. They use former document dates/versions as **source provenance**, not approved WAIA publication versions. Legal and factual approval is outstanding.
+
+**Outstanding mandatory factual and approval checks:**
+1. Verify Nineteen Point Two Limited's accurate registered identity and registered office, and approve the trading-as-WAIA disclosure.
+2. Verify privacy data categories, supplier processing/locations, retention/security promises and controller/processor roles against production.
+3. Complete the limited live browser storage/Tally check and legal assessment of Cloudflare analytics, Visibility Check storage and PECR before publishing corresponding claims.
+4. Have appropriate legal/privacy/contract reviewers approve the exact six revised documents and updated Terms, with source comparisons and version dates.
+5. Approve the Customer Order Form terms/DPA URLs and ensure the first sales contract uses the approved versions.
+6. Only after those gates, remove review/noindex controls, set WAIA canonical URLs and sitemap entries, update the common footer, Data & Privacy hub, Analytics Preferences, Visibility Check request links, and Insights generator output. Run layout/accessibility, links and functional checks before merge/publish.
+
+**Do not merge this PR in its current state.** It stages proposed documents and a contract-link change, not final authorised legal text.
