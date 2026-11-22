@@ -1,8 +1,25 @@
 <!doctype html>
 <html lang="en-GB">
   <head>
-    <link rel="stylesheet" href="/assets/css/workplace-ai-academy.css" />
-    <link rel="stylesheet" href="/assets/css/insights.css" />
+    <link
+      rel="stylesheet"
+      href="/assets/css/editorial-pages.css?v=20261122-2"
+    />
+    <link rel="stylesheet" href="/assets/css/insights.css?v=20261122-1" />
+    <link
+      rel="preload"
+      href="/assets/fonts/instrument-serif-regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/dm-sans-variable.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
     <link rel="canonical" href="https://waia.co.uk/insights/" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -123,58 +140,63 @@
       }
     </script>
   </head>
-  <body class="product-waia insights-page">
-    <div class="noise"></div>
+  <body class="editorial-page insights-page">
     <div class="site">
-      <header>
-        <nav class="nav" aria-label="Main navigation">
-          <a class="brand waia-brand" href="/" aria-label="WAIA home">
-            <img
-              class="brand-logo"
-              src="/assets/brand/waia-lockup-dark.svg"
+      <a class="skip-link" href="#main">Skip to content</a>
+
+      <header class="site-header">
+        <div class="wrap header-inner nav">
+          <a class="brand" href="/" aria-label="WAIA home"
+            ><img
+              src="/assets/brand/waia-lockup-light.svg"
               alt="WAIA"
               width="360"
               height="92"
-            />
-          </a>
-          <button
-            class="nav-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="site-navigation"
+          /></a>
+          <nav
+            class="nav-links"
+            id="site-navigation"
+            aria-label="Main navigation"
           >
-            Menu
-          </button>
-          <div class="nav-links" id="site-navigation">
             <a href="/">Product</a>
             <a href="/how-it-works/">How it works</a>
             <a href="/pricing/">Pricing</a>
             <a href="/insights/" aria-current="page">Insights</a>
-          </div>
-          <div class="nav-actions">
-            <a class="nav-sign-in" href="https://app.waia.co.uk/login"
+            <a class="mobile-sign-in" href="https://app.waia.co.uk/login"
               >Sign in</a
             >
+          </nav>
+          <div class="header-actions">
+            <a class="sign-in" href="https://app.waia.co.uk/login">Sign in</a>
             <a
-              class="nav-cta"
+              class="button button-small"
               href="https://tally.so/r/objzGM?product=WAIA&amp;enquiry_type=walkthrough"
               target="_blank"
               rel="noopener noreferrer"
               >See WAIA</a
             >
           </div>
-        </nav>
+          <button
+            class="menu-toggle nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-navigation"
+          >
+            Menu <span aria-hidden="true">☰</span>
+          </button>
+        </div>
       </header>
 
-      <main id="top">
+      <main id="main">
         <section class="insights-hero">
           <div class="container">
             <div class="eyebrow">Insights</div>
             <h1>Clear thinking on workplace AI and the work it changes.</h1>
             <p class="lede">
-              AI use is spreading through everyday work. These articles look at what
-              changes for people and managers, where checking or rework grows, and
-              what evidence helps a business decide whether the work improved.
+              AI use is spreading through everyday work. These articles look at
+              what changes for people and managers, where checking or rework
+              grows, and what evidence helps a business decide whether the work
+              improved.
             </p>
           </div>
         </section>
@@ -185,12 +207,12 @@
               <h2>Where AI helps, adds work or goes unseen.</h2>
               <p>
                 Read about AI use in everyday tasks, differences between teams,
-                checking and rework, and what managers need to see before they can
-                judge its value.
+                checking and rework, and what managers need to see before they
+                can judge its value.
               </p>
             </div>
             <div class="insight-grid">
-              <article class="insight-card">
+              <article class="insight-card insight-card-featured">
                 <div class="article-meta">
                   <time datetime="2026-09-22">22 September 2026</time>
                   <span>Workplace AI evidence</span>
@@ -313,7 +335,7 @@
                 <div class="article-meta">
                   <time datetime="2026-05-14">14 May 2026</time>
                   <span>Manager visibility</span>
-                  <span>4 min read</span>
+                  <span>3 min read</span>
                 </div>
                 <h3>The Management Blind Spot in Workplace AI</h3>
                 <p>
@@ -357,8 +379,8 @@
               <div class="eyebrow">See WAIA at work</div>
               <h2>See how WAIA helps managers review the work.</h2>
               <p>
-                WAIA brings guidance, examples from real work and evidence strength
-                together so managers can decide what needs attention.
+                WAIA brings guidance, examples from real work and evidence
+                strength together so managers can decide what needs attention.
               </p>
             </div>
             <div class="hero-actions">
@@ -375,39 +397,49 @@
         </section>
       </main>
 
-      <footer>
-        <div class="footer-grid">
-          <span>&copy; 2026 Nineteen Point Two Ltd.</span>
-          <span>WAIA is a Nineteen Point Two product.</span>
-          <span>
-            <a href="/">Product</a> |
-            <a href="/how-it-works/">How it works</a> |
-            <a href="/who-its-for/">Who it’s for</a> |
-            <a href="/insights/">Insights</a> |
-            <a href="/pricing/">Pricing</a> |
-            <a href="/data-privacy/">Data &amp; privacy</a>
-          </span>
-          <span>
-            <a href="/terms/">Terms</a> |
-            <a href="/ai-use-statement/">AI use statement</a>
-            |
-            <a
+      <footer class="footer">
+        <div class="wrap footer-top">
+          <img
+            src="/assets/brand/waia-lockup-dark.svg"
+            alt="WAIA"
+            width="360"
+            height="92"
+          />
+          <p>Make the next move visible.</p>
+        </div>
+        <div class="wrap footer-links">
+          <div>
+            <a href="/">Product</a><a href="/how-it-works/">How it works</a
+            ><a href="/who-its-for/">Who it's for</a
+            ><a href="/insights/">Insights</a><a href="/pricing/">Pricing</a>
+          </div>
+          <div>
+            <a href="/data-privacy/">Data &amp; privacy</a
+            ><a href="/terms/">Terms</a
+            ><a href="/ai-use-statement/">AI use statement</a
+            ><a
               href="https://legal.nineteenpointtwo.com/privacy/"
               target="_blank"
               rel="noopener noreferrer"
               >Privacy</a
-            >
-            |
-            <a
+            ><a
               href="https://legal.nineteenpointtwo.com/cookies/"
               target="_blank"
               rel="noopener noreferrer"
               >Cookies</a
-            >
-            |
-            <a href="/analytics-preferences/">Analytics preferences</a>
-          </span>
-          <span role="group" aria-label="Market">Market: <a href="https://waia.co.uk/" aria-current="page">UK (current)</a> | <a href="https://waiausa.com/">USA</a></span>
+            ><a href="/analytics-preferences/">Analytics preferences</a>
+          </div>
+        </div>
+        <div class="wrap footer-bottom">
+          <span
+            >© 2026 Nineteen Point Two Ltd. WAIA is a Nineteen Point Two
+            product.</span
+          >
+          <span
+            >Market:
+            <a href="https://waia.co.uk/" aria-current="page">UK (current)</a> ·
+            <a href="https://waiausa.com/">USA</a></span
+          >
         </div>
       </footer>
     </div>

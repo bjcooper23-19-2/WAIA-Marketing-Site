@@ -1,8 +1,25 @@
 <!doctype html>
 <html lang="en-GB">
   <head>
-    <link rel="stylesheet" href="/assets/css/workplace-ai-academy.css" />
-    <link rel="stylesheet" href="/assets/css/insights.css" />
+    <link
+      rel="stylesheet"
+      href="/assets/css/editorial-pages.css?v=20261122-2"
+    />
+    <link rel="stylesheet" href="/assets/css/insights.css?v=20261122-1" />
+    <link
+      rel="preload"
+      href="/assets/fonts/instrument-serif-regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/dm-sans-variable.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
     <link
       rel="canonical"
       href="https://waia.co.uk/insights/cost-of-ai-is-becoming-visible/"
@@ -74,50 +91,54 @@
       }
     </script>
   </head>
-  <body class="product-waia insights-page">
-    <div class="noise"></div>
+  <body class="editorial-page insights-page">
     <div class="site">
-      <header>
-        <nav class="nav" aria-label="Main navigation">
-          <a class="brand waia-brand" href="/" aria-label="WAIA home">
-            <img
-              class="brand-logo"
-              src="/assets/brand/waia-lockup-dark.svg"
+      <a class="skip-link" href="#main">Skip to content</a>
+
+      <header class="site-header">
+        <div class="wrap header-inner nav">
+          <a class="brand" href="/" aria-label="WAIA home"
+            ><img
+              src="/assets/brand/waia-lockup-light.svg"
               alt="WAIA"
               width="360"
               height="92"
-            />
-          </a>
-          <button
-            class="nav-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="site-navigation"
+          /></a>
+          <nav
+            class="nav-links"
+            id="site-navigation"
+            aria-label="Main navigation"
           >
-            Menu
-          </button>
-          <div class="nav-links" id="site-navigation">
             <a href="/">Product</a>
             <a href="/how-it-works/">How it works</a>
             <a href="/pricing/">Pricing</a>
             <a href="/insights/" aria-current="page">Insights</a>
-          </div>
-          <div class="nav-actions">
-            <a class="nav-sign-in" href="https://app.waia.co.uk/login"
+            <a class="mobile-sign-in" href="https://app.waia.co.uk/login"
               >Sign in</a
             >
+          </nav>
+          <div class="header-actions">
+            <a class="sign-in" href="https://app.waia.co.uk/login">Sign in</a>
             <a
-              class="nav-cta"
+              class="button button-small"
               href="https://tally.so/r/objzGM?product=WAIA&amp;enquiry_type=walkthrough"
               target="_blank"
               rel="noopener noreferrer"
               >See WAIA</a
             >
           </div>
-        </nav>
+          <button
+            class="menu-toggle nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-navigation"
+          >
+            Menu <span aria-hidden="true">☰</span>
+          </button>
+        </div>
       </header>
 
-      <main id="top">
+      <main id="main">
         <article class="insight-article">
           <header class="article-header">
             <div class="article-shell">
@@ -137,7 +158,13 @@
           </header>
           <div class="article-body">
             <div class="article-shell">
-              <p>AI cost is starting to move out of the background. For a while, many organisations could treat AI as experimentation: a few licences, some team-level testing and some useful shortcuts. That phase hasn't disappeared, and it shouldn’t. But the costs are becoming harder to ignore.</p>
+              <p>
+                AI cost is starting to move out of the background. For a while,
+                many organisations could treat AI as experimentation: a few
+                licences, some team-level testing and some useful shortcuts.
+                That phase hasn't disappeared, and it shouldn’t. But the costs
+                are becoming harder to ignore.
+              </p>
               <p>
                 Gartner forecasts worldwide AI spending will reach $2.59
                 trillion in 2026, up 47% year on year. That figure needs careful
@@ -161,7 +188,14 @@
                 significant, but they can usually be found somewhere. They
                 appear on invoices, contracts, budgets or procurement records.
               </p>
-              <p>The harder costs sit inside the work itself. Two teams pay for overlapping AI tools because neither knows what the other is using. A trial continues after the original sponsor has moved on because nobody has made a clear decision to stop it. A support team saves time drafting customer replies, but managers spend more time reviewing tone, accuracy and context.</p>
+              <p>
+                The harder costs sit inside the work itself. Two teams pay for
+                overlapping AI tools because neither knows what the other is
+                using. A trial continues after the original sponsor has moved on
+                because nobody has made a clear decision to stop it. A support
+                team saves time drafting customer replies, but managers spend
+                more time reviewing tone, accuracy and context.
+              </p>
               <p>
                 A customer success team starts using AI summaries, but different
                 people trust those summaries in different ways. A manager
@@ -259,8 +293,21 @@
                 real work. But experimentation becomes expensive when it remains
                 invisible.
               </p>
-              <p>When every team experiments separately, the business loses the ability to compare what is working. When every manager sets their own standard, review quality varies. When every department buys or trials its own tools, spend fragments. When trials keep running without evidence of value, activity becomes a substitute for progress.</p>
-              <p>This is how AI cost builds quietly, through small decisions that are never joined up. A licence here, a trial there, a prompt library in one team, a separate tool in another, more review for managers, customer communications that need correcting and reports built on assumptions nobody checked.</p>
+              <p>
+                When every team experiments separately, the business loses the
+                ability to compare what is working. When every manager sets
+                their own standard, review quality varies. When every department
+                buys or trials its own tools, spend fragments. When trials keep
+                running without evidence of value, activity becomes a substitute
+                for progress.
+              </p>
+              <p>
+                This is how AI cost builds quietly, through small decisions that
+                are never joined up. A licence here, a trial there, a prompt
+                library in one team, a separate tool in another, more review for
+                managers, customer communications that need correcting and
+                reports built on assumptions nobody checked.
+              </p>
               <p>
                 Gartner reported that in infrastructure and operations, only 28%
                 of AI use cases fully succeed and meet ROI expectations, while
@@ -271,7 +318,15 @@
                 delivers value when it fits the work, has clear ownership, is
                 reviewed properly and is measured against outcomes that matter.
               </p>
-              <p>The related <a href="/insights/hidden-cost-of-fragmented-ai-adoption/">WAIA Insights article on fragmented AI adoption</a> explores how this variation becomes commercially visible through inconsistent behaviours, weak manager visibility and hidden operational strain.</p>
+              <p>
+                The related
+                <a href="/insights/hidden-cost-of-fragmented-ai-adoption/"
+                  >WAIA Insights article on fragmented AI adoption</a
+                >
+                explores how this variation becomes commercially visible through
+                inconsistent behaviours, weak manager visibility and hidden
+                operational strain.
+              </p>
               <h2>Cost control should not mean slowing useful adoption</h2>
               <p>
                 The wrong response to rising AI costs is to shut down
@@ -306,7 +361,15 @@
                 Leaders don’t need to start by shutting AI usage down. They need
                 to make the current reality visible.
               </p>
-              <p>That means understanding where teams are already using AI, which tools are being paid for twice, which customer-facing tasks are now AI-assisted, and who checks the output before it reaches a customer. It also means looking beyond the invoice and asking which workflows are genuinely faster, which have moved effort into review or correction, and which trials are still running because nobody has made a decision to stop them.</p>
+              <p>
+                That means understanding where teams are already using AI, which
+                tools are being paid for twice, which customer-facing tasks are
+                now AI-assisted, and who checks the output before it reaches a
+                customer. It also means looking beyond the invoice and asking
+                which workflows are genuinely faster, which have moved effort
+                into review or correction, and which trials are still running
+                because nobody has made a decision to stop them.
+              </p>
               <p>
                 These are practical operating questions. They sit close to the
                 work. They show whether AI is improving the business or simply
@@ -325,7 +388,11 @@
                 changing work, where it’s creating value and where it’s quietly
                 adding cost.
               </p>
-              <p><a href="/">WAIA</a> helps organisations set shared guidance and see evidence from real work, so managers can review where AI is helping and where it is adding work.</p>
+              <p>
+                <a href="/">WAIA</a> helps organisations set shared guidance and
+                see evidence from real work, so managers can review where AI is
+                helping and where it is adding work.
+              </p>
               <h2>Closing point</h2>
               <p>
                 The answer isn’t to slow useful AI adoption. The answer is to
@@ -392,8 +459,8 @@
               <h2>See what AI is doing to the work.</h2>
               <p>
                 WAIA helps managers review where AI is changing work, what needs
-                checking and what the evidence supports, without monitoring prompts
-                or scoring people.
+                checking and what the evidence supports, without monitoring
+                prompts or scoring people.
               </p>
             </div>
             <div class="hero-actions">
@@ -410,39 +477,49 @@
         </section>
       </main>
 
-      <footer>
-        <div class="footer-grid">
-          <span>&copy; 2026 Nineteen Point Two Ltd.</span>
-          <span>WAIA is a Nineteen Point Two product.</span>
-          <span>
-            <a href="/">Product</a> |
-            <a href="/how-it-works/">How it works</a> |
-            <a href="/who-its-for/">Who it’s for</a> |
-            <a href="/insights/">Insights</a> |
-            <a href="/pricing/">Pricing</a> |
-            <a href="/data-privacy/">Data &amp; privacy</a>
-          </span>
-          <span>
-            <a href="/terms/">Terms</a> |
-            <a href="/ai-use-statement/">AI use statement</a>
-            |
-            <a
+      <footer class="footer">
+        <div class="wrap footer-top">
+          <img
+            src="/assets/brand/waia-lockup-dark.svg"
+            alt="WAIA"
+            width="360"
+            height="92"
+          />
+          <p>Make the next move visible.</p>
+        </div>
+        <div class="wrap footer-links">
+          <div>
+            <a href="/">Product</a><a href="/how-it-works/">How it works</a
+            ><a href="/who-its-for/">Who it's for</a
+            ><a href="/insights/">Insights</a><a href="/pricing/">Pricing</a>
+          </div>
+          <div>
+            <a href="/data-privacy/">Data &amp; privacy</a
+            ><a href="/terms/">Terms</a
+            ><a href="/ai-use-statement/">AI use statement</a
+            ><a
               href="https://legal.nineteenpointtwo.com/privacy/"
               target="_blank"
               rel="noopener noreferrer"
               >Privacy</a
-            >
-            |
-            <a
+            ><a
               href="https://legal.nineteenpointtwo.com/cookies/"
               target="_blank"
               rel="noopener noreferrer"
               >Cookies</a
-            >
-            |
-            <a href="/analytics-preferences/">Analytics preferences</a>
-          </span>
-          <span role="group" aria-label="Market">Market: <a href="https://waia.co.uk/" aria-current="page">UK (current)</a> | <a href="https://waiausa.com/">USA</a></span>
+            ><a href="/analytics-preferences/">Analytics preferences</a>
+          </div>
+        </div>
+        <div class="wrap footer-bottom">
+          <span
+            >© 2026 Nineteen Point Two Ltd. WAIA is a Nineteen Point Two
+            product.</span
+          >
+          <span
+            >Market:
+            <a href="https://waia.co.uk/" aria-current="page">UK (current)</a> ·
+            <a href="https://waiausa.com/">USA</a></span
+          >
         </div>
       </footer>
     </div>
