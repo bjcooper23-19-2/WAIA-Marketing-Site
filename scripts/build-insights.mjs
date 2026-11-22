@@ -247,10 +247,10 @@ const footer = `
   </div>
   <div class="wrap footer-links">
     <div><a href="/">Product</a><a href="/how-it-works/">How it works</a><a href="/who-its-for/">Who it's for</a><a href="/insights/">Insights</a><a href="/pricing/">Pricing</a></div>
-    <div><a href="/data-privacy/">Data &amp; privacy</a><a href="/terms/">Terms</a><a href="/ai-use-statement/">AI use statement</a><a href="https://legal.nineteenpointtwo.com/privacy/" target="_blank" rel="noopener noreferrer">Privacy</a><a href="https://legal.nineteenpointtwo.com/cookies/" target="_blank" rel="noopener noreferrer">Cookies</a><a href="/analytics-preferences/">Analytics preferences</a></div>
+    <div><a href="/data-privacy/">Data &amp; privacy</a><a href="/terms/">Terms</a><a href="/ai-use-statement/">AI use statement</a><a href="/privacy/" target="_blank" rel="noopener noreferrer">Privacy</a><a href="/cookies/" target="_blank" rel="noopener noreferrer">Cookies</a><a href="/analytics-preferences/">Analytics preferences</a></div>
   </div>
   <div class="wrap footer-bottom">
-    <span>© 2026 Nineteen Point Two Ltd. WAIA is a Nineteen Point Two product.</span>
+    <span>© 2026 Nineteen Point Two Limited trading as WAIA.</span>
     <span>Market: <a href="https://waia.co.uk/" aria-current="page">UK (current)</a> · <a href="https://waiausa.com/">USA</a></span>
   </div>
 </footer>`;
