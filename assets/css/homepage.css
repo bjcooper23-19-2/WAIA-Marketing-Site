@@ -250,9 +250,9 @@ button {
   grid-template-columns: minmax(0, 0.91fr) minmax(0, 1.09fr);
   align-items: center;
   gap: 10px;
-  min-height: 680px;
-  padding-top: 76px;
-  padding-bottom: 56px;
+  min-height: 620px;
+  padding-top: 48px;
+  padding-bottom: 48px;
 }
 .hero-copy {
   position: relative;
@@ -895,7 +895,7 @@ button {
   }
   .hero-grid {
     display: block;
-    padding-top: 78px;
+    padding-top: 56px;
     padding-bottom: 40px;
   }
   .hero-copy {
@@ -1000,7 +1000,7 @@ button {
     display: none;
   }
   .hero-grid {
-    padding-top: 65px;
+    padding-top: 48px;
     padding-bottom: 0;
   }
   .hero h1 {
