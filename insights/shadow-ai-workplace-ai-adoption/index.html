@@ -1,8 +1,25 @@
 <!doctype html>
 <html lang="en-GB">
   <head>
-    <link rel="stylesheet" href="/assets/css/workplace-ai-academy.css" />
-    <link rel="stylesheet" href="/assets/css/insights.css" />
+    <link
+      rel="stylesheet"
+      href="/assets/css/editorial-pages.css?v=20261122-2"
+    />
+    <link rel="stylesheet" href="/assets/css/insights.css?v=20261122-1" />
+    <link
+      rel="preload"
+      href="/assets/fonts/instrument-serif-regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/dm-sans-variable.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
     <link
       rel="canonical"
       href="https://waia.co.uk/insights/shadow-ai-workplace-ai-adoption/"
@@ -74,50 +91,54 @@
       }
     </script>
   </head>
-  <body class="product-waia insights-page">
-    <div class="noise"></div>
+  <body class="editorial-page insights-page">
     <div class="site">
-      <header>
-        <nav class="nav" aria-label="Main navigation">
-          <a class="brand waia-brand" href="/" aria-label="WAIA home">
-            <img
-              class="brand-logo"
-              src="/assets/brand/waia-lockup-dark.svg"
+      <a class="skip-link" href="#main">Skip to content</a>
+
+      <header class="site-header">
+        <div class="wrap header-inner nav">
+          <a class="brand" href="/" aria-label="WAIA home"
+            ><img
+              src="/assets/brand/waia-lockup-light.svg"
               alt="WAIA"
               width="360"
               height="92"
-            />
-          </a>
-          <button
-            class="nav-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="site-navigation"
+          /></a>
+          <nav
+            class="nav-links"
+            id="site-navigation"
+            aria-label="Main navigation"
           >
-            Menu
-          </button>
-          <div class="nav-links" id="site-navigation">
             <a href="/">Product</a>
             <a href="/how-it-works/">How it works</a>
             <a href="/pricing/">Pricing</a>
             <a href="/insights/" aria-current="page">Insights</a>
-          </div>
-          <div class="nav-actions">
-            <a class="nav-sign-in" href="https://app.waia.co.uk/login"
+            <a class="mobile-sign-in" href="https://app.waia.co.uk/login"
               >Sign in</a
             >
+          </nav>
+          <div class="header-actions">
+            <a class="sign-in" href="https://app.waia.co.uk/login">Sign in</a>
             <a
-              class="nav-cta"
+              class="button button-small"
               href="https://tally.so/r/objzGM?product=WAIA&amp;enquiry_type=walkthrough"
               target="_blank"
               rel="noopener noreferrer"
               >See WAIA</a
             >
           </div>
-        </nav>
+          <button
+            class="menu-toggle nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-navigation"
+          >
+            Menu <span aria-hidden="true">☰</span>
+          </button>
+        </div>
       </header>
 
-      <main id="top">
+      <main id="main">
         <article class="insight-article">
           <header class="article-header">
             <div class="article-shell">
@@ -139,8 +160,18 @@
           </header>
           <div class="article-body">
             <div class="article-shell">
-              <p>Shadow AI is not only a security problem. Leaders may know which tools are approved but have little visibility into how people use them in daily work. Teams develop different shortcuts and checks. Managers then have to account for work they cannot fully see.</p>
-              <p>Tool access is rarely the missing piece. People need clear expectations about when to use AI, what to check and who owns the result.</p>
+              <p>
+                Shadow AI is not only a security problem. Leaders may know which
+                tools are approved but have little visibility into how people
+                use them in daily work. Teams develop different shortcuts and
+                checks. Managers then have to account for work they cannot fully
+                see.
+              </p>
+              <p>
+                Tool access is rarely the missing piece. People need clear
+                expectations about when to use AI, what to check and who owns
+                the result.
+              </p>
               <p>AI is not a strategy, it's a tool.</p>
               <p>
                 The problem is what happens once real teams start folding those
@@ -163,7 +194,10 @@
                 local drives without visibility. Multiple teams solve the same
                 operational problems with radically different AI approaches.
               </p>
-              <p>These habits leave managers with an incomplete picture of how the work is being done.</p>
+              <p>
+                These habits leave managers with an incomplete picture of how
+                the work is being done.
+              </p>
               <h2>Shadow AI: an operational state, not a buzzword</h2>
               <p>
                 Shadow AI isn't a flashy new concept or a compliance alarm. It's
@@ -211,7 +245,11 @@
                 practical guidance, managers react to unexpected AI-driven
                 workflow changes rather than shaping them.
               </p>
-              <p>Managers need guidance they can use to review the work and agree standards across the team. Otherwise, each person is left to decide what is acceptable on their own.</p>
+              <p>
+                Managers need guidance they can use to review the work and agree
+                standards across the team. Otherwise, each person is left to
+                decide what is acceptable on their own.
+              </p>
               <h2>Governance that enables, not restricts</h2>
               <p>
                 Governance often defaults to restriction. It slows workflows,
@@ -225,7 +263,10 @@
                 provide clarity on responsible use and safe boundaries while
                 supporting managers in embedding AI within existing workflows.
               </p>
-              <p>Rules should tell people what they can do, what needs checking and when to ask for help.</p>
+              <p>
+                Rules should tell people what they can do, what needs checking
+                and when to ask for help.
+              </p>
               <h2>A practical workplace AI adoption path</h2>
               <p>
                 Organisations move through different stages of workplace AI
@@ -277,10 +318,26 @@
                 recurring revenue.
               </p>
               <h2>What managers need to see</h2>
-              <p><a href="/">WAIA</a> brings shared guidance, learning, acknowledgement and examples from real work into view so managers can see where follow-up is needed.</p>
-              <p>Shared standards start with the work people actually do. Managers need to see how AI is used before they can decide what to share, standardise or change.</p>
-              <p>Start with one recurring task. Ask where AI enters, who reviews the output and whether teams doing the same work follow the same guidance.</p>
-              <p>For leadership teams that need to see what is happening now, <a href="/">WAIA</a> brings a baseline, guidance and evidence from real work together for review.</p>
+              <p>
+                <a href="/">WAIA</a> brings shared guidance, learning,
+                acknowledgement and examples from real work into view so
+                managers can see where follow-up is needed.
+              </p>
+              <p>
+                Shared standards start with the work people actually do.
+                Managers need to see how AI is used before they can decide what
+                to share, standardise or change.
+              </p>
+              <p>
+                Start with one recurring task. Ask where AI enters, who reviews
+                the output and whether teams doing the same work follow the same
+                guidance.
+              </p>
+              <p>
+                For leadership teams that need to see what is happening now,
+                <a href="/">WAIA</a> brings a baseline, guidance and evidence
+                from real work together for review.
+              </p>
             </div>
           </div>
         </article>
@@ -291,8 +348,8 @@
               <h2>See what AI is doing to the work.</h2>
               <p>
                 WAIA helps managers review where AI is changing work, what needs
-                checking and what the evidence supports, without monitoring prompts
-                or scoring people.
+                checking and what the evidence supports, without monitoring
+                prompts or scoring people.
               </p>
             </div>
             <div class="hero-actions">
@@ -309,39 +366,49 @@
         </section>
       </main>
 
-      <footer>
-        <div class="footer-grid">
-          <span>&copy; 2026 Nineteen Point Two Ltd.</span>
-          <span>WAIA is a Nineteen Point Two product.</span>
-          <span>
-            <a href="/">Product</a> |
-            <a href="/how-it-works/">How it works</a> |
-            <a href="/who-its-for/">Who it’s for</a> |
-            <a href="/insights/">Insights</a> |
-            <a href="/pricing/">Pricing</a> |
-            <a href="/data-privacy/">Data &amp; privacy</a>
-          </span>
-          <span>
-            <a href="/terms/">Terms</a> |
-            <a href="/ai-use-statement/">AI use statement</a>
-            |
-            <a
+      <footer class="footer">
+        <div class="wrap footer-top">
+          <img
+            src="/assets/brand/waia-lockup-dark.svg"
+            alt="WAIA"
+            width="360"
+            height="92"
+          />
+          <p>Make the next move visible.</p>
+        </div>
+        <div class="wrap footer-links">
+          <div>
+            <a href="/">Product</a><a href="/how-it-works/">How it works</a
+            ><a href="/who-its-for/">Who it's for</a
+            ><a href="/insights/">Insights</a><a href="/pricing/">Pricing</a>
+          </div>
+          <div>
+            <a href="/data-privacy/">Data &amp; privacy</a
+            ><a href="/terms/">Terms</a
+            ><a href="/ai-use-statement/">AI use statement</a
+            ><a
               href="https://legal.nineteenpointtwo.com/privacy/"
               target="_blank"
               rel="noopener noreferrer"
               >Privacy</a
-            >
-            |
-            <a
+            ><a
               href="https://legal.nineteenpointtwo.com/cookies/"
               target="_blank"
               rel="noopener noreferrer"
               >Cookies</a
-            >
-            |
-            <a href="/analytics-preferences/">Analytics preferences</a>
-          </span>
-          <span role="group" aria-label="Market">Market: <a href="https://waia.co.uk/" aria-current="page">UK (current)</a> | <a href="https://waiausa.com/">USA</a></span>
+            ><a href="/analytics-preferences/">Analytics preferences</a>
+          </div>
+        </div>
+        <div class="wrap footer-bottom">
+          <span
+            >© 2026 Nineteen Point Two Ltd. WAIA is a Nineteen Point Two
+            product.</span
+          >
+          <span
+            >Market:
+            <a href="https://waia.co.uk/" aria-current="page">UK (current)</a> ·
+            <a href="https://waiausa.com/">USA</a></span
+          >
         </div>
       </footer>
     </div>

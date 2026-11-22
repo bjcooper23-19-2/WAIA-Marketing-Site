@@ -221,48 +221,37 @@ const navLink = (href, label, current = false) =>
   `<a href="${href}"${current ? ' aria-current="page"' : ""}>${label}</a>`;
 
 const header = (current = "") => `
-<header>
-  <nav class="nav" aria-label="Main navigation">
-    <a class="brand waia-brand" href="/" aria-label="WAIA home">
-      <img class="brand-logo" src="/assets/brand/waia-lockup-dark.svg" alt="WAIA" width="360" height="92" />
-    </a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">Menu</button>
-    <div class="nav-links" id="site-navigation">
+<header class="site-header">
+  <div class="wrap header-inner nav">
+    <a class="brand" href="/" aria-label="WAIA home"><img src="/assets/brand/waia-lockup-light.svg" alt="WAIA" width="360" height="92" /></a>
+    <nav class="nav-links" id="site-navigation" aria-label="Main navigation">
       ${navLink("/", "Product", current === "product")}
       ${navLink("/how-it-works/", "How it works", current === "how-it-works")}
       ${navLink("/pricing/", "Pricing", current === "pricing")}
       ${navLink("/insights/", "Insights", current === "insights")}
+      <a class="mobile-sign-in" href="${loginUrl}">Sign in</a>
+    </nav>
+    <div class="header-actions">
+      <a class="sign-in" href="${loginUrl}">Sign in</a>
+      <a class="button button-small" href="${walkthroughUrl}" target="_blank" rel="noopener noreferrer">See WAIA</a>
     </div>
-    <div class="nav-actions">
-      <a class="nav-sign-in" href="${loginUrl}">Sign in</a>
-      <a class="nav-cta" href="${walkthroughUrl}" target="_blank" rel="noopener noreferrer">See WAIA</a>
-    </div>
-  </nav>
+    <button class="menu-toggle nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">Menu <span aria-hidden="true">☰</span></button>
+  </div>
 </header>`;
 
 const footer = `
-<footer>
-  <div class="footer-grid">
-    <span>&copy; 2026 Nineteen Point Two Ltd.</span>
-    <span>WAIA is a Nineteen Point Two product.</span>
-    <span>
-      <a href="/">Product</a> |
-      <a href="/how-it-works/">How it works</a> |
-      <a href="/who-its-for/">Who it’s for</a> |
-      <a href="/insights/">Insights</a> |
-      <a href="/pricing/">Pricing</a> |
-      <a href="/data-privacy/">Data &amp; privacy</a>
-    </span>
-    <span>
-      <a href="/terms/">Terms</a> |
-      <a href="/ai-use-statement/">AI use statement</a>
-      |
-      <a href="https://legal.nineteenpointtwo.com/privacy/" target="_blank" rel="noopener noreferrer">Privacy</a>
-      |
-      <a href="https://legal.nineteenpointtwo.com/cookies/" target="_blank" rel="noopener noreferrer">Cookies</a> |
-      <a href="/analytics-preferences/">Analytics preferences</a>
-    </span>
-    <span role="group" aria-label="Market">Market: <a href="https://waia.co.uk/" aria-current="page">UK (current)</a> | <a href="https://waiausa.com/">USA</a></span>
+<footer class="footer">
+  <div class="wrap footer-top">
+    <img src="/assets/brand/waia-lockup-dark.svg" alt="WAIA" width="360" height="92" />
+    <p>Make the next move visible.</p>
+  </div>
+  <div class="wrap footer-links">
+    <div><a href="/">Product</a><a href="/how-it-works/">How it works</a><a href="/who-its-for/">Who it's for</a><a href="/insights/">Insights</a><a href="/pricing/">Pricing</a></div>
+    <div><a href="/data-privacy/">Data &amp; privacy</a><a href="/terms/">Terms</a><a href="/ai-use-statement/">AI use statement</a><a href="https://legal.nineteenpointtwo.com/privacy/" target="_blank" rel="noopener noreferrer">Privacy</a><a href="https://legal.nineteenpointtwo.com/cookies/" target="_blank" rel="noopener noreferrer">Cookies</a><a href="/analytics-preferences/">Analytics preferences</a></div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Nineteen Point Two Ltd. WAIA is a Nineteen Point Two product.</span>
+    <span>Market: <a href="https://waia.co.uk/" aria-current="page">UK (current)</a> · <a href="https://waiausa.com/">USA</a></span>
   </div>
 </footer>`;
 
@@ -293,8 +282,10 @@ const documentShell = ({
 }) => `<!doctype html>
 <html lang="en-GB">
   <head>
-    <link rel="stylesheet" href="/assets/css/workplace-ai-academy.css" />
-    <link rel="stylesheet" href="/assets/css/insights.css" />
+    <link rel="stylesheet" href="/assets/css/editorial-pages.css?v=20261122-2" />
+    <link rel="stylesheet" href="/assets/css/insights.css?v=20261122-1" />
+    <link rel="preload" href="/assets/fonts/instrument-serif-regular.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/assets/fonts/dm-sans-variable.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="canonical" href="${canonical}" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -312,9 +303,9 @@ const documentShell = ({
     ${faviconLinks}
     ${structuredData ? jsonLdScript(structuredData) : ""}
   </head>
-  <body class="product-waia insights-page">
-    <div class="noise"></div>
+  <body class="editorial-page insights-page">
     <div class="site">
+      <a class="skip-link" href="#main">Skip to content</a>
       ${header("insights")}
       ${body}
       ${footer}
@@ -374,8 +365,8 @@ const loadArticles = async () => {
 const renderIndex = (articles) => {
   const cards = articles
     .map(
-      (article) => `
-        <article class="insight-card">
+      (article, index) => `
+        <article class="insight-card${index === 0 ? " insight-card-featured" : ""}">
           <div class="article-meta">
             <time datetime="${article.date}">${article.formattedDate}</time>
             <span>${escapeHtml(article.category)}</span>
@@ -415,7 +406,7 @@ const renderIndex = (articles) => {
       })),
     },
     body: `
-      <main id="top">
+      <main id="main">
         <section class="insights-hero">
           <div class="container">
             <div class="eyebrow">Insights</div>
@@ -490,7 +481,7 @@ const renderArticle = (article) =>
       },
     },
     body: `
-      <main id="top">
+      <main id="main">
         <article class="insight-article">
           <header class="article-header">
             <div class="article-shell">
