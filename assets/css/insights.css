@@ -1,5 +1,6 @@
 /* Insights publication layouts on the shared WAIA editorial foundation. */
 .insights-page .insights-hero {
+  padding-top: clamp(56px, 5vw, 76px);
   background: linear-gradient(145deg, #fff 0%, #f8fbfb 60%, #e8f1f3 100%);
 }
 .insights-page .insights-hero h1 {
