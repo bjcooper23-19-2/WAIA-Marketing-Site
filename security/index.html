@@ -79,8 +79,7 @@
             security.
           </p>
           <p>
-            The platform is intended to process ordinary workplace learning and
-            adoption data. It is not intended to process special category data,
+            The platform is intended to process ordinary workplace learning and adoption data. Customers must not submit special category personal data unless expressly agreed in writing. It is not intended to process special category data,
             highly sensitive HR casework, medical records, disciplinary records,
             financial account information or national identifiers.
           </p>
@@ -112,9 +111,7 @@
           </p>
           <h2>4. Data segregation</h2>
           <p>
-            WAIA is a multi-tenant platform. Database row-level security is
-            active on its public tables and supports organisation-scoped access
-            for organisation administrators and learners.
+            WAIA is a multi-tenant platform. WAIA uses organisation-scoped access controls and database access policies intended to restrict organisation administrators and learners to their permitted information. The effective configuration requires verification in the deployed service.
           </p>
           <p>
             Platform administrators retain intentional cross-organisation
@@ -160,9 +157,7 @@
           </p>
           <h2>8. Backups and recovery</h2>
           <p>
-            Daily database backups are available through the managed
-            infrastructure, with a rolling retention period of approximately 14
-            days. Point-in-time recovery is not available. Recovery depends on
+            The availability, schedule, retention and restoration options for backups depend on the active managed infrastructure and its configuration. We assess recovery options with the infrastructure provider and do not promise a particular backup retention period or point-in-time recovery capability in this summary. Recovery depends on
             the available backup and the circumstances of the incident; no
             specific recovery time or absence of data loss is promised.
           </p>
