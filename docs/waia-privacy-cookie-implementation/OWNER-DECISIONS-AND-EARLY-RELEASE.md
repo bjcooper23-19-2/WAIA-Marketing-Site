@@ -50,3 +50,21 @@ WAIA application (repository code, not live hosted checks):
 
 ## Outstanding input specifically from owner
 - **ben@waia.co.uk** supplied and confirmed working by owner on 22 November 2026; forwards as an alias to ben@nineteenpointtwo.com.
+
+## Owner's final publication decisions (22 November 2026)
+
+- **Cloudflare Web Analytics remains enabled** during the PECR assessment. This is an explicit owner choice, not a legal opinion that the current use qualifies for the statutory exception. No consent mechanism change was made.
+- **Retain Tally** as the enquiry and Visibility Check provider. Third-party storage and form privacy behaviour are described without unverified claims about partial submissions.
+- **Security and backups:** use limited, factually supportable descriptions. Exact backup retention and point-in-time guarantees were removed from the draft Security Summary; factual live configuration remains to be confirmed.
+- **Suppliers and international transfers:** describe confirmed suppliers and processing roles, do not promise an independently unverified transfer location or mechanism. Current public Resend documents support UK transfer terms (DPA) and US primary processing; applicability to WAIA's account and other vendor chains still needs confirmation.
+- **Earliest defensible release:** progress the PR and prepare the entire first-party link graph now; do not confuse owner-directed expedited work with confirmation of statutory compliance.
+
+Current external references (checked 22 November 2026):
+- ICO statistical-purposes exception: https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guidance-on-the-use-of-storage-and-access-technologies/what-are-the-exceptions/
+- Cloudflare Web Analytics: https://developers.cloudflare.com/web-analytics/about/
+- Resend DPA: https://resend.com/legal/dpa
+- Resend processing summary: https://resend.com/security/gdpr/
+
+### Release execution progress
+- Replaced legacy legal-host links in core pages and the eight generated Insights articles on this branch; the Insights generator was updated to persist the same links on future rebuilds. This was a narrowly scoped generated-HTML footer update, **not a full new generation run**.
+- Draft legal pages remain noindex and carry review markers; their release gating is not yet closed. Do not merge until final document content and technical verification are accepted.
