@@ -312,6 +312,12 @@ html {
   max-width: 15ch;
   font-size: clamp(68px, 6.2vw, 98px);
 }
+
+/* The How it works heading uses a deliberate two-line desktop treatment. */
+.editorial-page .how-hero h1 {
+  max-width: 100%;
+  font-size: clamp(56px, 5.2vw, 78px);
+}
 .editorial-page .hero .lede {
   max-width: 59ch;
   margin-top: 30px;
