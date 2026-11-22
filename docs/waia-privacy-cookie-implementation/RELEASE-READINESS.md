@@ -33,3 +33,21 @@
 The technical publication candidate is prepared, but **the PR must remain draft and unmerged until the above factual/security checks and protected release verification have completed**. No separate user questionnaire is needed. The current legal host remains live/unchanged until the WAIA routes are deployed and verified.
 
 If the solicitor later identifies a required statutory change, update the published notice and implementation. An owner preference to keep analytics on does not independently establish PECR compliance.
+
+## Focused protected QA pass (22 November 2026)
+
+**Scope:** GitHub branch PR #110, public supplier/ICO guidance, 38 repository HTML routes, JavaScript source and six legal documents. No direct access to hosted Cloudflare/Tally settings, deployed database, live browser or local checkout available through this connection.
+
+### Results and fixes
+- **PASS, static:** Exhaustive review of all **38 HTML files** on the candidate branch for corporate legal URLs and corporate-site links. Three additional legacy legal/footer dependencies were found in `workplace-ai-visibility-check/access/`, `check/` and `results/`, plus the old footer in `start/`. All four pages corrected. Intentional noindex for access/check/results/start remains unchanged.
+- **PASS, static:** All 38 HTML files' root-relative `href` and `src` targets checked against the current recursive Git tree. No missing first-party destination identified.
+- **PASS, static:** Six legal documents' key semantic container tags were balanced, each with one H1 and existing local CSS. Improved legal notice table wrapping, keyboard region focus and semantic column headers (Privacy two tables, Cookies one).
+- **PASS, static:** Six legal pages have WAIA self-canonical URLs, 1.0 publication-version metadata, no draft/noindex markers and owner-confirmed trading identity/contact. Sitemap includes six routes.
+- **PASS, static:** 22 JavaScript/MJS source files inspected for unwanted corporate links; matches were confined to deliberate negative assertions in test files. Insights generator and eight generated Insights article footer links use the WAIA destinations.
+- **PASS, source:** Supabase migrations for learner evidence and structured use cases have `ENABLE ROW LEVEL SECURITY`, role- and organisation-scoped policies. Authentication code persists session in localStorage on ordinary app domains. **This does not prove deployed migrations or cross-tenant denial in production.**
+- **PASS, supplier documentation only:** Tally's partial response capture is an opt-in product feature (owner confirms disabled); Resend publicly provides a DPA including UK transfer clauses, and Cloudflare describes Web Analytics deployment including automatic-injection risks. **Account-specific options and full supply-chain are unverified.**
+- **PASS, qualified PECR analysis:** Owner says analytics solely aggregate site statistics/improvement, and the manual source/owner browser objection test aligns with the ICO's statutory exception framework. Still need to verify Cloudflare account configuration including auto-injection and whether all processing is eligible.
+- **NOT EXECUTED:** `node --test scripts/*.test.mjs`, `node scripts/build-insights.mjs` and output diff, automated HTML validation, desktop/mobile/keyboard rendering, real Tally form submission, live network/Cloudflare check, and live Supabase tenant isolation. GitHub connector does not run a shell; no associated Actions workflow run appeared at inspected branch head. Do not convert these into pass claims.
+
+### Resulting acceptance
+Release source-level audit: **PASS with corrections**. Protected end-to-end release gate: **OPEN** until commands, relevant browser/supplier checks and explicit merge/publish approval. This branch remains a pre-release candidate. No additional owner strategy/questionnaire decisions are required.
