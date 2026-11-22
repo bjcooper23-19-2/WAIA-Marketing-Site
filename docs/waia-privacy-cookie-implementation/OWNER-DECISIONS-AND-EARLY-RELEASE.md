@@ -4,7 +4,7 @@ Recorded: 22 November 2026. These are the owner's commercial/product choices, no
 
 ## Explicitly approved by owner
 1. Operate **WAIA** as a trading name of **Nineteen Point Two Limited**; no separate legal entity implied.
-2. Use a monitored **WAIA-branded legal/privacy contact address**, exact address now supplied as **ben@waia.co.uk**, but mailbox delivery and monitoring **have not been verified**. The draft legal pages use this address; test inbound and outbound delivery before publication.
+2. Use a monitored **WAIA-branded legal/privacy contact address**, exact address now supplied as **ben@waia.co.uk**, but the owner confirms that it works as an alias of ben@nineteenpointtwo.com. The draft legal pages use this address. This is owner-confirmed operational evidence, not independently tested delivery.
 3. WAIA is **not intended** for special-category personal data, including medical information and sensitive HR casework; customer submissions prohibited unless specifically agreed in writing.
 4. Customer export and deletion are handled **manually on request** with lawful retention and backup limitations. Do not promise self-service export, instantaneous deletion, guaranteed purge of protected backups, or specific backup retention unless verified.
 5. Paid WAIA UK subscriptions require **both parties' agreed Customer Order Form**, incorporating WAIA Terms and WAIA UK DPA. No automatic renewal unless expressly agreed.
@@ -30,7 +30,7 @@ WAIA application (repository code, not live hosted checks):
 ## Accelerated, conditional publication route
 
 **Gate A: factual and operational checks (not optional)**
-- Send-and-receive test of ben@waia.co.uk; confirm it is monitored and authorised for legal/privacy and security enquiries.
+- **Owner-confirmed:** ben@waia.co.uk is a functioning alias of ben@nineteenpointtwo.com, an inbox the owner uses. No separate mailbox provisioning is required. A targeted delivery check remains optional release QA, not a substantive blocker.
 - Check precise Tally form privacy link, provider storage/partial response setting and Google Apps Script access request flow.
 - Confirm supplier categories and roles, regional processing/transfer description, RLS/access-control and backup claims, current source data categories.
 - Confirm operative DPA obligations can be performed (export/deletion on request; incident notification and subprocessor change process).
@@ -49,4 +49,4 @@ WAIA application (repository code, not live hosted checks):
 **Not a blocker to website development:** the separate solicitor review can proceed in parallel if the above gates establish a lawful and factually accurate publication. A solicitor opinion remains recommended for PECR interpretation and binding commercial/DPA terms, and first customer contract should not incorporate an unreviewed high-risk legal promise.
 
 ## Outstanding input specifically from owner
-- **ben@waia.co.uk** supplied by owner on 22 November 2026; operational send/receive verification still outstanding.
+- **ben@waia.co.uk** supplied and confirmed working by owner on 22 November 2026; forwards as an alias to ben@nineteenpointtwo.com.
