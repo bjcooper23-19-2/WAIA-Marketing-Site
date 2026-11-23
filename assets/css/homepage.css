@@ -282,8 +282,7 @@ button {
   height: 575px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding-left: 10px;
+  justify-content: flex-start;
 }
 .hero-aura {
   position: absolute;
@@ -298,8 +297,9 @@ button {
 }
 .hero-evidence {
   position: relative;
-  width: 101%;
-  margin-right: 0;
+  top: -28px;
+  flex: none;
+  width: calc(100% + 220px);
   transform: perspective(1300px) rotateY(-5deg) rotateX(2deg) rotateZ(-1deg);
   border-radius: 8px;
   overflow: hidden;
@@ -311,7 +311,7 @@ button {
     transparent 100%
   );
   mask-image: linear-gradient(to bottom, #000 0%, #000 76%, transparent 100%);
-  animation: stage-in 0.8s both;
+  animation: evidence-settle 0.72s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 .hero-evidence img {
   width: 100%;
@@ -329,7 +329,7 @@ button {
   box-shadow:
     0 20px 42px #08122040,
     0 3px 10px #08122024;
-  animation: stage-in 0.9s 0.12s both;
+  animation: admin-settle 0.72s 0.12s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 .hero-admin img {
   width: 100%;
@@ -792,14 +792,25 @@ button {
   padding-top: 20px;
 }
 
-@keyframes stage-in {
+@keyframes evidence-settle {
   from {
     opacity: 0;
-    translate: 0 22px;
+    transform: perspective(1300px) rotateY(-2deg) rotateX(0) rotateZ(0)
+      translateY(18px) scale(0.985);
   }
   to {
     opacity: 1;
-    translate: 0 0;
+    transform: perspective(1300px) rotateY(-5deg) rotateX(2deg) rotateZ(-1deg);
+  }
+}
+@keyframes admin-settle {
+  from {
+    opacity: 0;
+    transform: rotate(2deg) translateY(14px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(5deg);
   }
 }
 
@@ -825,6 +836,9 @@ button {
   }
   .hero-visual {
     height: 470px;
+  }
+  .hero-evidence {
+    width: calc(100% + 120px);
   }
   .hero-admin {
     width: 145px;
@@ -914,7 +928,7 @@ button {
   }
   .hero-evidence {
     width: 90%;
-    margin-right: 0;
+    top: 0;
   }
   .hero-admin {
     right: 2%;
@@ -1025,8 +1039,8 @@ button {
   }
   .hero-evidence {
     width: 100%;
-    margin-right: 0;
     transform: perspective(800px) rotateY(-5deg) rotateX(2deg) rotateZ(-1deg);
+    animation: none;
     -webkit-mask-image: linear-gradient(
       to bottom,
       #000 0%,
@@ -1041,6 +1055,7 @@ button {
     bottom: 49px;
     border-width: 3px;
     border-radius: 8px;
+    animation: none;
   }
   .hero-visual figcaption {
     font-size: 12px;
@@ -1216,5 +1231,9 @@ button {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+  .hero-evidence,
+  .hero-admin {
+    animation: none;
   }
 }
