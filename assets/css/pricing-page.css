@@ -230,3 +230,30 @@
     font-size: 16px;
   }
 }
+
+/* Pricing is a single, centred commercial proposition, not a product-image hero. */
+.pricing-page .pricing-hero .hero-grid {
+  display: block;
+  text-align: center;
+}
+.pricing-page .pricing-hero .hero-grid > div:first-child {
+  max-width: 100%;
+  margin-inline: auto;
+}
+.pricing-page .pricing-hero h1 {
+  max-width: none;
+  margin-inline: auto;
+  font-size: clamp(56px, 6.2vw, 98px);
+}
+.pricing-page .pricing-hero .lede {
+  max-width: 66ch;
+  margin-inline: auto;
+}
+.pricing-page .pricing-hero .hero-actions {
+  justify-content: center;
+}
+@media (max-width: 600px) {
+  .pricing-page .pricing-hero h1 {
+    font-size: clamp(50px, 11vw, 68px);
+  }
+}
